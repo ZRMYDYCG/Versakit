@@ -40,6 +40,7 @@ import { VerFlex } from './components/flex/index'
 import { VerTable } from './components/table/index'
 import { VerCarousel, VerCarouselItem } from './components/carousel/index'
 import { VerCollapse, VerCollapseItem } from './components/collapse/index'
+import { VerScrollBar } from './components/scrollbar/index'
 
 // 指令
 import { vRipple, vIncrease } from './directives/index'
@@ -51,6 +52,7 @@ import './style/index.css'
 import 'virtual:svg-icons-register'
 
 const components: Component[] = [
+  VerScrollBar,
   VerCol,
   VerTag,
   VerNotification,
@@ -93,6 +95,7 @@ const components: Component[] = [
   VerTable,
 ]
 export {
+  VerScrollBar,
   VerCol,
   VerTag,
   VerNotification,

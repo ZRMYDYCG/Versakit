@@ -1,0 +1,72 @@
+.scrollbar {
+  position: relative;
+  overflow: hidden;
+}
+
+.scrollbar-content {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-content::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-content.with-vertical {
+  padding-right: 6px;
+}
+
+.scrollbar-content.with-horizontal {
+  padding-bottom: 6px;
+}
+
+.scrollbar-track {
+  position: absolute;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.scrollbar-track.vertical {
+  top: 2px;
+  right: 2px;
+  width: 6px;
+  height: calc(100% - 4px);
+}
+
+.scrollbar-track.horizontal {
+  left: 2px;
+  bottom: 2px;
+  height: 6px;
+  width: calc(100% - 4px);
+}
+
+.scrollbar-thumb {
+  position: absolute;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.scrollbar-thumb.visible {
+  opacity: 1;
+}
+
+.scrollbar-track.vertical .scrollbar-thumb {
+  width: 100%;
+}
+
+.scrollbar-track.horizontal .scrollbar-thumb {
+  height: 100%;
+}
+
+.scrollbar-thumb:hover {
+  background-color: var(--hover-color) !important;
+}
+
+.scrollbar-thumb:active {
+  background-color: var(--hover-color) !important;
+}

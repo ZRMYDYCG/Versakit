@@ -11,5 +11,9 @@ export const getGuideSidebar = (): DefaultTheme.Sidebar => {
         { text: '更新日志', link: '/guide/log/' },
       ],
     },
+    {
+      text: '进阶',
+      items: [{ text: '主题', link: '/guide/theme/' }],
+    },
   ]
 }

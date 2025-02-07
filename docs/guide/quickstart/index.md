@@ -16,3 +16,35 @@ const app = createApp(App)
 app.use(Versakit)
 app.mount('#app')
 ```
+
+## 按需导入
+
+自动导入 <ver-tag>推荐</ver-tag>
+​
+
+<p>首先你需要安装unplugin-vue-components 和 unplugin-auto-import这两款插件</p>
+
+```shell
+npm install -D unplugin-vue-components unplugin-auto-import @versakit/resolvers
+```
+
+### Vite
+
+```typescript
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { VersakitResolver } from '@versakit/resolvers'
+export default defineConfig({
+	plugins: [
+		vue(),
+		AutoImport({
+			resolvers: [VersakitResolver()],
+		}),
+		Components({
+			resolvers: [VersakitResolver()],
+		}),
+	],
+})
+```

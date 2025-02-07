@@ -5,6 +5,6 @@ export const getNav = (): DefaultTheme.NavItem[] => {
     { text: '设计', link: '/design/colors/' },
     { text: '指南', link: '/guide/installation/' },
     { text: '组件', link: '/components/layout/' },
-    { text: '团队', link: '/team/' },
+    { text: '指令集', link: '/directives/ripple/' },
   ]
 }

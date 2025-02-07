@@ -10,6 +10,7 @@ declare module 'vue' {
     VerButton: typeof import('@versakit/ui')['VerButton']
     VerCard: typeof import('@versakit/ui')['VerCard']
     VerInput: typeof import('@versakit/ui')['VerInput']
+    VerScrollbar: typeof import('@versakit/ui')['VerScrollbar']
     VerSwitch: typeof import('@versakit/ui')['VerSwitch']
   }
 }

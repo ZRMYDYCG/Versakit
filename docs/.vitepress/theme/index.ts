@@ -1,11 +1,15 @@
 import Theme from 'vitepress/theme'
 import Tool from '../components/tool.vue'
 import MyLayout from './Layout.vue'
-import './index.scss' // 引入样式
+// 引入样式
+import './index.scss'
+import 'virtual:group-icons.css'
 
-import Versakit from '@versakit/ui' // 引入组件库
+// 引入组件库
+import Versakit from '@versakit/ui'
 import { Element, Layui } from '@versakit/theme'
-import '@versakit/ui/dist/style.css' // 引入样式
+// 引入样式
+import '@versakit/ui/dist/style.css'
 
 export default {
   ...Theme,
