@@ -25,4 +25,6 @@ const props = withDefaults(defineProps<DividerProps>(), {
 })
 </script>
 
-<style scoped src="../style/index.css"></style>
+<style>
+@import '../style/index.css';
+</style>

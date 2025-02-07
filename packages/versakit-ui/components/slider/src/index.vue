@@ -131,4 +131,6 @@ const handleTouchEnd = () => {
   </div>
 </template>
 
-<style scoped src="../style/index.css"></style>
+<style>
+@import '../style/index.css';
+</style>

@@ -72,4 +72,6 @@ const statusColor = {
   </div>
 </template>
 
-<style src="../style/index.css" scoped></style>
+<style>
+@import '../style/index.css';
+</style>

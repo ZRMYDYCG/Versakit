@@ -60,4 +60,6 @@ const offset = computed(() => {
 })
 </script>
 
-<style scoped src="../stye/index.css" lang="css"></style>
+<style>
+@import '../style/index.css';
+</style>

@@ -52,4 +52,6 @@ const gap = computed(() => {
   </div>
 </template>
 
-<style lang="css" src="../style/index.css"></style>
+<style>
+@import '../style/index.css';
+</style>

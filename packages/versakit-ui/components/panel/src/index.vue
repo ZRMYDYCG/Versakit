@@ -29,4 +29,6 @@ const classes = computed(() => {
 })
 </script>
 
-<style src="../style/index.css" scoped></style>
+<style>
+@import '../style/index.css';
+</style>

@@ -19,4 +19,6 @@ const style: CSSProperties = {
   </section>
 </template>
 
-<style src="../style/index.css" scoped></style>
+<style>
+@import '../style/index.css';
+</style>

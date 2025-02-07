@@ -35,4 +35,6 @@ const VerClass = computed(() => {
 })
 </script>
 
-<style src="../style/index.css" lang="css" scoped></style>
+<style>
+@import '../style/index.css';
+</style>

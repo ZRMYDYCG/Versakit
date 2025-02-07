@@ -52,4 +52,6 @@ const modelValue = computed({
 })
 </script>
 
-<style scoped src="../style/index.css"></style>
+<style>
+@import '../style/index.css';
+</style>

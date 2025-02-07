@@ -79,4 +79,6 @@ onMounted(() => {
 })
 </script>
 
-<style src="../style/index.css" lang="scss" scoped></style>
+<style>
+@import '../style/index.css';
+</style>

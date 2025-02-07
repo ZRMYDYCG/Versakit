@@ -44,4 +44,7 @@ const computedIconName = computed(() => {
   }
 })
 </script>
-<style src="../style/index.css" lang="css"></style>
+
+<style>
+@import '../style/index.css';
+</style>
