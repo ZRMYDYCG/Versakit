@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { VersakitResolver } from '@versakit/resolvers'
+import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -16,6 +17,7 @@ export default defineConfig({
     Components({
       resolvers: [VersakitResolver()],
     }),
+    vueDevTools(),
   ],
   server: {
     host: true,
