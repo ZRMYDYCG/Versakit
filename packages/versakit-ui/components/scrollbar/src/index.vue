@@ -15,7 +15,7 @@ const props = withDefaults(defineProps<VerScrollBarProps>(), {
 })
 
 const containerRef = ref<HTMLElement | null>(null)
-const contentRef = ref<HTMLElement | null>(null)
+const contentRef: any = ref<HTMLElement | null>(null)
 const verticalThumbRef = ref<HTMLElement | null>(null)
 const horizontalThumbRef = ref<HTMLElement | null>(null)
 

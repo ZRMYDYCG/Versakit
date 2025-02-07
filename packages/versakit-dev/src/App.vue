@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import { VerScrollBar } from '@versakit/ui'
-import { ref } from 'vue'
-
-const flag = ref(true)
+import { VerTimeLineItem, VerTimeline } from '@versakit/ui'
 </script>
 
 <template>
@@ -20,45 +17,19 @@ const flag = ref(true)
     </div>
 
     <div class="container">
-      <p>按需引入测试</p>
+      <VerTimeline>
+        <VerTimeLineItem color="#1890ff">
+          <h4>创建项目</h4>
+          <p>初始化项目结构和依赖</p>
+          <p>2025-01-01</p>
+        </VerTimeLineItem>
 
-      <ver-card>卡片</ver-card>
-    </div>
-
-    <div class="container">
-      <ver-input></ver-input>
-    </div>
-
-    <div class="container">
-      <ver-switch size="lg" v-model="flag"></ver-switch>
-    </div>
-
-    <div class="container">
-      <h2>滚动条示例</h2>
-
-      <!-- 垂直滚动示例 -->
-      <div class="demo-section">
-        <h3>垂直滚动</h3>
-        <VerScrollBar class="demo-scrollbar" height="300px">
-          <div class="content">
-            <p v-for="i in 20" :key="i">这是第 {{ i }} 行内容</p>
-          </div>
-        </VerScrollBar>
-      </div>
-
-      <!-- 水平滚动示例 -->
-      <div class="demo-section">
-        <h3>水平滚动</h3>
-        <VerScrollBar
-          class="demo-scrollbar"
-          height="100px"
-          direction="horizontal"
-        >
-          <div class="horizontal-content">
-            <div v-for="i in 20" :key="i" class="box">Box {{ i }}</div>
-          </div>
-        </VerScrollBar>
-      </div>
+        <VerTimeLineItem color="red">
+          <h4>创建项目</h4>
+          <p>初始化项目结构和依赖</p>
+          <p>2025-01-01</p>
+        </VerTimeLineItem>
+      </VerTimeline>
     </div>
   </div>
 </template>

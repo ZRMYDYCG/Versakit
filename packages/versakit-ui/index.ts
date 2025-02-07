@@ -1,7 +1,7 @@
 import type { App, Component } from 'vue'
 import { installTheme } from './core/theme'
 
-// 组件
+// 基础组件
 import { VerButton } from './components/button/index'
 import { VerText } from './components/text/index'
 import { VerLink } from './components/link/index'
@@ -38,9 +38,12 @@ import { VerTooltip } from './components/tooltip/index'
 import { VerSlider } from './components/slider/index'
 import { VerFlex } from './components/flex/index'
 import { VerTable } from './components/table/index'
+import { VerScrollBar } from './components/scrollbar/index'
+
+// 层级组件
 import { VerCarousel, VerCarouselItem } from './components/carousel/index'
 import { VerCollapse, VerCollapseItem } from './components/collapse/index'
-import { VerScrollBar } from './components/scrollbar/index'
+import { VerTimeline, VerTimeLineItem } from './components/timeline/index'
 
 // 指令
 import { vRipple, vIncrease } from './directives/index'
@@ -52,6 +55,8 @@ import './style/index.css'
 import 'virtual:svg-icons-register'
 
 const components: Component[] = [
+  VerTimeline,
+  VerTimeLineItem,
   VerScrollBar,
   VerCol,
   VerTag,
@@ -95,6 +100,8 @@ const components: Component[] = [
   VerTable,
 ]
 export {
+  VerTimeline,
+  VerTimeLineItem,
   VerScrollBar,
   VerCol,
   VerTag,
