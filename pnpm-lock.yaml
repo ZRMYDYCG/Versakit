@@ -161,12 +161,45 @@ importers:
         specifier: ^3.5.13
         version: 3.5.13(typescript@5.6.3)
     devDependencies:
+      '@types/postcss-mixins':
+        specifier: ^9.0.6
+        version: 9.0.6
+      '@types/postcss-pxtorem':
+        specifier: ^6.1.0
+        version: 6.1.0
       '@vitejs/plugin-vue':
         specifier: ^5.2.1
         version: 5.2.1(vite@6.0.11(@types/node@22.10.1)(jiti@2.4.2)(lightningcss@1.29.1)(sass@1.83.4)(sugarss@4.0.1(postcss@8.4.49))(yaml@2.5.1))(vue@3.5.13(typescript@5.6.3))
       '@vue/tsconfig':
         specifier: ^0.7.0
         version: 0.7.0(typescript@5.6.3)(vue@3.5.13(typescript@5.6.3))
+      autoprefixer:
+        specifier: ^10.4.20
+        version: 10.4.20(postcss@8.4.49)
+      cssnano:
+        specifier: ^7.0.6
+        version: 7.0.6(postcss@8.4.49)
+      postcss:
+        specifier: ^8.4.49
+        version: 8.4.49
+      postcss-conditionals:
+        specifier: ^2.1.0
+        version: 2.1.0
+      postcss-each:
+        specifier: ^1.1.0
+        version: 1.1.0(postcss@8.4.49)
+      postcss-each-variables:
+        specifier: ^0.3.0
+        version: 0.3.0
+      postcss-mixins:
+        specifier: ^11.0.3
+        version: 11.0.3(postcss@8.4.49)
+      postcss-nested:
+        specifier: ^7.0.2
+        version: 7.0.2(postcss@8.4.49)
+      postcss-pxtorem:
+        specifier: ^6.1.0
+        version: 6.1.0(postcss@8.4.49)
       typescript:
         specifier: ~5.6.2
         version: 5.6.3

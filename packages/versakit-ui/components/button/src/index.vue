@@ -56,7 +56,6 @@ const rootAttrs = computed(() => ({
       :class="props.icon"
       v-bind="props.pt.icon"
     />
-
     <!-- Label -->
     <span v-bind="props.pt.label">
       <slot></slot>
@@ -64,4 +63,6 @@ const rootAttrs = computed(() => ({
   </button>
 </template>
 
-<style src="../style/index.css" lang="css" scoped></style>
+<style>
+@import '../style/index.css';
+</style>

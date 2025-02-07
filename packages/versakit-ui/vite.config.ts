@@ -5,8 +5,11 @@ import autoprefixer from 'autoprefixer'
 import postCssPxToRem from 'postcss-pxtorem'
 import postNested from 'postcss-nested'
 import mixins from 'postcss-mixins'
+// @ts-expect-error no types
 import each from 'postcss-each'
+// @ts-expect-error no types
 import eachVariables from 'postcss-each-variables'
+// @ts-expect-error no types
 import conditionals from 'postcss-conditionals'
 import cssnano from 'cssnano'
 // TS
@@ -61,6 +64,7 @@ export default defineConfig({
   build: {
     sourcemap: false,
     // 开启增量构建缓存
+    // @ts-expect-error unknown types
     incremental: true,
     rollupOptions: {
       external: ['vue'],

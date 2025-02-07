@@ -53,4 +53,6 @@ provide(collapseContextKey, {
 })
 </script>
 
-<style lang="css" scoped src="../style/index.css"></style>
+<style>
+@import '../style/index.css';
+</style>

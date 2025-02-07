@@ -44,4 +44,6 @@ const style = computed(() => ({
 }))
 </script>
 
-<style src="../style/index.css"></style>
+<style>
+@import '../style/index.css';
+</style>

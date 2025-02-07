@@ -35,4 +35,6 @@ watch(
 onMounted(() => setPaddings(props.gutter === 0))
 </script>
 
-<style scoped src="../style/index.css"></style>
+<style>
+@import '../style/index.css';
+</style>

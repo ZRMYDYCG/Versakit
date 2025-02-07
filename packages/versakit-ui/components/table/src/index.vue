@@ -45,4 +45,6 @@ const props = withDefaults(defineProps<TableProps>(), {
 defineOptions({ name: 'VerTable' })
 </script>
 
-<style scoped src="../style/index.css"></style>
+<style>
+@import '../style/index.css';
+</style>

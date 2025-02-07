@@ -31,6 +31,9 @@ const flag = ref(true)
     <div class="container">
       <ver-switch size="lg" v-model="flag"></ver-switch>
     </div>
+    <div class="container">
+      <VerCard>123</VerCard>
+    </div>
   </div>
 </template>
 

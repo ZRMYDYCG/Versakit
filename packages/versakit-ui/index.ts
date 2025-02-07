@@ -47,8 +47,8 @@ import { vRipple, vIncrease } from './directives/index'
 // 样式
 import './style/index.css'
 
-// 图标
-import 'virtual:svg-icons-register'
+// 热更新暂时不支持图标，先运行 pnpm ui:build，再注释掉此行
+// import 'virtual:svg-icons-register'
 
 const components: Component[] = [
   VerCol,
