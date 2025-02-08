@@ -1,9 +1,12 @@
-type tabList = {
-  id?: string
-  label?: string
-  name?: string
+export interface TabProps {
+  modelValue?: string | number
+  type?: 'line' | 'card'
+  closable?: boolean
+  addable?: boolean
 }
 
-export interface TabProps {
-  tabList?: tabList[]
+export interface TabItemProps {
+  label: string
+  name: string | number
+  disabled?: boolean
 }

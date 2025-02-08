@@ -23,7 +23,6 @@ import { VerContainer } from './components/container/index'
 import { VerHeader } from './components/header/index'
 import { VerMain } from './components/main/index'
 import { VerNotification } from './components/notification/index'
-import { VerTab } from './components/tab/index'
 import { VerIcon } from './components/icon/index'
 import { VerBacktop } from './components/backtop/index'
 import { VerResult } from './components/result/index'
@@ -44,7 +43,7 @@ import { VerScrollBar } from './components/scrollbar/index'
 import { VerCarousel, VerCarouselItem } from './components/carousel/index'
 import { VerCollapse, VerCollapseItem } from './components/collapse/index'
 import { VerTimeline, VerTimeLineItem } from './components/timeline/index'
-
+import { VerTab, VerTabItem } from './components/tab/index'
 // 指令
 import { vRipple, vIncrease } from './directives/index'
 
@@ -55,6 +54,7 @@ import './style/index.css'
 // import 'virtual:svg-icons-register'
 
 const components: Component[] = [
+  VerTabItem,
   VerTimeline,
   VerTimeLineItem,
   VerScrollBar,
@@ -100,6 +100,7 @@ const components: Component[] = [
   VerTable,
 ]
 export {
+  VerTabItem,
   VerTimeline,
   VerTimeLineItem,
   VerScrollBar,
