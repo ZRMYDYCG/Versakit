@@ -9,10 +9,10 @@
   "module": "./dist/esm/index.esm.js",
   "unpkg": "./dist/umd/index.umd.js",
   "style": "./dist/style.css",
-  "homepage": "https://lenran659.github.io/Versakit/",
+  "homepage": "https://versakit.github.io/Versakit/",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lenran659/Versakit.git"
+    "url": "git+https://github.com/Versakit/Versakit"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org/",
