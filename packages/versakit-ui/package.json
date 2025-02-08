@@ -6,6 +6,9 @@
   "type": "module",
   "types": "./dist/index.d.ts",
   "main": "./dist/ui.js",
+  "module": "./dist/esm/index.esm.js",
+  "unpkg": "./dist/umd/index.umd.js",
+  "style": "./dist/style.css",
   "homepage": "https://lenran659.github.io/Versakit/",
   "repository": {
     "type": "git",
