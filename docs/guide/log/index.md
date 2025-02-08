@@ -1,5 +1,11 @@
 # 更新日志
 
+## 0.2.6
+
+- 🛠 组件 bugs 修复
+- ✨新增Carousel 走马灯 组件
+- ✨新增NumberAnimation 数字动画 指令
+
 ## 0.2.5
 
 - 🛠 组件 bugs 修复
