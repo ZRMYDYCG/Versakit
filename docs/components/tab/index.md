@@ -8,6 +8,12 @@ Tabs 组件提供了选项卡功能，通过 `tabList` 绑定当前激活的 `Ta
 
 <demo vue="./example/base.vue"></demo>
 
+## 卡片
+
+Tabs 组件提供了选项卡功能，通过 `tabList` 绑定当前激活的 `Tab` 名称。
+
+<demo vue="./example/card.vue"></demo>
+
 ## Tabs API
 
 ### Tabs 属性

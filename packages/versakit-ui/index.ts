@@ -44,6 +44,7 @@ import { VerCarousel, VerCarouselItem } from './components/carousel/index'
 import { VerCollapse, VerCollapseItem } from './components/collapse/index'
 import { VerTimeline, VerTimeLineItem } from './components/timeline/index'
 import { VerTab, VerTabItem } from './components/tab/index'
+import { VerBreadcrumb, VerBreadcrumbItem } from './components/breadcrumb/index'
 // 指令
 import { vRipple, vIncrease } from './directives/index'
 
@@ -54,6 +55,8 @@ import './style/index.css'
 // import 'virtual:svg-icons-register'
 
 const components: Component[] = [
+  VerBreadcrumb,
+  VerBreadcrumbItem,
   VerTabItem,
   VerTimeline,
   VerTimeLineItem,
@@ -100,6 +103,8 @@ const components: Component[] = [
   VerTable,
 ]
 export {
+  VerBreadcrumb,
+  VerBreadcrumbItem,
   VerTabItem,
   VerTimeline,
   VerTimeLineItem,
