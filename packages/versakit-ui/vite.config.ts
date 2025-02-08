@@ -18,7 +18,7 @@ import dts from 'vite-plugin-dts'
 // 图标
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { defineConfig } from 'vite'
-import { visualizer } from 'rollup-plugin-visualizer'
+// import { visualizer } from 'rollup-plugin-visualizer'
 
 export default defineConfig({
   plugins: [
@@ -28,11 +28,11 @@ export default defineConfig({
       iconDirs: [path.resolve(process.cwd(), './icons')],
       symbolId: 'icon-[dir]-[name]',
     }),
-    visualizer({
-      open: true, // 打包完成后自动打开分析页面
-      gzipSize: true, // 显示 gzip 压缩后的大小
-      brotliSize: true, // 显示 brotli 压缩后的大小
-    }),
+    // visualizer({
+    //   open: true, // 打包完成后自动打开分析页面
+    //   gzipSize: true, // 显示 gzip 压缩后的大小
+    //   brotliSize: true, // 显示 brotli 压缩后的大小
+    // }),
   ],
   css: {
     preprocessorOptions: {
