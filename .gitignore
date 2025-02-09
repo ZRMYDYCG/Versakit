@@ -22,7 +22,7 @@ packages/versakit-ui/stats.html
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-!packages/docs/.vitepress/dist
+!docs/.vitepress/dist
 .idea
 *.suo
 *.ntvs*

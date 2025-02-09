@@ -120,15 +120,17 @@ importers:
 
   docs:
     dependencies:
-      '@versakit/theme':
-        specifier: workspace:*
-        version: link:../packages/versakit-theme
       '@versakit/ui':
+<<<<<<< HEAD
         specifier: ^0.2.7
         version: 0.2.7
+=======
+        specifier: ^0.2.6
+        version: 0.2.6
+>>>>>>> a97110cca60e222b1adab645d908a4fcb3d392b6
       docs:
         specifier: 'file:'
-        version: file:docs
+        version: 'link:'
       vitepress-plugin-group-icons:
         specifier: ^1.3.3
         version: 1.3.5
@@ -1406,8 +1408,13 @@ packages:
   '@ungap/structured-clone@1.2.1':
     resolution: {integrity: sha512-fEzPV3hSkSMltkw152tJKNARhOupqbH96MZWyRjNaYZOMIzbrTeQDG+MTc6Mr2pgzFQzFxAfmhGDNP5QK++2ZA==}
 
+<<<<<<< HEAD
   '@versakit/ui@0.2.7':
     resolution: {integrity: sha512-MXsCJbSdhVDkJ6gubB8toftmqNlFyHh61/SQk5+m+J1KJsltccqGn0mDNWNHaaSoE6JGf5wSiNOxoLgTNdMKMQ==}
+=======
+  '@versakit/ui@0.2.6':
+    resolution: {integrity: sha512-9NRou+FlhhOGt0VuOWovWox0ti81s0jUdU+X4zGFCR48/Ttyv3rF8RCtSH9G2g8gdk+r8d+tIScCXknhYcGsHw==}
+>>>>>>> a97110cca60e222b1adab645d908a4fcb3d392b6
 
   '@vitejs/plugin-vue@5.2.1':
     resolution: {integrity: sha512-cxh314tzaWwOLqVes2gnnCtvBDcM1UMdn+iFR+UjAn411dPT3tOmqrJjbMd7koZpMAmBM/GqeV4n9ge7JSiJJQ==}
@@ -2227,9 +2234,6 @@ packages:
 
   devlop@1.1.0:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
-
-  docs@file:docs:
-    resolution: {directory: docs, type: directory}
 
   doctrine@2.1.0:
     resolution: {integrity: sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw==}
@@ -6203,7 +6207,11 @@ snapshots:
 
   '@ungap/structured-clone@1.2.1': {}
 
+<<<<<<< HEAD
   '@versakit/ui@0.2.7': {}
+=======
+  '@versakit/ui@0.2.6': {}
+>>>>>>> a97110cca60e222b1adab645d908a4fcb3d392b6
 
   '@vitejs/plugin-vue@5.2.1(vite@5.4.11(@types/node@22.10.1)(lightningcss@1.29.1)(sass@1.83.4)(sugarss@4.0.1(postcss@8.4.49)))(vue@3.5.13(typescript@5.6.3))':
     dependencies:
@@ -7118,6 +7126,7 @@ snapshots:
     dependencies:
       dequal: 2.0.3
 
+<<<<<<< HEAD
   docs@file:docs:
     dependencies:
       '@versakit/theme': link:packages/versakit-theme
@@ -7125,6 +7134,8 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
+=======
+>>>>>>> a97110cca60e222b1adab645d908a4fcb3d392b6
   doctrine@2.1.0:
     dependencies:
       esutils: 2.0.3

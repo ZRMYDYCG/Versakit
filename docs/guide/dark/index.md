@@ -10,7 +10,7 @@
 
 ```html
 <html class="dark">
-  <head></head>
-  <body></body>
+	<head></head>
+	<body></body>
 </html>
 ```
