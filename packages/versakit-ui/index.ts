@@ -4,7 +4,6 @@ import { installTheme } from './core/theme'
 // 基础组件
 import { VerButton } from './components/button/index'
 import { VerText } from './components/text/index'
-import { VerLink } from './components/link/index'
 import { VerRow } from './components/row/index'
 import { VerCol } from './components/col/index'
 import { VerInput } from './components/input/index'
@@ -52,7 +51,7 @@ import { vRipple, vIncrease } from './directives/index'
 import './style/index.css'
 
 // 热更新暂时不支持图标，先运行 pnpm ui:build，再注释掉此行
-// import 'virtual:svg-icons-register'
+import 'virtual:svg-icons-register'
 
 const components: Component[] = [
   VerBreadcrumb,
@@ -65,7 +64,6 @@ const components: Component[] = [
   VerTag,
   VerNotification,
   VerMessage,
-  VerLink,
   VerText,
   VerBadge,
   VerCarouselItem,
@@ -113,7 +111,6 @@ export {
   VerTag,
   VerNotification,
   VerMessage,
-  VerLink,
   VerText,
   VerBadge,
   VerCarouselItem,

@@ -15,7 +15,7 @@
     padding: 0 4px;
     font-size: 12px;
     color: #fff;
-    background: var(--theme-error-500, var(--ver-error-color));
+    background: var(--theme-error-500, var(--ver-error-500));
     box-shadow: 0 0 0 2px #fff;
   }
   .ver-badge-num,
