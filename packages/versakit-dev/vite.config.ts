@@ -32,7 +32,7 @@ export default defineConfig({
     Components({
       include: `${__dirname}/**`,
       resolvers: [VersakitResolver({ importStyle: false })],
-      dts: false,
+      dts: true,
     }),
     vueDevTools(),
   ],

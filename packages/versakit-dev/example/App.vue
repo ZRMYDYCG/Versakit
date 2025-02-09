@@ -5,7 +5,6 @@
 <template>
   <div class="container">
     <!-- code here -->
-    <VerButton type="primary">Versakit</VerButton>
   </div>
 </template>
 
