@@ -1,13 +1,11 @@
 {
   "name": "@versakit/ui",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "author": "Jannik",
   "private": false,
   "type": "module",
   "types": "./dist/index.d.ts",
   "main": "./dist/ui.js",
-  "module": "./dist/esm/index.esm.js",
-  "unpkg": "./dist/umd/index.umd.js",
   "style": "./dist/style.css",
   "homepage": "https://versakit.github.io/Versakit/",
   "repository": {
@@ -34,9 +32,6 @@
     "build": "run-p type-check \"build-only {@}\" --",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force"
-  },
-  "dependencies": {
-    "@versakit/ui": "file:"
   },
   "devDependencies": {
     "@types/postcss-mixins": "^9.0.6",
