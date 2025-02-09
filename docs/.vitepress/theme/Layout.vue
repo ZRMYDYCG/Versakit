@@ -52,10 +52,8 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 .VPDoc.has-aside .container .aside {
   display: none;
 }
-.VPContent#VPContent .VPDoc.has-aside .container {
+.VPContent#VPContent .VPDoc.has-aside > .container {
   display: block;
-}
-.VPContent#VPContent .VPDoc.has-aside .container {
   max-width: 100%;
 }
 .VPDoc.has-aside .container .content {

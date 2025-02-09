@@ -1,6 +1,5 @@
-
-<div style="height: 500px;background-color: yellow;">13</div>
 <MainPage />
+
 <VPTeamPage>
   <VPTeamPageTitle>
     <template #title>团队成员</template>
