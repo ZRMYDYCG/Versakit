@@ -1,10 +1,12 @@
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
+
 // CSS工程化
 import autoprefixer from 'autoprefixer'
 import postCssPxToRem from 'postcss-pxtorem'
 import postNested from 'postcss-nested'
 import mixins from 'postcss-mixins'
+
 // @ts-expect-error no types
 import each from 'postcss-each'
 // @ts-expect-error no types
@@ -63,18 +65,17 @@ export default defineConfig({
   // 打包配置
   build: {
     sourcemap: false,
-    // 开启增量构建缓存
-    // @ts-expect-error unknown types
-    incremental: true,
     rollupOptions: {
       external: ['vue'],
       output: [
         {
           exports: 'named',
+          preserveModules: false,
+        },
+        {
           globals: {
             vue: 'Vue',
           },
-          preserveModules: false,
         },
         {
           format: 'umd',

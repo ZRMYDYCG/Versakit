@@ -1,12 +1,12 @@
 <template>
   <div class="background-box">
-    <!-- 小人1 -->
+    <!-- 人1 -->
     <img src="../../assets/person1.svg" class="person person1" alt="person1" />
 
-    <!-- 小人2 -->
+    <!-- 人2 -->
     <img src="../../assets/person2.svg" class="person person2" alt="person2" />
 
-    <!-- 小人3 -->
+    <!-- 人3 -->
     <img src="../../assets/person3.svg" class="person person3" alt="person3" />
 
     <!-- 背景装饰1 -->
@@ -52,7 +52,7 @@
 
 .person1 {
   top: 8%;
-  left: 45%;
+  left: 50%;
 
   @media (min-width: 555px) and (max-width: 765px) {
     top: 5%;
@@ -64,7 +64,7 @@
 
 .person2 {
   top: 18%;
-  left: 60%;
+  left: 62%;
   @media (min-width: 555px) and (max-width: 765px) {
     top: 12%;
   }

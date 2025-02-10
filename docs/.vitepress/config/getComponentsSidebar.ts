@@ -15,7 +15,6 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
       items: [
         { text: 'Button 按钮', link: '/components/button/' },
         { text: 'Text 文本', link: '/components/text/' },
-        { text: 'Link 链接', link: '/components/link/' },
         { text: 'Divider 分割线', link: '/components/divider/' },
         { text: 'Icon 图标', link: '/components/icons/' },
       ],
@@ -43,6 +42,7 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'Collapse 折叠面板', link: '/components/collapse/' },
         { text: 'Progress 进度条', link: '/components/progress/' },
         { text: 'GradientText 渐变文字', link: '/components/gradienttext/' },
+        { text: 'Timeline 时间线', link: '/components/timeline/' },
         { text: 'Table 表格', link: '/components/table/' },
       ],
     },
