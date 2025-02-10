@@ -1,28 +1,48 @@
 <template>
-  <div class="background-box">
-    <!-- 人1 -->
-    <img src="../../assets/person1.svg" class="person person1" alt="person1" />
+  <div class="theme-main-page">
+    <div class="background-box">
+      <!-- 背景装饰1 -->
+      <img src="../../assets/dot1.svg" class="decor decor1" alt="装饰1" />
 
-    <!-- 人2 -->
-    <img src="../../assets/person2.svg" class="person person2" alt="person2" />
+      <!-- 背景装饰2 -->
+      <img src="../../assets/dot2.svg" class="decor decor2" alt="装饰2" />
 
-    <!-- 人3 -->
-    <img src="../../assets/person3.svg" class="person person3" alt="person3" />
+      <!-- 背景装饰3 -->
+      <img src="../../assets/dot3.svg" class="decor decor3" alt="装饰3" />
 
-    <!-- 背景装饰1 -->
-    <img src="../../assets/dot1.svg" class="decor decor1" alt="装饰1" />
+      <!-- 背景装饰4 -->
+      <img src="../../assets/dot4.svg" class="decor decor4" alt="装饰4" />
+      <!-- 人1 -->
+      <img
+        src="../../assets/person1.svg"
+        class="person person1"
+        alt="person1"
+      />
 
-    <!-- 背景装饰2 -->
-    <img src="../../assets/dot2.svg" class="decor decor2" alt="装饰2" />
+      <!-- 人2 -->
+      <img
+        src="../../assets/person2.svg"
+        class="person person2"
+        alt="person2"
+      />
 
-    <!-- 背景装饰3 -->
-    <img src="../../assets/dot3.svg" class="decor decor3" alt="装饰3" />
+      <!-- 人3 -->
+      <img
+        src="../../assets/person3.svg"
+        class="person person3"
+        alt="person3"
+      />
 
-    <!-- 背景装饰4 -->
-    <img src="../../assets/dot4.svg" class="decor decor4" alt="装饰4" />
+      <div class="title">Versakit</div>
+      <div class="description">We create designs</div>
+      <div class="description">everyone loves.</div>
+      <VerButton>开始</VerButton>
+    </div>
   </div>
 </template>
-<script setup></script>
+<script setup>
+import { VerButton } from '@versakit/ui'
+</script>
 <style scoped>
 .background-box {
   width: 100%;
@@ -45,13 +65,13 @@
 
 .person {
   position: absolute;
-  width: clamp(10px, 15vw, 200px); /* 自适应宽度 */
-  animation: float 6s infinite ease-in-out;
+  width: clamp(10px, 15vw, 180px);
+  animation: float1 6s infinite ease-in-out;
   z-index: 1;
 }
 
 .person1 {
-  top: 8%;
+  top: 9%;
   left: 50%;
 
   @media (min-width: 555px) and (max-width: 765px) {
@@ -87,32 +107,47 @@
 
 .decor {
   position: absolute;
-  width: clamp(10px, 100vw, 300px);
+  width: clamp(30px, 100vw, 400px);
   animation: float2 5s infinite ease-in-out;
   z-index: 1;
+  @media (max-width: 1024px) {
+    width: clamp(30px, 80vw, 300px);
+  }
 }
 
 .decor1 {
-  top: 10%;
-  left: 20%;
+  top: 3%;
+  left: 48%;
+  @media (min-width: 555px) and (max-width: 765px) {
+    top: 1%;
+  }
+  @media (max-width: 555px) {
+    top: 0%;
+  }
 }
 
 .decor2 {
-  top: 40%;
-  left: 50%;
+  top: 14%;
+  left: 62%;
 }
 
 .decor3 {
-  top: 80%;
-  left: 10%;
+  top: 28%;
+  left: 62%;
+  @media (max-width: 765px) {
+    display: none;
+  }
 }
 
 .decor4 {
-  top: 60%;
-  left: 80%;
+  top: 12%;
+  left: 68%;
+  @media (max-width: 765px) {
+    display: none;
+  }
 }
 
-@keyframes float {
+@keyframes float1 {
   0%,
   100% {
     transform: translateY(0);
@@ -132,5 +167,19 @@
     transform: translateX(0px);
     transform: translateY(0px);
   }
+}
+
+.title {
+  color: #8b5cf6;
+  font-size: clamp(1.5rem, 5vw, 3rem);
+  font-weight: 600;
+  padding: 20px;
+}
+
+.description {
+  color: #fff;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  padding: 5px;
+  padding-left: 20px;
 }
 </style>
