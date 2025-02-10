@@ -101,29 +101,12 @@ let list = [
 ]
 </script>
 <style scoped>
-.VPContent .VPDoc.has-aside:has(.theme-main-page) {
-  padding: 0;
-}
-.VPDoc.has-aside .container .aside:has(.theme-main-page) {
-  display: none;
-}
-.VPDoc.has-aside .container .aside .aside-curtain {
-  display: none;
-}
-.VPContent#VPContent .VPDoc.has-aside > .container:has(.theme-main-page) {
-  display: block;
-  max-width: 100%;
-}
-.VPDoc.has-aside .container .content:has(.theme-main-page) {
-  max-width: 100%;
-  padding: 0;
-}
-.VPDoc.has-aside .container .content-container:has(.theme-main-page) {
-  max-width: 100%;
-}
 body {
   overflow-x: hidden;
 }
+/* .dark .theme-main-page {
+  background-color: red;
+} */
 .ver-btn {
   border: none;
   margin-left: 20px;
@@ -146,7 +129,8 @@ body {
 }
 .background-box {
   width: 100%;
-  background-image: url('../../assets/background.svg');
+  background-image: url('../../assets/bg.png');
+  opacity: 0.9;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -448,7 +432,7 @@ body {
 .center-components {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 30px;
   margin: 50px 0;
 }
 
@@ -506,7 +490,7 @@ body {
 }
 
 .component-bottom-icon {
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
 }
 .component-bottom:hover .component-bottom-icon {
   transform: translateX(5px);
