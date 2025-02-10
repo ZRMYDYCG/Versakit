@@ -1,30 +1,20 @@
 <template>
   <div class="theme-main-page">
     <div class="background-box">
-      <!-- 背景装饰1 -->
       <img src="../../assets/dot1.svg" class="decor decor1" alt="装饰1" />
-
-      <!-- 背景装饰2 -->
       <img src="../../assets/dot2.svg" class="decor decor2" alt="装饰2" />
-
-      <!-- 背景装饰3 -->
       <img src="../../assets/dot3.svg" class="decor decor3" alt="装饰3" />
-
-      <!-- 背景装饰4 -->
       <img src="../../assets/dot4.svg" class="decor decor4" alt="装饰4" />
-      <!-- 人1 -->
       <img
         src="../../assets/person1.svg"
         class="person person1"
         alt="person1"
       />
-      <!-- 人2 -->
       <img
         src="../../assets/person2.svg"
         class="person person2"
         alt="person2"
       />
-      <!-- 人3 -->
       <img
         src="../../assets/person3.svg"
         class="person person3"
@@ -55,7 +45,7 @@
         <div class="center-title">Versakit - ui</div>
         <div class="sur-title">基于 Vue 3，面向设计师和开发者的组件库</div>
         <div class="center-components">
-          <div class="center-component">
+          <div class="center-component" v-for="item in list" :key="item.name">
             <div class="component-top">
               <div class="purple-box">
                 <img
@@ -64,24 +54,22 @@
                   alt="紫色背景"
                 />
               </div>
-              <ver-icon class="component-top-icon" name="lightbulb" size="25" />
+              <ver-icon
+                class="component-top-icon"
+                :name="item.name"
+                size="25"
+              />
               <div class="component-top-content">
-                了解设计指南，帮助产品设计人员搭建逻辑清晰、结构合理且高效易用的产品。
+                {{ item.content }}
               </div>
             </div>
             <div class="component-bottom">
-              <div class="component-bottom-word">指南</div>
-              <ver-icon name="arrow-right-circle-fill" size="16" />
-            </div>
-          </div>
-          <div class="center-component">
-            <div class="component-top">
-              <ver-icon name="basket" size="25" />
-            </div>
-          </div>
-          <div class="center-component">
-            <div class="component-top">
-              <ver-icon name="rocket" size="25" />
+              <div class="component-bottom-word">{{ item.word }}</div>
+              <ver-icon
+                class="component-bottom-icon"
+                name="arrow-right-circle-fill"
+                size="16"
+              />
             </div>
           </div>
         </div>
@@ -91,6 +79,26 @@
 </template>
 <script setup>
 import { VerButton, VerIcon } from '@versakit/ui'
+let list = [
+  {
+    name: 'lightbulb',
+    content:
+      '了解设计指南，帮助产品设计人员搭建逻辑清晰、结构合理且高效易用的产品',
+    word: '指南',
+  },
+  {
+    name: 'basket',
+    content:
+      '使用组件 Demo 快速体验交互细节；使用前端框架封装的代码帮助工程师快速开发',
+    word: '组件',
+  },
+  {
+    name: 'rocket',
+    content:
+      '持续开发中，下载相关资源，用其快速搭建页面原型或高保真视觉稿，提升产品设计效率',
+    word: '资源',
+  },
+]
 </script>
 <style scoped>
 .VPContent .VPDoc.has-aside:has(.theme-main-page) {
@@ -203,20 +211,16 @@ body {
 
 .person3 {
   width: clamp(10px, 28vw, 450px);
-  top: 28%;
+  top: 27%;
   left: 60%;
   animation: float3 7s infinite ease-in-out;
 
-  @media (min-width: 765px) and (max-width: 1024px) {
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    top: 25%;
+    width: clamp(10px, 20vw, 350px);
+  }
+  @media (max-width: 1024px) {
     display: none;
-  }
-  @media (min-width: 555px) and (max-width: 765px) {
-    top: 18%;
-    left: 70%;
-  }
-  @media (max-width: 555px) {
-    top: 8%;
-    left: 70%;
   }
 }
 
@@ -272,6 +276,9 @@ body {
   left: 64%;
   width: clamp(30px, 80vw, 340px);
 
+  @media (min-width: 1024px) and (max-width: 1200px) {
+    width: clamp(10px, 70vw, 200px);
+  }
   @media (max-width: 1024px) {
     display: none;
   }
@@ -396,13 +403,13 @@ body {
   display: flex;
   max-width: 1152px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 24px;
 
   @media (min-width: 960px) {
-    padding: 0 64px;
+    padding: 40px 64px;
   }
   @media (min-width: 768px) {
-    padding: 0 48px;
+    padding: 40px 48px;
   }
 }
 
@@ -446,8 +453,15 @@ body {
 }
 
 .center-component {
+  position: relative;
   border-radius: 15px;
+  height: 400px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  transition: transform 0.3s ease;
+}
+
+.center-component:hover {
+  transform: translateY(-10px);
 }
 
 .component-top {
@@ -457,7 +471,7 @@ body {
 .purple-box {
   display: flex;
   justify-content: center;
-  transform: translateY(20px);
+  transform: translate(6px, 20px);
 }
 
 .purple-img {
@@ -465,14 +479,18 @@ body {
 }
 
 .component-top-icon {
-  transform: translateY(-40px);
+  transform: translateY(-45px);
 }
 
 .component-top-content {
   padding: 20px;
+  font-size: 14px;
 }
 
 .component-bottom {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -480,9 +498,17 @@ body {
   color: #fff;
   padding: 10px 0;
   border-radius: 0 0 15px 15px;
+  cursor: pointer;
 }
 
 .component-bottom-word {
   margin-right: 10px;
+}
+
+.component-bottom-icon {
+  transition: transform 0.3s ease;
+}
+.component-bottom:hover .component-bottom-icon {
+  transform: translateX(5px);
 }
 </style>
