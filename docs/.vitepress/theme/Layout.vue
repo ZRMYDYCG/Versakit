@@ -45,20 +45,25 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
   <Layout></Layout>
 </template>
 
-<style lang="scss">
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation: none;
-  mix-blend-mode: normal;
+<style>
+.VPContent .VPDoc.has-aside:has(.theme-main-page) {
+  padding: 0;
 }
-
-::view-transition-old(root),
-.dark::view-transition-new(root) {
-  z-index: 1;
+.VPDoc.has-aside .container .aside:has(.theme-main-page) {
+  display: none;
 }
-
-::view-transition-new(root),
-.dark::view-transition-old(root) {
-  z-index: 9999;
+.VPDoc.has-aside .container .aside .aside-curtain {
+  display: none;
+}
+.VPContent#VPContent .VPDoc.has-aside > .container:has(.theme-main-page) {
+  display: block;
+  max-width: 100%;
+}
+.VPDoc.has-aside .container .content:has(.theme-main-page) {
+  max-width: 100%;
+  padding: 0;
+}
+.VPDoc.has-aside .container .content-container:has(.theme-main-page) {
+  max-width: 100%;
 }
 </style>

@@ -16,7 +16,6 @@ export default {
   Layout: MyLayout,
   enhanceApp({ app }) {
     app.component('Tool', Tool)
-
     app.use(Versakit)
   },
 }
