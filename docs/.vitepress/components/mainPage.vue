@@ -64,7 +64,7 @@
                   alt="紫色背景"
                 />
               </div>
-              <ver-icon name="lightbulb" size="25" />
+              <ver-icon class="component-top-icon" name="lightbulb" size="25" />
               <div class="component-top-content">
                 了解设计指南，帮助产品设计人员搭建逻辑清晰、结构合理且高效易用的产品。
               </div>
@@ -465,7 +465,7 @@ body {
 }
 
 .component-top-icon {
-  transform: translateY(-20px);
+  transform: translateY(-40px);
 }
 
 .component-top-content {

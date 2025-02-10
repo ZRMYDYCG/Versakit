@@ -1,7 +1,8 @@
 <script setup lang="ts">
-// TODO: 切换颜色失败
-import { computed } from 'vue'
+import { computed, useAttrs } from 'vue'
 import type { IconsProps } from '../type/index'
+
+const attrs = useAttrs()
 
 defineOptions({ name: 'VerIcon', inheritAttrs: false })
 
@@ -9,18 +10,25 @@ const props = withDefaults(defineProps<IconsProps>(), {
   name: '',
   size: 14,
   color: '',
+  variant: '',
 })
 
-const size = props.size + 'px'
-
-const IconName = computed(() => {
-  return `#icon-${props.name}`
+// 合并根元素属性
+const rootAttrs = computed(() => {
+  return {
+    ...attrs,
+    class: ['ver-icon', attrs.class].filter(Boolean).join(' '),
+  }
 })
+
+const size = `${props.size}px`
+
+const IconName = computed(() => `#icon-${props.name}`)
 </script>
 
 <template>
   <svg
-    class="ver-icon"
+    v-bind="rootAttrs"
     aria-hidden="true"
     :style="{
       width: size,

@@ -40,9 +40,7 @@ const baseClass = computed(() => {
 // 合并根元素属性
 const rootAttrs = computed(() => ({
   ...attrs,
-  class: [baseClass.value.join(' '), attrs.class, props.pt.root]
-    .filter(Boolean)
-    .join(' '),
+  class: [baseClass.value.join(' '), props.pt.root].filter(Boolean).join(' '),
   disabled: props.disabled || undefined,
 }))
 </script>
