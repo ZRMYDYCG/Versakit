@@ -43,28 +43,9 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 
 <template>
   <Layout></Layout>
-  <div class="VPContent" id="VPContent">
-    <div class="VPDoc has-aside">
-      <div class="container">
-        <div class="aside"></div>
-        <div class="content">
-          <div class="content-container">
-            <main class="main">
-              <div class="vp-doc _Versakit_">
-                <div>
-                  <!-- 在这里加了一个样式 -->
-                  <div class="theme-main-page"></div>
-                </div>
-              </div>
-            </main>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 </template>
 
-<style lang="scss">
+<style>
 .VPContent .VPDoc.has-aside:has(.theme-main-page) {
   padding: 0;
 }
