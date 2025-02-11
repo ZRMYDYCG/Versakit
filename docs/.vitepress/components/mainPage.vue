@@ -157,6 +157,7 @@ body {
 .white-img {
   transform: translateY(30%);
   width: clamp(30px, 15vw, 200px);
+  user-select: none;
 }
 
 .component {
@@ -177,6 +178,8 @@ body {
   position: absolute;
   width: clamp(10px, 15vw, 180px);
   z-index: 1;
+  user-select: none;
+
   @media (max-width: 765px) {
     animation: float-min1 6s infinite ease-in-out;
   }
@@ -229,6 +232,7 @@ body {
   z-index: 1;
   max-width: 100%;
   overflow: hidden;
+  user-select: none;
 
   @media (max-width: 1024px) {
     width: clamp(30px, 80vw, 300px);
@@ -394,6 +398,7 @@ body {
 .dot-img {
   width: clamp(30px, 100vw, 800px);
   transform: translate(10%, -200%);
+  user-select: none;
 
   @media (max-width: 1024px) {
     width: clamp(30px, 80vw, 600px);
