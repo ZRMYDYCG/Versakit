@@ -349,6 +349,7 @@ body {
   font-weight: 600;
   padding: 20px;
   margin-bottom: 30px;
+  user-select: none;
 
   @media (max-width: 768px) {
     padding: 10px;
@@ -362,6 +363,8 @@ body {
 
 .title-sub {
   margin-bottom: 30px;
+  user-select: none;
+
   @media (max-width: 768px) {
     margin-bottom: 10px;
   }
@@ -428,6 +431,7 @@ body {
   font-size: clamp(1.5rem, 5vw, 3rem);
   font-weight: 600;
   padding: 20px;
+  user-select: none;
 }
 
 .dark .center-title {
@@ -437,6 +441,7 @@ body {
 .sur-title {
   color: #595959;
   padding: 20px;
+  user-select: none;
 }
 
 .dark .sur-title {
@@ -485,6 +490,7 @@ body {
 }
 
 .component-top-content {
+  user-select: none;
   padding: 20px;
   font-size: 14px;
 }
@@ -501,6 +507,7 @@ body {
   padding: 10px 0;
   border-radius: 0 0 15px 15px;
   cursor: pointer;
+  user-select: none;
 }
 
 .component-bottom-word {

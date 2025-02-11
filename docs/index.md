@@ -1,14 +1,14 @@
 <MainPage />
 
 <VPTeamPage>
-  <VPTeamPageTitle>
+  <VPTeamPageTitle class="member-title">
     <template #title>团队成员</template>
     <template #lead>
       我们是一群热爱开源的人。
     </template>
   </VPTeamPageTitle>
 
-<VPTeamMembers size="small" :members="members" />
+<VPTeamMembers class="member-content" size="small" :members="members" />
 
 </VPTeamPage>
 
@@ -71,3 +71,12 @@ const members = [
   },
 ]
 </script>
+<style>
+.member-title, .member-content{
+  user-select: none;
+}
+
+.profile:hover{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+</style>
