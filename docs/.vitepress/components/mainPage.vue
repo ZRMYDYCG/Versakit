@@ -31,7 +31,13 @@
               <span class="span-word">loves.</span>
             </div>
           </div>
-          <VerButton v-ripple type="primary" variant="round" size="lg">
+          <VerButton
+            v-ripple
+            @click="componentClick"
+            type="primary"
+            variant="round"
+            size="lg"
+          >
             开始
           </VerButton>
         </div>
@@ -63,7 +69,7 @@
                 {{ item.content }}
               </div>
             </div>
-            <div class="component-bottom">
+            <div class="component-bottom" @click="item.click">
               <div class="component-bottom-word">{{ item.word }}</div>
               <ver-icon
                 class="component-bottom-icon"
@@ -78,35 +84,43 @@
   </main>
 </template>
 <script setup>
-import { VerButton, VerIcon } from '@versakit/ui'
 let list = [
   {
     name: 'lightbulb',
     content:
       '了解设计指南，帮助产品设计人员搭建逻辑清晰、结构合理且高效易用的产品',
     word: '指南',
+    click: () => {
+      window.location.href = '/Versakit/guide/installation/'
+    },
   },
   {
     name: 'basket',
     content:
       '使用组件 Demo 快速体验交互细节；使用前端框架封装的代码帮助工程师快速开发',
     word: '组件',
+    click: () => {
+      componentClick()
+    },
   },
   {
     name: 'rocket',
     content:
-      '持续开发中，下载相关资源，用其快速搭建页面原型或高保真视觉稿，提升产品设计效率',
+      '持续开发中，使用相关资源，用其快速搭建页面原型或高保真视觉稿，提升产品设计效率',
     word: '资源',
+    click: () => {
+      window.location.href = '/Versakit/design/colors/'
+    },
   },
 ]
+const componentClick = () => {
+  window.location.href = '/Versakit/components/layout/'
+}
 </script>
 <style scoped>
 body {
   overflow-x: hidden;
 }
-/* .dark .theme-main-page {
-  background-color: red;
-} */
 .ver-btn {
   border: none;
   margin-left: 20px;
@@ -434,6 +448,10 @@ body {
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   margin: 50px 0;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 .center-component {
