@@ -1,27 +1,15 @@
 <template>
   <div class="theme-main-page">
     <div class="background-box">
-      <img src="../../assets/dot1.svg" class="decor decor1" alt="装饰1" />
-      <img src="../../assets/dot2.svg" class="decor decor2" alt="装饰2" />
-      <img src="../../assets/dot3.svg" class="decor decor3" alt="装饰3" />
-      <img src="../../assets/dot4.svg" class="decor decor4" alt="装饰4" />
-      <img
-        src="../../assets/person1.svg"
-        class="person person1"
-        alt="person1"
-      />
-      <img
-        src="../../assets/person2.svg"
-        class="person person2"
-        alt="person2"
-      />
-      <img
-        src="../../assets/person3.svg"
-        class="person person3"
-        alt="person3"
-      />
+      <template v-for="img in images" :key="img.src">
+        <img :src="getAssetPath(img.src)" :class="img.class" :alt="img.alt" />
+      </template>
       <div class="component-library">
-        <img src="../../assets/white.svg" class="white-img" alt="白色小点" />
+        <img
+          :src="getAssetPath('white.svg')"
+          class="white-img"
+          alt="白色小点"
+        />
         <div class="component">
           <div class="title">Versakit</div>
           <div class="title-sub">
@@ -33,7 +21,7 @@
           </div>
           <VerButton
             v-ripple
-            @click="componentClick"
+            @click="navigate('/Versakit/components/layout/')"
             type="primary"
             variant="round"
             size="lg"
@@ -55,7 +43,7 @@
             <div class="component-top">
               <div class="purple-box">
                 <img
-                  src="../../assets/purple.svg"
+                  :src="getAssetPath('purple.svg')"
                   class="purple-img"
                   alt="紫色背景"
                 />
@@ -69,7 +57,7 @@
                 {{ item.content }}
               </div>
             </div>
-            <div class="component-bottom" @click="item.click">
+            <div class="component-bottom" @click="navigate(item.link)">
               <div class="component-bottom-word">{{ item.word }}</div>
               <ver-icon
                 class="component-bottom-icon"
@@ -84,38 +72,43 @@
   </main>
 </template>
 <script setup>
+import { ref } from 'vue'
 let list = [
   {
     name: 'lightbulb',
     content:
       '了解设计指南，帮助产品设计人员搭建逻辑清晰、结构合理且高效易用的产品',
     word: '指南',
-    click: () => {
-      window.location.href = '/Versakit/guide/installation/'
-    },
+    link: '/Versakit/guide/installation/',
   },
   {
     name: 'basket',
     content:
       '使用组件 Demo 快速体验交互细节；使用前端框架封装的代码帮助工程师快速开发',
     word: '组件',
-    click: () => {
-      componentClick()
-    },
+    link: '/Versakit/components/layout/',
   },
   {
     name: 'rocket',
     content:
       '持续开发中，使用相关资源，用其快速搭建页面原型或高保真视觉稿，提升产品设计效率',
     word: '资源',
-    click: () => {
-      window.location.href = '/Versakit/design/colors/'
-    },
+    link: '/Versakit/design/colors/',
   },
 ]
-const componentClick = () => {
-  window.location.href = '/Versakit/components/layout/'
+const navigate = (path) => {
+  window.location.href = path
 }
+const images = ref([
+  { src: 'dot1.svg', class: 'decor decor1', alt: '装饰1' },
+  { src: 'dot2.svg', class: 'decor decor2', alt: '装饰2' },
+  { src: 'dot3.svg', class: 'decor decor3', alt: '装饰3' },
+  { src: 'dot4.svg', class: 'decor decor4', alt: '装饰4' },
+  { src: 'person1.svg', class: 'person person1', alt: '人物1' },
+  { src: 'person2.svg', class: 'person person2', alt: '人物2' },
+  { src: 'person3.svg', class: 'person person3', alt: '人物3' },
+])
+const getAssetPath = (fileName) => `/Versakit/assets/${fileName}`
 </script>
 <style scoped>
 body {
