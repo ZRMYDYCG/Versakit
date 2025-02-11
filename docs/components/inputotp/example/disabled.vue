@@ -2,11 +2,9 @@
 import { ref } from 'vue'
 import { VerInputOtp } from '@versakit/ui'
 
-const otpValue = ref('')
+const otpValue = ref('1234')
 </script>
 
 <template>
-  <VerInputOtp :disabled="true" v-model="otpValue" />
+  <VerInputOtp disabled v-model="otpValue" />
 </template>
-
-<style></style>
