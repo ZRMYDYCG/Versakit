@@ -3,7 +3,7 @@ const k = JSON.parse(
     '{"title":"安装","description":"","frontmatter":{},"headers":[],"relativePath":"guide/installation/index.md","filePath":"guide/installation/index.md"}',
   ),
   n = { name: 'guide/installation/index.md' }
-function l(p, a, d, h, o, r) {
+function l(d, a, p, h, o, r) {
   return s(), t('div', null, a[0] || (a[0] = [e('', 3)]))
 }
 const u = i(n, [['render', l]])
