@@ -66,4 +66,7 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 .VPDoc.has-aside .container .content-container:has(.theme-main-page) {
   max-width: 100%;
 }
+.VPNavBar.top {
+  user-select: none;
+}
 </style>
