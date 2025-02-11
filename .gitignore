@@ -15,6 +15,7 @@ coverage
 *.local
 **/cache/
 packages/versakit-ui/stats.html
+packages/versakit-dev/src/App.vue
 
 /cypress/videos/
 /cypress/screenshots/
