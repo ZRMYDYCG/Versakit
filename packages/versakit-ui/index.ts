@@ -37,6 +37,7 @@ import { VerSlider } from './components/slider/index'
 import { VerFlex } from './components/flex/index'
 import { VerTable } from './components/table/index'
 import { VerScrollBar } from './components/scrollbar/index'
+import { VerInputOtp } from './components/inputotp/index'
 
 // 层级组件
 import { VerCarousel, VerCarouselItem } from './components/carousel/index'
@@ -54,6 +55,7 @@ import './style/index.css'
 // import 'virtual:svg-icons-register'
 
 const components: Component[] = [
+  VerInputOtp,
   VerBreadcrumb,
   VerBreadcrumbItem,
   VerTabItem,
@@ -101,6 +103,7 @@ const components: Component[] = [
   VerTable,
 ]
 export {
+  VerInputOtp,
   VerBreadcrumb,
   VerBreadcrumbItem,
   VerTabItem,

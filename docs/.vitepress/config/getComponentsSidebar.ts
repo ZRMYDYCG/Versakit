@@ -23,6 +23,7 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
       text: 'Form 表单组件',
       items: [
         { text: 'Input 输入框', link: '/components/input/' },
+        { text: 'InputOtp 个人识别码', link: '/components/inputotp/' },
         { text: 'Switch 开关', link: '/components/switch/' },
         { text: 'Radio 单选框', link: '/components/radio/' },
         { text: 'Textarea 文本域', link: '/components/textarea/' },
