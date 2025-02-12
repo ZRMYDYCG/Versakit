@@ -9,13 +9,16 @@ import { getComponentsSidebar } from './config/getComponentsSidebar'
 import { getGuideSidebar } from './config/getGuideSidebar'
 import { getDesignSidebar } from './config/getDesignSidebar'
 import { getDirectives } from './config/getDirectives'
+import { getHead } from './config/getHead'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: '/Versakit/',
   title: 'Versakit',
   description: 'A VitePress Site',
+  head: getHead(),
   themeConfig: {
+    logo: '/logo.svg',
     search: {
       provider: 'algolia',
       options: {

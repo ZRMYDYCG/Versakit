@@ -2,14 +2,10 @@
   <div class="theme-main-page">
     <div class="background-box">
       <template v-for="img in images" :key="img.src">
-        <img :src="getAssetPath(img.src)" :class="img.class" :alt="img.alt" />
+        <img :src="`${img.src}`" :class="img.class" :alt="img.alt" />
       </template>
       <div class="component-library">
-        <img
-          :src="getAssetPath('white.svg')"
-          class="white-img"
-          alt="白色小点"
-        />
+        <img src="/white.svg" class="white-img" alt="白色小点" />
         <div class="component">
           <div class="title">Versakit</div>
           <div class="title-sub">
@@ -32,7 +28,7 @@
       </div>
     </div>
   </div>
-  <img src="../../assets/dot5.svg" class="dot-img" alt="装饰" />
+  <img src="/dot5.svg" class="dot-img" alt="装饰" />
   <main class="main">
     <div class="main-content">
       <div class="inner-content">
@@ -42,11 +38,7 @@
           <div class="center-component" v-for="item in list" :key="item.name">
             <div class="component-top">
               <div class="purple-box">
-                <img
-                  :src="getAssetPath('purple.svg')"
-                  class="purple-img"
-                  alt="紫色背景"
-                />
+                <img src="/purple.svg" class="purple-img" alt="紫色背景" />
               </div>
               <ver-icon
                 class="component-top-icon"
@@ -108,7 +100,6 @@ const images = ref([
   { src: 'person2.svg', class: 'person person2', alt: '人物2' },
   { src: 'person3.svg', class: 'person person3', alt: '人物3' },
 ])
-const getAssetPath = (fileName) => `/Versakit/assets/${fileName}`
 </script>
 <style scoped>
 body {
@@ -136,7 +127,7 @@ body {
 }
 .background-box {
   width: 100%;
-  background-image: url('../../assets/bg.png');
+  background-image: url('/bg.png');
   opacity: 0.9;
   background-size: cover;
   background-repeat: no-repeat;
