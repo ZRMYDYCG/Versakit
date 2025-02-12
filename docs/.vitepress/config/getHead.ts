@@ -6,7 +6,7 @@ export const getHead = (): HeadConfig[] => {
       'link',
       {
         rel: 'icon',
-        href: '/Versakit/logo.svg',
+        href: '/Versakit/image/logo.svg',
       },
     ],
   ]

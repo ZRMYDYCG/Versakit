@@ -2,10 +2,10 @@
   <div class="theme-main-page">
     <div class="background-box">
       <template v-for="img in images" :key="img.src">
-        <img :src="`${img.src}`" :class="img.class" :alt="img.alt" />
+        <img :src="img.src" :class="img.class" :alt="img.alt" />
       </template>
       <div class="component-library">
-        <img src="/white.svg" class="white-img" alt="白色小点" />
+        <img src="/image/white.svg" class="white-img" alt="白色小点" />
         <div class="component">
           <div class="title">Versakit</div>
           <div class="title-sub">
@@ -28,7 +28,7 @@
       </div>
     </div>
   </div>
-  <img src="/dot5.svg" class="dot-img" alt="装饰" />
+  <img src="/image/dot5.svg" class="dot-img" alt="装饰" />
   <main class="main">
     <div class="main-content">
       <div class="inner-content">
@@ -38,7 +38,11 @@
           <div class="center-component" v-for="item in list" :key="item.name">
             <div class="component-top">
               <div class="purple-box">
-                <img src="/purple.svg" class="purple-img" alt="紫色背景" />
+                <img
+                  src="/image/purple.svg"
+                  class="purple-img"
+                  alt="紫色背景"
+                />
               </div>
               <ver-icon
                 class="component-top-icon"
@@ -65,6 +69,7 @@
 </template>
 <script setup>
 import { ref } from 'vue'
+
 let list = [
   {
     name: 'lightbulb',
@@ -91,14 +96,16 @@ let list = [
 const navigate = (path) => {
   window.location.href = path
 }
+
+// 需要加上 config.mts 的 base 前缀， template 中的路径 Vite 会自动加上 base
 const images = ref([
-  { src: 'dot1.svg', class: 'decor decor1', alt: '装饰1' },
-  { src: 'dot2.svg', class: 'decor decor2', alt: '装饰2' },
-  { src: 'dot3.svg', class: 'decor decor3', alt: '装饰3' },
-  { src: 'dot4.svg', class: 'decor decor4', alt: '装饰4' },
-  { src: 'person1.svg', class: 'person person1', alt: '人物1' },
-  { src: 'person2.svg', class: 'person person2', alt: '人物2' },
-  { src: 'person3.svg', class: 'person person3', alt: '人物3' },
+  { src: '/Versakit/image/dot1.svg', class: 'decor decor1', alt: '装饰1' },
+  { src: '/Versakit/image/dot2.svg', class: 'decor decor2', alt: '装饰2' },
+  { src: '/Versakit/image/dot3.svg', class: 'decor decor3', alt: '装饰3' },
+  { src: '/Versakit/image/dot4.svg', class: 'decor decor4', alt: '装饰4' },
+  { src: '/Versakit/image/person1.svg', class: 'person person1', alt: '人物1' },
+  { src: '/Versakit/image/person2.svg', class: 'person person2', alt: '人物2' },
+  { src: '/Versakit/image/person3.svg', class: 'person person3', alt: '人物3' },
 ])
 </script>
 <style scoped>
@@ -127,7 +134,7 @@ body {
 }
 .background-box {
   width: 100%;
-  background-image: url('/bg.png');
+  background-image: url('/image/bg.png');
   opacity: 0.9;
   background-size: cover;
   background-repeat: no-repeat;

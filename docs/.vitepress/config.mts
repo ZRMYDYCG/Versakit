@@ -18,7 +18,7 @@ export default defineConfig({
   description: 'A VitePress Site',
   head: getHead(),
   themeConfig: {
-    logo: '/logo.svg',
+    logo: '/image/logo.svg',
     search: {
       provider: 'algolia',
       options: {
