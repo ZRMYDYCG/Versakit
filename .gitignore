@@ -23,7 +23,7 @@ packages/versakit-dev/src/App.vue
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
-!docs/.vitepress/dist
+docs/.vitepress/dist
 .idea
 *.suo
 *.ntvs*
