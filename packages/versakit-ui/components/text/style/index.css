@@ -28,8 +28,8 @@
   }
 }
 
-@each $size, $font-size in (lg, md, sm, xs), (16px, 14px, 12px, 10px) {
+@each $size, $fontsize in (lg, md, sm, xs), (16px, 14px, 12px, 10px) {
   .ver-text.is-$(size) {
-    font-size: $(font-size);
+    font-size: $(fontsize);
   }
 }

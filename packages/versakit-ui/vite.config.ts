@@ -6,14 +6,16 @@ import autoprefixer from 'autoprefixer'
 import postCssPxToRem from 'postcss-pxtorem'
 import postNested from 'postcss-nested'
 import mixins from 'postcss-mixins'
-
-// @ts-expect-error no types
-import each from 'postcss-each'
-// @ts-expect-error no types
-import eachVariables from 'postcss-each-variables'
-// @ts-expect-error no types
-import conditionals from 'postcss-conditionals'
 import cssnano from 'cssnano'
+
+// // @ts-expect-error no types
+// import each from 'postcss-each'
+// // @ts-expect-error no types
+// import eachVariables from 'postcss-each-variables'
+// // @ts-expect-error no types
+// import conditionals from 'postcss-conditionals'
+import CssMagic from 'postcss-magic'
+
 // TS
 import dts from 'vite-plugin-dts'
 
@@ -44,9 +46,10 @@ export default defineConfig({
     },
     postcss: {
       plugins: [
-        conditionals(),
-        each(),
-        eachVariables(),
+        // conditionals(),
+        // each(),
+        // eachVariables(),
+        CssMagic(),
         autoprefixer({
           overrideBrowserslist: ['Chrome > 40', 'ff > 31', 'ie 11'],
         }),
