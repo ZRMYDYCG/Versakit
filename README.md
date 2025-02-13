@@ -59,7 +59,7 @@ createApp(App).use(Versakit).mount('#app')
 
 ## IV. Documentation Address
 
-[Component Library Documentation](https://lenran659.github.io/versakit-docs/)
+[Component Library Documentation](https://versakit.github.io/Versakit/)
 
 [github](https://github.com/lenran659/versakit-ui)
 
