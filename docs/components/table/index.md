@@ -1,4 +1,4 @@
-# Table 表格
+# Table 表格 <ver-tag type="warn">Alpha</ver-tag>
 
 展示行列数据。
 

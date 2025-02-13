@@ -6,7 +6,7 @@ const otpValue = ref('')
 </script>
 
 <template>
-  <VerInputOtp :disabled="true" v-model="otpValue" />
+  <VerInputOtp v-model="otpValue" />
 </template>
 
 <style></style>
