@@ -61,7 +61,7 @@ createApp(App).use(Versakit).mount('#app')
 
 ## 四、文档地址
 
-[组件库文档](https://lenran659.github.io/versakit-docs/)
+[组件库文档](https://versakit.github.io/Versakit/)
 
 [github](https://github.com/lenran659/versakit-ui)
 
