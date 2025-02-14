@@ -12,6 +12,19 @@
 
 </VPTeamPage>
 
+<VPTeamPage>
+  <VPTeamPageTitle class="member-title">
+    <template #title>贡献者</template>
+  </VPTeamPageTitle>
+
+<div class="container">
+<a href="https://github.com/Versakit/Versakit/graphs/contributors">
+<img src="https://contrib.rocks/image?repo=Versakit/Versakit" />
+</a>
+</div>
+
+</VPTeamPage>
+
 <script setup>
 import MainPage from '/.vitepress/components/mainPage.vue'
 import {
@@ -71,8 +84,14 @@ const members = [
   },
 ]
 </script>
+
 <style>
 .member-title, .member-content{
   user-select: none;
+}
+
+.container{
+	display: flex;
+	justify-content: center;
 }
 </style>
