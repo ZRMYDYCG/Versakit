@@ -17,11 +17,13 @@
     <template #title>贡献者</template>
   </VPTeamPageTitle>
 
-<div class="container">
-<a href="https://github.com/Versakit/Versakit/graphs/contributors">
-<img src="https://contrib.rocks/image?repo=Versakit/Versakit" />
-</a>
-</div>
+<table>
+  <tbody>
+    <tr><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/lenran659" title="lenran659"><img src="https://avatars.githubusercontent.com/u/74483049?v=4" width="100px;" alt="lenran659" style="border-radius: 9999px;" /></a></td><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/Dream-2022" title="Dream-2022"><img src="https://avatars.githubusercontent.com/u/131731035?v=4" width="100px;" alt="Dream-2022" style="border-radius: 9999px;" /></a></td><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/ZHuuO" title="ZHuuO"><img src="https://avatars.githubusercontent.com/u/128499037?v=4" width="100px;" alt="ZHuuO" style="border-radius: 9999px;" /></a></td><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/Simonmie" title="Simonmie"><img src="https://avatars.githubusercontent.com/u/122306263?v=4" width="100px;" alt="Simonmie" style="border-radius: 9999px;" /></a></td><td align="center" valign="top" width="12.5%" style="word-break: break-word; white-space: normal;"><a href="https://github.com/yuguaa" title="yuguaa"><img src="https://avatars.githubusercontent.com/u/58333667?v=4" width="100px;" alt="yuguaa" style="border-radius: 9999px;" /></a></td>
+    </tr>
+
+  </tbody>
+</table>
 
 </VPTeamPage>
 
@@ -90,8 +92,4 @@ const members = [
   user-select: none;
 }
 
-.container{
-	display: flex;
-	justify-content: center;
-}
 </style>
