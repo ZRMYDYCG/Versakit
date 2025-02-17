@@ -68,6 +68,13 @@ const members = [
     links: [
       { icon: 'github', link: 'https://github.com/Natorx' },
     ]
+  },{
+    avatar: 'https://avatars.githubusercontent.com/u/86543671?v=4',
+    name: 'abining',
+    title: 'Developer',
+    links: [
+      { icon: 'github', link: 'https://github.com/abining' },
+    ]
   },
 ]
 </script>
