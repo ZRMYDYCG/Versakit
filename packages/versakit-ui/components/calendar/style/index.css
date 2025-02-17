@@ -1,0 +1,78 @@
+
+.ver-calendar {
+  /* --el-calendar-border: var(--el-table-border, 1px solid var(--el-border-color-lighter)); */
+  /* --el-calendar-header-border-bottom: var(--el-calendar-border); */
+  /* --el-calendar-selected-bg-color: var(--el-color-primary-light-9); */
+ 
+
+  width: 100%;
+  background: var(--theme-neutral-50, var(--ver-neutral-50));
+  border: 1px solid var(--theme-neutral-200, var(--ver-neutral-200));
+  border-radius: 4px;
+  padding:1.5rem;
+  --ver-calendar-header-border-bottom: 1px solid var(--theme-neutral-200, var(--ver-neutral-200));
+  --ver-calendar-cell-size: 85px;
+}
+
+.ver-calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--theme-neutral-200, var(--ver-neutral-200));
+}
+
+.ver-calendar-title {
+  color: var(--theme-neutral-900, var(--ver-neutral-900));
+}
+
+
+.ver-calendar-arrow:hover {
+  color: var(--theme-primary-500, var(--ver-primary-500));
+}
+
+.ver-calendar-weeks {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  padding: 12px 0;
+  color: var(--theme-neutral-600, var(--ver-neutral-600));
+  border-bottom: 1px solid var(--theme-neutral-200, var(--ver-neutral-200));
+}
+
+.ver-calendar-dates {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 8px;
+}
+
+.ver-calendar-cell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 2px;
+  width: var(--ver-calendar-cell-size);
+  height: var(--ver-calendar-cell-size);
+}
+
+.ver-calendar-cell:hover {
+  background: var(--theme-neutral-100, var(--ver-neutral-100));
+}
+
+.ver-calendar-cell-prev,
+.ver-calendar-cell-next {
+  color: var(--theme-neutral-400, var(--ver-neutral-400));
+}
+
+.ver-calendar-cell.is-selected {
+  background: var(--theme-primary-500, var(--ver-primary-500));
+  color: white;
+}
+
+.ver-calendar-header{
+  padding:12px 20px;
+  border-bottom: 1px solid var(--theme-neutral-200, var(--ver-neutral-200));
+}
+
