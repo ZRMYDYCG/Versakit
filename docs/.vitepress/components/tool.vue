@@ -35,7 +35,7 @@ const propsValue = computed(() => {
 const showTooltip = ref(false)
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .ver-btn {
   margin-left: 5px;
 }
