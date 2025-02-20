@@ -6,6 +6,7 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { VersakitResolver } from '@versakit/resolvers'
 import vueDevTools from 'vite-plugin-vue-devtools'
+import vueJsx from '@vitejs/plugin-vue-jsx'
 
 // CSS工程化
 import autoprefixer from 'autoprefixer'
@@ -35,6 +36,7 @@ export default defineConfig({
       dts: true,
     }),
     vueDevTools(),
+    vueJsx(),
   ],
   css: {
     postcss: {
