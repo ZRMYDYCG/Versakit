@@ -13,6 +13,8 @@
     "skipDefaultLibCheck": false,
     "skipLibCheck": false,
     "jsx": "preserve",
+    // https://cn.vuejs.org/guide/extras/render-function#jsx-type-inference
+    "jsxImportSource": "vue",
     "types": ["node", "vite/client", "vitest/globals"],
     "lib": ["esnext", "dom"]
   },
