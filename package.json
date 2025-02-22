@@ -7,7 +7,7 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "pnpm --filter devplay dev",
+    "dev": "pnpm resolvers:build && pnpm --filter devplay dev",
     "cli:build": "pnpm --filter cli build",
     "docs:build": "pnpm --filter docs docs:build",
     "docs:dev": "pnpm --filter docs docs:dev",
