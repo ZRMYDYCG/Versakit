@@ -16,7 +16,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   pt: () => ({}) as BtnPassThroughOptions,
 })
 
-const attrs = useAttrs()
+const attrs: any = useAttrs()
 
 // 计算样式类
 const baseClass = computed(() => {
@@ -38,7 +38,7 @@ const baseClass = computed(() => {
 })
 
 // 合并根元素属性
-const rootAttrs = computed(() => ({
+const rootAttrs: any = computed(() => ({
   ...attrs,
   class: [baseClass.value.join(' '), props.pt.root].filter(Boolean).join(' '),
   disabled: props.disabled || undefined,

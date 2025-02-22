@@ -2,7 +2,7 @@
 import { computed, useAttrs } from 'vue'
 import type { IconsProps } from '../type/index'
 
-const attrs = useAttrs()
+const attrs: any = useAttrs()
 
 defineOptions({ name: 'VerIcon', inheritAttrs: false })
 
@@ -14,7 +14,7 @@ const props = withDefaults(defineProps<IconsProps>(), {
 })
 
 // 合并根元素属性
-const rootAttrs = computed(() => {
+const rootAttrs: any = computed(() => {
   return {
     ...attrs,
     class: ['ver-icon', attrs.class].filter(Boolean).join(' '),

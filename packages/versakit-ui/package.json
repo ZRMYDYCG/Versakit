@@ -6,6 +6,8 @@
   "type": "module",
   "main": "./dist/ui.js",
   "style": "./dist/style.css",
+  "unpkg": "./dist/umd/index.umd.js",
+  "module": "./dist/esm/index.esm.js",
   "homepage": "https://versakit.github.io/Versakit/",
   "repository": {
     "type": "git",
