@@ -22,13 +22,8 @@
 </template>
 
 <script lang="ts" setup>
-/**
- * 1. 头像组件 支持 icon url text
- * 2. fallback 支持错误图片 同时支持自定义 fallback 是一个属性同时也是一个插槽
- */
-
 import { computed } from 'vue'
-import { Fit } from '../type/index'
+import type { Fit } from '../type/index'
 import type { AvatarProps } from '../type/index'
 
 defineOptions({ name: 'VerAvatar' })
