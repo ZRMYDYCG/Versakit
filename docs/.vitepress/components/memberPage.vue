@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="member-container">
     <VPTeamPage>
       <VPTeamPageTitle class="member-title">
         <template #title>团队成员</template>
@@ -22,6 +22,7 @@
           class="contributor"
           v-for="member in contributors"
           :key="member.name"
+          @click="handleClick(member.link)"
         >
           <img class="contributor-avatar" :src="member.avatar" alt="avatar" />
           {{ member.name }}
@@ -32,34 +33,33 @@
 </template>
 <script lang="ts" setup>
 import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from 'vitepress/theme'
-
 const contributors = [
   {
     avatar:
       'https://avatars.githubusercontent.com/u/74483049?s=400&u=102dfac48d0067d9d7a5576134e409590bbfaafe&v=4',
     name: 'Jannik',
-    links: [{ icon: 'github', link: 'https://github.com/lenran659' }],
+    link: 'https://github.com/lenran659',
   },
   {
     avatar: 'https://avatars.githubusercontent.com/u/131731035?v=4',
     name: 'Pei',
-    links: [{ icon: 'github', link: 'https://github.com/Dream-2022' }],
+    link: 'https://github.com/Dream-2022',
   },
   {
     avatar: 'https://avatars.githubusercontent.com/u/128499037?v=4',
     name: 'ZHuuO',
-    links: [{ icon: 'github', link: 'https://github.com/ZHuuO' }],
+    link: 'https://github.com/ZHuuO',
   },
   {
     avatar: 'https://avatars.githubusercontent.com/u/122306263?v=4',
     name: 'JustHappy',
-    links: [{ icon: 'github', link: 'https://github.com/Simonmie' }],
+    link: 'https://github.com/Simonmie',
   },
   {
     avatar: 'https://avatars.githubusercontent.com/u/58333667?v=4',
     name: 'yuguaa',
     title: 'Contributor',
-    links: [{ icon: 'github', link: 'https://github.com/yuguaa' }],
+    link: 'https://github.com/yuguaa',
   },
 ]
 const members = [
@@ -107,8 +107,15 @@ const members = [
     links: [{ icon: 'github', link: 'https://github.com/abining' }],
   },
 ]
+const handleClick = (link: string) => {
+  window.open(link)
+}
 </script>
 <style scoped>
+.member-container {
+  padding-bottom: 100px;
+}
+
 .member-title,
 .member-content,
 .contributors {
