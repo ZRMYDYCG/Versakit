@@ -56,6 +56,12 @@ const contributors = [
     link: 'https://github.com/Simonmie',
   },
   {
+    avatar: 'https://avatars.githubusercontent.com/u/86543671?v=4',
+    name: 'xiao yi bin',
+    title: 'Contributor',
+    link: 'https://github.com/abining',
+  },
+  {
     avatar: 'https://avatars.githubusercontent.com/u/58333667?v=4',
     name: 'yuguaa',
     title: 'Contributor',
