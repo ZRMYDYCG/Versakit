@@ -8,7 +8,7 @@ import postNested from 'postcss-nested'
 import mixins from 'postcss-mixins'
 import cssnano from 'cssnano'
 
-// // @ts-expect-error no types
+// // @ts-expect-error no types  each
 // import each from 'postcss-each'
 // // @ts-expect-error no types
 // import eachVariables from 'postcss-each-variables'
@@ -39,11 +39,6 @@ export default defineConfig({
     // }),
   ],
   css: {
-    preprocessorOptions: {
-      scss: {
-        api: 'modern-compiler',
-      },
-    },
     postcss: {
       plugins: [
         // conditionals(),
