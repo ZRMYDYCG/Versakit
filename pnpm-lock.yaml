@@ -127,8 +127,13 @@ importers:
         specifier: workspace:*
         version: link:../packages/versakit-theme
       '@versakit/ui':
+<<<<<<< HEAD
         specifier: ^0.2.9
         version: 0.2.9
+=======
+        specifier: ^0.2.8
+        version: 0.2.8
+>>>>>>> 068f3b6d2d9b0731d4888daa27a2426a0e5c78a0
       docs:
         specifier: 'file:'
         version: file:docs
