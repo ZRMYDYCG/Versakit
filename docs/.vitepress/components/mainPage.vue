@@ -112,6 +112,7 @@ const images = ref([
 body {
   overflow-x: hidden;
 }
+
 .ver-btn {
   border: none;
   margin-left: 20px;
@@ -132,6 +133,7 @@ body {
     margin-left: 10px;
   }
 }
+
 .background-box {
   width: 100%;
   background-image: url('/image/bg.png');
@@ -145,6 +147,7 @@ body {
 .component-library {
   display: flex;
 }
+
 .white-img {
   transform: translateY(30%);
   width: clamp(30px, 15vw, 200px);
@@ -184,6 +187,7 @@ body {
   @media (min-width: 555px) and (max-width: 765px) {
     top: 5%;
   }
+
   @media (max-width: 555px) {
     top: 3%;
   }
@@ -193,9 +197,11 @@ body {
   top: 18%;
   left: 62%;
   animation: float2 8s infinite ease-in-out;
+
   @media (min-width: 555px) and (max-width: 765px) {
     top: 12%;
   }
+
   @media (max-width: 555px) {
     top: 7%;
   }
@@ -211,6 +217,7 @@ body {
     top: 25%;
     width: clamp(10px, 20vw, 350px);
   }
+
   @media (max-width: 1024px) {
     display: none;
   }
@@ -228,6 +235,7 @@ body {
   @media (max-width: 1024px) {
     width: clamp(30px, 80vw, 300px);
   }
+
   @media (max-width: 765px) {
     animation: float-min2 5s infinite ease-in-out;
   }
@@ -236,10 +244,12 @@ body {
 .decor1 {
   top: 3%;
   left: 48%;
+
   @media (min-width: 555px) and (max-width: 765px) {
     width: clamp(30px, 50vw, 300px);
     top: 2%;
   }
+
   @media (max-width: 555px) {
     width: clamp(30px, 50vw, 300px);
     top: 1%;
@@ -259,6 +269,7 @@ body {
 .decor3 {
   top: 28%;
   left: 62%;
+
   @media (max-width: 1024px) {
     display: none;
   }
@@ -272,6 +283,7 @@ body {
   @media (min-width: 1024px) and (max-width: 1200px) {
     width: clamp(10px, 70vw, 200px);
   }
+
   @media (max-width: 1024px) {
     display: none;
   }
@@ -282,24 +294,29 @@ body {
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20px);
   }
 }
+
 @keyframes float2 {
   0%,
   100% {
     transform: translateY(10px);
   }
+
   50% {
     transform: translateY(-10px);
   }
 }
+
 @keyframes float3 {
   0%,
   100% {
     transform: translateY(20px);
   }
+
   50% {
     transform: translateY(0px);
   }
@@ -310,6 +327,7 @@ body {
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-5px);
   }
@@ -321,17 +339,20 @@ body {
     transform: translateX(5px);
     transform: translateY(-5px);
   }
+
   50% {
     transform: translateX(0px);
     transform: translateY(0px);
   }
 }
+
 @keyframes float2 {
   0%,
   100% {
     transform: translateX(20px);
     transform: translateY(-10px);
   }
+
   50% {
     transform: translateX(0px);
     transform: translateY(0px);
@@ -405,6 +426,7 @@ body {
   @media (min-width: 960px) {
     padding: 40px 64px;
   }
+
   @media (min-width: 768px) {
     padding: 40px 48px;
   }
@@ -513,6 +535,7 @@ body {
 .component-bottom-icon {
   transition: transform 0.5s ease;
 }
+
 .component-bottom:hover .component-bottom-icon {
   transform: translateX(5px);
 }
