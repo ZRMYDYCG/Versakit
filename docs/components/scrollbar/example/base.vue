@@ -3,7 +3,7 @@ import { VerScrollBar } from '@versakit/ui'
 </script>
 
 <template>
-  <VerScrollBar>
+  <VerScrollBar height="300px">
     <p v-for="item in 20" :key="item" class="scrollbar-demo-item">{{ item }}</p>
   </VerScrollBar>
 </template>

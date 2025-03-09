@@ -47,6 +47,7 @@ const verticalThumbPosition = computed(() => {
   const contentHeight = contentRef.value.scrollHeight
   const scrollTop = contentRef.value.scrollTop
   const maxScroll = contentHeight - containerHeight
+  if (maxScroll === 0) return '0%'
   const percentage =
     (scrollTop / maxScroll) * (100 - parseFloat(verticalThumbHeight.value))
   return `${percentage}%`
@@ -58,6 +59,7 @@ const horizontalThumbPosition = computed(() => {
   const contentWidth = contentRef.value.scrollWidth
   const scrollLeft = contentRef.value.scrollLeft
   const maxScroll = contentWidth - containerWidth
+  if (maxScroll === 0) return '0%'
   const percentage =
     (scrollLeft / maxScroll) * (100 - parseFloat(horizontalThumbWidth.value))
   return `${percentage}%`
@@ -160,6 +162,38 @@ const handleDragEnd = () => {
   handleMouseLeave()
 }
 
+const handleVerticalTrackClick = (e: MouseEvent) => {
+  // Only handle click if the target is the track itself, not the thumb
+  if (e.target !== e.currentTarget) return
+  if (!containerRef.value || !contentRef.value || !verticalThumbRef.value)
+    return
+
+  const { clientY } = e
+  const { top, height } = verticalThumbRef.value.getBoundingClientRect()
+  const thumbMiddle = top + height / 2
+  const direction = clientY < thumbMiddle ? -1 : 1
+
+  // Scroll by container height (page-wise scrolling)
+  const scrollAmount = containerRef.value.clientHeight
+  contentRef.value.scrollTop += direction * scrollAmount
+}
+
+const handleHorizontalTrackClick = (e: MouseEvent) => {
+  // Only handle click if the target is the track itself, not the thumb
+  if (e.target !== e.currentTarget) return
+  if (!containerRef.value || !contentRef.value || !horizontalThumbRef.value)
+    return
+
+  const { clientX } = e
+  const { left, width } = horizontalThumbRef.value.getBoundingClientRect()
+  const thumbMiddle = left + width / 2
+  const direction = clientX < thumbMiddle ? -1 : 1
+
+  // Scroll by container width (page-wise scrolling)
+  const scrollAmount = containerRef.value.clientWidth
+  contentRef.value.scrollLeft += direction * scrollAmount
+}
+
 onMounted(() => {
   if (contentRef.value) {
     contentRef.value.addEventListener('scroll', handleScroll)
@@ -180,7 +214,7 @@ onUnmounted(() => {
   <div
     ref="containerRef"
     class="scrollbar"
-    :style="{ width, height }"
+    :style="{ width: props.width, height: props.height }"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
   >
@@ -198,7 +232,8 @@ onUnmounted(() => {
     <div
       v-if="showVertical"
       class="scrollbar-track vertical"
-      :style="{ backgroundColor: trackColor }"
+      :style="{ backgroundColor: props.trackColor }"
+      @click="handleVerticalTrackClick"
     >
       <div
         ref="verticalThumbRef"
@@ -207,8 +242,8 @@ onUnmounted(() => {
         :style="{
           height: verticalThumbHeight,
           transform: `translateY(${verticalThumbPosition})`,
-          backgroundColor: thumbColor,
-          '--hover-color': thumbHoverColor,
+          backgroundColor: props.thumbColor,
+          '--hover-color': props.thumbHoverColor,
         }"
         @mousedown="handleVerticalDragStart"
       />
@@ -217,7 +252,8 @@ onUnmounted(() => {
     <div
       v-if="showHorizontal"
       class="scrollbar-track horizontal"
-      :style="{ backgroundColor: trackColor }"
+      :style="{ backgroundColor: props.trackColor }"
+      @click="handleHorizontalTrackClick"
     >
       <div
         ref="horizontalThumbRef"
@@ -226,8 +262,8 @@ onUnmounted(() => {
         :style="{
           width: horizontalThumbWidth,
           transform: `translateX(${horizontalThumbPosition})`,
-          backgroundColor: thumbColor,
-          '--hover-color': thumbHoverColor,
+          backgroundColor: props.thumbColor,
+          '--hover-color': props.thumbHoverColor,
         }"
         @mousedown="handleHorizontalDragStart"
       />
