@@ -47,6 +47,7 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'Timeline 时间线', link: '/components/timeline/' },
         { text: 'Table 表格', link: '/components/table/' },
         { text: 'Calendar 日历', link: '/components/calendar/' },
+        { text: 'Skeleton 骨架屏', link: '/components/skeleton/' },
       ],
     },
     {

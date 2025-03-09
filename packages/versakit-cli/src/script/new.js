@@ -5,7 +5,12 @@ import path from 'path'
 
 /// 定义创建新文件夹以及对应文件的逻辑
 export const createNewFolder = (folderName) => {
-  const targetFolderPath = path.join('packages', 'ui', 'components', folderName)
+  const targetFolderPath = path.join(
+    'packages',
+    'versakit-ui',
+    'components',
+    folderName,
+  )
   // 创建文件夹
   fs.mkdirpSync(targetFolderPath)
   // 创建src文件夹
