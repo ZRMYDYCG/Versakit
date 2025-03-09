@@ -40,6 +40,7 @@ import { VerScrollBar } from './components/scrollbar/index'
 import { VerInputOtp } from './components/inputotp/index'
 import { VerCalendar } from './components/calendar/index'
 import { VerSkeleton } from './components/skeleton/index'
+import { VerPagination } from './components/pagination/index'
 
 // 层级组件
 import { VerCarousel, VerCarouselItem } from './components/carousel/index'
@@ -57,6 +58,7 @@ import './style/index.css'
 // import 'virtual:svg-icons-register'
 
 const components: Component[] = [
+  VerPagination,
   VerSkeleton,
   VerCalendar,
   VerInputOtp,
@@ -107,6 +109,7 @@ const components: Component[] = [
   VerTable,
 ]
 export {
+  VerPagination,
   VerSkeleton,
   VerCalendar,
   VerInputOtp,
