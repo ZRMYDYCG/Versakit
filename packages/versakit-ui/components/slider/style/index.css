@@ -29,7 +29,7 @@
 .slider-track {
   position: absolute;
   height: 100%;
-  background-color: #1890ff;
+  background-color: var(--theme-primary-500, var(--ver-primary-500));
   border-radius: 2px;
   transition: width 0.2s;
 }
@@ -43,7 +43,7 @@
   width: 14px;
   height: 14px;
   background-color: #fff;
-  border: 2px solid #1890ff;
+  border: 2px solid var(--theme-primary-500, var(--ver-primary-500));
   border-radius: 50%;
   transform: translate(-50%, -50%);
   top: 50%;
