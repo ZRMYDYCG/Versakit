@@ -2,12 +2,20 @@ import type { ComponentResolver } from 'unplugin-vue-components'
 
 // 将组件名拆分为独立数组元素
 const components = [
-  'VerScrollbar',
+  'VerPagination',
+  'VerSkeleton',
+  'VerCalendar',
+  'VerInputOtp',
+  'VerBreadcrumb',
+  'VerBreadcrumbItem',
+  'VerTabItem',
+  'VerTimeline',
+  'VerTimeLineItem',
+  'VerScrollBar',
   'VerCol',
   'VerTag',
   'VerNotification',
   'VerMessage',
-  'VerLink',
   'VerText',
   'VerBadge',
   'VerCarouselItem',

@@ -28,8 +28,8 @@
 
 .pagination-btn:hover:not(:disabled),
 .pagination-item:hover:not(:disabled):not(.is-active):not(.is-ellipsis) {
-  border-color: #1890ff;
-  color: #1890ff;
+  border-color: var(--theme-primary-500, var(--ver-primary-500));
+  color: var(--theme-primary-500, var(--ver-primary-500));
 }
 
 .pagination-btn:disabled,
@@ -45,8 +45,8 @@
 }
 
 .pagination-item.is-active {
-  border-color: #1890ff;
-  background: #1890ff;
+  border-color: var(--theme-primary-500, var(--ver-primary-500));
+  background: var(--theme-primary-500, var(--ver-primary-500));
   color: white;
 }
 
