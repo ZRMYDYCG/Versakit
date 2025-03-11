@@ -7485,7 +7485,12 @@ var fs = /*@__PURE__*/getDefaultExportFromCjs(libExports);
 
 /// 定义创建新文件夹以及对应文件的逻辑
 const createNewFolder = (folderName) => {
-  const targetFolderPath = require$$1$1.join('packages', 'ui', 'components', folderName);
+  const targetFolderPath = require$$1$1.join(
+    'packages',
+    'versakit-ui',
+    'components',
+    folderName,
+  );
   // 创建文件夹
   fs.mkdirpSync(targetFolderPath);
   // 创建src文件夹
