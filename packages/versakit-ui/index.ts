@@ -49,6 +49,7 @@ import { VerTimeline, VerTimeLineItem } from './components/timeline/index'
 import { VerTab, VerTabItem } from './components/tab/index'
 import { VerBreadcrumb, VerBreadcrumbItem } from './components/breadcrumb/index'
 import { VerDescriptions, VerDescriptionsItem } from './components/descriptions'
+import { VerCheckbox, VerCheckboxGroup } from './components/checkbox/index'
 // 指令
 import { vRipple, vIncrease } from './directives/index'
 
@@ -59,6 +60,8 @@ import './style/index.css'
 import 'virtual:svg-icons-register'
 
 const components: Component[] = [
+  VerCheckbox,
+  VerCheckboxGroup,
   VerPagination,
   VerSkeleton,
   VerCalendar,
@@ -112,6 +115,8 @@ const components: Component[] = [
   VerTable,
 ]
 export {
+  VerCheckbox,
+  VerCheckboxGroup,
   VerPagination,
   VerSkeleton,
   VerCalendar,
