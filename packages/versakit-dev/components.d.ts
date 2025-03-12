@@ -8,6 +8,8 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
-    VerButton: typeof import('@versakit/ui')['VerButton']
+    VerDescriptions: typeof import('@versakit/ui')['VerDescriptions']
+    VerDescriptionsItem: typeof import('@versakit/ui')['VerDescriptionsItem']
+    VerTag: typeof import('@versakit/ui')['VerTag']
   }
 }

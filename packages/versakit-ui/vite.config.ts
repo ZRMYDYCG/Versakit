@@ -24,16 +24,21 @@ import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
 import { defineConfig } from 'vite'
 // import { visualizer } from 'rollup-plugin-visualizer'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import VueMacros from 'unplugin-vue-macros/vite'
 
 export default defineConfig({
   plugins: [
-    vue(),
     dts({ tsconfigPath: '../../tsconfig.build.json' }),
     createSvgIconsPlugin({
       iconDirs: [path.resolve(process.cwd(), './icons')],
       symbolId: 'icon-[dir]-[name]',
     }),
-    vueJsx(),
+    VueMacros({
+      plugins: {
+        vue: vue(),
+        vueJsx: vueJsx(),
+      },
+    }),
     // visualizer({
     //   open: true, // 打包完成后自动打开分析页面
     //   gzipSize: true, // 显示 gzip 压缩后的大小

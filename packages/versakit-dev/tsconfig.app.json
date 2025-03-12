@@ -10,5 +10,11 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "components.d.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "components.d.ts"],
+  "vueCompilerOptions": {
+    "plugins": ["unplugin-vue-macros/volar"],
+    "vueMacros": {
+      "exportRender": true
+    }
+  }
 }

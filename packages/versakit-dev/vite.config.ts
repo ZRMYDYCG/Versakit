@@ -7,6 +7,7 @@ import Components from 'unplugin-vue-components/vite'
 import { VersakitResolver } from '@versakit/resolvers'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import VueMacros from 'unplugin-vue-macros/vite'
 
 // CSS工程化
 import autoprefixer from 'autoprefixer'
@@ -25,7 +26,12 @@ const pkgRoot = resolve(__dirname, '..', 'versakit-ui')
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
-    vue(),
+    VueMacros({
+      plugins: {
+        vue: vue(),
+        vueJsx: vueJsx(),
+      },
+    }),
     tailwindcss(),
     AutoImport({
       resolvers: [VersakitResolver()],
@@ -36,7 +42,6 @@ export default defineConfig({
       dts: true,
     }),
     vueDevTools(),
-    vueJsx(),
   ],
   css: {
     postcss: {
