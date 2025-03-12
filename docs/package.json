@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@versakit/theme": "workspace:*",
-    "@versakit/ui": "workspace:*",
+    "@versakit/ui": "^0.2.10",
     "docs": "file:",
     "vitepress-plugin-group-icons": "^1.3.3"
   }
