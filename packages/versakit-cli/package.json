@@ -1,7 +1,7 @@
 {
   "name": "@versakit/cli",
   "version": "1.0.0",
-  "description": "",
+  "description": "cli of versakit",
   "type": "module",
   "private": "true",
   "bin": {

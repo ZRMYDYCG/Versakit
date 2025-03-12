@@ -2,6 +2,8 @@
 import { computed, ref, onMounted, nextTick } from 'vue'
 import type { SegmentedProps } from '../type/index.ts'
 
+defineOptions({ name: 'VerSegmented' })
+
 const props = defineProps<SegmentedProps>()
 const componentId = `segmented-${Math.random().toString(36).slice(2, 11)}`
 const labelRefs = ref<HTMLElement[]>([])
@@ -75,6 +77,6 @@ onMounted(async () => {
   </div>
 </template>
 
-<style>
+<style scoped>
 @import '../style/index.css';
 </style>

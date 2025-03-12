@@ -1,6 +1,6 @@
 {
   "name": "@versakit/ui",
-  "version": "0.2.9",
+  "version": "0.2.10",
   "author": "Jannik",
   "private": false,
   "type": "module",
@@ -44,8 +44,5 @@
     "postcss-mixins": "^11.0.3",
     "postcss-nested": "^7.0.2",
     "rollup-plugin-visualizer": "^5.14.0"
-  },
-  "dependencies": {
-    "@versakit/ui": "file:"
   }
 }

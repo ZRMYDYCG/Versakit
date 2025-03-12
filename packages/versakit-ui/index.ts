@@ -39,6 +39,8 @@ import { VerTable } from './components/table/index'
 import { VerScrollBar } from './components/scrollbar/index'
 import { VerInputOtp } from './components/inputotp/index'
 import { VerCalendar } from './components/calendar/index'
+import { VerSkeleton } from './components/skeleton/index'
+import { VerPagination } from './components/pagination/index'
 
 // 层级组件
 import { VerCarousel, VerCarouselItem } from './components/carousel/index'
@@ -53,9 +55,11 @@ import { vRipple, vIncrease } from './directives/index'
 import './style/index.css'
 
 // 热更新暂时不支持图标，先运行 pnpm ui:build，再注释掉此行
-// import 'virtual:svg-icons-register'
+import 'virtual:svg-icons-register'
 
 const components: Component[] = [
+  VerPagination,
+  VerSkeleton,
   VerCalendar,
   VerInputOtp,
   VerBreadcrumb,
@@ -105,6 +109,8 @@ const components: Component[] = [
   VerTable,
 ]
 export {
+  VerPagination,
+  VerSkeleton,
   VerCalendar,
   VerInputOtp,
   VerBreadcrumb,

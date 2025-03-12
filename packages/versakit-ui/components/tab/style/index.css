@@ -29,7 +29,7 @@
 }
 
 .tabs-line .tabs-tab.is-active {
-  color: #1890ff;
+  color: var(--theme-primary-500, var(--ver-primary-500));
 }
 
 .tabs-line .tabs-tab.is-active::after {
@@ -39,7 +39,7 @@
   left: 0;
   right: 0;
   height: 2px;
-  background-color: #1890ff;
+  background-color: var(--theme-primary-500, var(--ver-primary-500));
 }
 
 .tabs-card .tabs-tab {
@@ -54,7 +54,7 @@
 .tabs-card .tabs-tab.is-active {
   background: #fff;
   border-bottom-color: #fff;
-  color: #1890ff;
+  color: var(--theme-primary-500, var(--ver-primary-500));
 }
 
 .tabs-tab-close {
@@ -81,7 +81,7 @@
 }
 
 .tabs-nav-add:hover {
-  color: #1890ff;
+  color: var(--theme-primary-500, var(--ver-primary-500));
 }
 
 .tabs-content {

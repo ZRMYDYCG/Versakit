@@ -151,54 +151,5 @@ onMounted(() => {
 </template>
 
 <style scoped>
-.input-otp {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
-
-.input-otp.is-disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.input-otp-item {
-  width: 40px;
-  height: 40px;
-  padding: 0;
-  font-size: 20px;
-  text-align: center;
-  border: 1px solid #d9d9d9;
-  border-radius: 4px;
-  background-color: white;
-  transition: all 0.3s;
-  outline: none;
-  caret-color: #1890ff;
-}
-
-.input-otp-item:hover:not(:disabled) {
-  border-color: #40a9ff;
-}
-
-.input-otp-item:focus {
-  border-color: #1890ff;
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
-}
-
-.input-otp-item:disabled {
-  background-color: #f5f5f5;
-  cursor: not-allowed;
-}
-
-/* 去除数字输入框的上下箭头 */
-.input-otp-item::-webkit-outer-spin-button,
-.input-otp-item::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-.input-otp-item[type='number'] {
-  appearance: textfield;
-  -moz-appearance: textfield;
-}
+@import url('../style/index.css');
 </style>
