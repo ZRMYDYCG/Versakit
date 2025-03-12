@@ -16,6 +16,8 @@ coverage
 **/cache/
 packages/versakit-ui/stats.html
 packages/versakit-dev/src/App.vue
+packages/versakit-dev/auto-imports.d.ts
+packages/versakit-dev/components.d.ts
 
 /cypress/videos/
 /cypress/screenshots/
