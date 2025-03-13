@@ -17,6 +17,7 @@ module.exports = {
         'revert',
         'build',
         'ci',
+        'types',
       ],
     ],
     'type-case': [0],
