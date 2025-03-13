@@ -9,9 +9,11 @@ export type JustifyProps =
   | 'space-around'
   | 'space-evenly'
 
+export type WrapProps = 'nowrap' | 'wrap' | 'wrap-reverse'
+
 export interface FlexProps {
   vertical?: boolean
-  wrap?: 'nowrap' | 'wrap' | 'wrap-reverse'
+  wrap?: WrapProps
   justify?: JustifyProps
   align?: AlignProps
   gap?: number | number[] | 'small' | 'middle' | 'large'
