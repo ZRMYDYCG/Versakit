@@ -20,10 +20,11 @@ const setPaddings = (isZero: boolean) => {
   const children = row.value?.children
   if (!children || isZero) return
   const _padding = props.gutter / 2
-  children.forEach((child: HTMLElement) => {
+  for (let i = 0; i < children.length; i++) {
+    const child = children[i] as HTMLElement
     child.style.paddingLeft = `${_padding}px`
     child.style.paddingRight = `${_padding}px`
-  })
+  }
 }
 
 watch(
