@@ -9,20 +9,6 @@ describe('VerDialog', () => {
     expect(wrapper.exists()).toBe(true)
   })
 
-  // Props 测试
-  // it('测试 visible prop', async () => {
-  //   const wrapper = mount(VerDialog, {
-  //     props: {
-  //       modelValue: true,
-  //     },
-  //   })
-  //   expect(wrapper.isVisible()).toBe(true)
-
-  //   await wrapper.setProps({ modelValue: false })
-
-  //   expect(wrapper.isVisible()).toBe(false)
-  // })
-
   it('测试 title prop', () => {
     const title = '对话框标题'
     const wrapper = mount(VerDialog, {
