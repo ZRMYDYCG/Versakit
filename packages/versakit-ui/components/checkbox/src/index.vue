@@ -139,12 +139,12 @@ const handleChange = (e: Event) => {
 }
 
 .checkbox.is-checked .checkbox-inner {
-  background-color: #1890ff;
-  border-color: #1890ff;
+  background-color: var(--theme-primary-500, var(--ver-primary-500));
+  border-color: var(--theme-primary-500, var(--ver-primary-500));
 }
 
 .checkbox.is-checked .checkbox-inner::after {
-  transform: rotate(45deg) scale(1);
+  transform: rotate(30deg) scale(1);
 }
 
 .checkbox.is-indeterminate .checkbox-inner::after {
@@ -164,6 +164,6 @@ const handleChange = (e: Event) => {
 }
 
 .checkbox:hover:not(.is-disabled) .checkbox-inner {
-  border-color: #1890ff;
+  border-color: var(--theme-primary-500, var(--ver-primary-500));
 }
 </style>
