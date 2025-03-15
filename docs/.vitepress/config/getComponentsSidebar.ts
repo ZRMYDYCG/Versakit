@@ -18,7 +18,6 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'Divider 分割线', link: '/components/divider/' },
         { text: 'Icon 图标', link: '/components/icons/' },
         { text: 'Scrollbar 滚动条', link: '/components/scrollbar/' },
-        { text: 'CheckBox 复选框', link: '/components/checkBox/' },
       ],
     },
     {
@@ -30,6 +29,7 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'Radio 单选框', link: '/components/radio/' },
         { text: 'Textarea 文本域', link: '/components/textarea/' },
         { text: 'Slider 滑块', link: '/components/slider/' },
+        { text: 'CheckBox 复选框', link: '/components/checkBox/' },
       ],
     },
     {
