@@ -49,7 +49,6 @@ import { VerCollapse, VerCollapseItem } from './components/collapse/index'
 import { VerTimeline, VerTimeLineItem } from './components/timeline/index'
 import { VerTab, VerTabItem } from './components/tab/index'
 import { VerBreadcrumb, VerBreadcrumbItem } from './components/breadcrumb/index'
-import { VerDescriptions, VerDescriptionsItem } from './components/descriptions'
 import { VerCheckbox, VerCheckboxGroup } from './components/checkbox/index'
 // 指令
 import { vRipple, vIncrease } from './directives/index'
@@ -58,7 +57,7 @@ import { vRipple, vIncrease } from './directives/index'
 import './style/index.css'
 
 // 热更新暂时不支持图标，先运行 pnpm ui:build，再注释掉此行
-// import 'virtual:svg-icons-register'
+import 'virtual:svg-icons-register'
 
 const components: Component[] = [
   VerImage,
@@ -67,8 +66,6 @@ const components: Component[] = [
   VerPagination,
   VerSkeleton,
   VerCalendar,
-  VerDescriptions,
-  VerDescriptionsItem,
   VerInputOtp,
   VerBreadcrumb,
   VerBreadcrumbItem,
@@ -123,8 +120,6 @@ export {
   VerPagination,
   VerSkeleton,
   VerCalendar,
-  VerDescriptions,
-  VerDescriptionsItem,
   VerInputOtp,
   VerBreadcrumb,
   VerBreadcrumbItem,
