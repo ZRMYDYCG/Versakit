@@ -1,6 +1,6 @@
-import { withInstall } from '../../utils/withinstall';
-        import popover from './src/index.vue';
+import { withInstall } from '../../utils/withinstall'
+import popover from './src/index.vue'
 
-        const VerP = withInstall(popover);
+const VerPopover = withInstall(popover)
 
-        export default VerP;
+export { VerPopover }

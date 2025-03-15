@@ -41,6 +41,7 @@ import { VerInputOtp } from './components/inputotp/index'
 import { VerCalendar } from './components/calendar/index'
 import { VerSkeleton } from './components/skeleton/index'
 import { VerPagination } from './components/pagination/index'
+import { VerPopover } from './components/popover/index'
 
 // 层级组件
 import { VerCarousel, VerCarouselItem } from './components/carousel/index'
@@ -107,6 +108,7 @@ const components: Component[] = [
   VerSegmented,
   VerGradientText,
   VerTable,
+  VerPopover,
 ]
 export {
   VerPagination,
@@ -158,6 +160,7 @@ export {
   VerEmpty,
   VerGradientText,
   VerTable,
+  VerPopover,
 }
 
 // 定义 ThemeOptions 类型

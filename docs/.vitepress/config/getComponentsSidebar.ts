@@ -86,6 +86,10 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
           link: '/components/tooltip/',
         },
         {
+          text: 'Popover 弹出框',
+          link: '/components/popover/',
+        },
+        {
           text: 'Result 结果页',
           link: '/components/result/',
         },
