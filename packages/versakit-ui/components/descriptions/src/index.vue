@@ -19,12 +19,13 @@ const slots = useSlots()
 function isChildVNode(vnode: DescriptionsItemVNode) {
   return vnode.type.name === 'VerDescriptionsItem'
 }
-
 const calculateRows = () => {
-  const items: DescriptionsItemVNode[] = slots.default?.() || []
+  const items = slots.default?.() || []
+
   const filteredVNodes = items.filter((item) => {
-    return isChildVNode(item)
-  })
+    return isChildVNode(item as DescriptionsItemVNode)
+  }) as DescriptionsItemVNode[]
+
   const rows: DescriptionsItemVNode[][] = []
   const column = props.column
   // 当前行

@@ -38,6 +38,7 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'Avatar 头像', link: '/components/avatar/' },
         { text: 'Carousel 走马灯', link: '/components/carousel/' },
         { text: 'Card 卡片', link: '/components/card/' },
+        { text: 'Image 图片', link: '/components/image/' },
         { text: 'Tag 标签', link: '/components/tag/' },
         { text: 'Badge 徽标', link: '/components/badge/' },
         { text: 'Panel 面板', link: '/components/panel/' },

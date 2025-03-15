@@ -41,6 +41,7 @@ import { VerInputOtp } from './components/inputotp/index'
 import { VerCalendar } from './components/calendar/index'
 import { VerSkeleton } from './components/skeleton/index'
 import { VerPagination } from './components/pagination/index'
+import { VerImage } from './components/image/index'
 
 // 层级组件
 import { VerCarousel, VerCarouselItem } from './components/carousel/index'
@@ -60,6 +61,7 @@ import './style/index.css'
 // import 'virtual:svg-icons-register'
 
 const components: Component[] = [
+  VerImage,
   VerCheckbox,
   VerCheckboxGroup,
   VerPagination,
@@ -115,6 +117,7 @@ const components: Component[] = [
   VerTable,
 ]
 export {
+  VerImage,
   VerCheckbox,
   VerCheckboxGroup,
   VerPagination,

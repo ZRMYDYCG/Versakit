@@ -2,6 +2,12 @@
 import { computed, inject } from 'vue'
 import type { CheckoutProps } from '../type/index.ts'
 
+// Add this interface
+interface CheckboxGroup {
+  modelValue: string[]
+  onChange: (value: string[]) => void
+}
+
 defineOptions({
   name: 'VerCheckbox',
 })
@@ -16,22 +22,20 @@ const emit = defineEmits<{
   change: [value: boolean | string[]]
 }>()
 
-const checkboxGroup = inject('checkboxGroup', null)
+// Specify the type when injecting
+const checkboxGroup = inject<CheckboxGroup | null>('checkboxGroup', null)
 
 const isChecked = computed(() => {
   if (checkboxGroup) {
-    return (checkboxGroup.modelValue as string[]).includes(
-      props.value as string,
-    )
+    return checkboxGroup.modelValue.includes(props.value as string)
   }
   return props.modelValue as boolean
 })
 
 const handleChange = (e: Event) => {
   const target = e.target as HTMLInputElement
-
   if (checkboxGroup) {
-    const groupValue = [...(checkboxGroup.modelValue as string[])]
+    const groupValue = [...checkboxGroup.modelValue]
     const value = props.value as string
 
     if (target.checked) {
