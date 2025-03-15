@@ -69,29 +69,40 @@ export default defineConfig({
   },
   // 打包配置
   build: {
+    minify: 'terser',
+    cssCodeSplit: true,
+    chunkSizeWarningLimit: 500,
     sourcemap: false,
     rollupOptions: {
       external: ['vue'],
       output: [
         {
-          exports: 'named',
-          preserveModules: false,
-        },
-        {
-          globals: {
-            vue: 'Vue',
+          format: 'es',
+          dir: 'dist/es',
+          entryFileNames: 'index.js',
+          preserveModules: true,
+          preserveModulesRoot: 'src',
+          manualChunks: {
+            'vue-vendor': ['vue'],
+            utils: ['./src/utils'],
+            components: ['./src/components'],
           },
         },
         {
-          format: 'umd',
-          dir: 'dist/umd',
-          entryFileNames: '[name].umd.js',
-          name: 'index',
+          format: 'cjs',
+          dir: 'dist/lib',
+          entryFileNames: 'index.js',
+          preserveModules: true,
+          preserveModulesRoot: 'src',
         },
         {
-          format: 'esm',
-          dir: 'dist/esm',
-          entryFileNames: '[name].esm.js',
+          format: 'umd',
+          dir: 'dist/dist',
+          entryFileNames: 'index.full.js',
+          name: 'VersaKit',
+          globals: {
+            vue: 'Vue',
+          },
         },
       ],
     },
@@ -101,16 +112,20 @@ export default defineConfig({
     },
     terserOptions: {
       compress: {
-        // 防止 Infinity 被压缩成 1/0，这可能会导致 Chrome 上的性能问题
         keep_infinity: true,
-        // 生产环境去除 console
         drop_console: true,
-        // 生产环境去除 debugger
         drop_debugger: true,
+        pure_funcs: ['console.log'],
       },
       format: {
-        comments: false, // 删除注释
+        comments: false,
       },
     },
+    emptyOutDir: true,
   },
+  optimizeDeps: {
+    include: ['vue'],
+    exclude: ['your-package-name'],
+  },
+  cacheDir: 'node_modules/.vite',
 })
