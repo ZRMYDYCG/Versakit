@@ -16,8 +16,7 @@
             </div>
           </div>
 
-          <div>
-            <span>V0.2.11</span>
+          <div class="start-box">
             <VerButton
               v-ripple
               @click="navigate('/Versakit/components/layout/')"
@@ -27,6 +26,7 @@
             >
               开始
             </VerButton>
+            <div class="btn-shine">V 0.2.11</div>
           </div>
         </div>
       </div>
@@ -542,5 +542,119 @@ body {
 
 .component-bottom:hover .component-bottom-icon {
   transform: translateX(5px);
+}
+
+/* 版本号 */
+.start-box {
+  align-items: center;
+  display: flex;
+  gap: 5%;
+  position: relative;
+}
+
+/* From Uiverse.io by neerajbaniwal */
+.btn-shine {
+  position: absolute;
+  top: 50%;
+  margin-left: 10px;
+  left: 62%;
+  transform: translate(-50%, -50%);
+  padding: 12px 48px;
+  color: #fff;
+  /* background: linear-gradient(to right, #e4e4e4 0, #6a6a6a 10%, #b9b9b9 20%); */
+  background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #7f7f7f 20%);
+  background-position: 0;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 3s infinite linear;
+  animation-fill-mode: forwards;
+  -webkit-text-size-adjust: none;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  white-space: nowrap;
+  font-family: 'Poppins', sans-serif;
+
+  @media (max-width: 1256px) {
+    left: 76%;
+    margin-left: 20px;
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 1024px) {
+    left: 86%;
+    margin-left: 20px;
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 768px) {
+    left: 86%;
+    font-size: 0.8rem;
+  }
+
+  @media (max-width: 555px) {
+    font-size: 0.6rem;
+    margin-left: 5px;
+  }
+}
+
+.dark .btn-shine {
+  /* background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #7f7f7f 20%); */
+}
+
+@-moz-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+
+  60% {
+    background-position: 180px;
+  }
+
+  100% {
+    background-position: 180px;
+  }
+}
+
+@-webkit-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+
+  60% {
+    background-position: 180px;
+  }
+
+  100% {
+    background-position: 180px;
+  }
+}
+
+@-o-keyframes shine {
+  0% {
+    background-position: 0;
+  }
+
+  60% {
+    background-position: 180px;
+  }
+
+  100% {
+    background-position: 180px;
+  }
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+
+  60% {
+    background-position: 180px;
+  }
+
+  100% {
+    background-position: 180px;
+  }
 }
 </style>
