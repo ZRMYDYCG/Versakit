@@ -15,15 +15,19 @@
               <span class="span-word">loves.</span>
             </div>
           </div>
-          <VerButton
-            v-ripple
-            @click="navigate('/Versakit/components/layout/')"
-            type="primary"
-            variant="round"
-            size="lg"
-          >
-            开始
-          </VerButton>
+
+          <div>
+            <span>V0.2.11</span>
+            <VerButton
+              v-ripple
+              @click="navigate('/Versakit/components/layout/')"
+              type="primary"
+              variant="round"
+              size="lg"
+            >
+              开始
+            </VerButton>
+          </div>
         </div>
       </div>
     </div>
@@ -32,7 +36,7 @@
   <main class="main">
     <div class="main-content">
       <div class="inner-content">
-        <div class="center-title">Versakit - ui</div>
+        <div class="center-title">VersakitVue</div>
         <div class="sur-title">基于 Vue 3，面向设计师和开发者的组件库</div>
         <div class="center-components">
           <div class="center-component" v-for="item in list" :key="item.name">

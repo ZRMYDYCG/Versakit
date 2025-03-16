@@ -1,0 +1,361 @@
+<template>
+  <div class="theme-generator">
+    <h2>主题生成器</h2>
+
+    <div class="theme-container">
+      <!-- 左侧颜色编辑区域 -->
+      <div class="theme-editor">
+        <div
+          v-for="(colors, type) in themeData"
+          :key="type"
+          class="theme-section"
+        >
+          <h3 class="type-header">{{ type }}</h3>
+          <div class="color-grid">
+            <div
+              v-for="(value, shade) in colors"
+              :key="shade"
+              class="color-card"
+            >
+              <div
+                class="color-preview"
+                :style="{ backgroundColor: value }"
+              ></div>
+              <div class="color-controls">
+                <div class="shade-label">{{ shade }}</div>
+                <div class="inputs-row">
+                  <input
+                    type="color"
+                    v-model="themeData[type][shade]"
+                    @input="(event) => updateColor(type, shade, event)"
+                    class="color-picker"
+                  />
+                  <input
+                    type="text"
+                    v-model="themeData[type][shade]"
+                    class="color-input"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 右侧预览和操作区域 -->
+      <div class="theme-preview-panel">
+        <div class="actions">
+          <button class="action-button export" @click="exportTheme">
+            <span class="icon">↓</span>
+            导出主题
+          </button>
+          <input
+            type="file"
+            @change="importTheme"
+            accept=".json,.ts"
+            style="display: none"
+            ref="fileInput"
+          />
+          <button class="action-button import" @click="triggerImport">
+            <span class="icon">↑</span>
+            导入主题
+          </button>
+        </div>
+
+        <div class="theme-name-container">
+          <label for="themeName">主题名称:</label>
+          <input
+            id="themeName"
+            v-model="themeName"
+            type="text"
+            class="theme-name-input"
+            placeholder="输入主题名称"
+          />
+        </div>
+
+        <div class="preview-container">
+          <h3>预览代码</h3>
+          <pre class="preview">{{ generatedCode }}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref, computed } from 'vue'
+
+// 主题名称
+const themeName = ref('Element')
+
+// 初始主题数据
+const themeData = ref({
+  primary: {
+    50: '#e0f2fe',
+    100: '#b3e0ff',
+    200: '#80ccff',
+    300: '#4db8ff',
+    400: '#1aa3ff',
+    500: '#409EFF',
+    600: '#2563eb',
+    700: '#1d4ed8',
+    800: '#1e40af',
+    900: '#1e3a8a',
+  },
+  success: {
+    50: '#f0fdf4',
+    300: '#86efac',
+    500: '#67C23A',
+    700: '#15803d',
+  },
+  error: {
+    50: '#fef2f2',
+    300: '#fca5a5',
+    500: '#F56C6C',
+    700: '#b91c1c',
+  },
+  info: {
+    50: '#f8fafc',
+    300: '#bac2cb',
+    500: '#909399',
+    700: '#4b5563',
+  },
+  warning: {
+    50: '#fefce8',
+    300: '#fde047',
+    500: '#E6A23C',
+    700: '#a16207',
+  },
+})
+
+// 生成预览代码
+const generatedCode = computed(() => {
+  return `// 预设主题包
+export const ${themeName.value} = {
+  theme: ${JSON.stringify(themeData.value, null, 2)}
+}`
+})
+
+// 更新颜色
+const updateColor = (type: string, shade: any, event: any) => {
+  const input = event.target as HTMLInputElement
+  themeData.value[type][shade] = input.value
+}
+
+// 导出主题配置
+const exportTheme = () => {
+  const blob = new Blob([generatedCode.value], { type: 'text/plain' })
+  const url = URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.href = url
+  a.download = `${themeName.value.toLowerCase()}-theme.ts`
+  a.click()
+  URL.revokeObjectURL(url)
+}
+
+const fileInput = ref<HTMLInputElement | null>(null)
+
+const triggerImport = () => {
+  fileInput.value?.click()
+}
+
+const importTheme = (event: Event) => {
+  const input = event.target as HTMLInputElement
+  const file = input.files?.[0]
+  if (file) {
+    const reader = new FileReader()
+    reader.onload = (e) => {
+      try {
+        const content = e.target?.result as string
+        const match = content.match(/theme:\s*({[\s\S]*?})/)
+        if (match && match[1]) {
+          themeData.value = JSON.parse(match[1])
+        } else {
+          // 尝试直接解析JSON
+          themeData.value = JSON.parse(content)
+        }
+      } catch {
+        alert('主题文件格式错误，请检查文件内容')
+      }
+    }
+    reader.readAsText(file)
+  }
+}
+</script>
+
+<style scoped>
+.theme-generator {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.theme-container {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+@media (max-width: 920px) {
+  .theme-container {
+    flex-direction: column;
+  }
+}
+
+.theme-editor {
+  flex: 3;
+}
+
+.theme-preview-panel {
+  flex: 2;
+  position: sticky;
+  top: 20px;
+  align-self: flex-start;
+}
+
+.theme-section {
+  margin-bottom: 30px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.type-header {
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #eee;
+  text-transform: capitalize;
+  color: #333;
+}
+
+.color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.color-card {
+  background: white;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.color-preview {
+  height: 60px;
+  width: 100%;
+}
+
+.color-controls {
+  padding: 10px;
+}
+
+.shade-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.inputs-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.color-picker {
+  width: 40px;
+  height: 30px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+.color-input {
+  flex: 1;
+  padding: 5px 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: monospace;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.action-button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.export {
+  background: #409eff;
+  color: white;
+}
+
+.export:hover {
+  background: #2563eb;
+}
+
+.import {
+  background: white;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.import:hover {
+  background: #f5f5f5;
+}
+
+.icon {
+  font-size: 14px;
+}
+
+.preview-container {
+  background: white;
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.preview {
+  margin: 0;
+  padding: 15px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  overflow: auto;
+  max-height: 400px;
+  font-family: monospace;
+  font-size: 13px;
+}
+
+.theme-name-container {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.theme-name-input {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.theme-name-input:focus {
+  border-color: #409eff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(64, 158, 255, 0.2);
+}
+</style>
