@@ -194,23 +194,35 @@ const importTheme = (event: Event) => {
   display: flex;
   flex-direction: row;
   gap: 30px;
+  min-height: calc(100vh - 120px); /* 确保有足够的滚动空间 */
 }
 
 @media (max-width: 920px) {
   .theme-container {
     flex-direction: column;
   }
+
+  .theme-preview-panel {
+    position: relative !important;
+    top: 0 !important;
+  }
 }
 
 .theme-editor {
   flex: 3;
+  min-width: 0; /* 防止溢出 */
 }
 
 .theme-preview-panel {
   flex: 2;
   position: sticky;
   top: 20px;
-  align-self: flex-start;
+  height: fit-content;
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .theme-section {
@@ -241,11 +253,24 @@ const importTheme = (event: Event) => {
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.color-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
 }
 
 .color-preview {
   height: 60px;
   width: 100%;
+  transition: opacity 0.2s;
+}
+
+.color-preview:hover {
+  opacity: 0.9;
 }
 
 .color-controls {
@@ -295,7 +320,7 @@ const importTheme = (event: Event) => {
   display: flex;
   align-items: center;
   gap: 8px;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
 }
 
 .export {
@@ -305,6 +330,7 @@ const importTheme = (event: Event) => {
 
 .export:hover {
   background: #2563eb;
+  transform: translateY(-1px);
 }
 
 .import {
@@ -315,6 +341,7 @@ const importTheme = (event: Event) => {
 
 .import:hover {
   background: #f5f5f5;
+  transform: translateY(-1px);
 }
 
 .icon {
@@ -326,6 +353,11 @@ const importTheme = (event: Event) => {
   border-radius: 8px;
   padding: 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.2s;
+}
+
+.preview-container:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
 .preview {
@@ -351,11 +383,16 @@ const importTheme = (event: Event) => {
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.theme-name-input:hover {
+  border-color: #a3d0ff;
 }
 
 .theme-name-input:focus {
   border-color: #409eff;
   outline: none;
-  box-shadow: 0 0 0 2px rgba(64, 158, 255, 0.2);
+  box-shadow: 0 0 0 3px rgba(64, 158, 255, 0.2);
 }
 </style>
