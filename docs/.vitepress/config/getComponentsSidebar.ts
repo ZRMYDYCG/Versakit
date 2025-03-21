@@ -31,6 +31,7 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'Textarea 文本域', link: '/components/textarea/' },
         { text: 'Slider 滑块', link: '/components/slider/' },
         { text: 'CheckBox 复选框', link: '/components/checkBox/' },
+        { text: 'Rate 评分', link: '/components/rate/' },
       ],
     },
     {

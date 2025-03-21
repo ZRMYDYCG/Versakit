@@ -255,6 +255,10 @@ importers:
         version: 'link:'
 
   packages/versakit-ui:
+    dependencies:
+      '@versakit/ui':
+        specifier: 'file:'
+        version: 'link:'
     devDependencies:
       '@types/postcss-mixins':
         specifier: ^9.0.6
