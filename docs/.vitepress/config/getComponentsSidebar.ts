@@ -53,6 +53,8 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'Calendar 日历', link: '/components/calendar/' },
         { text: 'Skeleton 骨架屏', link: '/components/skeleton/' },
         { text: 'Pagination 分页', link: '/components/pagination/' },
+        { text: 'Splitter 分配器', link: '/components/splitter/' },
+        { text: 'NoticeBar 通知栏', link: '/components/noticebar/' },
       ],
     },
     {

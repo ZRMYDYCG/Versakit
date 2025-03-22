@@ -44,6 +44,8 @@ import { VerPagination } from './components/pagination/index'
 import { VerImage } from './components/image/index'
 import { VerInputTag } from './components/inputtag/index'
 import { VerRate } from './components/rate/index'
+import { VerSplitter } from './components/splitter/index'
+import { VerNoticeBar } from './components/noticebar/index'
 
 // 层级组件
 import { VerCarousel, VerCarouselItem } from './components/carousel/index'
@@ -62,6 +64,8 @@ import './style/index.css'
 import 'virtual:svg-icons-register'
 
 const components: Component[] = [
+  VerNoticeBar,
+  VerSplitter,
   VerRate,
   VerInputTag,
   VerImage,
@@ -118,6 +122,8 @@ const components: Component[] = [
   VerTable,
 ]
 export {
+  VerNoticeBar,
+  VerSplitter,
   VerRate,
   VerInputTag,
   VerImage,
