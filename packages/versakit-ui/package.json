@@ -44,5 +44,8 @@
     "postcss-mixins": "^11.0.3",
     "postcss-nested": "^7.0.2",
     "rollup-plugin-visualizer": "^5.14.0"
+  },
+  "dependencies": {
+    "@popperjs/core": "^2.11.8"
   }
 }

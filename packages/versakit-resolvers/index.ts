@@ -54,6 +54,7 @@ const components = [
   'VerEmpty',
   'VerGradientText',
   'VerTable',
+  'VerColorPicker',
 ]
 
 export interface ResolverOptions {
