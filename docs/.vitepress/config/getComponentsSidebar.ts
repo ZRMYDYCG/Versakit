@@ -61,6 +61,7 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
       text: 'Navigation 导航',
       items: [
         { text: 'Breadcrumb 面包屑', link: '/components/breadcrumb/' },
+        { text: 'Steps 步骤条', link: '/components/steps/' },
         { text: 'Backtop 回到顶部', link: '/components/backtop/' },
         {
           text: 'Tab 标签页',

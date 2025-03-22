@@ -55,6 +55,7 @@ import { VerTimeline, VerTimeLineItem } from './components/timeline/index'
 import { VerTab, VerTabItem } from './components/tab/index'
 import { VerBreadcrumb, VerBreadcrumbItem } from './components/breadcrumb/index'
 import { VerCheckbox, VerCheckboxGroup } from './components/checkbox/index'
+import { VerStepItem, VerSteps } from './components/steps/index'
 // 指令
 import { vRipple, vIncrease } from './directives/index'
 
@@ -65,6 +66,8 @@ import './style/index.css'
 // import 'virtual:svg-icons-register'
 
 const components: Component[] = [
+  VerStepItem,
+  VerSteps,
   VerNoticeBar,
   VerSplitter,
   VerRate,
@@ -124,6 +127,8 @@ const components: Component[] = [
   VerColorPicker,
 ]
 export {
+  VerStepItem,
+  VerSteps,
   VerNoticeBar,
   VerSplitter,
   VerRate,
