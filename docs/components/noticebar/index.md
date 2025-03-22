@@ -1,4 +1,4 @@
-# NoticeBar 通知栏
+# NoticeBar 通知栏 <ver-tag type="warn">Alpha</ver-tag>
 
 ## 基本使用
 
