@@ -46,6 +46,7 @@ import { VerInputTag } from './components/inputtag/index'
 import { VerRate } from './components/rate/index'
 import { VerSplitter } from './components/splitter/index'
 import { VerNoticeBar } from './components/noticebar/index'
+import { VerColorPicker } from './components/colorpicker/index'
 
 // 层级组件
 import { VerCarousel, VerCarouselItem } from './components/carousel/index'
@@ -61,7 +62,7 @@ import { vRipple, vIncrease } from './directives/index'
 import './style/index.css'
 
 // 热更新暂时不支持图标，先运行 pnpm ui:build，再注释掉此行
-import 'virtual:svg-icons-register'
+// import 'virtual:svg-icons-register'
 
 const components: Component[] = [
   VerNoticeBar,
@@ -120,6 +121,7 @@ const components: Component[] = [
   VerSegmented,
   VerGradientText,
   VerTable,
+  VerColorPicker,
 ]
 export {
   VerNoticeBar,
@@ -178,6 +180,7 @@ export {
   VerEmpty,
   VerGradientText,
   VerTable,
+  VerColorPicker,
 }
 
 // 定义 ThemeOptions 类型
