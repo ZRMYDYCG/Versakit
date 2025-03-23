@@ -271,15 +271,6 @@ importers:
       '@types/postcss-mixins':
         specifier: ^9.0.6
         version: 9.0.6
-      postcss-conditionals:
-        specifier: ^2.1.0
-        version: 2.1.0
-      postcss-each:
-        specifier: ^1.1.0
-        version: 1.1.0(postcss@8.5.3)
-      postcss-each-variables:
-        specifier: ^0.3.0
-        version: 0.3.0
       postcss-magic:
         specifier: ^0.0.2
         version: 0.0.2

@@ -1,3 +1,4 @@
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import path from 'path'
 
@@ -8,12 +9,6 @@ import postNested from 'postcss-nested'
 import mixins from 'postcss-mixins'
 import cssnano from 'cssnano'
 
-// // @ts-expect-error no types  each
-// import each from 'postcss-each'
-// // @ts-expect-error no types
-// import eachVariables from 'postcss-each-variables'
-// // @ts-expect-error no types
-// import conditionals from 'postcss-conditionals'
 import CssMagic from 'postcss-magic'
 
 // TS
@@ -21,8 +16,9 @@ import dts from 'vite-plugin-dts'
 
 // 图标
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-import { defineConfig } from 'vite'
-// import { visualizer } from 'rollup-plugin-visualizer'
+
+import { visualizer } from 'rollup-plugin-visualizer'
+
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import VueMacros from 'unplugin-vue-macros/vite'
 
@@ -39,11 +35,11 @@ export default defineConfig({
         vueJsx: vueJsx(),
       },
     }),
-    // visualizer({
-    //   open: true, // 打包完成后自动打开分析页面
-    //   gzipSize: true, // 显示 gzip 压缩后的大小
-    //   brotliSize: true, // 显示 brotli 压缩后的大小
-    // }),
+    visualizer({
+      open: true, // 打包完成后自动打开分析页面
+      gzipSize: true, // 显示 gzip 压缩后的大小
+      brotliSize: true, // 显示 brotli 压缩后的大小
+    }),
   ],
   css: {
     postcss: {

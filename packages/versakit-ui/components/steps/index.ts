@@ -1,4 +1,4 @@
-import { withInstall } from '../../utils/withinstall'
+import { withInstall } from '@versakit/shared'
 import Steps from './src/index.vue'
 import StepItem from './src/item.vue'
 

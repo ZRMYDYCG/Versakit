@@ -1,4 +1,4 @@
-import { withInstall } from '../../utils/withinstall'
+import { withInstall } from '@versakit/shared'
 import Tab from './src/index.vue'
 import TabItem from './src/item.vue'
 
