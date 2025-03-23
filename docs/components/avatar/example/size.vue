@@ -1,50 +1,63 @@
 <script setup lang="ts">
-import { VerAvatar } from '@versakit/ui'
+import { ref, watch } from 'vue'
+import { VerAvatar, VerSegmented, VerSlider } from '@versakit/ui'
+
+const sizeOptions = [
+  { label: '小型', value: 'small' },
+  { label: '默认', value: 'default' },
+  { label: '大型', value: 'large' },
+  { label: '自定义', value: 'custom' },
+]
+const selectedSize = ref<string | number>('default')
+const showSlider = ref(false)
+const customSize = ref(60)
+
+watch(selectedSize, (newVal) => {
+  showSlider.value = newVal === 'custom'
+  if (newVal !== 'custom') {
+    customSize.value = typeof newVal === 'number' ? newVal : 60
+  }
+})
 </script>
 
 <template>
   <div class="container">
     <section class="demo-section">
-      <h2>Sizes</h2>
+      <h2>尺寸演示</h2>
+      <div class="demo-controls">
+        <VerSegmented v-model="selectedSize" :options="sizeOptions" />
+
+        <VerSlider
+          v-if="showSlider"
+          v-model="customSize"
+          :min="20"
+          :max="120"
+          :step="5"
+          class="custom-slider"
+        />
+      </div>
       <div class="demo-row">
-        <VerAvatar size="small" text="S" />
-        <VerAvatar size="default" text="D" />
-        <VerAvatar size="large" text="L" />
-        <VerAvatar :size="60" text="60" />
+        <VerAvatar
+          :size="showSlider ? customSize : selectedSize"
+          :text="showSlider ? `${customSize}px` : selectedSize.toString()"
+        />
       </div>
     </section>
   </div>
 </template>
 
 <style scoped>
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+/* 新增滑块样式 */
+.custom-slider {
+  margin-top: 20px;
+  padding: 0 15px;
+  max-width: 300px;
 }
 
-h1 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 40px;
-}
-
-.demo-section {
-  margin-bottom: 40px;
-}
-
-h2 {
-  color: #666;
-  margin-bottom: 20px;
-  font-size: 1.2em;
-}
-
-.demo-row {
+.demo-controls {
+  /* 保持原有样式 */
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 16px;
-  padding: 16px;
-  background: #f5f5f5;
-  border-radius: 8px;
 }
 </style>

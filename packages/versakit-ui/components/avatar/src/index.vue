@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+import { computed, toRefs } from 'vue'
 import type { AvatarProps } from '../type/index'
 
 defineOptions({ name: 'VerAvatar' })
@@ -11,47 +11,63 @@ const props = withDefaults(defineProps<AvatarProps>(), {
   color: '#ffffff',
 })
 
-const sizeMap = {
+// 使用 toRefs 解构 props 保持响应式
+const { shape, size, src, backgroundColor, color, text, alt } = toRefs(props)
+
+// 将常量移到组件外部避免重复创建
+const SIZE_MAP = {
   small: 32,
   default: 40,
   large: 48,
-}
+} as const
 
-const avatarSize = computed(() => {
-  if (typeof props.size === 'number') {
-    return `${props.size}px`
-  }
-  return `${sizeMap[props.size]}px`
-})
+// 合并相关计算属性
+const avatarSize = computed(() =>
+  typeof size.value === 'number'
+    ? `${size.value}px`
+    : `${SIZE_MAP[size.value]}px`,
+)
 
 const fontSize = computed(() => {
-  const size = typeof props.size === 'number' ? props.size : sizeMap[props.size]
-  return `${size / 2.5}px`
+  const baseSize =
+    typeof size.value === 'number' ? size.value : SIZE_MAP[size.value]
+  return `${baseSize / 2.5}px`
 })
 
-const firstLetter = computed(() => {
-  if (!props.text) return ''
-  return props.text.charAt(0).toUpperCase()
-})
+// 增加文本处理健壮性
+const firstLetter = computed(
+  () => text.value?.trim().charAt(0).toUpperCase() || '',
+)
+
+// 增加图片加载失败处理
+const handleImgError = (e: Event) => {
+  ;(e.target as HTMLImageElement).style.display = 'none'
+}
+
+// 新增形状计算属性
+const shapeClass = computed(() => ({
+  'is-circle': shape.value === 'circle',
+  'is-square': shape.value === 'square',
+}))
 </script>
 
 <template>
   <div
     class="ver-avatar"
-    :class="[`ver-avatar-${props.shape}`]"
+    :class="shapeClass"
     :style="{
       width: avatarSize,
       height: avatarSize,
-      backgroundColor: !props.src ? props.backgroundColor : undefined,
-      color: !props.src ? props.color : undefined,
-      fontSize: !props.src ? fontSize : undefined,
+      backgroundColor: !src ? backgroundColor : undefined,
+      color: !src ? color : undefined,
+      fontSize: !src ? fontSize : undefined,
     }"
   >
-    <img v-if="props.src" :src="props.src" :alt="props.alt" />
-    <span v-else-if="props.text">
+    <img v-if="src" :src="src" :alt="alt || 'avatar'" @error="handleImgError" />
+    <span v-else-if="text && firstLetter">
       {{ firstLetter }}
     </span>
-    <slot v-else></slot>
+    <slot v-else />
   </div>
 </template>
 
