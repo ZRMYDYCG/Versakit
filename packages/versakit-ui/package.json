@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
-    "@versakit/shared": "workspace:*"
+    "@versakit/shared": "workspace:*",
+    "@versakit/icons": "workspace:*"
   }
 }

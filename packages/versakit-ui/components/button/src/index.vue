@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, useAttrs } from 'vue'
 import type { ButtonProps } from '../type/index'
-import { VerIcon } from '../../icon/index'
+import { VerIcon } from '@versakit/icons'
 
 defineOptions({ name: 'VerButton' })
 

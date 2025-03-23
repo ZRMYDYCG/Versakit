@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { VerIcon } from '../../icon'
+import { VerIcon } from '@versakit/icons'
 import type { ImageProps } from '../type/index'
 
 defineOptions({ name: 'VerImage' })

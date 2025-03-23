@@ -32,7 +32,7 @@
 
 <script lang="ts" setup>
 import type { DiaLogProps } from '../type/index'
-import { VerIcon } from '../../icon/index'
+import { VerIcon } from '@versakit/icons'
 
 defineOptions({ name: 'VerDialog' })
 

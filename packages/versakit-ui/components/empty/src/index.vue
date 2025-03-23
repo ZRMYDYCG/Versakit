@@ -23,7 +23,7 @@
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { VerIcon } from '../../icon/index'
+import { VerIcon } from '@versakit/icons'
 import { VerButton } from '../../button/index'
 import type { EmptyProps } from '../type/index'
 
