@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, useAttrs } from 'vue'
 import { Icon } from '@iconify/vue'
-import { IconsProps } from './type'
+import type { IconsProps } from './type'
 
 const attrs: any = useAttrs()
 
