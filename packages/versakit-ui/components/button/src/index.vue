@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, useAttrs } from 'vue'
-import type { ButtonProps, BtnPassThroughOptions } from '../type/index'
+import type { ButtonProps } from '../type/index'
 import { VerIcon } from '../../icon/index'
 
 defineOptions({ name: 'VerButton' })
@@ -12,16 +12,12 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   icon: '',
   variant: '',
   type: '',
-  unstyled: false,
-  pt: () => ({}) as BtnPassThroughOptions,
 })
 
 const attrs: any = useAttrs()
 
 // 计算样式类
 const baseClass = computed(() => {
-  if (props.unstyled) return []
-
   const variantClasses = props.variant
     .split(' ')
     .filter(Boolean)
@@ -40,7 +36,7 @@ const baseClass = computed(() => {
 // 合并根元素属性
 const rootAttrs: any = computed(() => ({
   ...attrs,
-  class: [baseClass.value.join(' '), props.pt.root].filter(Boolean).join(' '),
+  class: baseClass.value.join(' '),
   disabled: props.disabled || undefined,
 }))
 </script>
@@ -48,14 +44,9 @@ const rootAttrs: any = computed(() => ({
 <template>
   <button v-bind="rootAttrs">
     <!-- icon -->
-    <ver-icon
-      v-if="props.icon"
-      :name="props.icon"
-      :class="props.icon"
-      v-bind="props.pt.icon"
-    />
+    <ver-icon v-if="props.icon" :name="props.icon" :class="props.icon" />
     <!-- Label -->
-    <span v-bind="props.pt.label">
+    <span>
       <slot></slot>
     </span>
   </button>
