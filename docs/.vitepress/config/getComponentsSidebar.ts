@@ -16,7 +16,6 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'Button 按钮', link: '/components/button/' },
         { text: 'Text 文本', link: '/components/text/' },
         { text: 'Divider 分割线', link: '/components/divider/' },
-        { text: 'Icon 图标', link: '/components/icons/' },
         { text: 'Scrollbar 滚动条', link: '/components/scrollbar/' },
       ],
     },
