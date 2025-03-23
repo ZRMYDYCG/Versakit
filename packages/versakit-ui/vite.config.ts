@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import path from 'path'
 
 // CSS工程化
 import autoprefixer from 'autoprefixer'
@@ -14,9 +13,6 @@ import CssMagic from 'postcss-magic'
 // TS
 import dts from 'vite-plugin-dts'
 
-// 图标
-import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
-
 import { visualizer } from 'rollup-plugin-visualizer'
 
 import vueJsx from '@vitejs/plugin-vue-jsx'
@@ -25,10 +21,6 @@ import VueMacros from 'unplugin-vue-macros/vite'
 export default defineConfig({
   plugins: [
     dts({ tsconfigPath: '../../tsconfig.build.json' }),
-    createSvgIconsPlugin({
-      iconDirs: [path.resolve(process.cwd(), './icons')],
-      symbolId: 'icon-[dir]-[name]',
-    }),
     VueMacros({
       plugins: {
         vue: vue(),
