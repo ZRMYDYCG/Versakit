@@ -6,7 +6,7 @@ import './index.scss'
 import 'virtual:group-icons.css'
 
 // 引入组件库
-import Versakit from '@versakit/ui'
+import { Versakit } from '@versakit/ui'
 import { Element, Layui } from '@versakit/theme'
 // 引入样式
 import '@versakit/ui/dist/ui.css'

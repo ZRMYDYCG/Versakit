@@ -1,5 +1,5 @@
 <template>
-  <VerEmpty></VerEmpty>
+  <VerEmpty icon="ep:message-box"></VerEmpty>
 </template>
 <script setup>
 import { VerEmpty } from '@versakit/ui'

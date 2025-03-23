@@ -1,5 +1,5 @@
 export interface EmptyProps {
-  iconName?: string
+  icon?: string
   content?: string
   showDescription?: boolean
   showButton?: boolean

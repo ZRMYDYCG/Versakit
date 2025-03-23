@@ -8,6 +8,6 @@ type ResultType =
   | '500'
 
 export interface ResultProps {
-  status?: ResultType
-  iconName?: string
+  type?: ResultType
+  icon?: string
 }

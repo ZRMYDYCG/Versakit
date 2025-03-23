@@ -12,17 +12,14 @@
 <demo vue="./example/error.vue"></demo>
 <demo vue="./example/warning.vue"></demo>
 <demo vue="./example/info.vue"></demo>
-<demo vue="./example/403.vue"></demo>
-<demo vue="./example/404.vue"></demo>
-<demo vue="./example/500.vue"></demo>
 
 ## Result API
 
 ### Result 属性
 
-| 属性     | 说明                       | 类型     | 默认值    |
-| -------- | -------------------------- | -------- | --------- |
-| `status` | 结果的状态，决定图标和颜色 | `string` | `success` |
+| 属性   | 说明                       | 类型     | 默认值    |
+| ------ | -------------------------- | -------- | --------- |
+| `type` | 结果的状态，决定图标和颜色 | `string` | `success` |
 
 ### Result 插槽
 

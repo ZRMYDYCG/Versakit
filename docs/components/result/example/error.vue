@@ -1,5 +1,5 @@
 <template>
-  <ver-result status="error">
+  <ver-result icon="ep:close-bold" type="error">
     <template #content>
       <span>错误</span>
     </template>

@@ -1,5 +1,5 @@
 <template>
-  <ver-result status="success">
+  <ver-result icon="ep:select" type="success">
     <template #content>
       <span>成功</span>
     </template>

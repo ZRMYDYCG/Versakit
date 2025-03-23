@@ -1,5 +1,5 @@
 <template>
-  <ver-result status="info">
+  <ver-result icon="ep:info-filled" type="info">
     <template #content>
       <span>信息</span>
     </template>

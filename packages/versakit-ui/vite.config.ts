@@ -13,7 +13,7 @@ import CssMagic from 'postcss-magic'
 // TS
 import dts from 'vite-plugin-dts'
 
-import { visualizer } from 'rollup-plugin-visualizer'
+// import { visualizer } from 'rollup-plugin-visualizer'
 
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import VueMacros from 'unplugin-vue-macros/vite'
@@ -27,11 +27,11 @@ export default defineConfig({
         vueJsx: vueJsx(),
       },
     }),
-    visualizer({
-      open: true, // 打包完成后自动打开分析页面
-      gzipSize: true, // 显示 gzip 压缩后的大小
-      brotliSize: true, // 显示 brotli 压缩后的大小
-    }),
+    // visualizer({
+    //   open: true, // 打包完成后自动打开分析页面
+    //   gzipSize: true, // 显示 gzip 压缩后的大小
+    //   brotliSize: true, // 显示 brotli 压缩后的大小
+    // }),
   ],
   css: {
     postcss: {

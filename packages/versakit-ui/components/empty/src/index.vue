@@ -1,11 +1,6 @@
 <template>
   <div class="ver-empty">
-    <ver-icon
-      :name="computedIconName"
-      size="80"
-      class="ver-empty__icon"
-      color="c1c1c1"
-    />
+    <ver-icon :name="icon" size="80" class="ver-empty__icon" color="c1c1c1" />
     <div>
       <slot
         name="content"
@@ -22,7 +17,6 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
 import { VerIcon } from '@versakit/icons'
 import { VerButton } from '../../button/index'
 import type { EmptyProps } from '../type/index'
@@ -30,18 +24,10 @@ import type { EmptyProps } from '../type/index'
 defineOptions({ name: 'VerEmpty' })
 
 const props = withDefaults(defineProps<EmptyProps>(), {
-  iconName: '',
+  icon: '',
   content: '你什么也找不到',
   showDescription: true,
   showButton: true,
-})
-
-const computedIconName = computed(() => {
-  if (props.iconName) {
-    return props.iconName
-  } else {
-    return 'ban'
-  }
 })
 </script>
 
