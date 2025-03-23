@@ -48,7 +48,7 @@ const steps = [
   </div>
 </template>
 
-<style>
+<style scoped>
 .container {
   max-width: 800px;
   margin: 2rem auto;
