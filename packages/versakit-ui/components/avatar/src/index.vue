@@ -1,78 +1,84 @@
-<template>
-  <span
-    :class="VerClass"
-    :style="{
-      width: size,
-      height: size,
-    }"
-  >
-    <img
-      :class="imgClass"
-      v-if="imgURL"
-      :src="src"
-      alt=""
-      @error="handleImgError"
-    />
-    <span class="ver-avatar-inline" v-else>
-      <slot></slot>
-    </span>
-    <!-- 错误处理 -->
-    <slot class="ver-avatar-inline" name="error"></slot>
-  </span>
-</template>
-
-<script lang="ts" setup>
+<script setup lang="ts">
 import { computed } from 'vue'
-import type { Fit } from '../type/index'
 import type { AvatarProps } from '../type/index'
 
 defineOptions({ name: 'VerAvatar' })
 
 const props = withDefaults(defineProps<AvatarProps>(), {
-  src: '',
-  size: 50,
+  size: 'default',
   shape: 'circle',
-  fit: 'cover' as Fit.cover,
-  fallback: '',
+  backgroundColor: '#1890ff',
+  color: '#ffffff',
 })
 
-let imgURL = props.src
-const handleImgError = (event: Event) => {
-  const imgTarget = event.target as HTMLImageElement
-  return (imgTarget.src = props.fallback)
+const sizeMap = {
+  small: 32,
+  default: 40,
+  large: 48,
 }
 
-const size = computed(() => {
+const avatarSize = computed(() => {
   if (typeof props.size === 'number') {
-    return props.size + 'px'
+    return `${props.size}px`
   }
-  if (typeof props.size === 'string') {
-    switch (props.size) {
-      case 'xs':
-        return '25px'
-      case 'sm':
-        return '32px'
-      case 'lg':
-        return '42px'
-      default:
-        return '50px'
-    }
-  } else return 50
+  return `${sizeMap[props.size]}px`
 })
 
-const VerClass = computed(() => {
-  const classes = [
-    'ver-avatar',
-    props.shape == 'circle' ? 'is-circle' : 'is-square',
-  ]
-  return classes
+const fontSize = computed(() => {
+  const size = typeof props.size === 'number' ? props.size : sizeMap[props.size]
+  return `${size / 2.5}px`
 })
 
-const imgClass = computed(() => {
-  return [`fit-${props.fit}`]
+const firstLetter = computed(() => {
+  if (!props.text) return ''
+  return props.text.charAt(0).toUpperCase()
 })
 </script>
 
-<style>
-@import '../style/index.css';
+<template>
+  <div
+    class="ver-avatar"
+    :class="[`ver-avatar-${props.shape}`]"
+    :style="{
+      width: avatarSize,
+      height: avatarSize,
+      backgroundColor: !props.src ? props.backgroundColor : undefined,
+      color: !props.src ? props.color : undefined,
+      fontSize: !props.src ? fontSize : undefined,
+    }"
+  >
+    <img v-if="props.src" :src="props.src" :alt="props.alt" />
+    <span v-else-if="props.text">
+      {{ firstLetter }}
+    </span>
+    <slot v-else></slot>
+  </div>
+</template>
+
+<style scoped>
+.ver-avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  vertical-align: middle;
+}
+
+.ver-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.ver-avatar-circle {
+  border-radius: 50%;
+}
+
+.ver-avatar-square {
+  border-radius: 4px;
+}
 </style>

@@ -9,7 +9,6 @@ import { VerCol } from './components/col/index'
 import { VerInput } from './components/input/index'
 import { VerDialog } from './components/dialog/index'
 import { VerDivider } from './components/divider/index'
-import { VerAvatar } from './components/avatar/index'
 import { VerBadge } from './components/badge/index'
 import { VerCard } from './components/card/index'
 import { VerTag } from './components/tag/index'
@@ -55,6 +54,8 @@ import { VerTab, VerTabItem } from './components/tab/index'
 import { VerBreadcrumb, VerBreadcrumbItem } from './components/breadcrumb/index'
 import { VerCheckbox, VerCheckboxGroup } from './components/checkbox/index'
 import { VerStepItem, VerSteps } from './components/steps/index'
+import { VerAvatar, VerAvatarGroup } from './components/avatar/index'
+
 // 指令
 import { vRipple, vIncrease } from './directives/index'
 
@@ -62,6 +63,7 @@ import { vRipple, vIncrease } from './directives/index'
 import './style/index.css'
 
 const components: Component[] = [
+  VerAvatarGroup,
   VerStepItem,
   VerSteps,
   VerNoticeBar,
@@ -122,6 +124,7 @@ const components: Component[] = [
   VerColorPicker,
 ]
 export {
+  VerAvatarGroup,
   VerStepItem,
   VerSteps,
   VerNoticeBar,

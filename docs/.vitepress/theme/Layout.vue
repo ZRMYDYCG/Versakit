@@ -46,20 +46,6 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 </template>
 
 <style>
-.Layout .VPSidebar {
-  padding: 64px 32px 32px 50px !important;
-  width: 300px;
-}
-
-.VPNavBar.has-sidebar .title[data-v-1e532f5d] {
-  padding-left: 50px;
-  width: 290px;
-}
-
-.VPContent .VPDoc.has-aside:has(.theme-main-page) {
-  padding: 0;
-}
-
 .VPDoc.has-aside .container .aside:has(.theme-main-page) {
   display: none;
 }

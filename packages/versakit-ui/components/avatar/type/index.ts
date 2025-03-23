@@ -1,17 +1,16 @@
-type ShapType = 'circle' | 'square'
-
 export interface AvatarProps {
-  shape?: ShapType
   src?: string
-  size?: number | string
-  fit?: Fit | string
-  fallback?: string
+  alt?: string
+  size?: 'small' | 'default' | 'large' | number
+  shape?: 'circle' | 'square'
+  text?: string
+  backgroundColor?: string
+  color?: string
 }
 
-export enum Fit {
-  fill = 'fill',
-  contain = 'contain',
-  cover = 'cover',
-  none = 'none',
-  scaledown = 'scale-down',
+export interface AvatarGroupProps {
+  maxCount?: number
+  size?: 'small' | 'default' | 'large' | number
+  shape?: 'circle' | 'square'
+  maxPopoverPlacement?: 'top' | 'bottom'
 }
