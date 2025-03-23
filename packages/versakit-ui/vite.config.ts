@@ -36,9 +36,6 @@ export default defineConfig({
   css: {
     postcss: {
       plugins: [
-        // conditionals(),
-        // each(),
-        // eachVariables(),
         CssMagic(),
         autoprefixer({
           overrideBrowserslist: ['Chrome > 40', 'ff > 31', 'ie 11'],
@@ -55,26 +52,19 @@ export default defineConfig({
       ],
     },
   },
-  // 打包配置
   build: {
     sourcemap: false,
     rollupOptions: {
       external: ['vue'],
       output: [
         {
-          exports: 'named',
-          preserveModules: false,
-        },
-        {
-          globals: {
-            vue: 'Vue',
-          },
-        },
-        {
           format: 'umd',
           dir: 'dist/umd',
           entryFileNames: '[name].umd.js',
           name: 'index',
+          globals: {
+            vue: 'Vue',
+          },
         },
         {
           format: 'esm',
@@ -89,15 +79,12 @@ export default defineConfig({
     },
     terserOptions: {
       compress: {
-        // 防止 Infinity 被压缩成 1/0，这可能会导致 Chrome 上的性能问题
         keep_infinity: true,
-        // 生产环境去除 console
         drop_console: true,
-        // 生产环境去除 debugger
         drop_debugger: true,
       },
       format: {
-        comments: false, // 删除注释
+        comments: false,
       },
     },
   },

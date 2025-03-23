@@ -207,4 +207,4 @@ const Versakit = {
   },
 }
 
-export default Versakit
+export { Versakit }
