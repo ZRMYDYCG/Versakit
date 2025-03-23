@@ -46,6 +46,10 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
 </template>
 
 <style>
+.VPDoc {
+  padding: 0 !important;
+}
+
 .VPDoc.has-aside .container .aside:has(.theme-main-page) {
   display: none;
 }

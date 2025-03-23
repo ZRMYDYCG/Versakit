@@ -2,7 +2,7 @@
   <div>
     <ver-button @click="dialogVisible = true">点击打开对话框</ver-button>
 
-    <ver-dialog v-model="dialogVisible">
+    <ver-dialog v-model="dialogVisible" closeIcon="ep:close">
       <span>这是一段信息</span>
       <template #footer>
         <ver-button>取消</ver-button>

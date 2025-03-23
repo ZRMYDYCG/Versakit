@@ -16,7 +16,7 @@
             </span>
           </slot>
           <button class="ver-dialog_headerbtn" @click="close">
-            <VerIcon name="x-lg" />
+            <VerIcon :name="closeIcon" />
           </button>
         </div>
         <div class="ver-dialog_body">
@@ -41,6 +41,7 @@ const props = withDefaults(defineProps<DiaLogProps>(), {
   modelValue: false,
   width: '30%',
   top: '15vh',
+  closeIcon: '',
 })
 
 const emit = defineEmits(['update:modelValue'])

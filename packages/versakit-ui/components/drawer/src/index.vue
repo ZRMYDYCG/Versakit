@@ -11,7 +11,7 @@
             {{ props.title ? props.title : '标题' }}
           </span>
           <button class="ver-drawer_headerbtn" @click="handleClose">
-            <VerIcon name="x-lg" />
+            <VerIcon :name="closeIcon" />
           </button>
         </div>
         <div class="ver-drawer_body">
@@ -30,6 +30,7 @@ defineOptions({ name: 'VerDrawer' })
 const props = withDefaults(defineProps<DrawerProps>(), {
   modelValue: false,
   direction: 'left',
+  closeIcon: '',
 })
 
 const emit = defineEmits(['update:modelValue'])

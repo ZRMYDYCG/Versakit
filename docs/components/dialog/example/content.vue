@@ -7,7 +7,7 @@
       <p>这是一个信息</p>
     </ver-dialog>
     <!-- 表单 -->
-    <ver-dialog v-model="dialogFromVisible" title="表单">
+    <ver-dialog v-model="dialogFromVisible" title="表单" closeIcon="ep:close">
       <div>
         <ver-input />
       </div>

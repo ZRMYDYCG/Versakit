@@ -2,7 +2,7 @@
   <div>
     <VerButton @click="drawerLeft = true">基本使用</VerButton>
 
-    <VerDrawer v-model="drawerLeft">
+    <VerDrawer v-model="drawerLeft" closeIcon="ep:close">
       <span>左边</span>
     </VerDrawer>
   </div>

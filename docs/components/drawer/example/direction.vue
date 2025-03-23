@@ -5,19 +5,19 @@
     <VerButton @click="drawerRight = true">Right</VerButton>
     <VerButton @click="drawerBottom = true">Bottom</VerButton>
 
-    <VerDrawer v-model="drawerLeft">
+    <VerDrawer v-model="drawerLeft" closeIcon="ep:close">
       <span>左边</span>
     </VerDrawer>
 
-    <VerDrawer direction="top" v-model="drawerTop">
+    <VerDrawer direction="top" v-model="drawerTop" closeIcon="ep:close">
       <span>上面</span>
     </VerDrawer>
 
-    <VerDrawer direction="right" v-model="drawerRight">
+    <VerDrawer direction="right" v-model="drawerRight" closeIcon="ep:close">
       <span>上面</span>
     </VerDrawer>
 
-    <VerDrawer direction="bottom" v-model="drawerBottom">
+    <VerDrawer direction="bottom" v-model="drawerBottom" closeIcon="ep:close">
       <span>上面</span>
     </VerDrawer>
   </div>

@@ -3,4 +3,5 @@ export interface DiaLogProps {
   modelValue?: boolean
   width?: string
   top?: string
+  closeIcon?: string
 }
