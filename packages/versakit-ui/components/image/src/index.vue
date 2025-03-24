@@ -9,6 +9,7 @@ const props = withDefaults(defineProps<ImageProps>(), {
   src: '',
   fit: 'cover',
   lazy: false,
+  icon: '',
 })
 
 const loading = ref(true)
@@ -56,7 +57,7 @@ onMounted(() => {
     <div v-if="loading" class="ver-image__placeholder">
       <slot name="placeholder">
         <div class="ver-image__placeholder-default">
-          <ver-icon name="image" size="24" />
+          <ver-icon :name="icon" size="24" />
         </div>
       </slot>
     </div>

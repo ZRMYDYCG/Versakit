@@ -16,6 +16,7 @@ const info = () => {
     type: 'info',
     plain: true,
     content: 'content',
+    icon: 'ep:info-filled',
   })
 }
 
