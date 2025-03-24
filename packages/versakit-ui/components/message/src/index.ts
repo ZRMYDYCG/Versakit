@@ -9,6 +9,7 @@ export const Message = ({
   type,
   content,
   plain,
+  icon,
   duration = 3000,
 }: MessageProps) => {
   const id = `message_${seed++}`
@@ -28,6 +29,7 @@ export const Message = ({
     plain,
     duration,
     id,
+    icon,
     destroy: onDestroy,
   }
 

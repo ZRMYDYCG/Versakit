@@ -15,6 +15,7 @@ const topleft = () => {
     title: 'title',
     content: 'content',
     position: 'top-left',
+    icon: 'ep:info-filled',
   })
 }
 
@@ -22,6 +23,7 @@ const topright = () => {
   VerNotification({
     title: 'title',
     content: 'content',
+    icon: 'ep:info-filled',
   })
 }
 
@@ -30,6 +32,7 @@ const bottomleft = () => {
     title: 'title',
     content: 'content',
     position: 'bottom-left',
+    icon: 'ep:info-filled',
   })
 }
 
@@ -38,6 +41,7 @@ const bottomright = () => {
     title: 'title',
     content: 'content',
     position: 'bottom-right',
+    icon: 'ep:info-filled',
   })
 }
 </script>

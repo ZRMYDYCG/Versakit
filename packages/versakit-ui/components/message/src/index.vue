@@ -1,7 +1,7 @@
 <template>
   <transition name="down" @after-leave="destroy">
     <div v-show="isVisable" :class="VerClass" :style="cssStyle">
-      <VerIcon :color="iconColor" :name="iconName" />
+      <VerIcon :color="iconColor" :name="icon" />
       <span class="text">{{ content }}</span>
     </div>
   </transition>
@@ -20,6 +20,7 @@ const isVisable = ref(false)
 const props = withDefaults(defineProps<MessageProps>(), {
   type: 'info',
   content: '',
+  icon: '',
   duration: 0,
   offset: 25,
   plain: false,
@@ -52,20 +53,6 @@ const iconColor = computed(() => {
       return 'red'
     default:
       return 'gray'
-  }
-})
-
-// 根据传入的消息类型，计算对应的图标名称
-const iconName = computed(() => {
-  switch (props.type) {
-    case 'success':
-      return 'check-circle-fill'
-    case 'warning':
-      return 'exclamation-triangle-fill'
-    case 'error':
-      return 'x-circle-fill'
-    default:
-      return 'info-circle-fill'
   }
 })
 

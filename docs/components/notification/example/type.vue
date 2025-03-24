@@ -15,6 +15,7 @@ const info = () => {
     title: 'title',
     type: 'info',
     content: 'content',
+    icon: 'ep:info-filled',
   })
 }
 
@@ -23,14 +24,16 @@ const success = () => {
     title: 'title',
     type: 'success',
     content: 'content',
+    icon: 'ep:success-filled',
   })
 }
 
 const warning = () => {
   VerNotification({
     title: 'title',
-    type: 'warning',
+    type: 'warn',
     content: 'content',
+    icon: 'ep:warning-filled',
   })
 }
 
@@ -39,6 +42,7 @@ const error = () => {
     title: 'title',
     type: 'error',
     content: 'content',
+    icon: 'ep:circle-close-filled',
   })
 }
 </script>

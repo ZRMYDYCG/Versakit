@@ -24,6 +24,7 @@ const success = () => {
     title: 'title',
     type: 'success',
     plain: true,
+    icon: 'ep:success-filled',
     content: 'content',
   })
 }
@@ -33,6 +34,7 @@ const warning = () => {
     title: 'title',
     type: 'warn',
     plain: true,
+    icon: 'ep:warning-filled',
     content: 'content',
   })
 }
@@ -42,6 +44,7 @@ const error = () => {
     title: 'title',
     type: 'error',
     plain: true,
+    icon: 'ep:circle-close-filled',
     content: 'content',
   })
 }

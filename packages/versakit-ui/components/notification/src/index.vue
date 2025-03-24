@@ -2,7 +2,7 @@
   <transition name="slide-fade" @after-leave="props.destroy">
     <div v-show="isVisable" :class="VerClass" :style="positionStyle">
       <div class="ver-notification-top">
-        <VerIcon :size="25" :color="iconColor" :name="iconName" />
+        <VerIcon :size="25" :color="iconColor" :name="icon" />
         <h2 class="ver-notification-title">{{ title }}</h2>
       </div>
       <div class="ver-notification-content">
@@ -27,6 +27,7 @@ const props = withDefaults(defineProps<NotifivationProps>(), {
   type: 'info',
   plain: false,
   title: '',
+  icon: '',
   content: '',
   duration: 3000,
   offset: 25,
@@ -54,20 +55,6 @@ const iconColor = computed(() => {
       return 'red'
     default:
       return 'gray'
-  }
-})
-
-// 根据传入的消息类型，计算对应的图标名称
-const iconName = computed(() => {
-  switch (props.type) {
-    case 'success':
-      return 'check-circle-fill'
-    case 'warn':
-      return 'exclamation-triangle-fill'
-    case 'error':
-      return 'x-circle-fill'
-    default:
-      return 'info-circle-fill'
   }
 })
 

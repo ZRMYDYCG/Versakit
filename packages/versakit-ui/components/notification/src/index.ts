@@ -11,6 +11,7 @@ export const Notification = ({
   content,
   plain,
   position,
+  icon,
   duration = 3000,
 }: NotifivationProps) => {
   const id = `message_${seed++}`
@@ -30,6 +31,7 @@ export const Notification = ({
     content,
     position,
     duration,
+    icon,
     destroy: onDestroy,
     id,
   }

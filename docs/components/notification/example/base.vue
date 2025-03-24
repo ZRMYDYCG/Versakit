@@ -11,6 +11,7 @@ const openNotification = () => {
   VerNotification({
     title: 'title',
     content: 'content',
+    icon: 'ep:info-filled',
   })
 }
 </script>
