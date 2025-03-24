@@ -17,7 +17,7 @@
       <slot name="title">{{ title }}</slot>
 
       <div class="header-angle">
-        <VerIcon name="caret-right-fill" />
+        <VerIcon :name="icon" />
       </div>
     </div>
     <Transition name="slide" v-on="transitionEvents">
@@ -38,7 +38,9 @@ import { VerIcon } from '@versakit/icons'
 defineOptions({
   name: 'VerCollapseItem',
 })
+
 const props = defineProps<CollapseItemProps>()
+
 const collapseContext = inject(collapseContextKey)
 const isActive = computed(() =>
   collapseContext?.activeNames.value.includes(props.name),
@@ -49,6 +51,7 @@ const handleClick = () => {
   }
   collapseContext?.handleItemClick(props.name)
 }
+
 const transitionEvents: Record<string, (el: HTMLElement) => void> = {
   beforeEnter(el) {
     el.style.height = '0px'
@@ -75,4 +78,6 @@ const transitionEvents: Record<string, (el: HTMLElement) => void> = {
 }
 </script>
 
-<style scoped lang="css" src="../style/item.css"></style>
+<style scoped>
+@import url('../style/item.css');
+</style>

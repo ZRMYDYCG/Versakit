@@ -9,6 +9,7 @@ export interface CollapseItemProps {
   name: NameType
   title?: string
   disabled?: boolean
+  icon?: string
 }
 
 export interface CollapseContext {

@@ -23,8 +23,7 @@
     background-image: none;
   }
 
-  .header-angle {
-    transform: translateY(-20px);
+  &.header-angle {
     transition: transform 0.3s;
   }
 

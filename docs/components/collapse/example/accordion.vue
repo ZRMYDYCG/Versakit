@@ -9,19 +9,19 @@ const activeNames = ref(['1'])
 <template>
   <div>
     <VerCollapse v-model="activeNames" accordion>
-      <VerCollapseItem title="Consistency" name="1">
+      <VerCollapseItem title="Consistency" name="1" icon="ep:caret-right">
         <div>
           Consistent with real life: in line with the process and logic of real
           life, and comply with languages and habits that the users are used to;
         </div>
       </VerCollapseItem>
-      <VerCollapseItem title="Consistency" name="2">
+      <VerCollapseItem title="Consistency" name="2" icon="ep:caret-right">
         <div>
           Consistent with real life: in line with the process and logic of real
           life, and comply with languages and habits that the users are used to;
         </div>
       </VerCollapseItem>
-      <VerCollapseItem title="Consistency" name="3">
+      <VerCollapseItem title="Consistency" name="3" icon="ep:caret-right">
         <div>
           Consistent with real life: in line with the process and logic of real
           life, and comply with languages and habits that the users are used to;
