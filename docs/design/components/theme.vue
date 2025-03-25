@@ -88,43 +88,59 @@ import { ref, computed } from 'vue'
 // 主题名称
 const themeName = ref('Element')
 
-// 初始主题数据
+// 初始主题数据 - 基于 var.css 颜色系统
 const themeData = ref({
   primary: {
-    50: '#e0f2fe',
-    100: '#b3e0ff',
-    200: '#80ccff',
-    300: '#4db8ff',
-    400: '#1aa3ff',
-    500: '#409EFF',
-    600: '#2563eb',
-    700: '#1d4ed8',
-    800: '#1e40af',
-    900: '#1e3a8a',
+    50: '#f5f3ff',
+    100: '#ede9fe',
+    200: '#ddd6fe',
+    300: '#c4b5fd',
+    400: '#a78bfa',
+    500: '#8b5cf6',
+    600: '#7c3aed',
+    700: '#6d28d9',
+    800: '#5b21b6',
+    900: '#581c87',
+    950: '#2e1065',
   },
   success: {
     50: '#f0fdf4',
+    100: '#dcfce7',
+    200: '#bbf7d0',
     300: '#86efac',
-    500: '#67C23A',
+    400: '#4ade80',
+    500: '#22c55e',
+    600: '#16a34a',
     700: '#15803d',
+    800: '#166534',
+    900: '#14532d',
+    950: '#052e16',
   },
   error: {
     50: '#fef2f2',
+    100: '#fee2e2',
+    200: '#fecaca',
     300: '#fca5a5',
-    500: '#F56C6C',
+    400: '#f87171',
+    500: '#ef4444',
+    600: '#dc2626',
     700: '#b91c1c',
+    800: '#991b1b',
+    900: '#7f1d1d',
+    950: '#450a0a',
   },
   info: {
     50: '#f8fafc',
-    300: '#bac2cb',
-    500: '#909399',
-    700: '#4b5563',
-  },
-  warning: {
-    50: '#fefce8',
-    300: '#fde047',
-    500: '#E6A23C',
-    700: '#a16207',
+    100: '#f1f5f9',
+    200: '#e2e8f0',
+    300: '#cbd5e1',
+    400: '#94a3b8',
+    500: '#64748b',
+    600: '#475569',
+    700: '#334155',
+    800: '#1e293b',
+    900: '#0f172a',
+    950: '#020617',
   },
 })
 
@@ -159,6 +175,7 @@ const triggerImport = () => {
   fileInput.value?.click()
 }
 
+// 导入主题
 const importTheme = (event: Event) => {
   const input = event.target as HTMLInputElement
   const file = input.files?.[0]
@@ -167,14 +184,49 @@ const importTheme = (event: Event) => {
     reader.onload = (e) => {
       try {
         const content = e.target?.result as string
-        const match = content.match(/theme:\s*({[\s\S]*?})/)
-        if (match && match[1]) {
-          themeData.value = JSON.parse(match[1])
-        } else {
-          // 尝试直接解析JSON
-          themeData.value = JSON.parse(content)
+
+        // 尝试解析 TS 主题文件
+        if (file.name.endsWith('.ts')) {
+          // 解析导出的主题对象
+          const themeMatch = content.match(
+            /export\s+(?:const|let|var)\s+(\w+)\s*=\s*({[\s\S]*})/,
+          )
+          if (themeMatch) {
+            const [, name, themeObj] = themeMatch
+            // 提取 theme 对象
+            const themeContent = themeObj.match(
+              /theme:\s*({[\s\S]*?})[,\s]*\}/,
+            )?.[1]
+            if (themeContent) {
+              themeName.value = name
+              // 处理单引号和注释
+              const cleanContent = themeContent
+                .replace(/\/\*[\s\S]*?\*\//g, '') // 移除块注释
+                .replace(/\/\/.*/g, '') // 移除行注释
+                .replace(/'/g, '"') // 单引号转双引号
+                .replace(/,(\s*[}\]])/g, '$1') // 移除尾随逗号
+              themeData.value = JSON.parse(cleanContent)
+              return
+            }
+          }
         }
-      } catch {
+
+        // 尝试解析 JSON 格式
+        const jsonMatch = content.match(/theme:\s*({[\s\S]*?})/)
+        if (jsonMatch) {
+          themeData.value = JSON.parse(jsonMatch[1])
+          return
+        }
+
+        // 尝试直接解析为 JSON
+        const parsed = JSON.parse(content)
+        if (parsed.theme) {
+          themeData.value = parsed.theme
+        } else {
+          themeData.value = parsed
+        }
+      } catch (error) {
+        console.error('Theme import error:', error)
         alert('主题文件格式错误，请检查文件内容')
       }
     }
