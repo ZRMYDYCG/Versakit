@@ -1,30 +1,39 @@
 .ver-panel {
-  margin-bottom: 15px;
-  border-radius: 4px;
-  border: 1px solid var(--theme-neutral-300, var(--ver-neutral-300));
+  --panel-padding: 20px;
+  --panel-border-radius: 4px;
+  --panel-margin-bottom: 15px;
+  --panel-border-color: var(--theme-neutral-300, var(--ver-neutral-300));
+  --panel-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
+  --panel-shadow-dark: 0px 0px 12px rgba(255, 255, 255, 0.639);
+
+  margin-bottom: var(--panel-margin-bottom);
+  border-radius: var(--panel-border-radius);
+  border: 1px solid var(--panel-border-color);
   background-color: #fff;
-  padding: 20px;
+  padding: var(--panel-padding);
+  transition: box-shadow 0.3s ease;
+
   .dark & {
+    --panel-border-color: var(--theme-neutral-600, var(--ver-neutral-600));
     color: var(--theme-neutral-100, var(--ver-neutral-100));
     background-color: var(--theme-neutral-900, var(--ver-neutral-900));
-    border-color: var(--theme-neutral-600, var(--ver-neutral-600));
+  }
+}
+
+/* Shadow variants */
+.ver-panel.is-shadow-always {
+  box-shadow: var(--panel-shadow);
+  .dark & {
+    box-shadow: var(--panel-shadow-dark);
   }
 }
 
 .ver-panel.is-shadow-hover {
   &:hover {
-    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
-    transition: all 0.5s;
+    box-shadow: var(--panel-shadow);
     .dark & {
-      box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.639);
+      box-shadow: var(--panel-shadow-dark);
     }
-  }
-}
-
-.ver-panel.is-shadow-always {
-  box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
-  .dark & {
-    box-shadow: 0px 0px 12px rgba(255, 255, 255, 0.639);
   }
 }
 
