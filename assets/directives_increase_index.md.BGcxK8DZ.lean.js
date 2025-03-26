@@ -1,0 +1,8 @@
+import{_ as m,at as p,a5 as u,c as r,o as l,B as h,j as t,G as n,a,w as s,k as i}from"./chunks/framework.DSK5FMsA.js";import{Q as v}from"./chunks/index.CWxr9eMF.js";const _=`<script setup lang="ts"><\/script>
+
+<template>
+  <div v-increase="100"></div>
+</template>
+
+<style lang="scss" scoped></style>
+`,b={};function f(o,c){const e=p("increase");return u((l(),r("div",null,null,512)),[[e,100]])}const W=m(b,[["render",f]]),C=JSON.parse('{"title":"NumberAnimation 数字动画","description":"","frontmatter":{},"headers":[],"relativePath":"directives/increase/index.md","filePath":"directives/increase/index.md"}'),X={name:"directives/increase/index.md"},x=Object.assign(X,{setup(o){return(c,e)=>{const d=h("ClientOnly");return l(),r("div",null,[e[0]||(e[0]=t("h1",{id:"numberanimation-数字动画",tabindex:"-1"},[a("NumberAnimation 数字动画 "),t("a",{class:"header-anchor",href:"#numberanimation-数字动画","aria-label":'Permalink to "NumberAnimation 数字动画"'},"​")],-1)),e[1]||(e[1]=t("h2",{id:"基本用法",tabindex:"-1"},[a("基本用法 "),t("a",{class:"header-anchor",href:"#基本用法","aria-label":'Permalink to "基本用法"'},"​")],-1)),e[2]||(e[2]=t("p",null,[a("你可以在组件内通过"),t("code",null,"v-increase"),a("属性，让元素获得数字动画。")],-1)),n(d,null,{default:s(()=>[n(i(v),{title:"",description:"",select:"vue",order:"vue,react,html",github:"",gitlab:"",theme:"",lightTheme:"",darkTheme:"",stackblitz:"%7B%22show%22%3Afalse%7D",codesandbox:"%7B%22show%22%3Afalse%7D",codeplayer:"%7B%22show%22%3Afalse%7D",files:"%7B%22vue%22%3A%7B%7D%2C%22react%22%3A%7B%7D%2C%22html%22%3A%7B%7D%7D",scope:"",visible:!0,vueCode:i(_)},{vue:s(()=>[n(W)]),_:1},8,["vueCode"])]),_:1})])}}});export{C as __pageData,x as default};
