@@ -1,4 +1,4 @@
-# 无障碍 Accessibility
+# 无障碍
 
 ## 介绍
 
