@@ -94,10 +94,39 @@ const afterLeave = () => {
   }
 }
 
-// 处理滚动锁定
+// 添加滚动条宽度计算函数
+const getScrollBarWidth = () => {
+  const outer = document.createElement('div')
+  outer.style.visibility = 'hidden'
+  outer.style.width = '100px'
+  outer.style.position = 'absolute'
+  outer.style.top = '-9999px'
+  document.body.appendChild(outer)
+
+  const widthNoScroll = outer.offsetWidth
+  outer.style.overflow = 'scroll'
+
+  const inner = document.createElement('div')
+  inner.style.width = '100%'
+  outer.appendChild(inner)
+
+  const widthWithScroll = inner.offsetWidth
+  outer.parentNode?.removeChild(outer)
+
+  return widthNoScroll - widthWithScroll
+}
+
+// 修改滚动锁定处理函数
 const lockScrollHandler = () => {
   if (props.lockScroll) {
-    document.body.style.overflow = props.modelValue ? 'hidden' : ''
+    if (props.modelValue) {
+      const scrollBarWidth = getScrollBarWidth()
+      document.body.style.overflow = 'hidden'
+      document.body.style.paddingRight = `${scrollBarWidth}px`
+    } else {
+      document.body.style.overflow = ''
+      document.body.style.paddingRight = ''
+    }
   }
 }
 
@@ -122,6 +151,7 @@ onMounted(() => {
 
 onBeforeUnmount(() => {
   document.body.style.overflow = ''
+  document.body.style.paddingRight = ''
 })
 </script>
 
