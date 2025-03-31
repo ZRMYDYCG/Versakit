@@ -1,4 +1,4 @@
-import type { VNode, Slot, VNodeProps } from 'vue'
+import type { VNode, VNodeProps } from 'vue'
 
 export type DescriptionsItem = {
   label?: string
@@ -23,7 +23,6 @@ export interface DescriptionsItemProps {
 }
 
 export type DescriptionsItemVNode = VNode & {
-  children: { [name: string]: Slot } | null
   type: {
     name?: string
   }
