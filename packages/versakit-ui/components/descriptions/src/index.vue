@@ -15,13 +15,13 @@ const props = withDefaults(defineProps<DescriptionsProps>(), {
   direction: 'horizontal',
 })
 
-const slots = useSlots()
+const slots = useSlots() as { default?: () => DescriptionsItemVNode[] }
 function isChildVNode(vnode: DescriptionsItemVNode) {
   return vnode.type.name === 'VerDescriptionsItem'
 }
 
 const calculateRows = () => {
-  const items: DescriptionsItemVNode[] = slots.default?.() || []
+  const items = slots.default?.() || []
   const filteredVNodes = items.filter((item) => {
     return isChildVNode(item)
   })
@@ -72,9 +72,11 @@ const calculateTr = (rows: DescriptionsItemVNode[][]) => {
                 return [
                   cloneVNode(item, {
                     isLabel: true,
+                    colspan: 1,
                   } as DescriptionsItemVNode['props']),
                   cloneVNode(item, {
                     isContent: true,
+                    colspan: 2 * (item.props?.colspan || 1) - 1,
                   } as DescriptionsItemVNode['props']),
                 ]
               })

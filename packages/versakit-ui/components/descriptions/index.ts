@@ -1,4 +1,4 @@
-import { withInstall } from '../../utils/withinstall'
+import { withInstall } from '@versakit/shared'
 import Descriptions from './src/index.vue'
 import DescriptionsItem from './src/item.vue'
 

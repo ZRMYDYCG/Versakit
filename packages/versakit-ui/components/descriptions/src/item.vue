@@ -32,7 +32,3 @@ withDefaults(defineProps<DescriptionsItemProps>(), {
   isLabel: false,
 })
 </script>
-
-<style>
-@import '../style/index.css';
-</style>
