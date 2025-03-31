@@ -1,34 +1,41 @@
 .ver-badge {
+  --badge-height: 16px;
+  --badge-dot-size: 8px;
+  --badge-font-size: 12px;
+  --badge-padding: 4px;
+  --badge-bg-color: var(--theme-error-500, var(--ver-error-500));
+  --badge-text-color: #fff;
+  --badge-shadow: 0 0 0 2px #fff;
+  --badge-border-radius: 9px;
+
   position: relative;
   display: inline-block;
+}
 
-  &-dot,
-  &-num,
-  &-text {
-    position: absolute;
-    right: 0;
-    top: 0;
-    height: 16px;
-    line-height: 16px;
-    text-align: center;
-    border-radius: 9px;
-    padding: 0 4px;
-    font-size: 12px;
-    color: #fff;
-    background: var(--theme-error-500, var(--ver-error-500));
-    box-shadow: 0 0 0 2px #fff;
-  }
-  .ver-badge-num,
-  .ver-badge-text {
-    min-width: 16px;
-    right: -8px;
-    top: -8px;
-  }
-  .ver-badge-dot {
-    right: 0;
-    top: 0;
-    width: 8px;
-    height: 8px;
-    padding: 0;
-  }
+.ver-badge [class^='ver-badge-'] {
+  position: absolute;
+  height: var(--badge-height);
+  line-height: var(--badge-height);
+  text-align: center;
+  border-radius: var(--badge-border-radius);
+  padding: 0 var(--badge-padding);
+  font-size: var(--badge-font-size);
+  color: var(--badge-text-color);
+  background: var(--badge-bg-color);
+  box-shadow: var(--badge-shadow);
+}
+
+.ver-badge-num,
+.ver-badge-text {
+  min-width: var(--badge-height);
+  right: -8px;
+  top: -8px;
+}
+
+.ver-badge-dot {
+  right: 0;
+  top: 0;
+  width: var(--badge-dot-size);
+  height: var(--badge-dot-size);
+  padding: 0;
 }

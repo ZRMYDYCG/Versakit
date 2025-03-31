@@ -1,45 +1,48 @@
 <template>
-  <div class="ver-badge">
-    <slot></slot>
+  <div class="ver-badge" role="status">
+    <slot />
     <!-- 通过上标文本标签实现徽标 -->
-    <sup ref="verBadge" :class="badgeClass">
-      <template v-if="type !== 'dot'">
-        {{ calcValue }}
-      </template>
+    <sup
+      ref="verBadge"
+      :class="badgeClass"
+      :aria-label="ariaLabel"
+      aria-live="polite"
+    >
+      <template v-if="type !== 'dot'">{{ displayValue }}</template>
     </sup>
   </div>
 </template>
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import type { BadgeProps } from '../type/index.ts'
-defineOptions({
-  name: 'VerBadge',
-})
+import type { BadgeProps, BadgeType } from '../type/index'
+
+defineOptions({ name: 'VerBadge' })
+
+// Badge类型映射
+const TYPE_CLASS_MAP: Record<BadgeType, string> = {
+  dot: 'ver-badge-dot',
+  number: 'ver-badge-num',
+  text: 'ver-badge-text',
+} as const
 
 const props = withDefaults(defineProps<BadgeProps>(), {
   type: 'dot',
 })
 
-const calcValue = computed(() => {
-  if (typeof props.value === 'number' && props.value > 99) {
-    return '99+'
-  }
-  return props.value
+// 优化值的计算
+const displayValue = computed(() => {
+  if (typeof props.value !== 'number') return props.value
+  return props.value > 99 ? '99+' : props.value
 })
 
-const badgeClass = computed(() => {
-  const classes = ['ver-badge']
-  if (props.type === 'dot') {
-    classes.push('ver-badge-dot')
-  }
-  if (props.type === 'number') {
-    classes.push('ver-badge-num')
-  }
-  if (props.type === 'text') {
-    classes.push('ver-badge-text')
-  }
-  return classes
+// 优化类名计算
+const badgeClass = computed(() => ['ver-badge', TYPE_CLASS_MAP[props.type]])
+
+// 计算aria标签文本
+const ariaLabel = computed(() => {
+  if (props.type === 'dot') return 'Notification indicator'
+  return `Badge value is ${displayValue.value}`
 })
 </script>
 

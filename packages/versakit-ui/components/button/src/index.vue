@@ -5,6 +5,16 @@ import { VerIcon } from '@versakit/icons'
 
 defineOptions({ name: 'VerButton' })
 
+// 按钮类型映射
+const TYPE_CLASS_MAP = {
+  primary: 'ver-btn-primary',
+  secondary: 'ver-btn-secondary',
+  success: 'ver-btn-success',
+  info: 'ver-btn-info',
+  error: 'ver-btn-error',
+  warn: 'ver-btn-warn',
+} as const
+
 const props = withDefaults(defineProps<ButtonProps>(), {
   disabled: false,
   circle: false,
@@ -14,40 +24,54 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   type: '',
 })
 
-const attrs: any = useAttrs()
+const attrs = useAttrs()
 
-// 计算样式类
+// 优化类名计算逻辑
 const baseClass = computed(() => {
-  const variantClasses = props.variant
-    .split(' ')
-    .filter(Boolean)
-    .map((v) => `is-${v}`)
+  const classes = ['ver-btn']
 
-  return [
-    'ver-btn',
-    props.type === 'primary' ? 'ver-btn-primary' : `ver-btn-${props.type}`,
-    ...variantClasses,
-    props.circle && 'is-circle',
-    props.disabled && 'is-disabled',
-    props.size !== 'md' && `is-${props.size}`,
-  ].filter(Boolean)
+  // 处理按钮类型
+  classes.push(TYPE_CLASS_MAP[props.type as keyof typeof TYPE_CLASS_MAP] || '')
+
+  // 处理变体类名
+  if (props.variant) {
+    const variants = props.variant.split(' ').filter(Boolean)
+    classes.push(...variants.map((v) => `is-${v}`))
+  }
+
+  // 处理其他状态类名
+  if (props.circle) classes.push('is-circle')
+  if (props.disabled) classes.push('is-disabled')
+  if (props.size !== 'md') classes.push(`is-${props.size}`)
+
+  return classes.filter(Boolean)
 })
 
-// 合并根元素属性
-const rootAttrs: any = computed(() => ({
+// 优化根元素属性
+const rootAttrs = computed(() => ({
   ...attrs,
   class: baseClass.value.join(' '),
   disabled: props.disabled || undefined,
+  role: 'button',
+  'aria-disabled': props.disabled,
+  tabindex: props.disabled ? -1 : 0,
 }))
+
+// 优化键盘事件处理
+const handleKeydown = (event: KeyboardEvent) => {
+  const isActionKey = event.key === 'Enter' || event.key === ' '
+  if (!isActionKey || props.disabled) return
+
+  event.preventDefault()
+  event.target?.dispatchEvent(new Event('click', { bubbles: true }))
+}
 </script>
 
 <template>
-  <button v-bind="rootAttrs">
-    <!-- icon -->
-    <ver-icon v-if="props.icon" :name="props.icon" :class="props.icon" />
-    <!-- Label -->
-    <span>
-      <slot></slot>
+  <button v-bind="rootAttrs" @keydown="handleKeydown">
+    <ver-icon v-if="icon" :name="icon" :class="icon" aria-hidden="true" />
+    <span v-if="$slots.default">
+      <slot />
     </span>
   </button>
 </template>

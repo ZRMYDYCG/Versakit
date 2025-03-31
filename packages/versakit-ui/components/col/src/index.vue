@@ -1,11 +1,9 @@
 <template>
   <div
     :class="['ver-col', classOptions]"
-    class="ver-col"
-    :style="{
-      width: width,
-      marginLeft: offset,
-    }"
+    :style="colStyle"
+    role="gridcell"
+    :aria-colspan="props.span"
   >
     <slot></slot>
   </div>
@@ -22,7 +20,8 @@ const props = withDefaults(defineProps<ColProps>(), {
   offset: 0,
 })
 
-function generateClass(props: ColProps, prefix: string) {
+const generateClass = computed(() => {
+  const prefix = 'ver-col'
   const size: Array<keyof ColProps> = ['xs', 'sm', 'md', 'lg', 'xl']
   return size.reduce(
     (acc, cur) => {
@@ -33,30 +32,26 @@ function generateClass(props: ColProps, prefix: string) {
     },
     {} as Record<string, boolean>,
   )
-}
-
-const classOptions = computed(() => {
-  const prefix = 'ver-col'
-  return generateClass(props, prefix)
 })
 
-const width = computed(() => {
-  if (Object.keys(classOptions.value).length !== 0) {
-    return ''
+const classOptions = computed(() => generateClass.value)
+
+const colStyle = computed(() => {
+  const styles: Record<string, string> = {}
+
+  if (
+    Object.keys(classOptions.value).length === 0 &&
+    props.span <= 24 &&
+    props.span % 1 === 0
+  ) {
+    styles.width = `${(100 / 24) * props.span}%`
   }
-  return props.span <= 24
-    ? props.span % 1 == 0
-      ? (100 / 24) * props.span + '%'
-      : ''
-    : ''
-})
 
-const offset = computed(() => {
-  return props.offset <= 24
-    ? props.offset % 1 == 0
-      ? (100 / 24) * props.offset + '%'
-      : ''
-    : ''
+  if (props.offset <= 24 && props.offset % 1 === 0) {
+    styles.marginLeft = `${(100 / 24) * props.offset}%`
+  }
+
+  return styles
 })
 </script>
 

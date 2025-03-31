@@ -4,4 +4,7 @@ export interface DiaLogProps {
   width?: string
   top?: string
   closeIcon?: string
+  closeOnEsc?: boolean
+  appendToBody?: boolean
+  lockScroll?: boolean
 }

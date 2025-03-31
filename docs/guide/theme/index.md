@@ -20,7 +20,3 @@ app.use(versakit, {
 })
 app.mount('#app')
 ```
-
-## Style模式
-
-## UnStyled模式

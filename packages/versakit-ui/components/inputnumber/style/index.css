@@ -1,0 +1,78 @@
+.ver-input-number {
+  display: inline-flex;
+  position: relative;
+  width: 180px;
+  line-height: 1;
+}
+
+.ver-input-number__input {
+  flex: 1;
+  padding: 5px 10px;
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #606266;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.ver-input-number__input:focus {
+  border-color: #409eff;
+}
+
+.ver-input-number__input::-webkit-inner-spin-button,
+.ver-input-number__input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.ver-input-number.is-disabled .ver-input-number__input {
+  background-color: #f5f7fa;
+  border-color: #e4e7ed;
+  color: #c0c4cc;
+  cursor: not-allowed;
+}
+
+.ver-input-number__controls {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  bottom: 1px;
+  display: flex;
+  flex-direction: column;
+  width: 22px;
+  border-left: 1px solid #dcdfe6;
+}
+
+.ver-input-number__increase,
+.ver-input-number__decrease {
+  height: 50%;
+  border: none;
+  background: #f5f7fa;
+  color: #606266;
+  cursor: pointer;
+  padding: 0;
+  text-align: center;
+  line-height: 1;
+}
+
+.ver-input-number__increase {
+  border-top-right-radius: 4px;
+  border-bottom: 1px solid #dcdfe6;
+}
+
+.ver-input-number__decrease {
+  border-bottom-right-radius: 4px;
+}
+
+.ver-input-number__increase.is-disabled,
+.ver-input-number__decrease.is-disabled {
+  color: #c0c4cc;
+  cursor: not-allowed;
+}
+
+.ver-input-number__increase:hover:not(.is-disabled),
+.ver-input-number__decrease:hover:not(.is-disabled) {
+  background-color: #e6e6e6;
+}
