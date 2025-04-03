@@ -56,6 +56,7 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'Pagination 分页', link: '/components/pagination/' },
         { text: 'Splitter 分配器', link: '/components/splitter/' },
         { text: 'NoticeBar 通知栏', link: '/components/noticebar/' },
+        { text: 'Descriptions 描述列表', link: '/components/descriptions/' },
       ],
     },
     {

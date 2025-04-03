@@ -54,6 +54,7 @@ import { VerCollapse, VerCollapseItem } from './components/collapse/index'
 import { VerTimeline, VerTimeLineItem } from './components/timeline/index'
 import { VerTab, VerTabItem } from './components/tab/index'
 import { VerBreadcrumb, VerBreadcrumbItem } from './components/breadcrumb/index'
+import { VerDescriptions, VerDescriptionsItem } from './components/descriptions'
 import { VerCheckbox, VerCheckboxGroup } from './components/checkbox/index'
 import { VerStepItem, VerSteps } from './components/steps/index'
 import { VerAvatar, VerAvatarGroup } from './components/avatar/index'
@@ -80,6 +81,8 @@ const components: Component[] = [
   VerPagination,
   VerSkeleton,
   VerCalendar,
+  VerDescriptions,
+  VerDescriptionsItem,
   VerInputOtp,
   VerBreadcrumb,
   VerBreadcrumbItem,
@@ -143,6 +146,8 @@ export {
   VerPagination,
   VerSkeleton,
   VerCalendar,
+  VerDescriptions,
+  VerDescriptionsItem,
   VerInputOtp,
   VerBreadcrumb,
   VerBreadcrumbItem,

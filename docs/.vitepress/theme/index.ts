@@ -9,7 +9,7 @@ import 'virtual:group-icons.css'
 import { Versakit } from '@versakit/ui'
 import { Element, Layui } from '@versakit/theme'
 // 引入样式
-import '@versakit/ui/dist/ui.css'
+import '@versakit/ui/dist/esm/ui.css'
 
 export default {
   ...Theme,

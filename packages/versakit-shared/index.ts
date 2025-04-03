@@ -1,3 +1,1 @@
-import { withInstall } from './src/withinstall'
-
-export { withInstall }
+export * from './src/withinstall'
