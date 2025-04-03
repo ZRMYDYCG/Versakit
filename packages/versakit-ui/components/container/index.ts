@@ -1,5 +1,5 @@
 import Container from './src/index.vue'
-import { withInstall } from '@versakit/shared'
+import { withInstall } from '../../utils/withinstall'
 
 const VerContainer = withInstall(Container)
 

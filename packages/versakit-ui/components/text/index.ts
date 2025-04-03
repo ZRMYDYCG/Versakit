@@ -1,5 +1,5 @@
 import Text from './src/index.vue'
-import { withInstall } from '@versakit/shared'
+import { withInstall } from '../../utils/withinstall'
 
 const VerText = withInstall(Text)
 

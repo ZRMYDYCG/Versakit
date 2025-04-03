@@ -1,5 +1,5 @@
 import Main from './src/index.vue'
-import { withInstall } from '@versakit/shared'
+import { withInstall } from '../../utils/withinstall'
 
 const VerMain = withInstall(Main)
 

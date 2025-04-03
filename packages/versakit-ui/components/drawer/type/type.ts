@@ -5,4 +5,7 @@ export interface DrawerProps {
   modelValue?: boolean
   direction?: DirectionType
   closeIcon?: string
+  width?: string
+  height?: string
+  lockScroll?: boolean
 }

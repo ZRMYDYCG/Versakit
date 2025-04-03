@@ -31,6 +31,8 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'Slider 滑块', link: '/components/slider/' },
         { text: 'CheckBox 复选框', link: '/components/checkBox/' },
         { text: 'Rate 评分', link: '/components/rate/' },
+        { text: 'Input Number 数字输入框', link: '/components/inputnumber/' },
+        { text: 'Date Picker 日期选择器', link: '/components/datepicker/' },
       ],
     },
     {
@@ -54,6 +56,7 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'Pagination 分页', link: '/components/pagination/' },
         { text: 'Splitter 分配器', link: '/components/splitter/' },
         { text: 'NoticeBar 通知栏', link: '/components/noticebar/' },
+        { text: 'Descriptions 描述列表', link: '/components/descriptions/' },
       ],
     },
     {

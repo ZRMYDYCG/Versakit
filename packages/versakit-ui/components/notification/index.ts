@@ -1,5 +1,5 @@
 import { Notification } from './src/index'
-import { withInstall } from '@versakit/shared'
+import { withInstall } from '../../utils/withinstall'
 
 const VerNotification = withInstall(Notification)
 

@@ -1,4 +1,4 @@
-import { withInstall } from '@versakit/shared'
+import { withInstall } from '../../utils/withinstall'
 import Progress from './src/index.vue'
 
 const VerProgress = withInstall(Progress)

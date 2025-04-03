@@ -7853,7 +7853,7 @@ const createNewFolder = (folderName) => {
 
   // 创建index.ts文件并写入内容
   const indexTsPath = require$$1$1.join(targetFolderPath, 'index.ts')
-  const indexTsContent = `import { withInstall } from '@versakit/shared';
+  const indexTsContent = `import { withInstall } from '../../utils/withinstall';
         import ${folderName} from './src/index.vue';
 
         const Ver${folderName.charAt(0).toUpperCase()} = withInstall(${folderName});

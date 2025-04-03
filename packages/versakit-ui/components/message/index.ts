@@ -1,5 +1,5 @@
 import { Message } from './src/index'
-import { withInstall } from '@versakit/shared'
+import { withInstall } from '../../utils/withinstall'
 
 const VerMessage = withInstall(Message)
 

@@ -1,4 +1,4 @@
-import { withInstall } from '@versakit/shared'
+import { withInstall } from '../../utils/withinstall'
 import Avatar from './src/index.vue'
 import AvatarGroup from './src/group.vue'
 

@@ -1,4 +1,4 @@
-import { withInstall } from '@versakit/shared'
+import { withInstall } from '../../utils/withinstall'
 import Collapse from './src/index.vue'
 import CollapseItem from './src/item.vue'
 
