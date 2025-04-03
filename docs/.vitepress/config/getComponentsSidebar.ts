@@ -32,6 +32,7 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'CheckBox 复选框', link: '/components/checkBox/' },
         { text: 'Rate 评分', link: '/components/rate/' },
         { text: 'Input Number 数字输入框', link: '/components/inputnumber/' },
+        { text: 'Date Picker 日期选择器', link: '/components/datepicker/' },
       ],
     },
     {

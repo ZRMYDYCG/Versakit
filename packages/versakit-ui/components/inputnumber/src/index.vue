@@ -1,112 +1,168 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
-import type { InputNumberProps, InputNumberEmits } from '../type/index'
+import { ref, watch, computed } from 'vue'
 
-defineOptions({
-  name: 'VerInputNumber',
+const props = defineProps({
+  modelValue: {
+    type: Number,
+    default: 0,
+  },
+  min: {
+    type: Number,
+    default: -Infinity,
+  },
+  max: {
+    type: Number,
+    default: Infinity,
+  },
+  step: {
+    type: Number,
+    default: 1,
+  },
+  disabled: {
+    type: Boolean,
+    default: false,
+  },
+  precision: {
+    type: Number,
+    default: 0,
+  },
 })
 
-const props = withDefaults(defineProps<InputNumberProps>(), {
-  modelValue: 0,
-  min: -Infinity,
-  max: Infinity,
-  step: 1,
-  disabled: false,
-  controls: true,
-  precision: undefined,
-})
-
-const emit = defineEmits<InputNumberEmits>()
+const emit = defineEmits(['update:modelValue', 'change'])
 
 const inputValue = ref(props.modelValue)
+const inputRef = ref<HTMLInputElement>()
 
-// 格式化数值
-const formatValue = (value: number): number => {
-  if (typeof props.precision === 'number') {
-    return Number(value.toFixed(props.precision))
+const displayValue = computed(() => {
+  return props.precision > 0
+    ? inputValue.value.toFixed(props.precision)
+    : inputValue.value.toString()
+})
+
+const increment = () => {
+  const newValue = Number(
+    (inputValue.value + props.step).toFixed(props.precision),
+  )
+  updateValue(Math.min(newValue, props.max))
+}
+
+const decrement = () => {
+  const newValue = Number(
+    (inputValue.value - props.step).toFixed(props.precision),
+  )
+  updateValue(Math.max(newValue, props.min))
+}
+
+const updateValue = (newValue: number) => {
+  if (props.disabled) return
+
+  const oldValue = inputValue.value
+  inputValue.value = newValue
+
+  if (oldValue !== newValue) {
+    emit('update:modelValue', newValue)
+    emit('change', newValue)
   }
-  return value
 }
 
-// 验证并限制数值范围
-const validateValue = (value: number): number => {
-  if (isNaN(value)) return props.min ?? 0
-  if (value < props.min) return props.min
-  if (value > props.max) return props.max
-  return formatValue(value)
+const handleInput = (e: Event) => {
+  const value = (e.target as HTMLInputElement).value
+  if (value === '') {
+    updateValue(0)
+    return
+  }
+
+  const numValue = Number(value)
+  if (!isNaN(numValue)) {
+    updateValue(Math.min(Math.max(numValue, props.min), props.max))
+  }
 }
 
-// 处理输入变化
-const handleInput = (event: Event) => {
-  const value = Number((event.target as HTMLInputElement).value)
-  const validValue = validateValue(value)
-  inputValue.value = validValue
-  emit('update:modelValue', validValue)
-  emit('change', validValue)
-}
-
-// 增加值
-const increase = () => {
-  if (props.disabled) return
-  const newValue = validateValue(inputValue.value + props.step)
-  inputValue.value = newValue
-  emit('update:modelValue', newValue)
-  emit('change', newValue)
-}
-
-// 减少值
-const decrease = () => {
-  if (props.disabled) return
-  const newValue = validateValue(inputValue.value - props.step)
-  inputValue.value = newValue
-  emit('update:modelValue', newValue)
-  emit('change', newValue)
-}
-
-// 计算是否禁用增加按钮
-const isIncreaseDisabled = computed(() => {
-  return props.disabled || inputValue.value >= props.max
-})
-
-// 计算是否禁用减少按钮
-const isDecreaseDisabled = computed(() => {
-  return props.disabled || inputValue.value <= props.min
-})
+watch(
+  () => props.modelValue,
+  (val) => {
+    inputValue.value = val
+  },
+)
 </script>
 
 <template>
-  <div class="ver-input-number" :class="{ 'is-disabled': disabled }">
+  <div class="input-number">
+    <button
+      class="input-number__decrease"
+      :disabled="disabled || inputValue <= min"
+      @click="decrement"
+    >
+      -
+    </button>
+
     <input
-      type="number"
-      :value="inputValue"
+      ref="inputRef"
+      class="input-number__input"
+      type="text"
+      :value="displayValue"
       :disabled="disabled"
-      :placeholder="placeholder"
-      class="ver-input-number__input"
       @input="handleInput"
     />
-    <div v-if="controls" class="ver-input-number__controls">
-      <button
-        type="button"
-        class="ver-input-number__increase"
-        :class="{ 'is-disabled': isIncreaseDisabled }"
-        @click="increase"
-        :disabled="isIncreaseDisabled"
-      >
-        +
-      </button>
-      <button
-        type="button"
-        class="ver-input-number__decrease"
-        :class="{ 'is-disabled': isDecreaseDisabled }"
-        @click="decrease"
-        :disabled="isDecreaseDisabled"
-      >
-        -
-      </button>
-    </div>
+
+    <button
+      class="input-number__increase"
+      :disabled="disabled || inputValue >= max"
+      @click="increment"
+    >
+      +
+    </button>
   </div>
 </template>
 
-<style scoped>
-@import url('../style/index.css');
+<style lang="css" scoped>
+.input-number {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #dcdfe6;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.input-number__input {
+  width: 60px;
+  height: 32px;
+  padding: 0 8px;
+  border: none;
+  border-left: 1px solid #dcdfe6;
+  border-right: 1px solid #dcdfe6;
+  text-align: center;
+  outline: none;
+}
+
+.input-number__input:disabled {
+  background-color: #f5f7fa;
+  cursor: not-allowed;
+}
+
+.input-number__decrease,
+.input-number__increase {
+  width: 32px;
+  height: 32px;
+  background: #f5f7fa;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  color: #606266;
+}
+
+.input-number__decrease:disabled,
+.input-number__increase:disabled {
+  color: #c0c4cc;
+  cursor: not-allowed;
+}
+
+.input-number__decrease {
+  border-right: 1px solid #dcdfe6;
+}
+
+.input-number__increase {
+  border-left: 1px solid #dcdfe6;
+}
 </style>

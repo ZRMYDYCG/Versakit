@@ -46,6 +46,7 @@ import { VerSplitter } from './components/splitter/index'
 import { VerNoticeBar } from './components/noticebar/index'
 import { VerColorPicker } from './components/colorpicker/index'
 import { VerInputNumber } from './components/inputnumber/index'
+import { VerDataPicker } from './components/datapicker/index'
 
 // 层级组件
 import { VerCarousel, VerCarouselItem } from './components/carousel/index'
@@ -64,6 +65,7 @@ import { vRipple, vIncrease } from './directives/index'
 import './style/index.css'
 
 const components: Component[] = [
+  VerDataPicker,
   VerInputNumber,
   VerAvatarGroup,
   VerStepItem,
@@ -126,6 +128,7 @@ const components: Component[] = [
   VerColorPicker,
 ]
 export {
+  VerDataPicker,
   VerInputNumber,
   VerAvatarGroup,
   VerStepItem,

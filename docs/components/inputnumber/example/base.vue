@@ -2,35 +2,35 @@
 import { ref } from 'vue'
 import { VerInputNumber } from '@versakit/ui'
 
-const value1 = ref(1)
-const value2 = ref(1)
-const value3 = ref(5)
+const numberValue = ref(1)
+const decimalValue = ref(0.5)
 </script>
 
 <template>
-  <div class="demo-input-number">
-    <p>基础用法：</p>
-    <VerInputNumber v-model="value1" />
+  <div class="example-box">
+    <h3>整数输入示例</h3>
+    <VerInputNumber v-model="numberValue" :min="0" :max="10" :step="1" />
+    <div>当前值: {{ numberValue }}</div>
+  </div>
 
-    <p>禁用状态：</p>
-    <VerInputNumber v-model="value2" disabled />
-
-    <p>限制范围与步长：</p>
+  <div class="example-box">
+    <h3>小数输入示例</h3>
     <VerInputNumber
-      v-model="value3"
+      v-model="decimalValue"
       :min="0"
-      :max="10"
-      :step="2"
+      :max="1"
+      :step="0.1"
       :precision="1"
-      placeholder="请输入"
     />
+    <div>当前值: {{ decimalValue }}</div>
   </div>
 </template>
 
 <style scoped>
-.demo-input-number {
-  p {
-    margin: 20px 0 5px;
-  }
+.example-box {
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid #eee;
+  border-radius: 8px;
 }
 </style>
