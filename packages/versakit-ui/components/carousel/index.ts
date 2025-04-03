@@ -1,4 +1,4 @@
-import { withInstall } from '@versakit/shared'
+import { withInstall } from '../../utils/withinstall'
 import Carousel from './src/index.vue'
 import CarouselItem from './src/item.vue'
 

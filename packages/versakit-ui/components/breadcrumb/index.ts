@@ -1,4 +1,4 @@
-import { withInstall } from '@versakit/shared'
+import { withInstall } from '../../utils/withinstall'
 import Breadcrumb from './src/index.vue'
 import BreadcrumbItem from './src/item.vue'
 

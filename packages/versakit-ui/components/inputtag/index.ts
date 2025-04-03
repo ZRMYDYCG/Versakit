@@ -1,4 +1,4 @@
-import { withInstall } from '@versakit/shared'
+import { withInstall } from '../../utils/withinstall'
 import InputTag from './src/index.vue'
 
 const VerInputTag = withInstall(InputTag)

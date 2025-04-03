@@ -11,6 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "@iconify/vue": "^4.3.0",
-    "@versakit/shared": "workspace:*"
+    "../../utils/withinstall": "workspace:*"
   }
 }

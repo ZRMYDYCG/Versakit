@@ -1,5 +1,5 @@
 import Header from './src/index.vue'
-import { withInstall } from '@versakit/shared'
+import { withInstall } from '../../utils/withinstall'
 
 const VerHeader = withInstall(Header)
 
