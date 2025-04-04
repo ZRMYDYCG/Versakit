@@ -234,6 +234,7 @@ importers:
       '@iconify/vue':
         specifier: ^4.3.0
         version: 4.3.0(vue@3.5.13(typescript@5.7.2))
+    devDependencies:
       '@versakit/shared':
         specifier: workspace:*
         version: link:../versakit-shared
@@ -264,10 +265,11 @@ importers:
         version: 'link:'
 
   packages/versakit-ui:
-    dependencies:
+    devDependencies:
       '@popperjs/core':
         specifier: ^2.11.8
         version: 2.11.8
+<<<<<<< HEAD
       '@versakit/icons':
         specifier: workspace:*
         version: link:../versakit-icons
@@ -275,9 +277,17 @@ importers:
         specifier: workspace:*
         version: link:../versakit-shared
     devDependencies:
+=======
+>>>>>>> 833e0319ca4a546b691f2949e6d9937370e8a2e3
       '@types/postcss-mixins':
         specifier: ^9.0.6
         version: 9.0.6
+      '@versakit/icons':
+        specifier: workspace:*
+        version: link:../versakit-icons
+      '@versakit/shared':
+        specifier: workspace:*
+        version: link:../versakit-shared
       postcss-magic:
         specifier: ^0.0.2
         version: 0.0.2
