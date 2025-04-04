@@ -10,7 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@iconify/vue": "^4.3.0",
-    "../../utils/withinstall": "workspace:*"
+    "@iconify/vue": "^4.3.0"
+  },
+  "devDependencies": {
+    "@versakit/shared": "workspace:*"
   }
 }
