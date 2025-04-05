@@ -69,6 +69,7 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
           text: 'Tab 标签页',
           link: '/components/tab/',
         },
+        { text: 'Dropdown 下拉菜单', link: '/components/dropdown/' },
       ],
     },
     {

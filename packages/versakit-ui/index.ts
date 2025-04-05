@@ -1,5 +1,6 @@
 import type { App, Component } from 'vue'
 import { installTheme } from './core/theme'
+import { version } from './package.json'
 
 // 基础组件
 import { VerButton } from './components/button/index'
@@ -58,6 +59,10 @@ import { VerDescriptions, VerDescriptionsItem } from './components/descriptions'
 import { VerCheckbox, VerCheckboxGroup } from './components/checkbox/index'
 import { VerStepItem, VerSteps } from './components/steps/index'
 import { VerAvatar, VerAvatarGroup } from './components/avatar/index'
+import {
+  VerDropdownMenu,
+  VerDropdownMenuItem,
+} from './components/dropdown/index'
 
 // 指令
 import { vRipple, vIncrease } from './directives/index'
@@ -66,6 +71,8 @@ import { vRipple, vIncrease } from './directives/index'
 import './style/index.css'
 
 const components: Component[] = [
+  VerDropdownMenu,
+  VerDropdownMenuItem,
   VerDataPicker,
   VerInputNumber,
   VerAvatarGroup,
@@ -131,6 +138,8 @@ const components: Component[] = [
   VerColorPicker,
 ]
 export {
+  VerDropdownMenu,
+  VerDropdownMenuItem,
   VerDataPicker,
   VerInputNumber,
   VerAvatarGroup,
@@ -207,6 +216,15 @@ type VersakitOptions = {
 }
 
 const Versakit = {
+  version,
+
+  /**
+   * 安装方法
+   * @param app - Vue 应用实例
+   * @param options - 可选的配置项
+   * @param options.theme - 主题配置项
+   * @param options.theme.preset - 预设主题
+   */
   install: (app: App, options?: VersakitOptions) => {
     for (const c in components) {
       app.component(components[c]?.name || c, components[c])
@@ -221,4 +239,4 @@ const Versakit = {
   },
 }
 
-export { Versakit }
+export { Versakit, version }
