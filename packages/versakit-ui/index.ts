@@ -64,9 +64,6 @@ import {
   VerDropdownMenuItem,
 } from './components/dropdown/index'
 
-// 指令
-import { vRipple, vIncrease } from './directives/index'
-
 // 样式
 import './style/index.css'
 
@@ -229,9 +226,6 @@ const Versakit = {
     for (const c in components) {
       app.component(components[c]?.name || c, components[c])
     }
-
-    app.directive('ripple', vRipple)
-    app.directive('increase', vIncrease)
 
     if (options?.theme) {
       installTheme(options.theme)

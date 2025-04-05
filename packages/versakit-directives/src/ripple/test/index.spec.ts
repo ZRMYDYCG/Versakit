@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import { vRipple } from './index'
+import { vRipple } from '../index'
 
 describe('vRipple directive', () => {
   it('should create ripple element on click', async () => {
