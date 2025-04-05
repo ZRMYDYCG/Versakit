@@ -1,4 +1,4 @@
-import { withInstall } from '../../utils/withinstall'
+import { withInstall } from '@versakit/shared'
 import checkbox from './src/index.vue'
 import group from './src/group.vue'
 

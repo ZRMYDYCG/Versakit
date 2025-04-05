@@ -1,4 +1,4 @@
-import { withInstall } from '../../utils/withinstall'
+import { withInstall } from '@versakit/shared'
 import Slider from './src/index.vue'
 
 const VerSlider = withInstall(Slider)

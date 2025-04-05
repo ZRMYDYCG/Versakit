@@ -1,4 +1,4 @@
-import { withInstall } from '../../utils/withinstall'
+import { withInstall } from '@versakit/shared'
 import footer from './src/index.vue'
 
 const VerFooter = withInstall(footer)

@@ -1,4 +1,4 @@
-import { withInstall } from '../../utils/withinstall'
+import { withInstall } from '@versakit/shared'
 import Timeline from './src/index.vue'
 import TimeLineItem from './src/item.vue'
 

@@ -1,5 +1,5 @@
 import Textarea from './src/index.vue'
-import { withInstall } from '../../utils/withinstall'
+import { withInstall } from '@versakit/shared'
 
 const VerTextarea = withInstall(Textarea)
 
