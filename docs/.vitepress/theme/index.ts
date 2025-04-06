@@ -7,7 +7,7 @@ import 'virtual:group-icons.css'
 
 // 引入组件库
 import { Versakit } from '@versakit/ui'
-import '@versakit/ui/dist/ui.css'
+import '@versakit/ui/dist/esm/ui.css'
 import { Element, Layui } from '@versakit/theme'
 
 export default {
