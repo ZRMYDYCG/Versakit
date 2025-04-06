@@ -5,7 +5,7 @@
   "private": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "main": "./dist/esm/ui.js",
+  "main": "./dist/ui.js",
   "style": "./dist/esm/ui.css",
   "unpkg": "./dist/umd/index.umd.js",
   "module": "./dist/esm/index.esm.js",
