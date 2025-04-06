@@ -65,11 +65,14 @@ import {
   VerDropdownMenu,
   VerDropdownMenuItem,
 } from './components/dropdown/index'
+import { VerUpload, VerUploadDragger } from './components/upload/index'
 
 // 样式
 import './style/index.css'
 
 const components: Component[] = [
+  VerUpload,
+  VerUploadDragger,
   VerTimeSelect,
   VerTimePicker,
   VerDateTimePicker,
@@ -140,6 +143,8 @@ const components: Component[] = [
   VerColorPicker,
 ]
 export {
+  VerUpload,
+  VerUploadDragger,
   VerTimeSelect,
   VerTimePicker,
   VerDateTimePicker,

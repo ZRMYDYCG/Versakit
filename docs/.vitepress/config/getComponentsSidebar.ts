@@ -49,6 +49,10 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
           text: 'Color Picker 取色器',
           link: '/components/colorpicker/',
         },
+        {
+          text: 'Upload 上传',
+          link: '/components/upload/',
+        },
       ],
     },
     {
