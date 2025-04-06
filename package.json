@@ -25,7 +25,10 @@
     "lint:eslint": "eslint packages/**/*.{ts,vue} --cache --fix",
     "prepare": "husky install",
     "lint-staged": "lint-staged",
-    "commitlint": "commitlint --config commitlint.config.cjs -e -V"
+    "commitlint": "commitlint --config commitlint.config.cjs -e -V",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "turbo run build && changeset publish"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,vue}": [
@@ -39,11 +42,11 @@
   },
   "dependencies": {
     "eslint": "8",
-    "versakit-monorepo": "file:",
     "vue": "^3.5.12"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.25.9",
+    "@changesets/cli": "^2.28.1",
     "@commitlint/cli": "^19.6.0",
     "@commitlint/config-conventional": "^19.6.0",
     "@tsconfig/node22": "^22.0.0",
