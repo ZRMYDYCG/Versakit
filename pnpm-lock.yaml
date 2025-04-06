@@ -229,6 +229,8 @@ importers:
         specifier: ^7.7.1
         version: 7.7.2(rollup@4.34.8)(vite@6.1.1(@types/node@22.13.4)(jiti@2.4.2)(lightningcss@1.29.1)(sass@1.85.0)(sugarss@4.0.1(postcss@8.5.3))(tsx@4.19.3)(yaml@2.7.0))(vue@3.5.13(typescript@5.7.2))
 
+  packages/versakit-directives: {}
+
   packages/versakit-icons:
     dependencies:
       '@iconify/vue':
@@ -269,16 +271,6 @@ importers:
       '@popperjs/core':
         specifier: ^2.11.8
         version: 2.11.8
-<<<<<<< HEAD
-      '@versakit/icons':
-        specifier: workspace:*
-        version: link:../versakit-icons
-      '@versakit/shared':
-        specifier: workspace:*
-        version: link:../versakit-shared
-    devDependencies:
-=======
->>>>>>> 833e0319ca4a546b691f2949e6d9937370e8a2e3
       '@types/postcss-mixins':
         specifier: ^9.0.6
         version: 9.0.6

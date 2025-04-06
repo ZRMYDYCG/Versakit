@@ -18,7 +18,6 @@
 
           <div class="start-box">
             <VerButton
-              v-ripple
               @click="navigate('/Versakit/guide/versakit/')"
               type="primary"
               variant="round"
