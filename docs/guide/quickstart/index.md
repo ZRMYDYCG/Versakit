@@ -8,7 +8,7 @@
 // main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import Versakit from '@versakit/ui' // 引入组件库
+import { Versakit } from '@versakit/ui' // 引入组件库
 import '@versakit/ui/dist/ui.css' // 引入样式
 
 const app = createApp(App)
@@ -37,14 +37,14 @@ import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import { VersakitResolver } from '@versakit/resolvers'
 export default defineConfig({
-  plugins: [
-    vue(),
-    AutoImport({
-      resolvers: [VersakitResolver()],
-    }),
-    Components({
-      resolvers: [VersakitResolver()],
-    }),
-  ],
+	plugins: [
+		vue(),
+		AutoImport({
+			resolvers: [VersakitResolver()],
+		}),
+		Components({
+			resolvers: [VersakitResolver()],
+		}),
+	],
 })
 ```

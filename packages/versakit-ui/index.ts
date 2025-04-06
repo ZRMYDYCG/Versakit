@@ -48,7 +48,9 @@ import { VerNoticeBar } from './components/noticebar/index'
 import { VerColorPicker } from './components/colorpicker/index'
 import { VerInputNumber } from './components/inputnumber/index'
 import { VerDataPicker } from './components/datapicker/index'
-
+import { VerDateTimePicker } from './components/datetimepicker/index'
+import { VerTimePicker } from './components/timepicker/index'
+import { VerTimeSelect } from './components/timeselect/index'
 // 层级组件
 import { VerCarousel, VerCarouselItem } from './components/carousel/index'
 import { VerCollapse, VerCollapseItem } from './components/collapse/index'
@@ -68,6 +70,9 @@ import {
 import './style/index.css'
 
 const components: Component[] = [
+  VerTimeSelect,
+  VerTimePicker,
+  VerDateTimePicker,
   VerDropdownMenu,
   VerDropdownMenuItem,
   VerDataPicker,
@@ -135,6 +140,9 @@ const components: Component[] = [
   VerColorPicker,
 ]
 export {
+  VerTimeSelect,
+  VerTimePicker,
+  VerDateTimePicker,
   VerDropdownMenu,
   VerDropdownMenuItem,
   VerDataPicker,

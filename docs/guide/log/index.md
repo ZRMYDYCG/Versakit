@@ -4,7 +4,11 @@
 
 - 🛠&nbsp;组件 bugs 修复
 - 🛠&nbsp;组件样式 bugs 修复
-- ✨&nbsp;新增Dropdown 下拉菜单组件
+- ✨&nbsp;新增 Dropdown 下拉菜单组件
+- ✨&nbsp;新增 DateTime Picker 日期时间选择器
+- ✨&nbsp;新增 Time Picker 时间选择器
+- ✨&nbsp;新增 Time Select 时间选择
+- ✨&nbsp;新增 Color Picker 取色器
 
 ## 0.3.4
 
