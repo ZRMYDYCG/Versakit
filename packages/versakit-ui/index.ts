@@ -1,5 +1,6 @@
 import type { App, Component } from 'vue'
 import { installTheme } from './core/theme'
+import { version } from './package.json'
 
 // 基础组件
 import { VerButton } from './components/button/index'
@@ -47,7 +48,9 @@ import { VerNoticeBar } from './components/noticebar/index'
 import { VerColorPicker } from './components/colorpicker/index'
 import { VerInputNumber } from './components/inputnumber/index'
 import { VerDataPicker } from './components/datapicker/index'
-
+import { VerDateTimePicker } from './components/datetimepicker/index'
+import { VerTimePicker } from './components/timepicker/index'
+import { VerTimeSelect } from './components/timeselect/index'
 // 层级组件
 import { VerCarousel, VerCarouselItem } from './components/carousel/index'
 import { VerCollapse, VerCollapseItem } from './components/collapse/index'
@@ -58,14 +61,20 @@ import { VerDescriptions, VerDescriptionsItem } from './components/descriptions'
 import { VerCheckbox, VerCheckboxGroup } from './components/checkbox/index'
 import { VerStepItem, VerSteps } from './components/steps/index'
 import { VerAvatar, VerAvatarGroup } from './components/avatar/index'
-
-// 指令
-import { vRipple, vIncrease } from './directives/index'
+import {
+  VerDropdownMenu,
+  VerDropdownMenuItem,
+} from './components/dropdown/index'
 
 // 样式
 import './style/index.css'
 
 const components: Component[] = [
+  VerTimeSelect,
+  VerTimePicker,
+  VerDateTimePicker,
+  VerDropdownMenu,
+  VerDropdownMenuItem,
   VerDataPicker,
   VerInputNumber,
   VerAvatarGroup,
@@ -131,6 +140,11 @@ const components: Component[] = [
   VerColorPicker,
 ]
 export {
+  VerTimeSelect,
+  VerTimePicker,
+  VerDateTimePicker,
+  VerDropdownMenu,
+  VerDropdownMenuItem,
   VerDataPicker,
   VerInputNumber,
   VerAvatarGroup,
@@ -207,13 +221,19 @@ type VersakitOptions = {
 }
 
 const Versakit = {
+  version,
+
+  /**
+   * 安装方法
+   * @param app - Vue 应用实例
+   * @param options - 可选的配置项
+   * @param options.theme - 主题配置项
+   * @param options.theme.preset - 预设主题
+   */
   install: (app: App, options?: VersakitOptions) => {
     for (const c in components) {
       app.component(components[c]?.name || c, components[c])
     }
-
-    app.directive('ripple', vRipple)
-    app.directive('increase', vIncrease)
 
     if (options?.theme) {
       installTheme(options.theme)
@@ -221,4 +241,4 @@ const Versakit = {
   },
 }
 
-export { Versakit }
+export { Versakit, version }

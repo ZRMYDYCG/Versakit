@@ -1,6 +1,6 @@
 {
   "name": "@versakit/ui",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "author": "Jannik",
   "private": false,
   "type": "module",
@@ -36,14 +36,14 @@
     "type-check": "vue-tsc --build --force"
   },
   "devDependencies": {
+    "@popperjs/core": "^2.11.8",
     "@types/postcss-mixins": "^9.0.6",
+    "@versakit/icons": "workspace:*",
+    "@versakit/shared": "workspace:*",
+    "@vueuse/core": "^13.0.0",
     "postcss-magic": "^0.0.2",
     "postcss-mixins": "^11.0.3",
     "postcss-nested": "^7.0.2",
-    "rollup-plugin-visualizer": "^5.14.0",
-    "@versakit/shared": "workspace:*",
-    "@versakit/icons": "workspace:*",
-    "@popperjs/core": "^2.11.8"
-  },
-  "dependencies": {}
+    "rollup-plugin-visualizer": "^5.14.0"
+  }
 }

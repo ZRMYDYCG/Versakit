@@ -33,6 +33,22 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'Rate 评分', link: '/components/rate/' },
         { text: 'Input Number 数字输入框', link: '/components/inputnumber/' },
         { text: 'Date Picker 日期选择器', link: '/components/datepicker/' },
+        {
+          text: 'DateTime Picker 日期时间选择器',
+          link: '/components/datetimepicker/',
+        },
+        {
+          text: 'Time Picker 时间选择器',
+          link: '/components/timepicker/',
+        },
+        {
+          text: 'Time Select 时间选择器',
+          link: '/components/timeselect/',
+        },
+        {
+          text: 'Color Picker 取色器',
+          link: '/components/colorpicker/',
+        },
       ],
     },
     {
@@ -69,6 +85,7 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
           text: 'Tab 标签页',
           link: '/components/tab/',
         },
+        { text: 'Dropdown 下拉菜单', link: '/components/dropdown/' },
       ],
     },
     {

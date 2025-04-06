@@ -1,4 +1,4 @@
-import { withInstall } from '../../utils/withinstall'
+import { withInstall } from '@versakit/shared'
 import Result from './src/index.vue'
 
 const VerResult = withInstall(Result)
