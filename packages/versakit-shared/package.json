@@ -7,6 +7,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "build": "echo \"No build step needed for shared package\"",
+    "lint": "eslint --ext .ts .",
+    "lint:fix": "eslint --ext .ts . --fix",
+    "clean": "echo \"No clean step needed\""
+  },
   "peerDependencies": {
     "vue": "^3.0.0"
   }
