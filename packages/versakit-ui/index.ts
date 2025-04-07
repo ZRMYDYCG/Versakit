@@ -52,6 +52,7 @@ import { VerDateTimePicker } from './components/datetimepicker/index'
 import { VerTimePicker } from './components/timepicker/index'
 import { VerTimeSelect } from './components/timeselect/index'
 import { VerPopover } from './components/popover/index'
+import { VerSelect } from './components/select/index'
 
 // 层级组件
 import { VerCarousel, VerCarouselItem } from './components/carousel/index'
@@ -73,6 +74,7 @@ import { VerUpload, VerUploadDragger } from './components/upload/index'
 import './style/index.css'
 
 const components: Component[] = [
+  VerSelect,
   VerPopover,
   VerUpload,
   VerUploadDragger,
@@ -146,6 +148,7 @@ const components: Component[] = [
   VerColorPicker,
 ]
 export {
+  VerSelect,
   VerPopover,
   VerUpload,
   VerUploadDragger,

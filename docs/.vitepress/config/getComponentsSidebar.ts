@@ -53,6 +53,10 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
           text: 'Upload 上传',
           link: '/components/upload/',
         },
+        {
+          text: 'Select 选择器',
+          link: '/components/select/',
+        },
       ],
     },
     {

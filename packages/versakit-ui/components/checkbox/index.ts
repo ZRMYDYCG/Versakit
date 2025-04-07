@@ -1,8 +1,10 @@
 import { withInstall } from '@versakit/shared'
-import checkbox from './src/index.vue'
-import group from './src/group.vue'
+import Checkbox from './src/index.vue'
+import CheckboxGroup from './src/group.vue'
 
-const VerCheckbox = withInstall(checkbox)
-const VerCheckboxGroup = withInstall(group)
+export const VerCheckbox = withInstall(Checkbox)
+export const VerCheckboxGroup = withInstall(CheckboxGroup)
 
-export { VerCheckbox, VerCheckboxGroup }
+export default VerCheckbox
+
+export * from './type'

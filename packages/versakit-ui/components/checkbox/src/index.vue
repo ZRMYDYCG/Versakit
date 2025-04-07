@@ -1,18 +1,13 @@
 <script setup lang="ts">
 import { computed, inject } from 'vue'
-import type { CheckoutProps } from '../type/index.ts'
-
-// Add this interface
-interface CheckboxGroup {
-  modelValue: string[]
-  onChange: (value: string[]) => void
-}
+import type { CheckboxProps, CheckboxGroupContext } from '../type'
 
 defineOptions({
   name: 'VerCheckbox',
 })
 
-const props = withDefaults(defineProps<CheckoutProps>(), {
+const props = withDefaults(defineProps<CheckboxProps>(), {
+  modelValue: false,
   disabled: false,
   indeterminate: false,
 })
@@ -22,9 +17,10 @@ const emit = defineEmits<{
   change: [value: boolean | string[]]
 }>()
 
-// Specify the type when injecting
-const checkboxGroup = inject<CheckboxGroup | null>('checkboxGroup', null)
+// 注入 CheckboxGroup 上下文
+const checkboxGroup = inject<CheckboxGroupContext | null>('checkboxGroup', null)
 
+// 计算是否选中
 const isChecked = computed(() => {
   if (checkboxGroup) {
     return checkboxGroup.modelValue.includes(props.value as string)
@@ -32,14 +28,24 @@ const isChecked = computed(() => {
   return props.modelValue as boolean
 })
 
+// 计算是否禁用
+const isDisabled = computed(() => {
+  return props.disabled || (checkboxGroup?.disabled ?? false)
+})
+
+// 处理变更事件
 const handleChange = (e: Event) => {
   const target = e.target as HTMLInputElement
+
   if (checkboxGroup) {
+    // 在 CheckboxGroup 中的处理逻辑
     const groupValue = [...checkboxGroup.modelValue]
     const value = props.value as string
 
     if (target.checked) {
-      groupValue.push(value)
+      if (!groupValue.includes(value)) {
+        groupValue.push(value)
+      }
     } else {
       const index = groupValue.indexOf(value)
       if (index > -1) {
@@ -49,6 +55,7 @@ const handleChange = (e: Event) => {
 
     checkboxGroup.onChange(groupValue)
   } else {
+    // 独立 Checkbox 的处理逻辑
     emit('update:modelValue', target.checked)
     emit('change', target.checked)
   }
@@ -57,117 +64,30 @@ const handleChange = (e: Event) => {
 
 <template>
   <label
-    class="checkbox"
+    class="ver-checkbox"
     :class="{
       'is-checked': isChecked,
-      'is-disabled': disabled,
+      'is-disabled': isDisabled,
       'is-indeterminate': indeterminate,
     }"
   >
-    <span class="checkbox-input">
+    <span class="ver-checkbox__input">
       <input
         type="checkbox"
         :checked="isChecked"
-        :disabled="disabled"
+        :disabled="isDisabled"
         :name="name"
+        :value="value"
         @change="handleChange"
       />
-      <span class="checkbox-inner"></span>
+      <span class="ver-checkbox__inner"></span>
     </span>
-    <span v-if="label || $slots.default" class="checkbox-label">
+    <span v-if="label || $slots.default" class="ver-checkbox__label">
       <slot>{{ label }}</slot>
     </span>
   </label>
 </template>
 
-<style scoped>
-.checkbox {
-  display: inline-flex;
-  align-items: center;
-  cursor: pointer;
-  font-size: 14px;
-  margin-right: 16px;
-  user-select: none;
-}
-
-.checkbox.is-disabled {
-  cursor: not-allowed;
-  opacity: 0.6;
-}
-
-.checkbox-input {
-  position: relative;
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-}
-
-.checkbox-input input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-}
-
-.checkbox.is-disabled .checkbox-input input {
-  cursor: not-allowed;
-}
-
-.checkbox-inner {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 16px;
-  height: 16px;
-  border: 1px solid #d9d9d9;
-  border-radius: 2px;
-  background-color: #fff;
-  transition: all 0.3s;
-}
-
-.checkbox-inner::after {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 8px;
-  height: 8px;
-  border: 2px solid #fff;
-  border-top: 0;
-  border-left: 0;
-  transform: rotate(15deg) scale(0);
-  transition: all 0.2s;
-}
-
-.checkbox.is-checked .checkbox-inner {
-  background-color: var(--theme-primary-500, var(--ver-primary-500));
-  border-color: var(--theme-primary-500, var(--ver-primary-500));
-}
-
-.checkbox.is-checked .checkbox-inner::after {
-  transform: rotate(30deg) scale(1);
-}
-
-.checkbox.is-indeterminate .checkbox-inner::after {
-  top: 7px;
-  left: 3px;
-  width: 8px;
-  height: 0;
-  border: 1px solid #fff;
-  border-top: 0;
-  border-left: 0;
-  transform: scale(1);
-}
-
-.checkbox-label {
-  padding-left: 8px;
-  line-height: 1;
-}
-
-.checkbox:hover:not(.is-disabled) .checkbox-inner {
-  border-color: var(--theme-primary-500, var(--ver-primary-500));
-}
+<style>
+@import '../style/index.css';
 </style>
