@@ -3,6 +3,7 @@
   "version": "0.3.6",
   "description": "",
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "scripts": {
     "dev": "tsup index.ts --dts --format cjs,esm --watch --ignore-watch examples",
     "build": "npx rimraf dist && tsup index.ts --dts --format cjs,esm",
