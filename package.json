@@ -28,7 +28,7 @@
     "commitlint": "commitlint --config commitlint.config.cjs -e -V",
     "changeset": "changeset",
     "version": "changeset version",
-    "release": "turbo run build && changeset publish"
+    "release": "changeset publish"
   },
   "lint-staged": {
     "**/*.{js,jsx,ts,tsx,vue}": [
