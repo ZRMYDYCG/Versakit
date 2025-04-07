@@ -123,6 +123,10 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
           text: 'Empty 无内容',
           link: '/components/empty/',
         },
+        {
+          text: 'Popover 弹出框',
+          link: '/components/popover/',
+        },
       ],
     },
   ]
