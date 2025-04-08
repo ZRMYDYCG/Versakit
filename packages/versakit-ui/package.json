@@ -1,6 +1,6 @@
 {
   "name": "@versakit/ui",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "author": "Jannik",
   "private": false,
   "type": "module",
@@ -33,7 +33,10 @@
   "scripts": {
     "build-only": "run-p type-check \"build-only {@}\" --",
     "build": "vite build",
-    "type-check": "vue-tsc --build --force"
+    "type-check": "vue-tsc --build --force",
+    "lint": "eslint --ext .ts,.vue .",
+    "lint:fix": "eslint --ext .ts,.vue . --fix",
+    "clean": "rimraf dist"
   },
   "devDependencies": {
     "@popperjs/core": "^2.11.8",

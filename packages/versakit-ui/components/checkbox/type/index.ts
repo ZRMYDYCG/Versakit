@@ -1,4 +1,4 @@
-export interface CheckoutProps {
+export interface CheckboxProps {
   modelValue?: boolean | string[]
   label?: string
   disabled?: boolean
@@ -7,7 +7,13 @@ export interface CheckoutProps {
   name?: string
 }
 
-export interface CheckoutGroupProps {
+export interface CheckboxGroupProps {
   modelValue: string[]
   disabled?: boolean
+}
+
+export interface CheckboxGroupContext {
+  modelValue: string[]
+  disabled?: boolean
+  onChange: (value: string[]) => void
 }

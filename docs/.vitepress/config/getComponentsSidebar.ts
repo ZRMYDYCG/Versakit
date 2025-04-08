@@ -49,6 +49,14 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
           text: 'Color Picker 取色器',
           link: '/components/colorpicker/',
         },
+        {
+          text: 'Upload 上传',
+          link: '/components/upload/',
+        },
+        {
+          text: 'Select 选择器',
+          link: '/components/select/',
+        },
       ],
     },
     {
@@ -118,6 +126,10 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         {
           text: 'Empty 无内容',
           link: '/components/empty/',
+        },
+        {
+          text: 'Popover 弹出框',
+          link: '/components/popover/',
         },
       ],
     },

@@ -9,12 +9,14 @@
   },
   "keywords": [],
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "lint": "eslint --ext .js,.ts .",
+    "lint:fix": "eslint --ext .js,.ts . --fix",
+    "clean": "rimraf dist"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@versakit/cli": "file:",
     "colors": "^1.4.0",
     "commander": "^12.1.0",
     "figlet": "^1.8.0",

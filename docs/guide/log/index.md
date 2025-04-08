@@ -1,5 +1,15 @@
 # 更新日志
 
+## 0.3.6
+
+- 🛠&nbsp;组件 bugs 修复
+- 🛠&nbsp;组件样式 bugs 修复
+- ✨&nbsp;重构 Steps 步骤条
+- ✨&nbsp;重构 Checkbox 多选框
+- ✨&nbsp;新增Upload 上传
+- ✨&nbsp;新增Popover 弹出框
+- ✨&nbsp;新增Select 选择器
+
 ## 0.3.5
 
 - 🛠&nbsp;组件 bugs 修复

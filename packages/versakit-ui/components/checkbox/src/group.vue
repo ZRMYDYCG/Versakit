@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { provide } from 'vue'
-import type { CheckoutGroupProps } from '../type/index.ts'
+import type { CheckboxGroupProps, CheckboxGroupContext } from '../type'
 
 defineOptions({
   name: 'VerCheckboxGroup',
 })
 
-const props = withDefaults(defineProps<CheckoutGroupProps>(), {
+const props = withDefaults(defineProps<CheckboxGroupProps>(), {
   disabled: false,
 })
 
@@ -20,7 +20,7 @@ const onChange = (value: string[]) => {
   emit('change', value)
 }
 
-provide('checkboxGroup', {
+provide<CheckboxGroupContext>('checkboxGroup', {
   modelValue: props.modelValue,
   disabled: props.disabled,
   onChange,
@@ -28,15 +28,11 @@ provide('checkboxGroup', {
 </script>
 
 <template>
-  <div class="checkbox-group">
+  <div class="ver-checkbox-group">
     <slot></slot>
   </div>
 </template>
 
-<style scoped>
-.checkbox-group {
-  display: inline-flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
+<style>
+@import '../style/index.css';
 </style>
