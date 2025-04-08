@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import panel from './src/index.vue'
 
-const VerPanel = withInstall(panel)
+const VKPanel = withInstall(panel)
 
-export { VerPanel }
+export { VKPanel }

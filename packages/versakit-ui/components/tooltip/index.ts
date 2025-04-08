@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import Tooltip from './src/index.vue'
 
-const VerTooltip = withInstall(Tooltip)
+const VKTooltip = withInstall(Tooltip)
 
-export { VerTooltip }
+export { VKTooltip }

@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import Result from './src/index.vue'
 
-const VerResult = withInstall(Result)
+const VKResult = withInstall(Result)
 
-export { VerResult }
+export { VKResult }

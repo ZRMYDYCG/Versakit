@@ -1,6 +1,6 @@
 import Col from './src/index.vue'
 import { withInstall } from '@versakit/shared'
 
-const VerCol = withInstall(Col)
+const VKCol = withInstall(Col)
 
-export { VerCol }
+export { VKCol }

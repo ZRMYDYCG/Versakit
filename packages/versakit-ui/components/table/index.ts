@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import Table from './src/index.vue'
 
-const VerTable = withInstall(Table)
+const VKTable = withInstall(Table)
 
-export { VerTable }
+export { VKTable }

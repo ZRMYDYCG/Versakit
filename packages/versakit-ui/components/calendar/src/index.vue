@@ -11,9 +11,7 @@
       :next-year="nextYear"
     >
       <div class="ver-calendar-header">
-        <VerButton type="primary" size="sm" @click="prevMonth">
-          上个月
-        </VerButton>
+        <VKButton type="primary" size="sm" @click="prevMonth">上个月</VKButton>
         <span class="ver-calendar-title">
           {{ currentYear }}年{{ currentMonth + 1 }}月
         </span>
@@ -58,7 +56,7 @@ import type {
   DateCell,
   DateCellData,
 } from '../type/index'
-import { VerButton } from '../../button/index'
+import { VKButton } from '../../button/index'
 
 defineOptions({ name: 'VerCalendar' })
 

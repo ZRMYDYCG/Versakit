@@ -1,6 +1,6 @@
 import Radio from './src/index.vue'
 import { withInstall } from '@versakit/shared'
 
-const VerRadio = withInstall(Radio)
+const VKRadio = withInstall(Radio)
 
-export { VerRadio }
+export { VKRadio }

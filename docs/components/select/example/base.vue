@@ -2,7 +2,7 @@
   <div class="select-demo">
     <h2>基础用法</h2>
     <div class="select-demo__row">
-      <ver-select
+      <VKSelect
         v-model="value"
         :options="options"
         placeholder="请选择"
@@ -12,7 +12,7 @@
 
     <h2>多选模式</h2>
     <div class="select-demo__row">
-      <ver-select
+      <VKSelect
         v-model="multipleValue"
         :options="options"
         multiple
@@ -24,7 +24,7 @@
 
     <h2>可搜索</h2>
     <div class="select-demo__row">
-      <ver-select
+      <VKSelect
         v-model="searchValue"
         :options="options"
         filterable
@@ -37,7 +37,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerSelect } from '@versakit/ui'
+import { VKSelect } from '@versakit/ui'
 
 const value = ref('')
 const multipleValue = ref<string[]>([])

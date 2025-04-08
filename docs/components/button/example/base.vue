@@ -1,43 +1,43 @@
 <script setup lang="ts">
-import { VerButton, VerRow } from '@versakit/ui'
+import { VKButton, VKRow } from '@versakit/ui'
 </script>
 
 <template>
-  <ver-row class="mb-4">
-    <ver-button type="primary">按 钮</ver-button>
-    <ver-button variant="round" type="primary">按 钮</ver-button>
-    <ver-button variant="ghost" type="primary">按 钮</ver-button>
-    <ver-button variant="ghost round" type="primary">按 钮</ver-button>
-  </ver-row>
+  <VKRow class="mb-4">
+    <VKButton type="primary">按 钮</VKButton>
+    <VKButton variant="round" type="primary">按 钮</VKButton>
+    <VKButton variant="ghost" type="primary">按 钮</VKButton>
+    <VKButton variant="ghost round" type="primary">按 钮</VKButton>
+  </VKRow>
 
-  <ver-row class="mb-4">
-    <ver-button type="error">按 钮</ver-button>
-    <ver-button variant="round" type="error">按 钮</ver-button>
-    <ver-button variant="ghost" type="error">按 钮</ver-button>
-    <ver-button variant="ghost round" type="error">按 钮</ver-button>
-  </ver-row>
+  <VKRow class="mb-4">
+    <VKButton type="error">按 钮</VKButton>
+    <VKButton variant="round" type="error">按 钮</VKButton>
+    <VKButton variant="ghost" type="error">按 钮</VKButton>
+    <VKButton variant="ghost round" type="error">按 钮</VKButton>
+  </VKRow>
 
-  <ver-row class="mb-4">
-    <ver-button type="success">按 钮</ver-button>
-    <ver-button variant="round" type="success">按 钮</ver-button>
+  <VKRow class="mb-4">
+    <VKButton type="success">按 钮</VKButton>
+    <VKButton variant="round" type="success">按 钮</VKButton>
 
-    <ver-button variant="ghost" type="success">按 钮</ver-button>
-    <ver-button variant="ghost round" type="success">按 钮</ver-button>
-  </ver-row>
+    <VKButton variant="ghost" type="success">按 钮</VKButton>
+    <VKButton variant="ghost round" type="success">按 钮</VKButton>
+  </VKRow>
 
-  <ver-row class="mb-4">
-    <ver-button type="info">按 钮</ver-button>
-    <ver-button variant="round" type="info">按 钮</ver-button>
-    <ver-button variant="ghost" type="info">按 钮</ver-button>
-    <ver-button variant="ghost round" type="info">按 钮</ver-button>
-  </ver-row>
+  <VKRow class="mb-4">
+    <VKButton type="info">按 钮</VKButton>
+    <VKButton variant="round" type="info">按 钮</VKButton>
+    <VKButton variant="ghost" type="info">按 钮</VKButton>
+    <VKButton variant="ghost round" type="info">按 钮</VKButton>
+  </VKRow>
 
-  <ver-row class="mb-4">
-    <ver-button type="warn">按 钮</ver-button>
-    <ver-button variant="round" type="warn">按 钮</ver-button>
-    <ver-button variant="ghost" type="warn">按 钮</ver-button>
-    <ver-button variant="ghost round" type="warn">按 钮</ver-button>
-  </ver-row>
+  <VKRow class="mb-4">
+    <VKButton type="warn">按 钮</VKButton>
+    <VKButton variant="round" type="warn">按 钮</VKButton>
+    <VKButton variant="ghost" type="warn">按 钮</VKButton>
+    <VKButton variant="ghost round" type="warn">按 钮</VKButton>
+  </VKRow>
 </template>
 
 <style scoped lang="scss">
@@ -47,7 +47,7 @@ import { VerButton, VerRow } from '@versakit/ui'
   margin-bottom: 1rem;
 }
 
-.ver-btn + .ver-btn {
+.vk-btn + .vk-btn {
   margin: 0px 6px;
 }
 </style>

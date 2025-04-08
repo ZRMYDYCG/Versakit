@@ -1,6 +1,6 @@
 import Text from './src/index.vue'
 import { withInstall } from '@versakit/shared'
 
-const VerText = withInstall(Text)
+const VKText = withInstall(Text)
 
-export { VerText }
+export { VKText }

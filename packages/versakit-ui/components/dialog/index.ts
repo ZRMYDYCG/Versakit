@@ -1,6 +1,6 @@
 import Dialog from './src/index.vue'
 import { withInstall } from '@versakit/shared'
 
-const VerDialog = withInstall(Dialog)
+const VKDialog = withInstall(Dialog)
 
-export { VerDialog }
+export { VKDialog }

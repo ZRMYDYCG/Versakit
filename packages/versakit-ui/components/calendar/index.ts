@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import Calendar from './src/index.vue'
 
-const VerCalendar = withInstall(Calendar)
+const VKCalendar = withInstall(Calendar)
 
-export { VerCalendar }
+export { VKCalendar }

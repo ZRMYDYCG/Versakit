@@ -2,11 +2,10 @@ import { withInstall } from '@versakit/shared'
 import Upload from './src/index.vue'
 import UploadDragger from './src/dragger.vue'
 
-const VerUpload = withInstall(Upload)
-const VerUploadDragger = withInstall(UploadDragger)
+const VKUpload = withInstall(Upload)
+const VKUploadDragger = withInstall(UploadDragger)
 
-export { VerUpload, VerUploadDragger }
-export type VerUploadProps = InstanceType<typeof Upload>['$props']
-export type VerUploadDraggerProps = InstanceType<typeof UploadDragger>['$props']
+export { VKUpload, VKUploadDragger }
 
-export default VerUpload
+export type VKUploadProps = InstanceType<typeof Upload>['$props']
+export type VKUploadDraggerProps = InstanceType<typeof UploadDragger>['$props']

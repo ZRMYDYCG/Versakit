@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import NoticeBar from './src/index.vue'
 
-const VerNoticeBar = withInstall(NoticeBar)
+const VKNoticeBar = withInstall(NoticeBar)
 
-export { VerNoticeBar }
+export { VKNoticeBar }

@@ -1,22 +1,22 @@
 <template>
   <section class="demo-section">
     <div class="demo-row">
-      <VerAvatar src="https://randomuser.me/api/portraits/men/1.jpg" />
-      <VerAvatar text="User" />
-      <VerAvatar backgroundColor="#f56a00">U</VerAvatar>
+      <VKAvatar src="https://randomuser.me/api/portraits/men/1.jpg" />
+      <VKAvatar text="User" />
+      <VKAvatar backgroundColor="#f56a00">U</VKAvatar>
     </div>
   </section>
 
   <section class="demo-section">
     <div class="demo-row">
-      <VerAvatar shape="circle" text="C" />
-      <VerAvatar shape="square" text="S" />
+      <VKAvatar shape="circle" text="C" />
+      <VKAvatar shape="square" text="S" />
     </div>
   </section>
 </template>
 
 <script lang="ts" setup>
-import { VerAvatar } from '@versakit/ui'
+import { VKAvatar } from '@versakit/ui'
 </script>
 
 <style scoped>

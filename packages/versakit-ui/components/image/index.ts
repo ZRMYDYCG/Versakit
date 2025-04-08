@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import Image from './src/index.vue'
 
-const VerImage = withInstall(Image)
+const VKImage = withInstall(Image)
 
-export { VerImage }
+export { VKImage }

@@ -1,6 +1,6 @@
 import Header from './src/index.vue'
 import { withInstall } from '@versakit/shared'
 
-const VerHeader = withInstall(Header)
+const VKHeader = withInstall(Header)
 
-export { VerHeader }
+export { VKHeader }

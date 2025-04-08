@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import footer from './src/index.vue'
 
-const VerFooter = withInstall(footer)
+const VKFooter = withInstall(footer)
 
-export { VerFooter }
+export { VKFooter }

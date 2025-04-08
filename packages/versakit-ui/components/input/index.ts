@@ -1,6 +1,6 @@
 import Input from './src/index.vue'
 import { withInstall } from '@versakit/shared'
 
-const VerInput = withInstall(Input)
+const VKInput = withInstall(Input)
 
-export { VerInput }
+export { VKInput }

@@ -1,6 +1,6 @@
 import Row from './src/index.vue'
 import { withInstall } from '@versakit/shared'
 
-const VerRow = withInstall(Row)
+const VKRow = withInstall(Row)
 
-export { VerRow }
+export { VKRow }
