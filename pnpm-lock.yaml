@@ -11,9 +11,6 @@ importers:
       eslint:
         specifier: '8'
         version: 8.57.1
-      versakit-monorepo:
-        specifier: 'file:'
-        version: file:(typescript@5.6.3)
       vue:
         specifier: ^3.5.12
         version: 3.5.13(typescript@5.6.3)
@@ -234,8 +231,6 @@ importers:
       vite-plugin-vue-devtools:
         specifier: ^7.7.1
         version: 7.7.2(vite@6.2.5)(vue@3.5.13)
-
-  packages/versakit-directives: {}
 
   packages/versakit-directives: {}
 
@@ -9677,16 +9672,3 @@ packages:
   /zwitch@2.0.4:
     resolution: {integrity: sha512-bXE4cR/kVZhKZX/RjPEflHaKVhUVl85noU3v6b8apfQEc1x4A+zBxjZ4lN8LqGd6WZ3dl98pY4o717VFmoPp+A==}
     dev: true
-
-  file:(typescript@5.6.3):
-    resolution: {directory: '', type: directory}
-    id: 'file:'
-    name: versakit-monorepo
-    requiresBuild: true
-    dependencies:
-      eslint: 8.57.1
-      vue: 3.5.13(typescript@5.6.3)
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-    dev: false
