@@ -25,7 +25,7 @@
             >
               开始
             </VerButton>
-            <div class="btn-shine">V 0.3.5</div>
+            <div class="btn-shine">V 0.3.6</div>
           </div>
         </div>
       </div>
