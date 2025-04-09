@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import type { AsideProps } from '../type/index'
 
 defineOptions({
-  name: 'VerAside',
+  name: 'VKAside',
 })
 
 const props = withDefaults(defineProps<AsideProps>(), {
@@ -20,7 +20,7 @@ const asideStyle = computed(() => ({
     class="ver-aside"
     :style="asideStyle"
     role="complementary"
-    :aria-label="props.label"
+    aria-label="侧边栏"
   >
     <slot />
   </aside>

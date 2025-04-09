@@ -3,6 +3,8 @@ import { computed } from 'vue'
 import Avatar from './index.vue'
 import type { AvatarGroupProps } from '../type/index.ts'
 
+defineOptions({ name: 'VKAvatarGroup' })
+
 withDefaults(defineProps<AvatarGroupProps>(), {
   maxCount: 5,
   size: 'default',
@@ -32,17 +34,5 @@ const maxStyle = computed(() => {
 </template>
 
 <style scoped>
-.avatar-group {
-  display: inline-flex;
-  align-items: center;
-}
-
-.avatar-group :deep(.avatar) {
-  border: 2px solid #fff;
-  margin-left: -8px;
-}
-
-.avatar-group :deep(.avatar:first-child) {
-  margin-left: 0;
-}
+@import url('../style/group.css');
 </style>
