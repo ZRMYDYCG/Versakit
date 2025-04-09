@@ -29,7 +29,7 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'Radio 单选框', link: '/components/radio/' },
         { text: 'Textarea 文本域', link: '/components/textarea/' },
         { text: 'Slider 滑块', link: '/components/slider/' },
-        { text: 'CheckBox 复选框', link: '/components/checkBox/' },
+        { text: 'CheckBox 复选框', link: '/components/checkbox/' },
         { text: 'Rate 评分', link: '/components/rate/' },
         { text: 'Input Number 数字输入框', link: '/components/inputnumber/' },
         { text: 'Date Picker 日期选择器', link: '/components/datepicker/' },
