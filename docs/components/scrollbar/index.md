@@ -1,4 +1,4 @@
-# Scrollbar 滚动条 <ver-tag type="warn">Alpha</ver-tag>
+# Scrollbar 滚动条 <VK-tag type="warn">Alpha</VK-tag>
 
 ## 基础用法
 

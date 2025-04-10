@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { VerRadio, VerSlider, VerFlex } from '@versakit/ui'
+import { VKRadio, VKSlider, VKFlex } from '@versakit/ui'
 
 const gapSize = ref<'small' | 'middle' | 'large' | 'custom'>('small')
 const customGapSize = ref(16)
@@ -14,18 +14,15 @@ const computedGap = computed<number | 'small' | 'middle' | 'large'>(() => {
 </script>
 <template>
   <div>
-    <VerRadio label="small" v-model="gapSize">small</VerRadio>
-    <VerRadio label="middle" v-model="gapSize">middle</VerRadio>
-    <VerRadio label="large" v-model="gapSize">large</VerRadio>
-    <VerRadio label="custom" v-model="gapSize">custom</VerRadio>
-    <VerSlider
-      v-model="customGapSize"
-      v-show="gapSize === 'custom'"
-    ></VerSlider>
+    <VKRadio label="small" v-model="gapSize">small</VKRadio>
+    <VKRadio label="middle" v-model="gapSize">middle</VKRadio>
+    <VKRadio label="large" v-model="gapSize">large</VKRadio>
+    <VKRadio label="custom" v-model="gapSize">custom</VKRadio>
+    <VKSlider v-model="customGapSize" v-show="gapSize === 'custom'"></VKSlider>
   </div>
-  <VerFlex :gap="computedGap" style="margin-top: 10px">
+  <VKFlex :gap="computedGap" style="margin-top: 10px">
     <div v-for="n in 4" :key="n" class="flex-item" />
-  </VerFlex>
+  </VKFlex>
 </template>
 
 <style scoped>

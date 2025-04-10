@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { VerSkeleton } from '@versakit/ui'
+import { VKSkeleton } from '@versakit/ui'
 </script>
 
 <template>
-  <VerSkeleton round avatar />
+  <VKSkeleton round avatar />
 </template>

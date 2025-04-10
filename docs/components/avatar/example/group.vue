@@ -1,33 +1,33 @@
 <script setup lang="ts">
-import { VerAvatar, VerAvatarGroup } from '@versakit/ui'
+import { VKAvatar, VKAvatarGroup } from '@versakit/ui'
 </script>
 
 <template>
   <div class="container">
     <section class="demo-section">
-      <h2>VerAvatar Group</h2>
+      <h2>VKAvatar Group</h2>
       <div class="demo-row">
-        <VerAvatarGroup>
-          <VerAvatar src="https://randomuser.me/api/portraits/women/1.jpg" />
-          <VerAvatar src="https://randomuser.me/api/portraits/men/1.jpg" />
-          <VerAvatar src="https://randomuser.me/api/portraits/women/2.jpg" />
-          <VerAvatar src="https://randomuser.me/api/portraits/men/2.jpg" />
-          <VerAvatar src="https://randomuser.me/api/portraits/women/3.jpg" />
-          <VerAvatar src="https://randomuser.me/api/portraits/men/3.jpg" />
-        </VerAvatarGroup>
+        <VKAvatarGroup>
+          <VKAvatar src="https://randomuser.me/api/portraits/women/1.jpg" />
+          <VKAvatar src="https://randomuser.me/api/portraits/men/1.jpg" />
+          <VKAvatar src="https://randomuser.me/api/portraits/women/2.jpg" />
+          <VKAvatar src="https://randomuser.me/api/portraits/men/2.jpg" />
+          <VKAvatar src="https://randomuser.me/api/portraits/women/3.jpg" />
+          <VKAvatar src="https://randomuser.me/api/portraits/men/3.jpg" />
+        </VKAvatarGroup>
       </div>
     </section>
 
     <section class="demo-section">
       <h2>Custom Max Count</h2>
       <div class="demo-row">
-        <VerAvatarGroup :maxCount="3">
-          <VerAvatar src="https://randomuser.me/api/portraits/women/4.jpg" />
-          <VerAvatar src="https://randomuser.me/api/portraits/men/4.jpg" />
-          <VerAvatar src="https://randomuser.me/api/portraits/women/5.jpg" />
-          <VerAvatar src="https://randomuser.me/api/portraits/men/5.jpg" />
-          <VerAvatar src="https://randomuser.me/api/portraits/women/6.jpg" />
-        </VerAvatarGroup>
+        <VKAvatarGroup :maxCount="3">
+          <VKAvatar src="https://randomuser.me/api/portraits/women/4.jpg" />
+          <VKAvatar src="https://randomuser.me/api/portraits/men/4.jpg" />
+          <VKAvatar src="https://randomuser.me/api/portraits/women/5.jpg" />
+          <VKAvatar src="https://randomuser.me/api/portraits/men/5.jpg" />
+          <VKAvatar src="https://randomuser.me/api/portraits/women/6.jpg" />
+        </VKAvatarGroup>
       </div>
     </section>
   </div>

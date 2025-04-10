@@ -1,24 +1,24 @@
 <template>
-  <VerRow class="mb-4">
-    <VerCol :span="10"><div class="col-box col-box-1"></div></VerCol>
-    <VerCol :span="14">
+  <VKRow class="mb-4">
+    <VKCol :span="10"><div class="col-box col-box-1"></div></VKCol>
+    <VKCol :span="14">
       <div class="col-box col-box-2"></div>
-    </VerCol>
-  </VerRow>
-  <VerRow class="mb-4">
-    <VerCol :span="6"><div class="col-box col-box-1"></div></VerCol>
-    <VerCol :span="8"><div class="col-box col-box-2"></div></VerCol>
+    </VKCol>
+  </VKRow>
+  <VKRow class="mb-4">
+    <VKCol :span="6"><div class="col-box col-box-1"></div></VKCol>
+    <VKCol :span="8"><div class="col-box col-box-2"></div></VKCol>
     <VerCol :span="10"><div class="col-box col-box-1"></div></VerCol>
-  </VerRow>
-  <VerRow class="mb-4">
-    <VerCol :span="4"><div class="col-box col-box-1"></div></VerCol>
-    <VerCol :span="16"><div class="col-box col-box-2"></div></VerCol>
-    <VerCol :span="4"><div class="col-box col-box-1"></div></VerCol>
-  </VerRow>
+  </VKRow>
+  <VKRow class="mb-4">
+    <VKCol :span="4"><div class="col-box col-box-1"></div></VKCol>
+    <VKCol :span="16"><div class="col-box col-box-2"></div></VKCol>
+    <VKCol :span="4"><div class="col-box col-box-1"></div></VKCol>
+  </VKRow>
 </template>
 
 <script setup lang="ts">
-import { VerRow, VerCol } from '@versakit/ui'
+import { VKRow, VKCol } from '@versakit/ui'
 </script>
 
 <style scoped>

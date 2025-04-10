@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerSegmented, VerFlex } from '@versakit/ui'
+import { VKSegmented, VKFlex } from '@versakit/ui'
 import { AlignProps, JustifyProps } from '@versakit/ui/components/flex/type'
 
 const justify = ref<JustifyProps>('flex-start')
@@ -22,12 +22,12 @@ const alignOptions = [
 </script>
 <template>
   <div style="line-height: 36px">justify-content:</div>
-  <VerSegmented v-model="justify" :options="justifyOptions"></VerSegmented>
+  <VKSegmented v-model="justify" :options="justifyOptions"></VKSegmented>
   <div style="line-height: 36px">align-items:</div>
-  <VerSegmented v-model="align" :options="alignOptions"></VerSegmented>
-  <VerFlex class="flex-container" :align="align" :justify="justify">
+  <VKSegmented v-model="align" :options="alignOptions"></VKSegmented>
+  <VKFlex class="flex-container" :align="align" :justify="justify">
     <div v-for="n in 4" :key="n" class="flex-item" />
-  </VerFlex>
+  </VKFlex>
 </template>
 <style scoped>
 .flex-container {

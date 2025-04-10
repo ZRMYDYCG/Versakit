@@ -1,15 +1,15 @@
 <template>
   <div class="common-layout">
-    <ver-container>
-      <ver-aside width="200px">Aside</ver-aside>
-      <ver-main>Main</ver-main>
-      <ver-aside width="200px">Aside</ver-aside>
-    </ver-container>
+    <VK-container>
+      <VK-aside width="200px">Aside</VK-aside>
+      <VK-main>Main</VK-main>
+      <VK-aside width="200px">Aside</VK-aside>
+    </VK-container>
   </div>
 </template>
 
 <script setup lang="ts">
-import { VerContainer, VerAside, VerMain } from '@versakit/ui'
+import { VKContainer, VKAside, VKMain } from '@versakit/ui'
 </script>
 
 <style scoped>
@@ -18,14 +18,14 @@ import { VerContainer, VerAside, VerMain } from '@versakit/ui'
     flex-direction: column;
   }
 
-  .ver-aside {
+  .VK-aside {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #c1deff;
   }
 
-  .ver-main {
+  .VK-main {
     display: flex;
     justify-content: center;
     align-items: center;

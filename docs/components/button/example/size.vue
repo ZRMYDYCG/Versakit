@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerButton, VerSegmented } from '@versakit/ui'
+import { VKButton, VKSegmented } from '@versakit/ui'
 
 const selectedValue = ref('md')
 const options = [
@@ -13,11 +13,11 @@ const options = [
 
 <template>
   <div>
-    <VerSegmented v-model="selectedValue" :options="options"></VerSegmented>
+    <VKSegmented v-model="selectedValue" :options="options"></VKSegmented>
 
-    <ver-button class="mx-2" color="blue-5" :size="selectedValue">
+    <VKButton class="mx-2" color="blue-5" :size="selectedValue">
       主要按钮
-    </ver-button>
+    </VKButton>
   </div>
 </template>
 

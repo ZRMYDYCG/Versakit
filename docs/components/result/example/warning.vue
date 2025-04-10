@@ -1,13 +1,13 @@
 <template>
-  <ver-result icon="ep:warning-filled" type="warning">
+  <VKResult icon="ep:warning-filled" type="warning">
     <template #content>
       <span>警告</span>
     </template>
-  </ver-result>
+  </VKResult>
 </template>
 
 <script lang="ts" setup>
-import { VerResult } from '@versakit/ui'
+import { VKResult } from '@versakit/ui'
 </script>
 
 <style scoped></style>

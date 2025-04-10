@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ver-card>
+    <VKCard>
       <template #header>
         <div>
           <span>头部</span>
@@ -14,10 +14,10 @@
           <span>底部</span>
         </div>
       </template>
-    </ver-card>
+    </VKCard>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { VerCard } from '@versakit/ui'
+import { VKCard } from '@versakit/ui'
 </script>

@@ -4,7 +4,7 @@
     <div class="demo-section">
       <h3>基础用法</h3>
       <div class="demo-content">
-        <VerColorPicker v-model:value="color1" />
+        <VKColorPicker v-model:value="color1" />
         <div class="desc">
           <p class="title">基本颜色选择</p>
           <p class="value">选中值: {{ color1 || '未选择' }}</p>
@@ -16,11 +16,7 @@
     <div class="demo-section">
       <h3>透明度选择</h3>
       <div class="demo-content">
-        <VerColorPicker
-          v-model:value="color2"
-          :show-alpha="true"
-          format="rgb"
-        />
+        <VKColorPicker v-model:value="color2" :show-alpha="true" format="rgb" />
         <div class="desc">
           <p class="title">支持透明度调节</p>
           <p>格式: RGBA</p>
@@ -36,17 +32,17 @@
         <div class="format-group">
           <div class="format-item">
             <p>HEX 格式</p>
-            <VerColorPicker v-model:value="color3hex" format="hex" />
+            <VKColorPicker v-model:value="color3hex" format="hex" />
             <p class="value">{{ color3hex }}</p>
           </div>
           <div class="format-item">
             <p>RGB 格式</p>
-            <VerColorPicker v-model:value="color3rgb" format="rgb" />
+            <VKColorPicker v-model:value="color3rgb" format="rgb" />
             <p class="value">{{ color3rgb }}</p>
           </div>
           <div class="format-item">
             <p>HSL 格式</p>
-            <VerColorPicker v-model:value="color3hsl" format="hsl" />
+            <VKColorPicker v-model:value="color3hsl" format="hsl" />
             <p class="value">{{ color3hsl }}</p>
           </div>
         </div>
@@ -59,15 +55,15 @@
       <div class="demo-content">
         <div class="size-group">
           <div class="size-item">
-            <VerColorPicker v-model:value="color4" :size="16" />
+            <VKColorPicker v-model:value="color4" :size="16" />
             <span>小尺寸 (16px)</span>
           </div>
           <div class="size-item">
-            <VerColorPicker v-model:value="color4" :size="24" />
+            <VKColorPicker v-model:value="color4" :size="24" />
             <span>中尺寸 (24px)</span>
           </div>
           <div class="size-item">
-            <VerColorPicker v-model:value="color4" :size="36" />
+            <VKColorPicker v-model:value="color4" :size="36" />
             <span>大尺寸 (36px)</span>
           </div>
         </div>
@@ -78,7 +74,7 @@
     <div class="demo-section">
       <h3>自定义预设颜色</h3>
       <div class="demo-content">
-        <VerColorPicker v-model:value="color5" :colors="customColors" />
+        <VKColorPicker v-model:value="color5" :colors="customColors" />
         <div class="desc">
           <p class="title">自定义预设颜色面板</p>
           <p>可以传入自定义的颜色数组作为预设选项</p>
@@ -91,7 +87,7 @@
     <div class="demo-section">
       <h3>添加删除颜色</h3>
       <div class="demo-content">
-        <VerColorPicker
+        <VKColorPicker
           v-model:value="color6"
           :add-color="true"
           :delete-color="true"
@@ -108,7 +104,7 @@
     <div class="demo-section">
       <h3>格式选项</h3>
       <div class="demo-content">
-        <VerColorPicker
+        <VKColorPicker
           v-model:value="color7"
           :format-options="['rgb', 'hex', 'hsl']"
           @format-change="onFormatChange"
@@ -126,7 +122,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { VerColorPicker } from '@versakit/ui'
+import { VKColorPicker } from '@versakit/ui'
 
 // 基础用法
 const color1 = ref('#1e90ff')

@@ -1,11 +1,11 @@
 <script setup>
-import { VerBreadcrumbItem, VerBreadcrumb } from '@versakit/ui'
+import { VKBreadcrumbItem, VKBreadcrumb } from '@versakit/ui'
 </script>
 
 <template>
-  <VerBreadcrumb>
-    <VerBreadcrumbItem>首页</VerBreadcrumbItem>
-    <VerBreadcrumbItem>产品列表</VerBreadcrumbItem>
-    <VerBreadcrumbItem>产品详情</VerBreadcrumbItem>
-  </VerBreadcrumb>
+  <VKBreadcrumb>
+    <VKBreadcrumbItem>首页</VKBreadcrumbItem>
+    <VKBreadcrumbItem>产品列表</VKBreadcrumbItem>
+    <VKBreadcrumbItem>产品详情</VKBreadcrumbItem>
+  </VKBreadcrumb>
 </template>

@@ -1,9 +1,9 @@
 <template>
-  <VerTextarea disabled placeholder="请输入内容" />
+  <VKTextarea disabled placeholder="请输入内容" />
 </template>
 
 <script lang="ts" setup>
-import { VerTextarea } from '@versakit/ui'
+import { VKTextarea } from '@versakit/ui'
 </script>
 
 <style scoped>

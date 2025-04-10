@@ -1,13 +1,13 @@
 <template>
-  <ver-result icon="ep:select" type="success">
+  <VKResult icon="ep:select" type="success">
     <template #content>
       <span>成功</span>
     </template>
-  </ver-result>
+  </VKResult>
 </template>
 
 <script lang="ts" setup>
-import { VerResult } from '@versakit/ui'
+import { VKResult } from '@versakit/ui'
 </script>
 
 <style scoped></style>

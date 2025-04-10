@@ -1,22 +1,22 @@
 <template>
-  <ver-row :gutter="4">
-    <ver-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+  <VKRow :gutter="4">
+    <VKCol :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
       <div class="col-box"></div>
-    </ver-col>
-    <ver-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+    </VKCol>
+    <VKCol :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
       <div class="col-box col-box-1"></div>
-    </ver-col>
-    <ver-col :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
+    </VKCol>
+    <VKCol :xs="4" :sm="6" :md="8" :lg="9" :xl="11">
       <div class="col-box"></div>
-    </ver-col>
-    <ver-col :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
+    </VKCol>
+    <VKCol :xs="8" :sm="6" :md="4" :lg="3" :xl="1">
       <div class="col-box col-box-1"></div>
-    </ver-col>
-  </ver-row>
+    </VKCol>
+  </VKRow>
 </template>
 
 <script setup lang="ts">
-import { VerRow, VerCol } from '@versakit/ui'
+import { VKRow, VKCol } from '@versakit/ui'
 </script>
 
 <style scoped>

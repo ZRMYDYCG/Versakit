@@ -1,16 +1,16 @@
 <template>
   <div>
-    <VerButton @click="drawerLeft = true">基本使用</VerButton>
+    <VKButton @click="drawerLeft = true">基本使用</VKButton>
 
-    <VerDrawer v-model="drawerLeft" closeIcon="ep:close">
+    <VKDrawer v-model="drawerLeft" closeIcon="ep:close">
       <span>左边</span>
-    </VerDrawer>
+    </VKDrawer>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerDrawer, VerButton } from '@versakit/ui'
+import { VKDrawer, VKButton } from '@versakit/ui'
 
 const drawerLeft = ref(false)
 </script>

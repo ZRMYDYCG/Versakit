@@ -1,13 +1,13 @@
 <template>
   <div>
-    <VerSegmented v-model="typeValue" :options="typeOptions" />
-    <VerSegmented v-model="variantValue" :options="variantOptions" />
+    <VKSegmented v-model="typeValue" :options="typeOptions" />
+    <VKSegmented v-model="variantValue" :options="variantOptions" />
 
-    <ver-button :type="typeValue" :variant="variantValue">按 钮</ver-button>
+    <VKButton :type="typeValue" :variant="variantValue">按 钮</VKButton>
   </div>
 </template>
 <script setup lang="ts">
-import { VerButton, VerSegmented } from '@versakit/ui'
+import { VKButton, VKSegmented } from '@versakit/ui'
 import { ref } from 'vue'
 
 let typeValue = ref('primary')

@@ -1,17 +1,17 @@
 <template>
   <div class="button-container">
-    <ver-button
+    <VKButton
       text
       size="xs"
       icon="tag-fill"
       @click="showTooltip = !showTooltip"
-    ></ver-button>
+    ></VKButton>
     <div class="tooltip-content" v-show="showTooltip" v-html="propsValue"></div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { VerButton } from '@versakit/ui'
+import { VKButton } from '@versakit/ui'
 import { computed, ref } from 'vue'
 
 const props = defineProps({

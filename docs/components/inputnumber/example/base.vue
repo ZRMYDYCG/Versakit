@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerInputNumber } from '@versakit/ui'
+import { VKInputNumber } from '@versakit/ui'
 
 const numberValue = ref(1)
 const decimalValue = ref(0.5)
@@ -9,13 +9,13 @@ const decimalValue = ref(0.5)
 <template>
   <div class="example-box">
     <h3>整数输入示例</h3>
-    <VerInputNumber v-model="numberValue" :min="0" :max="10" :step="1" />
+    <VKInputNumber v-model="numberValue" :min="0" :max="10" :step="1" />
     <div>当前值: {{ numberValue }}</div>
   </div>
 
   <div class="example-box">
     <h3>小数输入示例</h3>
-    <VerInputNumber
+    <VKInputNumber
       v-model="decimalValue"
       :min="0"
       :max="1"

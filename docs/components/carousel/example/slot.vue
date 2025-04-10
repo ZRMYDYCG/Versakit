@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { VerCarousel, VerCarouselItem } from '@versakit/ui'
+import { VKCarousel, VKCarouselItem } from '@versakit/ui'
 </script>
 
 <template>
   <div class="carousel-wrapper">
-    <VerCarousel
+    <VKCarousel
       :autoplay="true"
       :interval="3000"
       :show-arrows="true"
@@ -12,19 +12,19 @@ import { VerCarousel, VerCarouselItem } from '@versakit/ui'
       direction="horizontal"
       trigger="hover"
     >
-      <VerCarouselItem width="1200px" height="600px">
+      <VKCarouselItem width="1200px" height="600px">
         <div class="custom-slide">
           <h3>自定义内容 1</h3>
           <p>这是一个使用 slot 的示例</p>
         </div>
-      </VerCarouselItem>
-      <VerCarouselItem width="1200px" height="600px">
+      </VKCarouselItem>
+      <VKCarouselItem width="1200px" height="600px">
         <div class="custom-slide">
           <h3>自定义内容 2</h3>
           <p>你可以放置任何内容</p>
         </div>
-      </VerCarouselItem>
-    </VerCarousel>
+      </VKCarouselItem>
+    </VKCarousel>
   </div>
 </template>
 

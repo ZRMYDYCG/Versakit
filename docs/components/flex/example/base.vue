@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerFlex, VerRadio } from '@versakit/ui'
+import { VKFlex, VKRadio } from '@versakit/ui'
 
 const direction = ref('horizontal')
 </script>
 
 <template>
   <div>
-    <VerRadio label="horizontal" v-model="direction">horizontal</VerRadio>
-    <VerRadio label="vertical" v-model="direction">vertical</VerRadio>
+    <VKRadio label="horizontal" v-model="direction">horizontal</VKRadio>
+    <VKRadio label="vertical" v-model="direction">vertical</VKRadio>
   </div>
-  <VerFlex :vertical="direction === 'vertical'">
+  <VKFlex :vertical="direction === 'vertical'">
     <div v-for="n in 4" :key="n" class="flex-item" />
-  </VerFlex>
+  </VKFlex>
 </template>
 
 <style scoped>

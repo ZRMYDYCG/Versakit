@@ -1,9 +1,9 @@
 <template>
-  <VerPanel shadow="always">始终</VerPanel>
-  <VerPanel shadow="hover">悬浮</VerPanel>
-  <VerPanel shadow="never">永不</VerPanel>
+  <VKPanel shadow="always">始终</VKPanel>
+  <VKPanel shadow="hover">悬浮</VKPanel>
+  <VKPanel shadow="never">永不</VKPanel>
 </template>
 
 <script setup>
-import { VerPanel } from '@versakit/ui'
+import { VKPanel } from '@versakit/ui'
 </script>

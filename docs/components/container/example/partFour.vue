@@ -1,29 +1,29 @@
 <template>
   <div class="common-layout">
-    <ver-container direction="column">
-      <ver-header>Header</ver-header>
-      <ver-container>
-        <ver-aside width="200px">Aside</ver-aside>
-        <ver-main>Main</ver-main>
-      </ver-container>
-    </ver-container>
+    <VK-container direction="column">
+      <VK-header>Header</VK-header>
+      <VK-container>
+        <VK-aside width="200px">Aside</VK-aside>
+        <VK-main>Main</VK-main>
+      </VK-container>
+    </VK-container>
   </div>
 </template>
 
 <script setup lang="ts">
-import { VerContainer, VerHeader, VerMain, VerAside } from '@versakit/ui'
+import { VKContainer, VKHeader, VKMain, VKAside } from '@versakit/ui'
 </script>
 
 <style scoped>
 .common-layout {
-  .ver-header {
+  .VK-header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #c6e2ff;
   }
 
-  .ver-aside {
+  .VK-aside {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,7 +32,7 @@ import { VerContainer, VerHeader, VerMain, VerAside } from '@versakit/ui'
     background-color: rgb(216.8, 235.6, 255);
   }
 
-  .ver-main {
+  .VK-main {
     display: flex;
     justify-content: center;
     align-items: center;

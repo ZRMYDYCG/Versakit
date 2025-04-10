@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerStepItem, VerSteps } from '@versakit/ui'
+import { VKStepItem, VKSteps } from '@versakit/ui'
 
 interface Step {
   title: string
@@ -37,30 +37,26 @@ const iconSteps: Step[] = [
     <!-- Vertical Example -->
     <div class="example-box">
       <h3>垂直步骤条</h3>
-      <VerSteps :steps="steps" :currentStep="currentStep" direction="vertical">
-        <VerStepItem
+      <VKSteps :steps="steps" :currentStep="currentStep" direction="vertical">
+        <VKStepItem
           v-for="(_, index) in steps"
           :key="`v-${index}`"
           :index="index"
           :clickable="true"
         />
-      </VerSteps>
+      </VKSteps>
     </div>
 
     <!-- Horizontal Example -->
     <div class="example-box">
       <h3>水平步骤条</h3>
-      <VerSteps
-        :steps="steps"
-        :currentStep="currentStep"
-        direction="horizontal"
-      >
-        <VerStepItem
+      <VKSteps :steps="steps" :currentStep="currentStep" direction="horizontal">
+        <VKStepItem
           v-for="(_, index) in steps"
           :key="`h-${index}`"
           :index="index"
         />
-      </VerSteps>
+      </VKSteps>
     </div>
 
     <!-- Controls -->
@@ -81,25 +77,25 @@ const iconSteps: Step[] = [
     <!-- Error Status Example -->
     <div class="example-box">
       <h3>错误状态</h3>
-      <VerSteps :steps="errorSteps" :currentStep="1" direction="horizontal">
-        <VerStepItem
+      <VKSteps :steps="errorSteps" :currentStep="1" direction="horizontal">
+        <VKStepItem
           v-for="(_, index) in errorSteps"
           :key="`error-${index}`"
           :index="index"
         />
-      </VerSteps>
+      </VKSteps>
     </div>
 
     <!-- Custom Icons Example -->
     <div class="example-box">
       <h3>自定义图标</h3>
-      <VerSteps :steps="iconSteps" :currentStep="1" direction="horizontal">
-        <VerStepItem
+      <VKSteps :steps="iconSteps" :currentStep="1" direction="horizontal">
+        <VKStepItem
           v-for="(_, index) in iconSteps"
           :key="`icon-${index}`"
           :index="index"
         />
-      </VerSteps>
+      </VKSteps>
     </div>
 
     <!-- Different Size Example -->
@@ -107,33 +103,33 @@ const iconSteps: Step[] = [
       <h3>不同尺寸</h3>
       <div style="margin-bottom: 20px">
         <small>小尺寸</small>
-        <VerSteps :steps="steps" :currentStep="1" size="small">
-          <VerStepItem
+        <VKSteps :steps="steps" :currentStep="1" size="small">
+          <VKStepItem
             v-for="(_, index) in steps"
             :key="`small-${index}`"
             :index="index"
           />
-        </VerSteps>
+        </VKSteps>
       </div>
       <div style="margin-bottom: 20px">
         <small>默认尺寸</small>
-        <VerSteps :steps="steps" :currentStep="1" size="default">
-          <VerStepItem
+        <VKSteps :steps="steps" :currentStep="1" size="default">
+          <VKStepItem
             v-for="(_, index) in steps"
             :key="`default-${index}`"
             :index="index"
           />
-        </VerSteps>
+        </VKSteps>
       </div>
       <div>
         <small>大尺寸</small>
-        <VerSteps :steps="steps" :currentStep="1" size="large">
-          <VerStepItem
+        <VKSteps :steps="steps" :currentStep="1" size="large">
+          <VKStepItem
             v-for="(_, index) in steps"
             :key="`large-${index}`"
             :index="index"
           />
-        </VerSteps>
+        </VKSteps>
       </div>
     </div>
 
@@ -141,22 +137,22 @@ const iconSteps: Step[] = [
     <div class="example-box">
       <h3>标签位置</h3>
       <div style="margin-bottom: 20px">
-        <VerSteps :steps="steps" :currentStep="1" labelPlacement="horizontal">
-          <VerStepItem
+        <VKSteps :steps="steps" :currentStep="1" labelPlacement="horizontal">
+          <VKStepItem
             v-for="(_, index) in steps"
             :key="`h-label-${index}`"
             :index="index"
           />
-        </VerSteps>
+        </VKSteps>
       </div>
       <div>
-        <VerSteps :steps="steps" :currentStep="1" labelPlacement="vertical">
-          <VerStepItem
+        <VKSteps :steps="steps" :currentStep="1" labelPlacement="vertical">
+          <VKStepItem
             v-for="(_, index) in steps"
             :key="`v-label-${index}`"
             :index="index"
           />
-        </VerSteps>
+        </VKSteps>
       </div>
     </div>
   </div>

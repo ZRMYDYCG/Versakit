@@ -1,5 +1,5 @@
 <template>
-  <VerCalendar ref="calendar">
+  <VKCalendar ref="calendar">
     <template
       #header="{ date, prevMonth, nextMonth, prevYear, nextYear, today }"
     >
@@ -8,24 +8,20 @@
           {{ date.getFullYear() }}年{{ date.getMonth() + 1 }}月
         </span>
 
-        <VerButton type="primary" size="sm" @click="prevYear">上一年</VerButton>
-        <VerButton type="primary" size="sm" @click="nextYear">下一年</VerButton>
-        <VerButton type="primary" size="sm" @click="prevMonth">
-          上个月
-        </VerButton>
+        <VKButton type="primary" size="sm" @click="prevYear">上一年</VKButton>
+        <VKButton type="primary" size="sm" @click="nextYear">下一年</VKButton>
+        <VKButton type="primary" size="sm" @click="prevMonth">上个月</VKButton>
 
-        <VerButton type="primary" size="sm" @click="today">今天</VerButton>
-        <VerButton type="primary" size="sm" @click="nextMonth">
-          下个月
-        </VerButton>
-        <VerButton type="primary" size="sm" @click="nextYear">下一年</VerButton>
+        <VKButton type="primary" size="sm" @click="today">今天</VKButton>
+        <VKButton type="primary" size="sm" @click="nextMonth">下个月</VKButton>
+        <VKButton type="primary" size="sm" @click="nextYear">下一年</VKButton>
       </div>
     </template>
-  </VerCalendar>
+  </VKCalendar>
 </template>
 
 <script lang="ts" setup>
-import { VerCalendar } from '@versakit/ui'
+import { VKCalendar, VKButton } from '@versakit/ui'
 </script>
 <style>
 .custom-header {

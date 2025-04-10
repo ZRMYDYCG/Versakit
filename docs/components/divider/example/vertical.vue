@@ -1,13 +1,13 @@
 <template>
   <div>
     <span>Rain</span>
-    <ver-divider direction="vertical" />
+    <VKDivider direction="vertical" />
     <span>Home</span>
-    <ver-divider direction="vertical" border-style="dashed" />
+    <VKDivider direction="vertical" border-style="dashed" />
     <span>Grass</span>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { VerDivider } from '@versakit/ui'
+import { VKDivider } from '@versakit/ui'
 </script>

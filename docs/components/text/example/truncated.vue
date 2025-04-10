@@ -1,12 +1,11 @@
-c
 <script setup lang="ts">
-import { VerRow, VerText } from '@versakit/ui'
+import { VKRow, VKText } from '@versakit/ui'
 </script>
 
 <template>
-  <ver-row>
-    <ver-text class="w-100px" truncated>Self element set width 100px</ver-text>
-  </ver-row>
+  <VKRow>
+    <VKText class="w-100px" truncated>Self element set width 100px</VKText>
+  </VKRow>
 </template>
 
 <style scoped>

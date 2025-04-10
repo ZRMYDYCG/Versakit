@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VerSlider } from '@versakit/ui'
+import { VKSlider } from '@versakit/ui'
 import { ref } from 'vue'
 
 const value = ref(0)
@@ -13,9 +13,9 @@ const handleChange = (val: number) => {
 
 <template>
   <div>
-    <VerSlider v-model="value" />
+    <VKSlider v-model="value" />
 
-    <VerSlider
+    <VKSlider
       v-model="value2"
       :min="0"
       :max="200"
@@ -23,6 +23,6 @@ const handleChange = (val: number) => {
       @change="handleChange"
     />
 
-    <VerSlider v-model="value3" disabled @change="handleChange" />
+    <VKSlider v-model="value3" disabled @change="handleChange" />
   </div>
 </template>

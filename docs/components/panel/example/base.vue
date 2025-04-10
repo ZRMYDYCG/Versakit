@@ -1,7 +1,7 @@
 <template>
-  <VerPanel>基本面板</VerPanel>
+  <VKPanel>基本面板</VKPanel>
 </template>
 
 <script setup>
-import { VerPanel } from '@versakit/ui'
+import { VKPanel } from '@versakit/ui'
 </script>

@@ -1,17 +1,17 @@
 <template>
   <div>
-    <VerButton type="info" @click="info">info</VerButton>
-    <VerButton type="success" @click="success">success</VerButton>
-    <VerButton type="warn" @click="warning">warning</VerButton>
-    <VerButton type="error" @click="error">error</VerButton>
+    <VKButton type="info" @click="info">info</VKButton>
+    <VKButton type="success" @click="success">success</VKButton>
+    <VKButton type="warn" @click="warning">warning</VKButton>
+    <VKButton type="error" @click="error">error</VKButton>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { VerButton, VerNotification } from '@versakit/ui'
+import { VKButton, VKNotification } from '@versakit/ui'
 
 const info = () => {
-  VerNotification({
+  VKNotification({
     title: 'title',
     type: 'info',
     content: 'content',
@@ -20,7 +20,7 @@ const info = () => {
 }
 
 const success = () => {
-  VerNotification({
+  VKNotification({
     title: 'title',
     type: 'success',
     content: 'content',
@@ -29,7 +29,7 @@ const success = () => {
 }
 
 const warning = () => {
-  VerNotification({
+  VKNotification({
     title: 'title',
     type: 'warn',
     content: 'content',
@@ -38,7 +38,7 @@ const warning = () => {
 }
 
 const error = () => {
-  VerNotification({
+  VKNotification({
     title: 'title',
     type: 'error',
     content: 'content',

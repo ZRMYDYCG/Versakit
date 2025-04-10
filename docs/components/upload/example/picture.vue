@@ -1,6 +1,6 @@
 <template>
   <div class="picture-upload-demo">
-    <ver-upload
+    <VKUpload
       action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
       v-model:fileList="fileList"
       list-type="picture-card"
@@ -10,10 +10,10 @@
       @exceed="handleExceed"
     >
       <div class="upload-picture-add">
-        <ver-icon name="ep:plus" size="24px" />
+        <VKIcon name="ep:plus" size="24px" />
         <span>上传图片</span>
       </div>
-    </ver-upload>
+    </VKUpload>
 
     <!-- 图片预览区域 -->
     <div class="image-preview-gallery" v-if="fileList.length > 0">
@@ -27,7 +27,7 @@
         >
           <img v-if="file.url" :src="file.url" :alt="file.name" />
           <div v-else class="image-loading">
-            <ver-icon name="loading" size="20px" />
+            <VKIcon name="loading" size="20px" />
           </div>
         </div>
       </div>
@@ -38,7 +38,7 @@
       <div class="image-preview-content">
         <img :src="previewUrl" alt="预览图片" />
         <div class="image-preview-close" @click="closePreview">
-          <ver-icon name="close" size="24px" />
+          <VKIcon name="close" size="24px" />
         </div>
       </div>
     </div>
@@ -47,7 +47,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerUpload } from '@versakit/ui'
+import { VKUpload } from '@versakit/ui'
 
 interface UploadFile {
   uid: string

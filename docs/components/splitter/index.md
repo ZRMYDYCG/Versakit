@@ -1,4 +1,4 @@
-# Splitter 分配器 <ver-tag type="warn">Alpha</ver-tag>
+# Splitter 分配器 <VK-tag type="warn">Alpha</VK-tag>
 
 ## 基本使用
 

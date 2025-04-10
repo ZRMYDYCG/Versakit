@@ -3,7 +3,7 @@
     <div class="demo-section">
       <h3>基础用法</h3>
       <div class="flex-row">
-        <VerTimePicker v-model="time1" placeholder="请选择时间" />
+        <VKTimePicker v-model="time1" placeholder="请选择时间" />
         <div class="value-display">选中的值: {{ formattedTime(time1) }}</div>
       </div>
     </div>
@@ -11,7 +11,7 @@
     <div class="demo-section">
       <h3>隐藏秒选择</h3>
       <div class="flex-row">
-        <VerTimePicker
+        <VKTimePicker
           v-model="time2"
           placeholder="请选择时间"
           :hideSeconds="true"
@@ -25,7 +25,7 @@
     <div class="demo-section">
       <h3>12小时制</h3>
       <div class="flex-row">
-        <VerTimePicker
+        <VKTimePicker
           v-model="time3"
           placeholder="请选择时间"
           :use12Hours="true"
@@ -43,7 +43,7 @@
     <div class="demo-section">
       <h3>步长设置</h3>
       <div class="flex-row">
-        <VerTimePicker
+        <VKTimePicker
           v-model="time4"
           placeholder="请选择时间"
           :hourStep="2"
@@ -60,7 +60,7 @@
     <div class="demo-section">
       <h3>禁用状态</h3>
       <div class="flex-row">
-        <VerTimePicker v-model="time5" placeholder="禁用状态" disabled />
+        <VKTimePicker v-model="time5" placeholder="禁用状态" disabled />
         <div class="value-display">选中的值: {{ formattedTime(time5) }}</div>
       </div>
     </div>
@@ -68,7 +68,7 @@
     <div class="demo-section">
       <h3>不可清除</h3>
       <div class="flex-row">
-        <VerTimePicker
+        <VKTimePicker
           v-model="time6"
           placeholder="不可清除"
           :clearable="false"
@@ -81,7 +81,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerTimePicker } from '@versakit/ui'
+import { VKTimePicker } from '@versakit/ui'
 
 // 基础用法
 const time1 = ref(new Date())

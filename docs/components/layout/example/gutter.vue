@@ -1,13 +1,13 @@
 <template>
-  <ver-row :gutter="20">
-    <ver-col :span="6" v-for="n in 4" :key="n">
+  <VKRow :gutter="20">
+    <VKCol :span="6" v-for="n in 4" :key="n">
       <div class="col-box"></div>
-    </ver-col>
-  </ver-row>
+    </VKCol>
+  </VKRow>
 </template>
 
 <script setup lang="ts">
-import { VerRow, VerCol } from '@versakit/ui'
+import { VKRow, VKCol } from '@versakit/ui'
 </script>
 
 <style scoped>

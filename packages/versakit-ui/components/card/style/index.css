@@ -8,7 +8,13 @@
   border-radius: var(--card-border-radius);
   background-color: #fff;
   overflow: hidden;
+  /* 只对box-shadow属性进行过渡，提高性能 */
   transition: box-shadow 0.3s ease;
+  /* 启用GPU加速 */
+  will-change: box-shadow;
+  /* 提高层叠上下文，避免z-index问题 */
+  position: relative;
+  z-index: 1;
 
   .dark & {
     --card-border-color: var(--theme-neutral-700, var(--ver-neutral-700));
@@ -38,12 +44,14 @@
   border-top: 1px solid var(--card-border-color);
 }
 
-/* Shadow variants */
+/* Shadow variants - 使用更高效的选择器 */
 .ver-card.is-shadow-always {
   box-shadow: var(--card-shadow);
 }
 
 .ver-card.is-shadow-hover {
+  /* 使用硬件加速的hover效果 */
+  transform: translateZ(0);
   &:hover {
     box-shadow: var(--card-shadow);
   }
@@ -51,4 +59,6 @@
 
 .ver-card.is-shadow-never {
   box-shadow: none;
+  /* 禁用不必要的硬件加速 */
+  will-change: auto;
 }

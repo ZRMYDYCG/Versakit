@@ -1,31 +1,31 @@
 <script setup lang="ts">
-import { VerTimeLineItem, VerTimeline } from '@versakit/ui'
+import { VKTimeLineItem, VKTimeline } from '@versakit/ui'
 </script>
 
 <template>
-  <VerTimeline>
-    <VerTimeLineItem color="#1890ff">
+  <VKTimeline>
+    <VKTimeLineItem color="#1890ff">
       <h4>创建项目</h4>
       <p>初始化项目结构和依赖</p>
       <p>2025-01-01</p>
-    </VerTimeLineItem>
+    </VKTimeLineItem>
 
-    <VerTimeLineItem color="red">
+    <VKTimeLineItem color="red">
       <h4>创建项目</h4>
       <p>初始化项目结构和依赖</p>
       <p>2025-01-01</p>
-    </VerTimeLineItem>
+    </VKTimeLineItem>
 
-    <VerTimeLineItem color="orange">
+    <VKTimeLineItem color="orange">
       <h4>创建项目</h4>
       <p>初始化项目结构和依赖</p>
       <p>2025-01-01</p>
-    </VerTimeLineItem>
+    </VKTimeLineItem>
 
-    <VerTimeLineItem color="green">
+    <VKTimeLineItem color="green">
       <h4>创建项目</h4>
       <p>初始化项目结构和依赖</p>
       <p>2025-01-01</p>
-    </VerTimeLineItem>
-  </VerTimeline>
+    </VKTimeLineItem>
+  </VKTimeline>
 </template>

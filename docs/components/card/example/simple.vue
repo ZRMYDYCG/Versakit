@@ -1,15 +1,15 @@
 <template>
   <div>
-    <ver-card>
+    <VKCard>
       <div v-for="o in 4" :key="o" class="text item">
         {{ 'List item ' + o }}
       </div>
-    </ver-card>
+    </VKCard>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { VerCard } from '@versakit/ui'
+import { VKCard } from '@versakit/ui'
 </script>
 
 <style scoped>

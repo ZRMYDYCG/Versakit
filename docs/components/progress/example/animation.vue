@@ -1,16 +1,16 @@
 <template>
   <div>
-    <VerProgress :animation="true" :percent />
+    <VKProgress :animation="true" :percent />
 
     <div>
-      <VerProgress :animation="true" type="circle" :percent />
+      <VKProgress :animation="true" type="circle" :percent />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerProgress } from '@versakit/ui'
+import { VKProgress } from '@versakit/ui'
 
 const percent = ref(0)
 

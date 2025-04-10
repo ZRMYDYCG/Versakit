@@ -1,9 +1,9 @@
 <template>
-  <VerBadge type="text" value="new">
-    <VerButton>点我没事</VerButton>
-  </VerBadge>
+  <VKBadge type="text" value="new">
+    <VKButton>点我没事</VKButton>
+  </VKBadge>
 </template>
 
 <script setup>
-import { VerBadge, VerButton } from '@versakit/ui'
+import { VKBadge, VKButton } from '@versakit/ui'
 </script>

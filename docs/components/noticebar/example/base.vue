@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import { VerNoticeBar } from '@versakit/ui'
+import { VKNoticeBar } from '@versakit/ui'
 </script>
 
 <template>
   <div class="notice-examples">
     <!-- Basic types -->
-    <VerNoticeBar text="This is an info notice" type="info" />
+    <VKNoticeBar text="This is an info notice" type="info" />
 
-    <VerNoticeBar
+    <VKNoticeBar
       text="Success! Your operation has been completed."
       type="success"
     />
 
-    <VerNoticeBar
+    <VKNoticeBar
       text="Warning: Please backup your data before proceeding."
       type="warning"
     />
 
-    <VerNoticeBar
+    <VKNoticeBar
       text="Error: Failed to save changes. Please try again."
       type="error"
     />
 
     <!-- Horizontal scrolling -->
-    <VerNoticeBar
+    <VKNoticeBar
       text="This is a very long notice that will scroll horizontally when the content exceeds the container width. It demonstrates the horizontal scrolling feature."
       type="info"
       scrollable
@@ -31,7 +31,7 @@ import { VerNoticeBar } from '@versakit/ui'
     />
 
     <!-- Vertical scrolling -->
-    <VerNoticeBar
+    <VKNoticeBar
       :text="[
         'First notification message',
         'Second notification message',
@@ -44,7 +44,7 @@ import { VerNoticeBar } from '@versakit/ui'
     />
 
     <!-- With close button -->
-    <VerNoticeBar text="This notice can be closed" type="info" closable />
+    <VKNoticeBar text="This notice can be closed" type="info" closable />
   </div>
 </template>
 

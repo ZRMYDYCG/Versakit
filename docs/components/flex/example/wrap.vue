@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { VerFlex } from '@versakit/ui'
+import { VKFlex } from '@versakit/ui'
 </script>
 <template>
-  <VerFlex wrap="wrap">
+  <VKFlex wrap="wrap">
     <div v-for="n in 20" :key="n" class="flex-item" />
-  </VerFlex>
+  </VKFlex>
 </template>
 
 <style scoped>

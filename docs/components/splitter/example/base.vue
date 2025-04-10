@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerSplitter } from '@versakit/ui'
+import { VKSplitter } from '@versakit/ui'
 
 const horizontalSizes = ref([30, 70])
 const verticalSizes = ref([40, 60])
@@ -8,7 +8,7 @@ const verticalSizes = ref([40, 60])
 
 <template>
   <h2>横</h2>
-  <VerSplitter
+  <VKSplitter
     v-model:sizes="horizontalSizes"
     direction="horizontal"
     :min-size="20"
@@ -26,10 +26,10 @@ const verticalSizes = ref([40, 60])
         <div>Current size: {{ horizontalSizes[1] }}%</div>
       </div>
     </template>
-  </VerSplitter>
+  </VKSplitter>
 
   <h2>竖</h2>
-  <VerSplitter
+  <VKSplitter
     v-model:sizes="verticalSizes"
     direction="vertical"
     :min-size="30"
@@ -47,7 +47,7 @@ const verticalSizes = ref([40, 60])
         <div>Current size: {{ verticalSizes[1] }}%</div>
       </div>
     </template>
-  </VerSplitter>
+  </VKSplitter>
 </template>
 
 <style scoped></style>

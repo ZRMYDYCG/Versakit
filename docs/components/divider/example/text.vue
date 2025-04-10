@@ -1,11 +1,11 @@
 <template>
   <div>
-    <ver-divider>🎇</ver-divider>
-    <ver-divider position="center">🎇</ver-divider>
-    <ver-divider position="right">🎇</ver-divider>
+    <VKDivider>🎇</VKDivider>
+    <VKDivider position="center">🎇</VKDivider>
+    <VKDivider position="right">🎇</VKDivider>
   </div>
 </template>
 
 <script setup lang="ts">
-import { VerDivider } from '@versakit/ui'
+import { VKDivider } from '@versakit/ui'
 </script>
