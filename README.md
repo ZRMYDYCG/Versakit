@@ -48,7 +48,7 @@ yarn add @versakit/ui
 pnpm add @versakit/ui
 ```
 
-```
+```js
 import App from './App.vue'
 import { createApp } from 'vue'
 import Versakit from '@versakit/ui' // Import the component library
