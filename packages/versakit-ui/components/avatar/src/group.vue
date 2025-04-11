@@ -21,14 +21,15 @@ const maxStyle = computed(() => {
 </script>
 
 <template>
-  <div class="avatar-group">
+  <div class="vk-avatar-group" role="group" aria-label="Avatar group">
     <slot></slot>
     <Avatar
-      v-if="$slots.default && $slots.default.length > maxCount"
+      v-if="$slots.default?.length && $slots.default.length > maxCount"
       :size="size"
       :shape="shape"
       :text="`+${$slots.default.length - maxCount}`"
       v-bind="maxStyle"
+      aria-label="Additional avatars count"
     />
   </div>
 </template>

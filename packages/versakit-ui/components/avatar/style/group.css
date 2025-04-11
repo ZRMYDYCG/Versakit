@@ -1,13 +1,14 @@
-.avatar-group {
+.vk-avatar-group {
   display: inline-flex;
-  align-items: center;
+  flex-wrap: nowrap;
 }
 
-.avatar-group :deep(.avatar) {
-  border: 2px solid #fff;
+.vk-avatar-group :deep(.vk-avatar) {
   margin-left: -8px;
+  border: 2px solid #fff;
+  transition: margin 0.3s ease;
 }
 
-.avatar-group :deep(.avatar:first-child) {
+.vk-avatar-group :deep(.vk-avatar:first-child) {
   margin-left: 0;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div class="ver-badge" role="status">
+  <div class="vkbadge" role="status">
     <slot />
     <!-- 通过上标文本标签实现徽标 -->
     <sup
@@ -17,13 +17,13 @@
 import { computed } from 'vue'
 import type { BadgeProps, BadgeType } from '../type/index'
 
-defineOptions({ name: 'VerBadge' })
+defineOptions({ name: 'VKBadge' })
 
 // Badge类型映射
 const TYPE_CLASS_MAP: Record<BadgeType, string> = {
-  dot: 'ver-badge-dot',
-  number: 'ver-badge-num',
-  text: 'ver-badge-text',
+  dot: 'vkbadge-dot',
+  number: 'vkbadge-num',
+  text: 'vkbadge-text',
 } as const
 
 const props = withDefaults(defineProps<BadgeProps>(), {
@@ -37,7 +37,7 @@ const displayValue = computed(() => {
 })
 
 // 优化类名计算
-const badgeClass = computed(() => ['ver-badge', TYPE_CLASS_MAP[props.type]])
+const badgeClass = computed(() => ['vkbadge', TYPE_CLASS_MAP[props.type]])
 
 // 计算aria标签文本
 const ariaLabel = computed(() => {

@@ -12,7 +12,7 @@ import { VKBadge, VKButton } from '@versakit/ui'
 </script>
 
 <style scoped lang="scss">
-.ver-badge {
+.vkbadge {
   margin-right: 20px;
 }
 </style>
