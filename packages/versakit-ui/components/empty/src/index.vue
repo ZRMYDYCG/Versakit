@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import { VerIcon } from '@versakit/icons'
+import { VKIcon } from '@versakit/icons'
 import { VKButton } from '../../button/index'
 import type { EmptyProps } from '../type/index'
 

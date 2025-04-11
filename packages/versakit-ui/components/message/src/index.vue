@@ -1,7 +1,7 @@
 <template>
   <transition name="down" @after-leave="destroy">
     <div v-show="isVisable" :class="VerClass" :style="cssStyle">
-      <VerIcon :color="iconColor" :name="icon" />
+      <VKIcon :color="iconColor" :name="icon" />
       <span class="text">{{ content }}</span>
     </div>
   </transition>
@@ -11,7 +11,7 @@
 import { onMounted, ref, computed } from 'vue'
 import { getLastBottomOffset } from './index'
 import type { MessageProps } from '../type/index'
-import { VerIcon } from '@versakit/icons'
+import { VKIcon } from '@versakit/icons'
 
 defineOptions({ name: 'VerMessage' })
 

@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import { VerIcon } from '@versakit/icons'
+import { VKIcon } from '@versakit/icons'
 import { computed, ref, onMounted, shallowRef } from 'vue'
 import type { BackTopProps } from '../type/index'
 

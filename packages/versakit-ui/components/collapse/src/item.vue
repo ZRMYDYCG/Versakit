@@ -17,7 +17,7 @@
       <slot name="title">{{ title }}</slot>
 
       <div class="header-angle">
-        <VerIcon :name="icon" />
+        <VKIcon :name="icon" />
       </div>
     </div>
     <Transition name="slide" v-on="transitionEvents">
@@ -33,7 +33,7 @@
 import { inject, computed } from 'vue'
 import type { CollapseItemProps } from '../type/index'
 import { collapseContextKey } from '../type/index'
-import { VerIcon } from '@versakit/icons'
+import { VKIcon } from '@versakit/icons'
 
 defineOptions({
   name: 'VerCollapseItem',

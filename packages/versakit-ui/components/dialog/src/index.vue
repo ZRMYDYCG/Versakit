@@ -24,7 +24,7 @@
               @click="close"
               aria-label="关闭对话框"
             >
-              <VerIcon :name="closeIcon || 'close'" />
+              <VKIcon :name="closeIcon || 'close'" />
             </button>
           </div>
           <div
@@ -46,7 +46,7 @@
 <script lang="ts" setup>
 import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import type { DiaLogProps } from '../type/index'
-import { VerIcon } from '@versakit/icons'
+import { VKIcon } from '@versakit/icons'
 
 defineOptions({ name: 'VerDialog' })
 
