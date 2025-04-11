@@ -1,18 +1,19 @@
-# 贡献指南
+# Contribution Guidelines
 
-欢迎为我们的项目贡献代码！以下是参与项目贡献的指南，希望能帮助你顺利提交高质量的代码。
+Welcome to contribute code to our project! The following guidelines are designed to assist you in submitting high-quality code smoothly.
 
-## 1. 开发环境设置
+## 1. Development Environment Setup
 
-1. **安装依赖**：
-   - 确保你的机器上已经安装了 [Node.js](https://nodejs.org/en/)，版本建议为 [具体版本号] 及以上。
-   - 克隆项目仓库到本地：
+### 1.1 Install Dependencies
+
+- Ensure that [Node.js](https://nodejs.org/en/) is installed on your machine. The recommended version is [Specific Version Number] or higher.
+- Clone the project repository to your local machine:
 
 ```bash
 git clone -b beta https://github.com/Versakit/Versakit.git
 ```
 
-- 进入项目目录并安装依赖：
+- Navigate to the project directory and install the dependencies:
 
 ```bash
 cd Versakit
@@ -20,80 +21,103 @@ pnpm i
 pnpm i -w
 ```
 
-## 2. 分支管理
+## 2. Branch Management
 
-1. **主分支**：`main` 分支是项目的稳定版本，用于发布正式版本。不要直接在 `main` 分支上进行开发。
-2. **开发分支**：`beta` 分支是日常开发的主要分支，所有新功能的开发和 bug 修复都应该基于 `beta` 分支进行。
+### 2.1 Main Branch
 
-## 3. 代码规范
+The `main` branch represents the stable version of the project and is used for official releases. Do not develop directly on the `main` branch.
 
-1. **代码风格**：我们遵循 [具体代码风格规范，如 ESLint + Prettier 配置]。在提交代码前，请确保你的代码通过了代码检查和格式化。
-2. **注释**：
-   - 为所有函数、类和复杂的逻辑添加注释，以提高代码的可读性。
-   - 注释风格采用 [具体注释风格，如 JSDoc]。例如：
+### 2.2 Development Branch
+
+The `beta` branch is the primary branch for daily development. All new feature development and bug fixes should be based on the `beta` branch.
+
+## 3. Code Standards
+
+### 3.1 Code Style
+
+We adhere to [Specific Code Style Guidelines, e.g., ESLint + Prettier Configuration]. Before submitting your code, make sure it passes the code checks and formatting.
+
+### 3.2 Comments
+
+- Add comments to all functions, classes, and complex logic to enhance code readability.
+- Use [Specific Comment Style, e.g., JSDoc]. For example:
 
 ```javascript
 /**
- * 计算两个数的和
- * @param {number} a - 第一个数
- * @param {number} b - 第二个数
- * @returns {number} 两数之和
+ * Calculate the sum of two numbers
+ * @param {number} a - The first number
+ * @param {number} b - The second number
+ * @returns {number} The sum of the two numbers
  */
 function add(a, b) {
 	return a + b
 }
 ```
 
-## 4. 提交规范
+## 4. Commit Standards
 
-1. **提交信息格式**：
+### 4.1 Commit Message Format
 
-   - 提交信息应该遵循 [具体的提交信息规范，如 Conventional Commits]。格式为 `<类型>[可选范围]: <描述>`。
-   - 类型包括：`feat`（新功能）、`fix`（修复 bug）、`docs`（文档更新）、`style`（代码格式调整）、`refactor`（重构代码）、`test`（添加或更新测试用例）等。
-   - 示例：`feat: 添加用户注册功能`
+- Commit messages should follow [Specific Commit Message Guidelines, e.g., Conventional Commits]. The format is `<Type>[Optional Scope]: <Description>`.
+- Types include: `feat` (new feature), `fix` (bug fix), `docs` (documentation update), `style` (code formatting adjustment), `refactor` (code refactoring), `test` (add or update test cases), etc.
+- Example: `feat: Add user registration function`
 
-2. **避免大而全的提交**：尽量将功能或修复拆分成多个小的、有意义的提交，每个提交专注于一个具体的改动。
+### 4.2 Avoid Monolithic Commits
 
-## 5. 拉取请求（Pull Request）
+Try to break down features or fixes into multiple small, meaningful commits, with each commit focusing on a specific change.
 
-1. **提交拉取请求**：
+## 5. Pull Request
 
-   - 在完成功能开发或 bug 修复后，将你的功能分支推送到远程仓库，并在 GitHub 上提交拉取请求（PR）。
-   - 选择 `beta` 分支作为目标分支，并填写详细的 PR 描述，说明本次改动的目的、内容和影响。
+### 5.1 Submit a Pull Request
 
-2. **代码审查**：
-   - 团队成员会对你的 PR 进行代码审查，可能会提出一些修改建议。请及时回复评论并根据建议进行修改。
-   - 只有在 PR 通过代码审查并解决所有问题后，才会被合并到 `beta` 分支。
+- After completing feature development or bug fixes, push your feature branch to the remote repository and submit a Pull Request (PR) on GitHub.
+- Select the `beta` branch as the target branch and provide a detailed PR description, explaining the purpose, content, and impact of the changes.
 
-## 6. 测试
+### 5.2 Code Review
 
-1. **单元测试**：对于新添加的功能，必须编写相应的单元测试。测试用例应覆盖各种可能的输入和边界条件，确保代码的正确性和稳定性。
-2. **测试框架**：我们使用 [vitest] 进行单元测试。运行测试的命令为：
+- Team members will review your PR and may provide some modification suggestions. Please respond to the comments promptly and make changes according to the suggestions.
+- A PR will only be merged into the `beta` branch after passing the code review and resolving all issues.
+
+## 6. Testing
+
+### 6.1 Unit Testing
+
+For newly added features, corresponding unit tests must be written. Test cases should cover all possible inputs and boundary conditions to ensure the correctness and stability of the code.
+
+### 6.2 Testing Framework
+
+We use [vitest] for unit testing. The command to run the tests is:
 
 ```bash
 pnpm test:ui
 ```
 
-3. **测试覆盖率**：尽量保持较高的测试覆盖率，建议达到 [具体覆盖率数值] 以上。
+### 6.3 Test Coverage
 
-## 7. 沟通协作
+Try to maintain a high test coverage rate, preferably above [Specific Coverage Value].
 
-1. **问题讨论**：如果你在开发过程中遇到问题或有疑问，欢迎在项目的 [GitHub Discussions] 或 [其他沟通渠道，如 Slack 群组] 中发起讨论。
-2. **功能规划**：在开始较大规模的功能开发前，请先与团队成员沟通，确保该功能符合项目的整体规划和架构设计。
+## 7. Communication and Collaboration
 
-##8. 项目结构
+### 7.1 Issue Discussion
+
+If you encounter problems or have questions during development, feel free to initiate a discussion in the project's [GitHub Discussions] or [Other Communication Channels, e.g., Slack Group].
+
+### 7.2 Feature Planning
+
+Before starting large-scale feature development, communicate with team members to ensure that the feature aligns with the overall project plan and architectural design.
+
+## 8. Project Structure
 
 ```bash
-├── docs 文档
+├── docs  Documentation
 ├── packages
-│   ├── versakit-cli    项目脚手架
-│   ├── versakit-dev    项目集成测试环境
-│   ├── versakit-icons  项目图标库
-│   ├── versakit-shared 项目共享工具包
-│   ├── versakit-theme  主题包
-│   ├── versakit-ui     项目组件库
-│   └── versakit-resolvers 按需引入的组件库
-
+│   ├── versakit-cli    Project scaffolding
+│   ├── versakit-dev    Project integration test environment
+│   ├── versakit-icons  Project icon library
+│   ├── versakit-shared Project shared toolkit
+│   ├── versakit-theme  Theme package
+│   ├── versakit-ui     Project component library
+│   └── versakit-resolvers On-demand component library
 ```
 
-感谢你对本项目的贡献！让我们共同努力，打造一个优秀的项目。
+Thank you for contributing to this project! Let's work together to build an excellent project.
