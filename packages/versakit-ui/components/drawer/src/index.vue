@@ -22,7 +22,7 @@
               @click="handleClose"
               aria-label="关闭抽屉"
             >
-              <VerIcon :name="closeIcon || 'close'" />
+              <VKIcon :name="closeIcon || 'close'" />
             </button>
           </div>
           <div class="ver-drawer_body" aria-labelledby="drawer-title">
@@ -37,7 +37,7 @@
 <script lang="ts" setup>
 import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import type { DrawerProps } from '../type/type'
-import { VerIcon } from '@versakit/icons'
+import { VKIcon } from '@versakit/icons'
 
 defineOptions({ name: 'VerDrawer' })
 

@@ -2,14 +2,14 @@
   <transition name="slide-fade" @after-leave="props.destroy">
     <div v-show="isVisable" :class="VerClass" :style="positionStyle">
       <div class="ver-notification-top">
-        <VerIcon :size="25" :color="iconColor" :name="icon" />
+        <VKIcon :size="25" :color="iconColor" :name="icon" />
         <h2 class="ver-notification-title">{{ title }}</h2>
       </div>
       <div class="ver-notification-content">
         <span>{{ content }}</span>
       </div>
       <div class="ver-notification-closebtn" @click="handClose">
-        <VerIcon name="cross" />
+        <VKIcon name="cross" />
       </div>
     </div>
   </transition>
@@ -18,7 +18,7 @@
 <script lang="ts" setup>
 import { ref, onMounted, computed } from 'vue'
 import { getLastBottomOffset } from './index'
-import { VerIcon } from '@versakit/icons'
+import { VKIcon } from '@versakit/icons'
 import type { NotifivationProps } from '../type/index'
 
 defineOptions({ name: 'VerNotifivation' })
