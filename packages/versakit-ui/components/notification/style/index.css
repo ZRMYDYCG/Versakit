@@ -1,17 +1,17 @@
-.ver-notification {
+.vk-notification {
   width: 330px;
   height: auto;
   padding: 14px 26px 14px 13px;
   border-radius: 8px;
-  border: 1px solid var(--theme-neutral-100, var(--ver-neutral-100));
+  border: 1px solid var(--theme-neutral-100, var(--vk-neutral-100));
   box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
-  background-color: var(--theme-neutral-100, var(--ver-neutral-100));
+  background-color: var(--theme-neutral-100, var(--vk-neutral-100));
   overflow: hidden;
   overflow-wrap: anywhere;
-  z-index: 2010;
+  z-index: 9999;
   .dark & {
-    border: 1px solidvar(--theme-neutral-700, var(--ver-neutral-700));
-    background-color: var(--theme-neutral-800, var(--ver-neutral-800));
+    border: 1px solid var(--theme-neutral-700, var(--vk-neutral-700));
+    background-color: var(--theme-neutral-800, var(--vk-neutral-800));
     box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
   }
 
@@ -19,7 +19,7 @@
     display: inline-flex;
     align-items: center;
 
-    .ver-notification-title {
+    .vk-notification-title {
       font-weight: 700;
       font-size: 16px;
       line-height: 24px;
@@ -28,19 +28,19 @@
       padding: 0;
 
       .dark & {
-        color: var(--theme-neutral-100, var(--ver-neutral-100));
+        color: var(--theme-neutral-100, var(--vk-neutral-100));
       }
     }
   }
 
   &-content {
-    margin-top: 6px 0 0;
+    margin-top: 6px;
     font-size: 14px;
     line-height: 24px;
     text-align: justify;
 
     .dark & {
-      color: var(--theme-neutral-100, var(--ver-neutral-100));
+      color: var(--theme-neutral-100, var(--vk-neutral-100));
     }
   }
   &-closebtn {
@@ -54,19 +54,19 @@
 }
 
 @each $item in primary, success, warn, info, error {
-  .ver-notification-$(item)-plain {
-    color: var(--theme-$(item)-500, var(--ver-$(item)-color));
-    background-color: var(--theme-$(item)-100, var(--ver-$(item)-100));
+  .vk-notification-$(item)-plain {
+    color: var(--theme-$(item)-500, var(--vk-$(item)-color));
+    background-color: var(--theme-$(item)-100, var(--vk-$(item)-100));
 
     .dark & {
-      background-color: var(--theme-$(item)-100, var(--ver-$(item)-100));
+      background-color: var(--theme-$(item)-100, var(--vk-$(item)-100));
 
-      .ver-notification-title {
-        color: var(--theme-$(item)-500, var(--ver-$(item)-500));
+      .vk-notification-title {
+        color: var(--theme-$(item)-500, var(--vk-$(item)-500));
       }
 
-      .ver-notification-content {
-        color: var(--theme-$(item)-500, var(--ver-$(item)-500));
+      .vk-notification-content {
+        color: var(--theme-$(item)-500, var(--vk-$(item)-500));
       }
     }
   }
