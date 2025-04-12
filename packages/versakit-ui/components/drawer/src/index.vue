@@ -3,29 +3,29 @@
     <transition name="fade" @after-leave="afterLeave">
       <div
         v-show="props.modelValue"
-        :class="['ver-drawer-wrapper', `ver-drawer-${props.direction}`]"
+        :class="['vk-drawer-wrapper', `vk-drawer-${props.direction}`]"
         role="dialog"
         aria-modal="true"
-        :aria-label="props.title"
+        aria-label="抽屉"
         @click.self="handleClose"
         @keydown.esc="handleClose"
         tabindex="-1"
         ref="drawerRef"
       >
-        <div class="ver-drawer" role="document" :style="drawerStyle">
-          <div class="ver-drawer_header">
-            <span class="ver-drawer_title" id="drawer-title">
+        <div class="vk-drawer" role="document" :style="drawerStyle">
+          <div class="vk-drawer_header">
+            <span class="vk-drawer_title" id="drawer-title">
               {{ props.title || '标题' }}
             </span>
             <button
-              class="ver-drawer_headerbtn"
+              class="vk-drawer_headerbtn"
               @click="handleClose"
               aria-label="关闭抽屉"
             >
               <VKIcon :name="closeIcon || 'close'" />
             </button>
           </div>
-          <div class="ver-drawer_body" aria-labelledby="drawer-title">
+          <div class="vk-drawer_body" aria-labelledby="drawer-title">
             <slot></slot>
           </div>
         </div>
@@ -39,7 +39,7 @@ import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import type { DrawerProps } from '../type/type'
 import { VKIcon } from '@versakit/icons'
 
-defineOptions({ name: 'VerDrawer' })
+defineOptions({ name: 'VKDrawer' })
 
 const props = withDefaults(defineProps<DrawerProps>(), {
   modelValue: false,
@@ -79,26 +79,34 @@ const afterLeave = () => {
   }
 }
 
-const getScrollBarWidth = () => {
-  const outer = document.createElement('div')
-  outer.style.visibility = 'hidden'
-  outer.style.width = '100px'
-  outer.style.position = 'absolute'
-  outer.style.top = '-9999px'
-  document.body.appendChild(outer)
+// 优化滚动条宽度计算函数，使用缓存避免重复计算
+const getScrollBarWidth = (() => {
+  let width: number | null = null
 
-  const widthNoScroll = outer.offsetWidth
-  outer.style.overflow = 'scroll'
+  return () => {
+    if (width !== null) return width
 
-  const inner = document.createElement('div')
-  inner.style.width = '100%'
-  outer.appendChild(inner)
+    const outer = document.createElement('div')
+    outer.style.visibility = 'hidden'
+    outer.style.width = '100px'
+    outer.style.position = 'absolute'
+    outer.style.top = '-9999px'
+    document.body.appendChild(outer)
 
-  const widthWithScroll = inner.offsetWidth
-  outer.parentNode?.removeChild(outer)
+    const widthNoScroll = outer.offsetWidth
+    outer.style.overflow = 'scroll'
 
-  return widthNoScroll - widthWithScroll
-}
+    const inner = document.createElement('div')
+    inner.style.width = '100%'
+    outer.appendChild(inner)
+
+    const widthWithScroll = inner.offsetWidth
+    outer.parentNode?.removeChild(outer)
+
+    width = widthNoScroll - widthWithScroll
+    return width
+  }
+})()
 
 const lockScrollHandler = () => {
   if (props.lockScroll) {
@@ -113,6 +121,7 @@ const lockScrollHandler = () => {
   }
 }
 
+// 监听显示状态
 watch(
   () => props.modelValue,
   (val) => {
@@ -123,6 +132,7 @@ watch(
   },
 )
 
+// 优化生命周期钩子
 onMounted(() => {
   if (props.modelValue) {
     open()
@@ -131,6 +141,7 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
+  // 确保组件卸载时恢复滚动状态
   document.body.style.overflow = ''
   document.body.style.paddingRight = ''
 })

@@ -43,7 +43,7 @@ const error = () => {
 </script>
 
 <style scoped>
-.ver-btn {
+.vk-btn {
   margin: 0px 10px;
 }
 </style>

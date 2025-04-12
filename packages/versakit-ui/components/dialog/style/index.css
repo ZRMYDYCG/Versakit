@@ -1,4 +1,4 @@
-.ver-dialog_wrapper {
+.vk-dialog_wrapper {
   position: fixed;
   top: 0;
   right: 0;
@@ -8,31 +8,31 @@
   margin: 0;
   z-index: 2001;
   background-color: rgba(0, 0, 0, 0.5);
-  .ver-dialog {
+  .vk-dialog {
     position: relative;
     width: 30%;
     margin: 15vh auto 50px;
-    background-color: var(--theme-neutral-100, var(--ver-neutral-100));
+    background-color: var(--theme-neutral-100, var(--vk-neutral-100));
     border-radius: 2px;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
     box-sizing: border-box;
 
     .dark & {
-      background-color: var(--theme-neutral-800, var(--ver-neutral-800));
+      background-color: var(--theme-neutral-800, var(--vk-neutral-800));
     }
 
     &_header {
       padding: 20px 20px 10px;
-      .ver-dialog_title {
+      .vk-dialog_title {
         line-height: 24px;
         font-size: 18px;
         color: #303133;
 
         .dark & {
-          color: var(--theme-neutral-100, var(--ver-neutral-100));
+          color: var(--theme-neutral-100, var(--vk-neutral-100));
         }
       }
-      .ver-dialog_headerbtn {
+      .vk-dialog_headerbtn {
         position: absolute;
         top: 20px;
         right: 20px;
@@ -51,7 +51,7 @@
       word-break: break-all;
 
       .dark & {
-        color: var(--theme-neutral-100, var(--ver-neutral-100));
+        color: var(--theme-neutral-100, var(--vk-neutral-100));
       }
     }
     &_footer {

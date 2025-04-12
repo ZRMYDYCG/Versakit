@@ -38,7 +38,7 @@ const components = [
   'VerCol',
   'VerTag',
   'VerNotification',
-  'VerMessage',
+  'VKMessage',
   'VerText',
   'VerBadge',
   'VerCarouselItem',

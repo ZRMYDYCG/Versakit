@@ -1,6 +1,12 @@
 <template>
   <transition name="down" @after-leave="destroy">
-    <div v-show="isVisable" :class="VerClass" :style="cssStyle">
+    <div
+      v-show="isVisable"
+      :class="VKClass"
+      :style="cssStyle"
+      role="alert"
+      aria-live="polite"
+    >
       <VKIcon :color="iconColor" :name="icon" />
       <span class="text">{{ content }}</span>
     </div>
@@ -8,12 +14,12 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, computed } from 'vue'
+import { onMounted, onUnmounted, ref, computed } from 'vue'
 import { getLastBottomOffset } from './index'
 import type { MessageProps } from '../type/index'
 import { VKIcon } from '@versakit/icons'
 
-defineOptions({ name: 'VerMessage' })
+defineOptions({ name: 'VKMessage' })
 
 const isVisable = ref(false)
 
@@ -56,11 +62,11 @@ const iconColor = computed(() => {
   }
 })
 
-const VerClass = computed(() => {
+const VKClass = computed(() => {
   return [
-    'ver-message',
-    props.type == 'info' ? '' : `ver-message-${props.type}`,
-    props.plain == false ? '' : `ver-message-${props.type}-plain`,
+    'vk-message',
+    props.type == 'info' ? '' : `vk-message-${props.type}`,
+    props.plain == false ? '' : `vk-message-${props.type}-plain`,
   ]
 })
 
@@ -68,13 +74,20 @@ const VerClass = computed(() => {
  * 保证动画展示，需要在 mounted 之后进行展示
  */
 onMounted(() => {
-  isVisable.value = true
-  /**
-   * 延迟时间关闭
-   */
-  setTimeout(() => {
-    isVisable.value = false
-  }, props.duration)
+  // 使用requestAnimationFrame优化性能，确保DOM更新后再显示
+  requestAnimationFrame(() => {
+    isVisable.value = true
+  })
+
+  // 只有当duration大于0时才设置定时器
+  if (props.duration > 0) {
+    const timer = setTimeout(() => {
+      isVisable.value = false
+    }, props.duration)
+
+    // 组件卸载时清除定时器，避免内存泄漏
+    onUnmounted(() => clearTimeout(timer))
+  }
 })
 
 defineExpose({
