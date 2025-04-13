@@ -8,10 +8,12 @@
   border-radius: var(--card-border-radius);
   background-color: #fff;
   overflow: hidden;
+
   /* 只对box-shadow属性进行过渡，提高性能 */
   transition: box-shadow 0.3s ease;
   /* 启用GPU加速 */
   will-change: box-shadow;
+
   /* 提高层叠上下文，避免z-index问题 */
   position: relative;
   z-index: 1;

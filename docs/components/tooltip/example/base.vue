@@ -11,7 +11,7 @@ import { VKTooltip, VKButton } from '@versakit/ui'
         content="Top Left"
         position="top-left"
       >
-        <ver-button ghost>top-left</ver-button>
+        <VKButton ghost>top-left</VKButton>
       </VKTooltip>
 
       <VKTooltip class="box-item" effect="dark" content="Top " position="top">

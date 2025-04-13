@@ -1,6 +1,6 @@
 <template>
   <div class="ver-empty">
-    <ver-icon :name="icon" size="80" class="ver-empty__icon" color="c1c1c1" />
+    <VKIcon :name="icon" size="80" class="ver-empty__icon" color="c1c1c1" />
     <div>
       <slot
         name="content"

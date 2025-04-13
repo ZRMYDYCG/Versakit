@@ -1,6 +1,6 @@
 <template>
   <div :class="VerClass">
-    <ver-icon :name="icon" size="120" :color="computedColor" />
+    <VKIcon :name="icon" size="120" :color="computedColor" />
     <div class="result-content">
       <slot name="content">{{ VerContent }}</slot>
     </div>
