@@ -39,31 +39,31 @@ describe('Flex Component', () => {
     expect(wrapper.vm.gap).toBe('5px 10px')
   })
 
-  it('should apply "ver-flex--vertical" class when vertical is true', () => {
+  it('should apply "vk-flex--vertical" class when vertical is true', () => {
     const wrapper = mount(Flex, {
       props: { vertical: true },
     })
-    expect(wrapper.classes()).toContain('ver-flex--vertical')
+    expect(wrapper.classes()).toContain('vk-flex--vertical')
   })
 
-  it('should not apply "ver-flex--vertical" class when vertical is false or undefined', () => {
+  it('should not apply "vk-flex--vertical" class when vertical is false or undefined', () => {
     const wrapperFalse = mount(Flex, {
       props: { vertical: false },
     })
     const wrapperUndefined = mount(Flex)
 
-    expect(wrapperFalse.classes()).not.toContain('ver-flex--vertical')
-    expect(wrapperUndefined.classes()).not.toContain('ver-flex--vertical')
+    expect(wrapperFalse.classes()).not.toContain('vk-flex--vertical')
+    expect(wrapperUndefined.classes()).not.toContain('vk-flex--vertical')
   })
 
   it.each<WrapProps>(['nowrap', 'wrap', 'wrap-reverse'])(
-    'should set --ver-flex-wrap to %s when wrap is %s',
+    'should set --vk-flex-wrap to %s when wrap is %s',
     (wrapValue) => {
       const wrapper = mount(Flex, {
         props: { wrap: wrapValue },
       })
       expect(wrapper.attributes('style')).toContain(
-        `--ver-flex-wrap: ${wrapValue};`,
+        `--vk-flex-wrap: ${wrapValue};`,
       )
     },
   )
@@ -77,13 +77,13 @@ describe('Flex Component', () => {
     ['space-around', 'space-around'],
     ['space-evenly', 'space-evenly'],
   ])(
-    'should set --ver-flex-justify to %s when justify is %s',
+    'should set --vk-flex-justify to %s when justify is %s',
     (justifyValue, expected) => {
       const wrapper = mount(Flex, {
         props: { justify: justifyValue },
       })
       expect(wrapper.attributes('style')).toContain(
-        `--ver-flex-justify: ${expected};`,
+        `--vk-flex-justify: ${expected};`,
       )
     },
   )
@@ -94,13 +94,13 @@ describe('Flex Component', () => {
     ['center', 'center'],
     ['flex-end', 'flex-end'],
   ])(
-    'should set --ver-flex-align to %s when align is %s',
+    'should set --vk-flex-align to %s when align is %s',
     (alignValue, expected) => {
       const wrapper = mount(Flex, {
         props: { align: alignValue },
       })
       expect(wrapper.attributes('style')).toContain(
-        `--ver-flex-align: ${expected};`,
+        `--vk-flex-align: ${expected};`,
       )
     },
   )

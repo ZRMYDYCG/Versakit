@@ -1,8 +1,8 @@
-.ver-flex {
+.vk-flex {
   display: flex;
-  flex-wrap: var(--ver-flex-wrap);
-  justify-content: var(--ver-flex-justify);
-  align-items: var(--ver-flex-align);
+  flex-wrap: var(--vk-flex-wrap);
+  justify-content: var(--vk-flex-justify);
+  align-items: var(--vk-flex-align);
   gap: var(--ver-flex-gap);
   transition: all 0.3s;
 

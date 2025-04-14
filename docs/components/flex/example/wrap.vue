@@ -11,6 +11,6 @@ import { VKFlex } from '@versakit/ui'
 .flex-item {
   width: 80px;
   height: 40px;
-  background-color: var(--theme-primary-500, var(--ver-primary-500));
+  background-color: var(--theme-primary-500, var(--vk-primary-500));
 }
 </style>

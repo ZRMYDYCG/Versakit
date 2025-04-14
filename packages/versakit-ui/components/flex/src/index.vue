@@ -39,14 +39,16 @@ const gap = computed(() => {
 
 <template>
   <div
-    class="ver-flex"
-    :class="{ 'ver-flex--vertical': vertical }"
+    class="vk-flex"
+    :class="{ 'vk-flex--vertical': vertical }"
     :style="{
-      '--ver-flex-gap': gap,
-      '--ver-flex-justify': justify,
-      '--ver-flex-align': align,
-      '--ver-flex-wrap': wrap,
+      '--vk-flex-gap': gap,
+      '--vk-flex-justify': justify,
+      '--vk-flex-align': align,
+      '--vk-flex-wrap': wrap,
     }"
+    aria-orientation="horizontal"
+    aria-live="polite"
   >
     <slot></slot>
   </div>

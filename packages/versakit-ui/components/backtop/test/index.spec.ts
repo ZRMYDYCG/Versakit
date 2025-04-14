@@ -1,9 +1,3 @@
-/*
- * @Author: 2171204141@qq.com
- * @Date: 2024-12-08 23:10:39
- * @LastEditors: Dream
- * @Description: Backtop 单元测试
- */
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
 import VerBacktop from '../src/index.vue'

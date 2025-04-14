@@ -19,6 +19,6 @@ const direction = ref('horizontal')
 .flex-item {
   width: 25%;
   height: 80px;
-  background-color: var(--theme-primary-500, var(--ver-primary-500));
+  background-color: var(--theme-primary-500, var(--vk-primary-500));
 }
 </style>
