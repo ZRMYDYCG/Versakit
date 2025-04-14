@@ -86,13 +86,14 @@ pnpm test:ui
 ```bash
 ├── docs 文档
 ├── packages
-│   ├── versakit-cli    项目脚手架
-│   ├── versakit-dev    项目集成测试环境
-│   ├── versakit-icons  项目图标库
-│   ├── versakit-shared 项目共享工具包
-│   ├── versakit-theme  主题包
-│   ├── versakit-ui     项目组件库
-│   └── versakit-resolvers 按需引入的组件库
+│   ├── versakit-cli            项目脚手架
+│   ├── versakit-dev            项目集成测试环境
+│   ├── versakit-icons          项目图标库
+│   ├── versakit-shared         项目共享工具包
+│   ├── versakit-theme          主题包
+│   ├── versakit-ui     		  项目组件库
+│   ├── versakit-directives     项目指令库
+│   └── versakit-resolvers      按需引入的组件库
 
 ```
 
