@@ -49,7 +49,7 @@ export default defineConfig({
         cssnano({
           preset: 'default',
         }),
-      ],
+      ] as any,
     },
   },
   build: {
