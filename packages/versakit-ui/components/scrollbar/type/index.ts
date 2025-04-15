@@ -1,4 +1,4 @@
-export interface VerScrollBarProps {
+export interface VKScrollBarProps {
   direction?: 'horizontal' | 'vertical' | 'both'
   height?: string
   width?: string

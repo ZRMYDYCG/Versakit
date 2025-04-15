@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, onUnmounted } from 'vue'
-import type { VerScrollBarProps } from '../type/index'
+import type { VKScrollBarProps } from '../type/index'
 
-defineOptions({ name: 'VerScrollBar' })
+defineOptions({ name: 'VKScrollBar' })
 
-const props = withDefaults(defineProps<VerScrollBarProps>(), {
+const props = withDefaults(defineProps<VKScrollBarProps>(), {
   direction: 'vertical',
   height: '100%',
   width: '100%',
@@ -217,6 +217,8 @@ onUnmounted(() => {
     :style="{ width: props.width, height: props.height }"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
+    role="region"
+    aria-label="Custom Scrollbar"
   >
     <div
       ref="contentRef"

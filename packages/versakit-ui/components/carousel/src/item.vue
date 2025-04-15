@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref, inject, onMounted, onUnmounted, computed } from 'vue'
 import type { CarouselItemProps } from '../type/item.ts'
-defineOptions({ name: 'VerCarouselItem' })
+
+defineOptions({ name: 'VKCarouselItem' })
 
 const props = withDefaults(defineProps<CarouselItemProps>(), {
   alt: '',
@@ -28,24 +29,23 @@ const style = computed(() => {
   const isHorizontal = carousel.direction === 'horizontal'
   const offset = (index - currentIndex) * 100
 
-  if (isHorizontal) {
-    return {
-      transform: `translateX(${offset}%)`,
-      transition: 'transform 0.5s ease-in-out',
-      width: props.width,
-      height: props.height,
-    }
-  } else {
-    return {
-      transform: `translateY(${offset}%)`,
-      transition: 'transform 0.5s ease-in-out',
-      width: props.width,
-      height: props.height,
-    }
+  return {
+    transform: isHorizontal
+      ? `translateX(${offset}%)`
+      : `translateY(${offset}%)`,
+    transition: 'transform 0.5s ease-in-out',
+    width: props.width,
+    height: props.height,
   }
 })
 
+const ariaLabel = ref('')
+
 onMounted(() => {
+  const index = carousel.items.value.findIndex(
+    (item: any) => item.uid === uid.value,
+  )
+  ariaLabel.value = `Slide ${index + 1} of ${carousel.items.value.length}`
   carousel.registerItem({ uid: uid.value })
 })
 
@@ -55,7 +55,14 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="carousel-item" :class="{ active: isActive }" :style="style">
+  <div
+    class="carousel-item"
+    :class="{ active: isActive }"
+    :style="style"
+    role="group"
+    aria-roledescription="slide"
+    :aria-label="ariaLabel"
+  >
     <template v-if="src">
       <div class="carousel-slide">
         <img :src="src" :alt="alt" :style="{ objectFit: fit }" />

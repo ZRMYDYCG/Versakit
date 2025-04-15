@@ -1,16 +1,14 @@
 <script setup lang="ts">
-import { ref, inject, onMounted, onBeforeUnmount } from 'vue'
+import { inject, onMounted, onBeforeUnmount } from 'vue'
 import type { TabItemProps } from '../type/index.ts'
 
-defineOptions({ name: 'VerTabItem' })
+defineOptions({ name: 'VKTabItem' }) // 修改组件名称为 VKTabItem
 
 const props = withDefaults(defineProps<TabItemProps>(), {
   disabled: false,
 })
 
 const tabs = inject('tabs') as any
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const isActive = ref(false)
 
 onMounted(() => {
   tabs.registerTab({
@@ -26,7 +24,13 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div v-show="tabs.activeTab === name" class="tab-pane">
+  <div
+    v-show="tabs.activeTab === props.name"
+    class="tab-pane"
+    role="tabpanel"
+    :aria-hidden="tabs.activeTab !== props.name ? 'true' : 'false'"
+    :aria-labelledby="`tab-${props.name}`"
+  >
     <slot></slot>
   </div>
 </template>

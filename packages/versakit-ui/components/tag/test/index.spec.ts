@@ -1,10 +1,10 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import VerTag from '../src/index.vue'
+import { VKTag } from '../index'
 
 describe('tag', () => {
   it('测试是否有默认样式', () => {
-    const wrapper = mount(VerTag)
+    const wrapper = mount(VKTag)
     expect(wrapper.classes()).toContain('ver-tag')
   })
 
@@ -13,7 +13,7 @@ describe('tag', () => {
     .filter((s) => s !== 'default')
     .forEach((item) => {
       it(`测试type:${item}`, () => {
-        const wrapper = mount(VerTag, {
+        const wrapper = mount(VKTag, {
           props: {
             size: item as any,
           },
@@ -23,7 +23,7 @@ describe('tag', () => {
     })
 
   it('测试plain', () => {
-    const wrapper = mount(VerTag, {
+    const wrapper = mount(VKTag, {
       props: {
         plain: true,
       },
@@ -32,7 +32,7 @@ describe('tag', () => {
   })
 
   it('测试round', () => {
-    const wrapper = mount(VerTag, {
+    const wrapper = mount(VKTag, {
       props: {
         round: true,
       },
@@ -43,7 +43,7 @@ describe('tag', () => {
   const types = ['success', 'primary', 'warning', 'error', 'info']
   types.forEach((type) => {
     it(`测试type:${type}`, () => {
-      const wrapper = mount(VerTag, {
+      const wrapper = mount(VKTag, {
         props: {
           type: type as any,
         },
@@ -55,7 +55,7 @@ describe('tag', () => {
   const typesII = ['success', 'primary', 'warning', 'error', 'info']
   typesII.forEach((type) => {
     it(`测试type:${type} 和plain`, () => {
-      const wrapper = mount(VerTag, {
+      const wrapper = mount(VKTag, {
         props: {
           type: type as any,
           plain: true,

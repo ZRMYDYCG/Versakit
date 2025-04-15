@@ -2,6 +2,10 @@
 import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import type { NoticeBarProps } from '../type/index.ts'
 
+defineOptions({
+  name: 'VKNoticeBar', // 修改组件名称为 VKNoticeBar
+})
+
 const props = withDefaults(defineProps<NoticeBarProps>(), {
   type: 'info',
   closable: false,
@@ -111,7 +115,13 @@ onUnmounted(() => {
 
 <template>
   <transition name="notice-bar">
-    <div v-if="visible" class="notice-bar" :class="[`notice-bar-${type}`]">
+    <div
+      v-if="visible"
+      class="notice-bar"
+      :class="[`notice-bar-${type}`]"
+      role="alert"
+      aria-live="polite"
+    >
       <div class="notice-bar-icon">
         {{ typeIcon }}
       </div>

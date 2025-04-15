@@ -3,7 +3,7 @@ import { computed, ref } from 'vue'
 import type { PaginationProps } from '../type/index.ts'
 
 defineOptions({
-  name: 'VerPagination',
+  name: 'VKPagination', // 修改组件名称为 VKPagination
 })
 
 const props = withDefaults(defineProps<PaginationProps>(), {
@@ -92,7 +92,7 @@ const handleJumpInput = (event: KeyboardEvent) => {
 </script>
 
 <template>
-  <div class="pagination">
+  <div class="pagination" role="navigation" aria-label="Pagination Navigation">
     <span v-if="showTotal" class="pagination-total">
       Total {{ total }} items
     </span>
@@ -101,6 +101,7 @@ const handleJumpInput = (event: KeyboardEvent) => {
       class="pagination-btn"
       :disabled="modelValue <= 1 || disabled"
       @click="handlePageChange(modelValue - 1)"
+      aria-label="Previous Page"
     >
       Previous
     </button>
@@ -116,6 +117,7 @@ const handleJumpInput = (event: KeyboardEvent) => {
         }"
         :disabled="item === '...' || disabled"
         @click="typeof item === 'number' && handlePageChange(item)"
+        :aria-label="typeof item === 'number' ? 'Page ' + item : '...'"
       >
         {{ item }}
       </button>
@@ -125,12 +127,20 @@ const handleJumpInput = (event: KeyboardEvent) => {
       class="pagination-btn"
       :disabled="modelValue >= totalPages || disabled"
       @click="handlePageChange(modelValue + 1)"
+      aria-label="Next Page"
     >
       Next
     </button>
 
     <div v-if="showSizeChanger" class="pagination-size-changer">
-      <select :value="pageSize" :disabled="disabled" @change="handleSizeChange">
+      <label for="page-size-select" class="sr-only">Page Size</label>
+      <select
+        id="page-size-select"
+        :value="pageSize"
+        :disabled="disabled"
+        @change="handleSizeChange"
+        aria-label="Page Size Selector"
+      >
         <option v-for="size in pageSizeOptions" :key="size" :value="size">
           {{ size }} / page
         </option>
@@ -139,11 +149,14 @@ const handleJumpInput = (event: KeyboardEvent) => {
 
     <div v-if="showQuickJumper" class="pagination-jumper">
       <span>Go to</span>
+      <label for="jump-to-page" class="sr-only">Jump to Page</label>
       <input
+        id="jump-to-page"
         v-model="inputPage"
         type="text"
         :disabled="disabled"
         @keyup.enter="handleJumpInput"
+        aria-label="Jump to Page Input"
       />
       <span>page</span>
     </div>

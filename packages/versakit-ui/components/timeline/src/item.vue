@@ -19,7 +19,12 @@ const itemPosition = computed(() => {
 </script>
 
 <template>
-  <div class="timeline-item" :class="[`timeline-item-${itemPosition}`]">
+  <div
+    class="timeline-item"
+    :class="[`timeline-item-${itemPosition}`]"
+    role="listitem"
+    aria-label="Timeline Item"
+  >
     <div v-if="label" class="timeline-item-label">
       {{ label }}
     </div>
@@ -60,7 +65,7 @@ const itemPosition = computed(() => {
   top: -2px;
   width: calc(50% - 12px);
   text-align: right;
-  color: #999;
+  color: var(--vk-neutral-500, #999); /* 使用 VK 前缀变量 */
 }
 
 .timeline-item-right .timeline-item-label {
@@ -74,7 +79,7 @@ const itemPosition = computed(() => {
   left: 50%;
   transform: translateX(-50%);
   height: calc(100% - 10px);
-  border-left: 2px solid #e8e8e8;
+  border-left: 2px solid var(--vk-neutral-200, #e8e8e8); /* 使用 VK 前缀变量 */
   z-index: 1;
 }
 

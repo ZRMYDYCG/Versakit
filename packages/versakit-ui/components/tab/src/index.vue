@@ -2,7 +2,7 @@
 import { ref, provide } from 'vue'
 import type { TabProps } from '../type/index.ts'
 
-defineOptions({ name: 'VerTab' })
+defineOptions({ name: 'VKTab' })
 
 const props = withDefaults(defineProps<TabProps>(), {
   type: 'line',
@@ -64,7 +64,12 @@ provide('tabs', {
 </script>
 
 <template>
-  <div class="tabs" :class="[`tabs-${type}`]">
+  <div
+    class="tabs"
+    :class="[`tabs-${type}`]"
+    role="tablist"
+    aria-label="Tab Navigation"
+  >
     <div class="tabs-nav">
       <div class="tabs-nav-wrap">
         <div
@@ -72,6 +77,8 @@ provide('tabs', {
           :key="tab.name"
           class="tabs-tab"
           :class="{ 'is-active': activeTab === tab.name }"
+          role="tab"
+          :aria-selected="activeTab === tab.name ? 'true' : 'false'"
           @click="handleTabClick(tab.name)"
         >
           <span>{{ tab.label }}</span>
@@ -83,7 +90,12 @@ provide('tabs', {
             ×
           </span>
         </div>
-        <button v-if="addable" class="tabs-nav-add" @click="handleTabAdd">
+        <button
+          v-if="addable"
+          class="tabs-nav-add"
+          @click="handleTabAdd"
+          aria-label="Add Tab"
+        >
           +
         </button>
       </div>
