@@ -2,7 +2,7 @@
   --card-padding: 15px;
   --card-border-radius: 5px;
   --card-header-height: 42px;
-  --card-border-color: var(--theme-neutral-300, var(--ver-neutral-300));
+  --card-border-color: var(--theme-neutral-300, var(--vk-neutral-300));
   --card-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
 
   border-radius: var(--card-border-radius);
@@ -19,9 +19,9 @@
   z-index: 1;
 
   .dark & {
-    --card-border-color: var(--theme-neutral-700, var(--ver-neutral-700));
-    color: var(--theme-neutral-50, var(--ver-neutral-100));
-    background-color: var(--theme-neutral-900, var(--ver-neutral-900));
+    --card-border-color: var(--theme-neutral-700, var(--vk-neutral-700));
+    color: var(--theme-neutral-50, var(--vk-neutral-100));
+    background-color: var(--theme-neutral-900, var(--vk-neutral-900));
   }
 }
 
