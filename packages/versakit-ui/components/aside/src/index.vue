@@ -17,7 +17,7 @@ const asideStyle = computed(() => ({
 
 <template>
   <aside
-    class="ver-aside"
+    class="vk-aside"
     :style="asideStyle"
     role="complementary"
     aria-label="侧边栏"
