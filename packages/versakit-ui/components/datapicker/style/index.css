@@ -95,7 +95,7 @@
 
 .day.selected {
   border-radius: 50%;
-  background-color: var(--theme-primary-500, var(--ver-primary-500));
+  background-color: var(--theme-primary-500, var(--vk-primary-500));
   color: white;
 }
 

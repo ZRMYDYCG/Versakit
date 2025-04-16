@@ -9,12 +9,11 @@
 }
 
 .input-tag:hover:not(.is-disabled) {
-  border-color: var(--theme-primary-500, var(--ver-primary-500));
+  border-color: var(--theme-primary-500, var(--vk-primary-500));
 }
 
 .input-tag:focus-within:not(.is-disabled) {
-  border-color: var(--theme-primary-500, var(--ver-primary-500));
-  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+  border-color: var(--theme-primary-500, var(--vk-primary-500));
 }
 
 .input-tag.is-disabled {

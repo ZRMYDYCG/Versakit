@@ -40,7 +40,7 @@ const gap = computed(() => {
 <template>
   <div
     class="vk-flex"
-    :class="{ 'vk-flex--vertical': vertical }"
+    :class="{ 'vk-flex--vktical': vertical }"
     :style="{
       '--vk-flex-gap': gap,
       '--vk-flex-justify': justify,

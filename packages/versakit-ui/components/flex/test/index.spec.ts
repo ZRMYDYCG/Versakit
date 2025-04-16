@@ -39,21 +39,21 @@ describe('Flex Component', () => {
     expect(wrapper.vm.gap).toBe('5px 10px')
   })
 
-  it('should apply "vk-flex--vertical" class when vertical is true', () => {
+  it('should apply "vk-flex--vktical" class when vertical is true', () => {
     const wrapper = mount(Flex, {
       props: { vertical: true },
     })
-    expect(wrapper.classes()).toContain('vk-flex--vertical')
+    expect(wrapper.classes()).toContain('vk-flex--vktical')
   })
 
-  it('should not apply "vk-flex--vertical" class when vertical is false or undefined', () => {
+  it('should not apply "vk-flex--vktical" class when vertical is false or undefined', () => {
     const wrapperFalse = mount(Flex, {
       props: { vertical: false },
     })
     const wrapperUndefined = mount(Flex)
 
-    expect(wrapperFalse.classes()).not.toContain('vk-flex--vertical')
-    expect(wrapperUndefined.classes()).not.toContain('vk-flex--vertical')
+    expect(wrapperFalse.classes()).not.toContain('vk-flex--vktical')
+    expect(wrapperUndefined.classes()).not.toContain('vk-flex--vktical')
   })
 
   it.each<WrapProps>(['nowrap', 'wrap', 'wrap-reverse'])(

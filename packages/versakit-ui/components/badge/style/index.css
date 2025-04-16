@@ -3,7 +3,7 @@
   --badge-dot-size: 8px;
   --badge-font-size: 12px;
   --badge-padding: 4px;
-  --badge-bg-color: var(--theme-error-500, var(--ver-error-500));
+  --badge-bg-color: var(--theme-error-500, var(--vk-error-500));
   --badge-text-color: #fff;
   --badge-shadow: 0 0 0 2px #fff;
   --badge-border-radius: 9px;

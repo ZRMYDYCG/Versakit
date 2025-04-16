@@ -2,7 +2,7 @@
   --panel-padding: 20px;
   --panel-border-radius: 4px;
   --panel-margin-bottom: 15px;
-  --panel-border-color: var(--theme-neutral-300, var(--ver-neutral-300));
+  --panel-border-color: var(--theme-neutral-300, var(--vk-neutral-300));
   --panel-shadow: 0px 0px 12px rgba(0, 0, 0, 0.12);
   --panel-shadow-dark: 0px 0px 12px rgba(255, 255, 255, 0.639);
 
@@ -14,9 +14,9 @@
   transition: box-shadow 0.3s ease;
 
   .dark & {
-    --panel-border-color: var(--theme-neutral-600, var(--ver-neutral-600));
-    color: var(--theme-neutral-100, var(--ver-neutral-100));
-    background-color: var(--theme-neutral-900, var(--ver-neutral-900));
+    --panel-border-color: var(--theme-neutral-600, var(--vk-neutral-600));
+    color: var(--theme-neutral-100, var(--vk-neutral-100));
+    background-color: var(--theme-neutral-900, var(--vk-neutral-900));
   }
 }
 
