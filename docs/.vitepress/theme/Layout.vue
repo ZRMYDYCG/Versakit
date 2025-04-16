@@ -127,6 +127,32 @@ provide('toggle-appearance', async ({ clientX: x, clientY: y }: MouseEvent) => {
   transition: all 1.2s cubic-bezier(0.16, 0.85, 0.25, 1);
 }
 
+.VPDoc.has-aside .container .aside:has(.theme-main-page) {
+  display: none;
+}
+
+.VPDoc.has-aside .container .aside .aside-curtain {
+  display: none;
+}
+
+.VPContent#VPContent .VPDoc.has-aside > .container:has(.theme-main-page) {
+  display: block;
+  max-width: 100%;
+}
+
+.VPDoc.has-aside .container .content:has(.theme-main-page) {
+  max-width: 100%;
+  padding: 0;
+}
+
+.VPDoc.has-aside .container .content-container:has(.theme-main-page) {
+  max-width: 100%;
+}
+
+.VPNavBar.top {
+  user-select: none;
+}
+
 .dark {
   --vp-c-bg: #0a0a0a;
   --vp-c-text: rgba(255, 255, 255, 0.96);
