@@ -30,7 +30,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, watch } from 'vue'
+import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import type { PopoverProps } from '../type'
 
 defineOptions({ name: 'VerPopover' })
@@ -114,6 +114,12 @@ const handleBlur = () => {
   }
 }
 
+const handleClickOutside = (event: MouseEvent) => {
+  if (popoverRef.value && !popoverRef.value?.contains(event.target as Node)) {
+    hide()
+  }
+}
+
 watch(
   () => props.visible,
   (val) => {
@@ -122,6 +128,14 @@ watch(
     }
   },
 )
+
+onMounted(() => {
+  document.addEventListener('click', handleClickOutside)
+})
+
+onUnmounted(() => {
+  document.removeEventListener('click', handleClickOutside)
+})
 </script>
 
 <style>
