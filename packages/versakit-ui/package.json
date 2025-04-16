@@ -28,7 +28,9 @@
   ],
   "license": "MIT",
   "files": [
-    "dist/*"
+    "dist",
+    "!**/*.test.*",
+    "!**/*.spec.*"
   ],
   "scripts": {
     "build-only": "run-p type-check \"build-only {@}\" --",
@@ -40,6 +42,7 @@
   },
   "devDependencies": {
     "@popperjs/core": "^2.11.8",
+    "@types/fs-extra": "^11.0.4",
     "@types/postcss-mixins": "^9.0.6",
     "@versakit/icons": "workspace:*",
     "@versakit/shared": "workspace:*",
@@ -48,5 +51,8 @@
     "postcss-mixins": "^11.0.3",
     "postcss-nested": "^7.0.2",
     "rollup-plugin-visualizer": "^5.14.0"
+  },
+  "dependencies": {
+    "fs-extra": "^11.2.0"
   }
 }

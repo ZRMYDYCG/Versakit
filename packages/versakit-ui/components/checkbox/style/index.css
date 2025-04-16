@@ -85,7 +85,7 @@
 }
 
 .ver-checkbox:hover:not(.is-disabled) .ver-checkbox__inner {
-  border-color: var(--theme-primary-500, var(--ver-primary-500));
+  border-color: var(--theme-primary-500, var(--vk-primary-500));
 }
 
 .ver-checkbox-group {
