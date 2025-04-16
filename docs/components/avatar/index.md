@@ -17,7 +17,7 @@ Avatar 组件可以用来代表人物或对象， 支持使用图片、图标或
 
 ## 头像组
 
-<!-- <demo vue="./example/group.vue"></demo> -->
+<demo vue="./example/group.vue"></demo>
 
 ## API 参考
 

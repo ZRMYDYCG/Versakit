@@ -1,4 +1,4 @@
-.ver-text {
+.vk-text {
   align-self: center;
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@
   }
 }
 
-.ver-text.is-truncated {
+.vk-text.is-truncated {
   display: inline-block;
   max-width: 100%;
   text-overflow: ellipsis;
@@ -19,7 +19,7 @@
 }
 
 @each $item in primary, success, warn, info, error {
-  .ver-text-$(item) {
+  .vk-text-$(item) {
     color: var(--theme-$(item)-500, var(--vk-$(item)-500));
 
     .dark & {
@@ -29,7 +29,7 @@
 }
 
 @each $size, $fontsize in (lg, md, sm, xs), (16px, 14px, 12px, 10px) {
-  .ver-text.is-$(size) {
+  .vk-text.is-$(size) {
     font-size: $(fontsize);
   }
 }

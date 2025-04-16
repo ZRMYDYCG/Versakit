@@ -9,11 +9,11 @@ import { VKRow, VKText } from '@versakit/ui'
     <VKText class="mx4" type="success">Success</VKText>
     <VKText class="mx4" type="info">Info</VKText>
     <VKText class="mx4" type="warn">Warning</VKText>
-    <VKText class="mx4" type="error">Drange</VKText>
+    <VKText class="mx4" type="error">Danger</VKText>
   </VKRow>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .mx4 {
   margin: 0px 10px;
 }

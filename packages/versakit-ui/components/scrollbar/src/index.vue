@@ -273,4 +273,6 @@ onUnmounted(() => {
   </div>
 </template>
 
-<style src="../style/index.css" scoped></style>
+<style scoped>
+@import '../style/index.css';
+</style>
