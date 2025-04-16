@@ -20,15 +20,15 @@
   background-color: white;
   transition: all 0.3s;
   outline: none;
-  caret-color: var(--theme-primary-500, var(--ver-primary-500));
+  caret-color: var(--theme-primary-500, var(--vk-primary-500));
 }
 
 .input-otp-item:hover:not(:disabled) {
-  border-color: var(--theme-primary-500, var(--ver-primary-500));
+  border-color: var(--theme-primary-500, var(--vk-primary-500));
 }
 
 .input-otp-item:focus {
-  border-color: var(--theme-primary-500, var(--ver-primary-500));
+  border-color: var(--theme-primary-500, var(--vk-primary-500));
   box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
 }
 

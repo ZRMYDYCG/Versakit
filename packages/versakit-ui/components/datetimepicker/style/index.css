@@ -81,7 +81,7 @@
 }
 
 .tab.active {
-  color: var(--theme-primary-500, var(--ver-primary-500));
+  color: var(--theme-primary-500, var(--vk-primary-500));
   font-weight: bold;
 }
 
@@ -138,7 +138,7 @@
 }
 
 .day.selected {
-  background-color: var(--theme-primary-500, var(--ver-primary-500));
+  background-color: var(--theme-primary-500, var(--vk-primary-500));
   color: white;
 }
 
@@ -200,7 +200,7 @@
 
 .time-item.selected {
   background-color: #f2f6fc;
-  color: var(--theme-primary-500, var(--ver-primary-500));
+  color: var(--theme-primary-500, var(--vk-primary-500));
   font-weight: bold;
 }
 
@@ -232,8 +232,8 @@
 }
 
 .confirm-btn {
-  background-color: var(--theme-primary-500, var(--ver-primary-500));
-  border-color: var(--theme-primary-500, var(--ver-primary-500));
+  background-color: var(--theme-primary-500, var(--vk-primary-500));
+  border-color: var(--theme-primary-500, var(--vk-primary-500));
 }
 
 button {
@@ -246,5 +246,5 @@ button {
 }
 
 button:hover {
-  color: var(--theme-primary-500, var(--ver-primary-500));
+  color: var(--theme-primary-500, var(--vk-primary-500));
 }
