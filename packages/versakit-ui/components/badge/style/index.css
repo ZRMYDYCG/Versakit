@@ -1,4 +1,4 @@
-.vkbadge {
+.vk-badge {
   --badge-height: 16px;
   --badge-dot-size: 8px;
   --badge-font-size: 12px;
@@ -12,7 +12,7 @@
   display: inline-block;
 }
 
-.vkbadge [class^='vkbadge-'] {
+.vk-badge [class^='vk-badge-'] {
   position: absolute;
   height: var(--badge-height);
   line-height: var(--badge-height);
@@ -25,14 +25,14 @@
   box-shadow: var(--badge-shadow);
 }
 
-.vkbadge-num,
-.vkbadge-text {
+.vk-badge-num,
+.vk-badge-text {
   min-width: var(--badge-height);
   right: -8px;
   top: -8px;
 }
 
-.vkbadge-dot {
+.vk-badge-dot {
   right: 0;
   top: 0;
   width: var(--badge-dot-size);
