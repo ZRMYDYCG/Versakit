@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue'
+import { computed, ref, useSlots } from 'vue'
 import type { PaginationProps } from '../type/index.ts'
 
 defineOptions({
-  name: 'VKPagination', // 修改组件名称为 VKPagination
+  name: 'VKPagination',
 })
 
 const props = withDefaults(defineProps<PaginationProps>(), {
@@ -20,6 +20,8 @@ const emit = defineEmits<{
   'update:pageSize': [size: number]
   change: [page: number, pageSize: number]
 }>()
+
+const slots = useSlots()
 
 const totalPages = computed(() => Math.ceil(props.total / props.pageSize))
 const inputPage = ref('')
@@ -94,10 +96,14 @@ const handleJumpInput = (event: KeyboardEvent) => {
 <template>
   <div class="pagination" role="navigation" aria-label="Pagination Navigation">
     <span v-if="showTotal" class="pagination-total">
-      Total {{ total }} items
+      <slot name="total" :total="total">Total {{ total }} items</slot>
     </span>
 
+    <div v-if="slots.prev" @click="handlePageChange(modelValue - 1)">
+      <slot name="prev" :disabled="modelValue <= 1 || disabled" />
+    </div>
     <button
+      v-else
       class="pagination-btn"
       :disabled="modelValue <= 1 || disabled"
       @click="handlePageChange(modelValue - 1)"
@@ -123,8 +129,12 @@ const handleJumpInput = (event: KeyboardEvent) => {
       </button>
     </div>
 
+    <div v-if="slots.next" @click="handlePageChange(modelValue + 1)">
+      <slot name="next" :disabled="modelValue >= totalPages || disabled"></slot>
+    </div>
     <button
       class="pagination-btn"
+      v-else
       :disabled="modelValue >= totalPages || disabled"
       @click="handlePageChange(modelValue + 1)"
       aria-label="Next Page"

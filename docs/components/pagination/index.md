@@ -20,6 +20,10 @@
 
 <demo vue="./example/disabled-state.vue"></demo>
 
+## 自定义内容
+
+<demo vue="./example/slots.vue"></demo>
+
 ## Pagination Api
 
 | 参数 | 说明 | 类型 | 默认值 |
@@ -48,4 +52,3 @@
 | total | 自定义总数显示内容 |
 | prev | 自定义上一页按钮 |
 | next | 自定义下一页按钮 |
-| page | 自定义页码按钮 |
