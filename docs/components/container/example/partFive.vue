@@ -1,15 +1,15 @@
 <template>
   <div class="common-layout">
-    <VK-container direction="column">
-      <VK-header>Header</VK-header>
+    <VKContainer direction="column">
+      <VKHeader>Header</VKHeader>
       <VK-container>
-        <VK-aside width="200px">Aside</VK-aside>
+        <VKAside width="200px">Aside</VKAside>
         <VK-container direction="column">
-          <VK-main>Main</VK-main>
-          <VK-footer>Footer</VK-footer>
+          <VKMain>Main</VKMain>
+          <VKFooter>Footer</VKFooter>
         </VK-container>
       </VK-container>
-    </VK-container>
+    </VKContainer>
   </div>
 </template>
 

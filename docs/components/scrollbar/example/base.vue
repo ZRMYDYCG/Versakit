@@ -18,6 +18,6 @@ import { VKScrollBar } from '@versakit/ui'
   text-align: center;
   border-radius: 4px;
   color: #fff;
-  background-color: var(--theme-primary-500, var(--ver-primary-500));
+  background-color: var(--theme-primary-500, var(--vk-primary-500));
 }
 </style>
