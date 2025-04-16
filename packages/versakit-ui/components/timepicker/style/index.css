@@ -156,7 +156,7 @@
 
 .time-item.selected {
   background-color: #f2f6fc;
-  color: var(--theme-primary-500, var(--ver-primary-500));
+  color: var(--theme-primary-500, var(--vk-primary-500));
   font-weight: bold;
   position: relative;
 }
@@ -170,7 +170,7 @@
   transform: translateY(-50%);
   width: 3px;
   height: 16px;
-  background-color: var(--theme-primary-500, var(--ver-primary-500));
+  background-color: var(--theme-primary-500, var(--vk-primary-500));
   border-radius: 0 2px 2px 0;
 }
 
@@ -214,13 +214,13 @@
 }
 
 .now-btn:hover {
-  color: var(--theme-primary-500, var(--ver-primary-500));
-  border-color: var(--theme-primary-500, var(--ver-primary-500));
+  color: var(--theme-primary-500, var(--vk-primary-500));
+  border-color: var(--theme-primary-500, var(--vk-primary-500));
 }
 
 .confirm-btn {
-  background-color: var(--theme-primary-500, var(--ver-primary-500));
-  border-color: var(--theme-primary-500, var(--ver-primary-500));
+  background-color: var(--theme-primary-500, var(--vk-primary-500));
+  border-color: var(--theme-primary-500, var(--vk-primary-500));
 }
 
 .confirm-btn:hover {
