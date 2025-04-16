@@ -17,14 +17,14 @@ import { VKContainer, VKHeader, VKMain, VKAside, VKFooter } from '@versakit/ui'
 
 <style scoped>
 .common-layout {
-  .VK-header {
+  .vk-header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #c6e2ff;
   }
 
-  .VK-aside {
+  .vk-aside {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -33,7 +33,7 @@ import { VKContainer, VKHeader, VKMain, VKAside, VKFooter } from '@versakit/ui'
     background-color: rgb(216.8, 235.6, 255);
   }
 
-  .VK-main {
+  .vk-main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +41,7 @@ import { VKContainer, VKHeader, VKMain, VKAside, VKFooter } from '@versakit/ui'
     height: 150px;
   }
 
-  .VK-footer {
+  .vk-footer {
     display: flex;
     justify-content: center;
     align-items: center;

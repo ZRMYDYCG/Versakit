@@ -1,5 +1,5 @@
 <template>
-  <header class="ver-header">
+  <header class="vk-header">
     <slot></slot>
   </header>
 </template>
