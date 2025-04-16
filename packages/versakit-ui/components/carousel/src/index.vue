@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, provide, onMounted, onUnmounted } from 'vue'
+import { ref, provide, onMounted, onUnmounted, computed } from 'vue'
 import type { CarouselProps } from '../type/index.ts'
 
 // 修改组件名称为 VKCarousel
@@ -13,6 +13,10 @@ const props = withDefaults(defineProps<CarouselProps>(), {
   showIndicators: true,
   trigger: 'hover',
   direction: 'horizontal',
+  type: 'default',
+  height: '300px',
+  indicatorPosition: 'bottom',
+  indicatorType: 'dot',
 })
 
 // 使用 ref 定义响应式数据
@@ -20,6 +24,11 @@ const items = ref<any[]>([])
 const currentIndex = ref(0)
 const isHovering = ref(false)
 let autoplayTimer: number | null = null
+
+// 暴露 currentIndex 给测试使用
+defineExpose({
+  currentIndex,
+})
 
 // 注册和注销轮播项
 const registerItem = (item: any) => {
@@ -82,6 +91,13 @@ const handleMouseLeave = () => {
   }
 }
 
+const carouselClasses = computed(() => [
+  'carousel',
+  props.direction,
+  props.type,
+  `indicators-${props.indicatorPosition}`,
+])
+
 // 提供上下文数据
 provide('carousel', {
   currentIndex,
@@ -89,6 +105,7 @@ provide('carousel', {
   registerItem,
   unregisterItem,
   direction: props.direction,
+  type: props.type,
 })
 
 // 生命周期钩子
@@ -103,12 +120,12 @@ onUnmounted(() => {
 
 <template>
   <div
-    class="carousel"
-    :class="direction"
+    :class="carouselClasses"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
     role="region"
     aria-label="Carousel Component"
+    :style="{ height: height }"
   >
     <div class="carousel-container">
       <slot></slot>
@@ -146,15 +163,35 @@ onUnmounted(() => {
     <div
       v-if="props.showIndicators && items.length > 1"
       class="carousel-indicators"
+      :class="[`indicators-${indicatorType}`]"
     >
-      <button
-        v-for="(_, index) in items"
-        :key="index"
-        class="carousel-indicator"
-        :class="{ active: currentIndex === index }"
-        @click="goToSlide(index)"
-        :aria-label="'Go to slide ' + (index + 1)"
-      />
+      <template v-if="indicatorType === 'number'">
+        <div class="carousel-indicator-number">
+          {{ currentIndex + 1 }} / {{ items.length }}
+        </div>
+      </template>
+      <template v-else-if="indicatorType === 'custom'">
+        <slot name="indicators" :currentIndex="currentIndex" :items="items">
+          <button
+            v-for="(_, index) in items"
+            :key="index"
+            class="carousel-indicator"
+            :class="{ active: currentIndex === index }"
+            @click="goToSlide(index)"
+            :aria-label="'Go to slide ' + (index + 1)"
+          />
+        </slot>
+      </template>
+      <template v-else>
+        <button
+          v-for="(_, index) in items"
+          :key="index"
+          class="carousel-indicator"
+          :class="{ active: currentIndex === index }"
+          @click="goToSlide(index)"
+          :aria-label="'Go to slide ' + (index + 1)"
+        />
+      </template>
     </div>
   </div>
 </template>

@@ -21,6 +21,23 @@ const isActive = computed(() => {
   return items.findIndex((item: any) => item.uid === uid.value) === index
 })
 
+const position = computed(() => {
+  const index = carousel.items.value.findIndex(
+    (item: any) => item.uid === uid.value,
+  )
+  const currentIndex = carousel.currentIndex.value
+  const totalItems = carousel.items.value.length
+
+  if (carousel.type === 'card') {
+    if (index === currentIndex) return 'active'
+    if (index === (currentIndex - 1 + totalItems) % totalItems) return 'prev'
+    if (index === (currentIndex + 1) % totalItems) return 'next'
+    return 'hidden'
+  }
+
+  return ''
+})
+
 const style = computed(() => {
   const index = carousel.items.value.findIndex(
     (item: any) => item.uid === uid.value,
@@ -28,6 +45,13 @@ const style = computed(() => {
   const currentIndex = carousel.currentIndex.value
   const isHorizontal = carousel.direction === 'horizontal'
   const offset = (index - currentIndex) * 100
+
+  if (carousel.type === 'card') {
+    return {
+      width: props.width,
+      height: props.height,
+    }
+  }
 
   return {
     transform: isHorizontal
@@ -57,7 +81,7 @@ onUnmounted(() => {
 <template>
   <div
     class="carousel-item"
-    :class="{ active: isActive }"
+    :class="[position, { active: isActive }]"
     :style="style"
     role="group"
     aria-roledescription="slide"
