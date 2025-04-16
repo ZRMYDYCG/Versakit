@@ -13,13 +13,13 @@ import { VKContainer, VKHeader, VKMain } from '@versakit/ui'
 
 <style scoped>
 .common-layout {
-  .VK-header {
+  .vk-header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #c6e2ff;
   }
-  .VK-main {
+  .vk-main {
     display: flex;
     justify-content: center;
     align-items: center;

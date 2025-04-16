@@ -14,13 +14,13 @@ import { VKContainer, VKHeader, VKMain, VKFooter } from '@versakit/ui'
 
 <style scoped>
 .common-layout {
-  .VK-header {
+  .vk-header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #c6e2ff;
   }
-  .VK-main {
+  .vk-main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +28,7 @@ import { VKContainer, VKHeader, VKMain, VKFooter } from '@versakit/ui'
     height: 150px;
   }
 
-  .VK-footer {
+  .vk-footer {
     display: flex;
     justify-content: center;
     align-items: center;

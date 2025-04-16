@@ -1,5 +1,5 @@
 <template>
-  <main class="ver-main">
+  <main class="vk-main">
     <slot></slot>
   </main>
 </template>
