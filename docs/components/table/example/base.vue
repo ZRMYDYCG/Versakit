@@ -1,9 +1,9 @@
 <template>
-  <VerTable :data="tableData" :columns="columns" />
+  <VKTable :data="tableData" :columns="columns" />
 </template>
 
 <script setup lang="ts">
-import { VerTable } from '@versakit/ui'
+import { VKTable } from '@versakit/ui'
 
 const tableData = [
   {

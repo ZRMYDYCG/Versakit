@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import InputTag from './src/index.vue'
 
-const VerInputTag = withInstall(InputTag)
+const VKInputTag = withInstall(InputTag)
 
-export { VerInputTag }
+export { VKInputTag }

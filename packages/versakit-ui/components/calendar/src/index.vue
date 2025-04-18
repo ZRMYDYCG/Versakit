@@ -1,5 +1,5 @@
 <template>
-  <div class="ver-calendar">
+  <div class="vk-calendar" role="grid" aria-label="日历">
     <!-- 添加默认头部插槽 -->
     <slot
       name="header"
@@ -10,35 +10,49 @@
       :prev-year="prevYear"
       :next-year="nextYear"
     >
-      <div class="ver-calendar-header">
-        <VerButton type="primary" size="sm" @click="prevMonth">
+      <div class="vk-calendar-header">
+        <VKButton
+          type="primary"
+          size="sm"
+          @click="prevMonth"
+          aria-label="上个月"
+        >
           上个月
-        </VerButton>
-        <span class="ver-calendar-title">
+        </VKButton>
+        <span class="vk-calendar-title">
           {{ currentYear }}年{{ currentMonth + 1 }}月
         </span>
-        <VerButton type="primary" size="sm" @click="nextMonth">
+        <VKButton
+          type="primary"
+          size="sm"
+          @click="nextMonth"
+          aria-label="下个月"
+        >
           下个月
-        </VerButton>
+        </VKButton>
       </div>
     </slot>
 
-    <div class="ver-calendar-body">
-      <div class="ver-calendar-weeks">
-        <span v-for="week in weeks" :key="week">{{ week }}</span>
+    <div class="vk-calendar-body">
+      <div class="vk-calendar-weeks" role="row">
+        <span v-for="week in weeks" :key="week" role="columnheader">
+          {{ week }}
+        </span>
       </div>
 
-      <div class="ver-calendar-dates">
+      <div class="vk-calendar-dates">
         <div
-          v-for="(cell, index) in dates"
-          :key="index"
+          v-for="cell in dates"
+          :key="cell.date.toISOString()"
           :class="[
-            'ver-calendar-cell',
-            `ver-calendar-cell-${cell.type}`,
+            'vk-calendar-cell',
+            `vk-calendar-cell-${cell.type}`,
             {
               'is-selected': isSelected(cell.date),
             },
           ]"
+          role="gridcell"
+          :aria-selected="isSelected(cell.date)"
           @click="handleDateClick(cell)"
         >
           <slot name="date-cell" :data="getCellData(cell)">
@@ -58,7 +72,7 @@ import type {
   DateCell,
   DateCellData,
 } from '../type/index'
-import { VerButton } from '../../button/index'
+import { VKButton } from '../../button/index'
 
 defineOptions({ name: 'VerCalendar' })
 

@@ -3,7 +3,7 @@ import { provide } from 'vue'
 import type { TimelineProps } from '../type/index'
 
 defineOptions({
-  name: 'VerTimeline',
+  name: 'VKTimeline', // 修改组件名称为 VKTimeline
 })
 
 const props = withDefaults(defineProps<TimelineProps>(), {
@@ -12,6 +12,7 @@ const props = withDefaults(defineProps<TimelineProps>(), {
   pending: false,
 })
 
+// 提供 timeline 的上下文
 provide('timeline', {
   mode: props.mode,
 })
@@ -20,9 +21,11 @@ provide('timeline', {
 <template>
   <div
     class="timeline"
+    role="list"
+    aria-label="Timeline Component"
     :class="{
-      'timeline-reverse': reverse,
-      'timeline-pending': pending,
+      'timeline-reverse': props.reverse,
+      'timeline-pending': props.pending,
     }"
   >
     <slot></slot>

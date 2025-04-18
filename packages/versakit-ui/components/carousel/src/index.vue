@@ -1,9 +1,11 @@
 <script setup lang="ts">
-import { ref, provide, onMounted, onUnmounted } from 'vue'
+import { ref, provide, onMounted, onUnmounted, computed } from 'vue'
 import type { CarouselProps } from '../type/index.ts'
 
-defineOptions({ name: 'VerCarousel' })
+// 修改组件名称为 VKCarousel
+defineOptions({ name: 'VKCarousel' })
 
+// 定义属性并设置默认值
 const props = withDefaults(defineProps<CarouselProps>(), {
   autoplay: true,
   interval: 3000,
@@ -11,13 +13,24 @@ const props = withDefaults(defineProps<CarouselProps>(), {
   showIndicators: true,
   trigger: 'hover',
   direction: 'horizontal',
+  type: 'default',
+  height: '300px',
+  indicatorPosition: 'bottom',
+  indicatorType: 'dot',
 })
 
+// 使用 ref 定义响应式数据
 const items = ref<any[]>([])
 const currentIndex = ref(0)
 const isHovering = ref(false)
 let autoplayTimer: number | null = null
 
+// 暴露 currentIndex 给测试使用
+defineExpose({
+  currentIndex,
+})
+
+// 注册和注销轮播项
 const registerItem = (item: any) => {
   items.value.push(item)
 }
@@ -29,19 +42,23 @@ const unregisterItem = (uid: number) => {
   }
 }
 
+// 切换到下一张幻灯片
 const nextSlide = () => {
   currentIndex.value = (currentIndex.value + 1) % items.value.length
 }
 
+// 切换到上一张幻灯片
 const prevSlide = () => {
   currentIndex.value =
     (currentIndex.value - 1 + items.value.length) % items.value.length
 }
 
+// 跳转到指定幻灯片
 const goToSlide = (index: number) => {
   currentIndex.value = index
 }
 
+// 开始自动播放
 const startAutoplay = () => {
   if (props.autoplay && !isHovering.value && items.value.length > 1) {
     autoplayTimer = window.setInterval(() => {
@@ -50,6 +67,7 @@ const startAutoplay = () => {
   }
 }
 
+// 停止自动播放
 const stopAutoplay = () => {
   if (autoplayTimer) {
     clearInterval(autoplayTimer)
@@ -57,6 +75,7 @@ const stopAutoplay = () => {
   }
 }
 
+// 鼠标进入事件处理
 const handleMouseEnter = () => {
   if (props.trigger === 'hover') {
     isHovering.value = true
@@ -64,6 +83,7 @@ const handleMouseEnter = () => {
   }
 }
 
+// 鼠标离开事件处理
 const handleMouseLeave = () => {
   if (props.trigger === 'hover') {
     isHovering.value = false
@@ -71,14 +91,24 @@ const handleMouseLeave = () => {
   }
 }
 
+const carouselClasses = computed(() => [
+  'carousel',
+  props.direction,
+  props.type,
+  `indicators-${props.indicatorPosition}`,
+])
+
+// 提供上下文数据
 provide('carousel', {
   currentIndex,
-  items, // 提供 items 数组
+  items,
   registerItem,
   unregisterItem,
   direction: props.direction,
+  type: props.type,
 })
 
+// 生命周期钩子
 onMounted(() => {
   startAutoplay()
 })
@@ -90,17 +120,24 @@ onUnmounted(() => {
 
 <template>
   <div
-    class="carousel"
-    :class="direction"
+    :class="carouselClasses"
     @mouseenter="handleMouseEnter"
     @mouseleave="handleMouseLeave"
+    role="region"
+    aria-label="Carousel Component"
+    :style="{ height: height }"
   >
     <div class="carousel-container">
       <slot></slot>
     </div>
 
-    <template v-if="showArrows && items.length > 1">
-      <button class="carousel-arrow carousel-arrow-prev" @click="prevSlide">
+    <!-- 箭头导航 -->
+    <template v-if="props.showArrows && items.length > 1">
+      <button
+        class="carousel-arrow carousel-arrow-prev"
+        @click="prevSlide"
+        aria-label="Previous Slide"
+      >
         <svg viewBox="0 0 24 24" width="24" height="24">
           <path
             fill="currentColor"
@@ -108,7 +145,11 @@ onUnmounted(() => {
           />
         </svg>
       </button>
-      <button class="carousel-arrow carousel-arrow-next" @click="nextSlide">
+      <button
+        class="carousel-arrow carousel-arrow-next"
+        @click="nextSlide"
+        aria-label="Next Slide"
+      >
         <svg viewBox="0 0 24 24" width="24" height="24">
           <path
             fill="currentColor"
@@ -118,14 +159,39 @@ onUnmounted(() => {
       </button>
     </template>
 
-    <div v-if="showIndicators && items.length > 1" class="carousel-indicators">
-      <button
-        v-for="(_, index) in items"
-        :key="index"
-        class="carousel-indicator"
-        :class="{ active: currentIndex === index }"
-        @click="goToSlide(index)"
-      />
+    <!-- 指示器 -->
+    <div
+      v-if="props.showIndicators && items.length > 1"
+      class="carousel-indicators"
+      :class="[`indicators-${indicatorType}`]"
+    >
+      <template v-if="indicatorType === 'number'">
+        <div class="carousel-indicator-number">
+          {{ currentIndex + 1 }} / {{ items.length }}
+        </div>
+      </template>
+      <template v-else-if="indicatorType === 'custom'">
+        <slot name="indicators" :currentIndex="currentIndex" :items="items">
+          <button
+            v-for="(_, index) in items"
+            :key="index"
+            class="carousel-indicator"
+            :class="{ active: currentIndex === index }"
+            @click="goToSlide(index)"
+            :aria-label="'Go to slide ' + (index + 1)"
+          />
+        </slot>
+      </template>
+      <template v-else>
+        <button
+          v-for="(_, index) in items"
+          :key="index"
+          class="carousel-indicator"
+          :class="{ active: currentIndex === index }"
+          @click="goToSlide(index)"
+          :aria-label="'Go to slide ' + (index + 1)"
+        />
+      </template>
     </div>
   </div>
 </template>

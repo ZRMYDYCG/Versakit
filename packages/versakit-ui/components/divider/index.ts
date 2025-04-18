@@ -1,6 +1,6 @@
 import Divider from './src/index.vue'
 import { withInstall } from '@versakit/shared'
 
-const VerDivider = withInstall(Divider)
+const VKDivider = withInstall(Divider)
 
-export { VerDivider }
+export { VKDivider }

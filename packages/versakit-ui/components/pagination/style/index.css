@@ -3,6 +3,7 @@
   align-items: center;
   gap: 8px;
   font-size: 14px;
+  text-wrap: nowrap;
 }
 
 .pagination-total {
@@ -23,13 +24,13 @@
   background: white;
   color: #666;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.2s ease-in-out; /* 优化过渡效果 */
 }
 
 .pagination-btn:hover:not(:disabled),
 .pagination-item:hover:not(:disabled):not(.is-active):not(.is-ellipsis) {
-  border-color: var(--theme-primary-500, var(--ver-primary-500));
-  color: var(--theme-primary-500, var(--ver-primary-500));
+  border-color: var(--theme-primary-500, var(--vk-primary-500)); /* 修改变量前缀为 VK */
+  color: var(--theme-primary-500, var(--vk-primary-500));
 }
 
 .pagination-btn:disabled,
@@ -45,8 +46,8 @@
 }
 
 .pagination-item.is-active {
-  border-color: var(--theme-primary-500, var(--ver-primary-500));
-  background: var(--theme-primary-500, var(--ver-primary-500));
+  border-color: var(--theme-primary-500, var(--vk-primary-500)); /* 修改变量前缀为 VK */
+  background: var(--theme-primary-500, var(--vk-primary-500));
   color: white;
 }
 
@@ -61,6 +62,7 @@
   border-radius: 4px;
   background: white;
   cursor: pointer;
+  transition: all 0.2s ease-in-out; /* 优化过渡效果 */
 }
 
 .pagination-size-changer select:disabled {
@@ -80,6 +82,7 @@
   border: 1px solid #d9d9d9;
   border-radius: 4px;
   text-align: center;
+  transition: all 0.2s ease-in-out; /* 优化过渡效果 */
 }
 
 .pagination-jumper input:disabled {

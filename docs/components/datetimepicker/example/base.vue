@@ -2,13 +2,13 @@
   <div class="datetime-picker-demo">
     <div class="demo-section">
       <h3>基础用法</h3>
-      <VerDateTimePicker v-model="dateTime1" placeholder="请选择日期和时间" />
+      <VKDateTimePicker v-model="dateTime1" placeholder="请选择日期和时间" />
       <div class="value-display">选中的值: {{ dateTime1 }}</div>
     </div>
 
     <div class="demo-section">
       <h3>显示秒选择</h3>
-      <VerDateTimePicker
+      <VKDateTimePicker
         v-model="dateTime2"
         placeholder="请选择日期和时间"
         :hideSeconds="false"
@@ -18,12 +18,12 @@
 
     <div class="demo-section">
       <h3>禁用状态</h3>
-      <VerDateTimePicker v-model="dateTime3" placeholder="禁用状态" disabled />
+      <VKDateTimePicker v-model="dateTime3" placeholder="禁用状态" disabled />
     </div>
 
     <div class="demo-section">
       <h3>不可清除</h3>
-      <VerDateTimePicker
+      <VKDateTimePicker
         v-model="dateTime4"
         placeholder="不可清除"
         :clearable="false"
@@ -35,7 +35,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerDateTimePicker } from '@versakit/ui'
+import { VKDateTimePicker } from '@versakit/ui'
 
 // 基础用法
 const dateTime1 = ref(new Date())

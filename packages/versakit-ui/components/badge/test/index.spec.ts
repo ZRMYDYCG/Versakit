@@ -6,7 +6,7 @@ describe('VerBadge', () => {
   // 基础渲染测试
   it('renders basic badge properly', () => {
     const wrapper = mount(VerBadge)
-    expect(wrapper.classes()).toContain('ver-badge')
+    expect(wrapper.classes()).toContain('vkbadge')
   })
 
   // 测试所有徽标类型
@@ -16,7 +16,7 @@ describe('VerBadge', () => {
       const wrapper = mount(VerBadge, {
         props: { type },
       })
-      expect(wrapper.find('sup').classes()).toContain(`ver-badge-${type}`)
+      expect(wrapper.find('sup').classes()).toContain(`vkbadge-${type}`)
     },
   )
 

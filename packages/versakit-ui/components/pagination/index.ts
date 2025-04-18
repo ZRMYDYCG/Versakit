@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import Pagination from './src/index.vue'
 
-const VerPagination = withInstall(Pagination)
+const VKPagination = withInstall(Pagination)
 
-export { VerPagination }
+export { VKPagination }

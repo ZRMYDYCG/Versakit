@@ -50,7 +50,7 @@ pnpm add @versakit/ui
 
 ```
 
-```
+```js
 import App from './App.vue'
 import { createApp } from 'vue'
 import Versakit from '@versakit/ui' // 引入组件库

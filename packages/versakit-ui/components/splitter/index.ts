@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import Splitter from './src/index.vue'
 
-const VerSplitter = withInstall(Splitter)
+const VKSplitter = withInstall(Splitter)
 
-export { VerSplitter }
+export { VKSplitter }

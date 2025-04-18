@@ -1,14 +1,14 @@
 <template>
   <div>
-    <VerButton @click="openNotification">openNotification</VerButton>
+    <VKButton @click="openNotification">openNotification</VKButton>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { VerButton, VerNotification } from '@versakit/ui'
+import { VKButton, VKNotification } from '@versakit/ui'
 
 const openNotification = () => {
-  VerNotification({
+  VKNotification({
     title: 'title',
     content: 'content',
     icon: 'ep:info-filled',

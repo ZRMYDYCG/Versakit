@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import Flex from './src/index.vue'
 
-const VerFlex = withInstall(Flex)
+const VKFlex = withInstall(Flex)
 
-export { VerFlex }
+export { VKFlex }

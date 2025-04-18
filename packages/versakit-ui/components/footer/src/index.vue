@@ -3,7 +3,7 @@ defineOptions({ name: 'VerFooter' })
 </script>
 
 <template>
-  <footer class="ver-footer">
+  <footer class="vk-footer">
     <slot></slot>
   </footer>
 </template>

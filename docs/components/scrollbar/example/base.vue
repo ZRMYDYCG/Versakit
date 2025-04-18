@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { VerScrollBar } from '@versakit/ui'
+import { VKScrollBar } from '@versakit/ui'
 </script>
 
 <template>
-  <VerScrollBar height="300px">
+  <VKScrollBar height="300px">
     <p v-for="item in 20" :key="item" class="scrollbar-demo-item">{{ item }}</p>
-  </VerScrollBar>
+  </VKScrollBar>
 </template>
 
 <style scoped>
@@ -18,6 +18,6 @@ import { VerScrollBar } from '@versakit/ui'
   text-align: center;
   border-radius: 4px;
   color: #fff;
-  background-color: var(--theme-primary-500, var(--ver-primary-500));
+  background-color: var(--theme-primary-500, var(--vk-primary-500));
 }
 </style>

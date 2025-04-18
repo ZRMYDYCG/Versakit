@@ -1,12 +1,12 @@
 <template>
-  <VerRow>
-    <VerInput v-model="value" placeholder="Please input" />
-  </VerRow>
+  <VKRow>
+    <VKInput v-model="value" placeholder="Please input" />
+  </VKRow>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerInput, VerRow } from '@versakit/ui'
+import { VKInput, VKRow } from '@versakit/ui'
 
 const value = ref('')
 </script>

@@ -1,113 +1,108 @@
 <script setup lang="ts">
-import { VerTooltip, VerButton } from '@versakit/ui'
+import { VKTooltip, VKButton } from '@versakit/ui'
 </script>
 
 <template>
   <div class="tooltip-base-box">
     <div class="row center">
-      <ver-tooltip
+      <VKTooltip
         class="box-item"
         effect="dark"
         content="Top Left"
         position="top-left"
       >
-        <ver-button ghost>top-left</ver-button>
-      </ver-tooltip>
+        <VKButton ghost>top-left</VKButton>
+      </VKTooltip>
 
-      <ver-tooltip class="box-item" effect="dark" content="Top " position="top">
-        <ver-button ghost>top</ver-button>
-      </ver-tooltip>
+      <VKTooltip class="box-item" effect="dark" content="Top " position="top">
+        <VKButton ghost>top</VKButton>
+      </VKTooltip>
 
-      <ver-tooltip
+      <VKTooltip
         class="box-item"
         effect="dark"
         content="Top Right prompts info"
         position="top-right"
       >
-        <ver-button ghost>top-right</ver-button>
-      </ver-tooltip>
+        <VKButton ghost>top-right</VKButton>
+      </VKTooltip>
     </div>
 
     <div class="row">
-      <ver-tooltip
+      <VKTooltip
         class="box-item"
         effect="dark"
         content="Left Top prompts info"
         position="left-top"
       >
-        <ver-button ghost>left-top</ver-button>
-      </ver-tooltip>
-      <ver-tooltip
+        <VKButton ghost>left-top</VKButton>
+      </VKTooltip>
+      <VKTooltip
         class="box-item"
         effect="dark"
         content="Right Top prompts info"
         position="right-top"
       >
-        <ver-button ghost>right-top</ver-button>
-      </ver-tooltip>
+        <VKButton ghost>right-top</VKButton>
+      </VKTooltip>
     </div>
     <div class="row">
-      <ver-tooltip
-        class="box-item"
-        effect="dark"
-        content="Left"
-        position="left"
-      >
-        <ver-button ghost class="mt-3 mb-3">left</ver-button>
-      </ver-tooltip>
-      <ver-tooltip
+      <VKTooltip class="box-item" effect="dark" content="Left" position="left">
+        <VKButton ghost class="mt-3 mb-3">left</VKButton>
+      </VKTooltip>
+      <VKTooltip
         class="box-item"
         effect="dark"
         content="Right"
         position="right"
       >
-        <ver-button ghost>right</ver-button>
-      </ver-tooltip>
+        <VKButton ghost>right</VKButton>
+      </VKTooltip>
     </div>
     <div class="row">
-      <ver-tooltip
+      <VKTooltip
         class="box-item"
         effect="dark"
         content="left-bottom"
         position="left-bottom"
       >
-        <ver-button ghost>left-bottom</ver-button>
-      </ver-tooltip>
-      <ver-tooltip
+        <VKButton ghost>left-bottom</VKButton>
+      </VKTooltip>
+      <VKTooltip
         class="box-item"
         effect="dark"
         content="Right Bottom prompts info"
         position="right-bottom"
       >
-        <ver-button ghost>right-bottom</ver-button>
-      </ver-tooltip>
+        <VKButton ghost>right-bottom</VKButton>
+      </VKTooltip>
     </div>
     <div class="row center">
-      <ver-tooltip
+      <VKTooltip
         class="box-item"
         effect="dark"
         content="Bottom Left prompts info"
         position="bottom-left"
       >
-        <ver-button ghost>bottom-left</ver-button>
-      </ver-tooltip>
+        <VKButton ghost>bottom-left</VKButton>
+      </VKTooltip>
 
-      <ver-tooltip
+      <VKTooltip
         class="box-item"
         effect="dark"
         content="Bottom "
         position="bottom"
       >
-        <ver-button ghost>bottom</ver-button>
-      </ver-tooltip>
-      <ver-tooltip
+        <VKButton ghost>bottom</VKButton>
+      </VKTooltip>
+      <VKTooltip
         class="box-item"
         effect="dark"
         content="Bottom Right prompts info"
         position="bottom-right"
       >
-        <ver-button ghost>bottom-right</ver-button>
-      </ver-tooltip>
+        <VKButton ghost>bottom-right</VKButton>
+      </VKTooltip>
     </div>
   </div>
 </template>

@@ -1,6 +1,8 @@
 import Select from './src/index.vue'
 import { withInstall } from '@versakit/shared'
 
-export const VerSelect = withInstall(Select)
+const VKSelect = withInstall(Select)
+
+export { VKSelect }
 
 export * from './type'

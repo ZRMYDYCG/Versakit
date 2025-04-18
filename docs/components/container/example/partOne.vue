@@ -1,25 +1,25 @@
 <template>
   <div class="common-layout">
-    <ver-container direction="column">
-      <ver-header>Header</ver-header>
-      <ver-main>Main</ver-main>
-    </ver-container>
+    <VK-container direction="column">
+      <VK-header>Header</VK-header>
+      <VK-main>Main</VK-main>
+    </VK-container>
   </div>
 </template>
 
 <script setup lang="ts">
-import { VerContainer, VerHeader, VerMain } from '@versakit/ui'
+import { VKContainer, VKHeader, VKMain } from '@versakit/ui'
 </script>
 
 <style scoped>
 .common-layout {
-  .ver-header {
+  .vk-header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #c6e2ff;
   }
-  .ver-main {
+  .vk-main {
     display: flex;
     justify-content: center;
     align-items: center;

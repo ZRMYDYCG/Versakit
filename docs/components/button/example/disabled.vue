@@ -1,36 +1,32 @@
 <script setup lang="ts">
-import { VerButton, VerRow } from '@versakit/ui'
+import { VKButton, VKRow } from '@versakit/ui'
 </script>
 
 <template>
-  <ver-row class="mb-4">
-    <ver-button disabled color="red-5">按 钮</ver-button>
-    <ver-button disabled variant="plain round" color="red-1">按 钮</ver-button>
-  </ver-row>
+  <VKRow class="mb-4">
+    <VKButton disabled color="red-5">按 钮</VKButton>
+    <VKButton disabled variant="plain round" color="red-1">按 钮</VKButton>
+  </VKRow>
 
-  <ver-row class="mb-4">
-    <ver-button disabled color="blue-5">按 钮</ver-button>
-    <ver-button disabled variant="plain round" color="blue-1">按 钮</ver-button>
-  </ver-row>
+  <VKRow class="mb-4">
+    <VKButton disabled color="blue-5">按 钮</VKButton>
+    <VKButton disabled variant="plain round" color="blue-1">按 钮</VKButton>
+  </VKRow>
 
-  <ver-row class="mb-4">
-    <ver-button disabled color="green-5">按 钮</ver-button>
-    <ver-button disabled variant="plain round" color="green-1">
-      按 钮
-    </ver-button>
-  </ver-row>
+  <VKRow class="mb-4">
+    <VKButton disabled color="green-5">按 钮</VKButton>
+    <VKButton disabled variant="plain round" color="green-1">按 钮</VKButton>
+  </VKRow>
 
-  <ver-row class="mb-4">
-    <ver-button disabled color="zinc-5">按 钮</ver-button>
-    <ver-button disabled variant="plain round" color="zinc-1">按 钮</ver-button>
-  </ver-row>
+  <VKRow class="mb-4">
+    <VKButton disabled color="zinc-5">按 钮</VKButton>
+    <VKButton disabled variant="plain round" color="zinc-1">按 钮</VKButton>
+  </VKRow>
 
-  <ver-row class="mb-4">
-    <ver-button disabled color="violet-5">按 钮</ver-button>
-    <ver-button disabled variant="plain round" color="violet-1">
-      按 钮
-    </ver-button>
-  </ver-row>
+  <VKRow class="mb-4">
+    <VKButton disabled color="violet-5">按 钮</VKButton>
+    <VKButton disabled variant="plain round" color="violet-1">按 钮</VKButton>
+  </VKRow>
 </template>
 
 <style scoped>

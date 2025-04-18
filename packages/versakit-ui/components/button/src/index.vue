@@ -1,18 +1,18 @@
 <script setup lang="ts">
 import { computed, useAttrs } from 'vue'
 import type { ButtonProps } from '../type/index'
-import { VerIcon } from '@versakit/icons'
+import { VKIcon } from '@versakit/icons'
 
-defineOptions({ name: 'VerButton' })
+defineOptions({ name: 'VkButton' }) // 修改组件名
 
 // 按钮类型映射
 const TYPE_CLASS_MAP = {
-  primary: 'ver-btn-primary',
-  secondary: 'ver-btn-secondary',
-  success: 'ver-btn-success',
-  info: 'ver-btn-info',
-  error: 'ver-btn-error',
-  warn: 'ver-btn-warn',
+  primary: 'vk-btn-primary',
+  secondary: 'vk-btn-secondary',
+  success: 'vk-btn-success',
+  info: 'vk-btn-info',
+  error: 'vk-btn-error',
+  warn: 'vk-btn-warn',
 } as const
 
 const props = withDefaults(defineProps<ButtonProps>(), {
@@ -28,7 +28,7 @@ const attrs = useAttrs()
 
 // 优化类名计算逻辑
 const baseClass = computed(() => {
-  const classes = ['ver-btn']
+  const classes = ['vk-btn']
 
   // 处理按钮类型
   classes.push(TYPE_CLASS_MAP[props.type as keyof typeof TYPE_CLASS_MAP] || '')
@@ -69,7 +69,7 @@ const handleKeydown = (event: KeyboardEvent) => {
 
 <template>
   <button v-bind="rootAttrs" @keydown="handleKeydown">
-    <ver-icon v-if="icon" :name="icon" :class="icon" aria-hidden="true" />
+    <VKIcon v-if="icon" :name="icon" :class="icon" aria-hidden="true" />
     <span v-if="$slots.default">
       <slot />
     </span>

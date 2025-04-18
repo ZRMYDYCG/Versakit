@@ -3,12 +3,10 @@ import Steps from './src/index.vue'
 import StepItem from './src/item.vue'
 import type { Step } from './src/index.vue'
 
-const VerSteps = withInstall(Steps)
-const VerStepItem = withInstall(StepItem)
+const VKSteps = withInstall(Steps)
+const VKStepItem = withInstall(StepItem)
 
-export { VerSteps, VerStepItem }
+export { VKSteps, VKStepItem }
 export type { Step }
-export type VerStepsProps = InstanceType<typeof Steps>['$props']
-export type VerStepItemProps = InstanceType<typeof StepItem>['$props']
-
-export default VerSteps
+export type VKStepsProps = InstanceType<typeof Steps>['$props']
+export type VKStepItemProps = InstanceType<typeof StepItem>['$props']

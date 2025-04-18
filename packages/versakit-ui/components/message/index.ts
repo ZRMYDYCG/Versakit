@@ -1,6 +1,6 @@
 import { Message } from './src/index'
 import { withInstall } from '@versakit/shared'
 
-const VerMessage = withInstall(Message)
+const VKMessage = withInstall(Message)
 
-export { VerMessage }
+export { VKMessage }

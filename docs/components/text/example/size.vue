@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerText, VerSegmented } from '@versakit/ui'
+import { VKText, VKSegmented } from '@versakit/ui'
 
 const selectedValue = ref('md')
 const options = [
@@ -13,9 +13,9 @@ const options = [
 
 <template>
   <div>
-    <VerSegmented :options v-model="selectedValue" />
+    <VKSegmented :options="options" v-model="selectedValue" />
 
-    <ver-text class="mx4" :size="selectedValue">我是文本</ver-text>
+    <VKText class="mx4" :size="selectedValue">我是文本</VKText>
   </div>
 </template>
 

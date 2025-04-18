@@ -1,6 +1,6 @@
 import Tag from './src/index.vue'
 import { withInstall } from '@versakit/shared'
 
-const VerTag = withInstall(Tag)
+const VKTag = withInstall(Tag)
 
-export { VerTag }
+export { VKTag }

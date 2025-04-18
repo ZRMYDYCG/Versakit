@@ -1,7 +1,7 @@
-.ver-tag {
-  color: var(--theme-neutral-100, var(--ver-neutral-100));
-  background-color: var(--theme-neutral-600, var(--ver-neutral-600));
-  border-color: var(--theme-neutral-500, var(--ver-neutral-500));
+.vk-tag {
+  color: var(--theme-neutral-100, var(--vk-neutral-100));
+  background-color: var(--theme-neutral-600, var(--vk-neutral-600));
+  border-color: var(--theme-neutral-500, var(--vk-neutral-500));
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -15,45 +15,93 @@
   border-style: solid;
   border-radius: 4px;
 }
+
 /* round */
-.ver-tag.is-round {
+.vk-tag.is-round {
   border-radius: 50px;
 }
 
-.ver-tag.is-plain {
-  color: var(--theme-primary-500, var(--ver-primary-500));
-  border-color: var(--theme-primary-600, var(--ver-primary-600));
+.vk-tag.is-plain {
+  color: var(--theme-primary-500, var(--vk-primary-500));
+  border-color: var(--theme-primary-600, var(--vk-primary-600));
   background-color: transparent;
 }
 
-@each $item in primary, success, warn, info, error {
-  .ver-tag-$(item) {
-    color: var(--theme-neutral-100, var(--ver-neutral-100));
-    border-color: var(--theme-$(item)-500, var(--ver-$(item)-500));
-    background-color: var(--theme-$(item)-500, var(--ver-$(item)-500));
-  }
-
-  .ver-tag-$(item).is-plain {
-    color: var(--theme-$(item)-500, var(--ver-$(item)-500));
-    border-color: var(--theme-$(item)-500, var(--ver-$(item)-500));
-    background-color: transparent;
-  }
+/* 状态样式 */
+.vk-tag-primary {
+  color: var(--theme-neutral-100, var(--vk-neutral-100));
+  border-color: var(--theme-primary-500, var(--vk-primary-500));
+  background-color: var(--theme-primary-500, var(--vk-primary-500));
 }
 
-/* size属性 */
-.ver-tag.is-xs {
+.vk-tag-primary.is-plain {
+  color: var(--theme-primary-500, var(--vk-primary-500));
+  border-color: var(--theme-primary-500, var(--vk-primary-500));
+  background-color: transparent;
+}
+
+.vk-tag-success {
+  color: var(--theme-neutral-100, var(--vk-neutral-100));
+  border-color: var(--theme-success-500, var(--vk-success-500));
+  background-color: var(--theme-success-500, var(--vk-success-500));
+}
+
+.vk-tag-success.is-plain {
+  color: var(--theme-success-500, var(--vk-success-500));
+  border-color: var(--theme-success-500, var(--vk-success-500));
+  background-color: transparent;
+}
+
+.vk-tag-warn {
+  color: var(--theme-neutral-100, var(--vk-neutral-100));
+  border-color: var(--theme-warn-500, var(--vk-warn-500));
+  background-color: var(--theme-warn-500, var(--vk-warn-500));
+}
+
+.vk-tag-warn.is-plain {
+  color: var(--theme-warn-500, var(--vk-warn-500));
+  border-color: var(--theme-warn-500, var(--vk-warn-500));
+  background-color: transparent;
+}
+
+.vk-tag-info {
+  color: var(--theme-neutral-100, var(--vk-neutral-100));
+  border-color: var(--theme-info-500, var(--vk-info-500));
+  background-color: var(--theme-info-500, var(--vk-info-500));
+}
+
+.vk-tag-info.is-plain {
+  color: var(--theme-info-500, var(--vk-info-500));
+  border-color: var(--theme-info-500, var(--vk-info-500));
+  background-color: transparent;
+}
+
+.vk-tag-error {
+  color: var(--theme-neutral-100, var(--vk-neutral-100));
+  border-color: var(--theme-error-500, var(--vk-error-500));
+  background-color: var(--theme-error-500, var(--vk-error-500));
+}
+
+.vk-tag-error.is-plain {
+  color: var(--theme-error-500, var(--vk-error-500));
+  border-color: var(--theme-error-500, var(--vk-error-500));
+  background-color: transparent;
+}
+
+/* size 属性 */
+.vk-tag.is-xs {
   font-size: 6px;
   height: 10px;
   padding: 0px 7px;
 }
 
-.ver-tag.is-sm {
+.vk-tag.is-sm {
   font-size: 10px;
   height: 20px;
   padding: 0px 7px;
 }
 
-.ver-tag.is-lg {
+.vk-tag.is-lg {
   font-size: 16px;
   height: 32px;
   padding: 0px 11px;

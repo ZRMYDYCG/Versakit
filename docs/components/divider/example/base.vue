@@ -4,7 +4,7 @@
       There little thoughts are the rustle of leaves; they have their whisper of
       joy in my mind.
     </p>
-    <ver-divider />
+    <VKDivider />
     <p>
       There little thoughts are the rustle of leaves; they have their whisper of
       joy in my mind.
@@ -13,5 +13,5 @@
 </template>
 
 <script setup lang="ts">
-import { VerDivider } from '@versakit/ui'
+import { VKDivider } from '@versakit/ui'
 </script>

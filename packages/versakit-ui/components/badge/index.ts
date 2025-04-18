@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import badge from './src/index.vue'
 
-const VerBadge = withInstall(badge)
+const VKBadge = withInstall(badge)
 
-export { VerBadge }
+export { VKBadge }

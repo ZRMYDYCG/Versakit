@@ -1,38 +1,32 @@
 <template>
   <div class="common-layout">
-    <ver-container direction="column">
-      <ver-header>Header</ver-header>
-      <ver-container>
-        <ver-aside width="200px">Aside</ver-aside>
-        <ver-container direction="column">
-          <ver-main>Main</ver-main>
-          <ver-footer>Footer</ver-footer>
-        </ver-container>
-      </ver-container>
-    </ver-container>
+    <VKContainer direction="column">
+      <VKHeader>Header</VKHeader>
+      <VK-container>
+        <VKAside width="200px">Aside</VKAside>
+        <VK-container direction="column">
+          <VKMain>Main</VKMain>
+          <VKFooter>Footer</VKFooter>
+        </VK-container>
+      </VK-container>
+    </VKContainer>
   </div>
 </template>
 
 <script setup lang="ts">
-import {
-  VerContainer,
-  VerHeader,
-  VerMain,
-  VerAside,
-  VerFooter,
-} from '@versakit/ui'
+import { VKContainer, VKHeader, VKMain, VKAside, VKFooter } from '@versakit/ui'
 </script>
 
 <style scoped>
 .common-layout {
-  .ver-header {
+  .vk-header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #c6e2ff;
   }
 
-  .ver-aside {
+  .vk-aside {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +35,7 @@ import {
     background-color: rgb(216.8, 235.6, 255);
   }
 
-  .ver-main {
+  .vk-main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +43,7 @@ import {
     height: 150px;
   }
 
-  .ver-footer {
+  .vk-footer {
     display: flex;
     justify-content: center;
     align-items: center;

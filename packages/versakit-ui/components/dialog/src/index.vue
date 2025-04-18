@@ -3,38 +3,38 @@
     <transition name="fade" @after-leave="afterLeave">
       <div
         v-show="props.modelValue"
-        class="ver-dialog_wrapper"
+        class="vk-dialog_wrapper"
         role="dialog"
         aria-modal="true"
-        :aria-label="props.title"
+        aria-label="对话框"
         @click.self="close"
         @keydown.esc="close"
         tabindex="-1"
         ref="dialogRef"
       >
-        <div class="ver-dialog" :style="dialogStyle">
-          <div class="ver-dialog_header">
+        <div class="vk-dialog" :style="dialogStyle">
+          <div class="vk-dialog_header">
             <slot name="title">
-              <span class="ver-dialog_title" id="dialog-title">
+              <span class="vk-dialog_title" id="dialog-title">
                 {{ props.title }}
               </span>
             </slot>
             <button
-              class="ver-dialog_headerbtn"
+              class="vk-dialog_headerbtn"
               @click="close"
               aria-label="关闭对话框"
             >
-              <VerIcon :name="closeIcon || 'close'" />
+              <VKIcon :name="closeIcon || 'close'" />
             </button>
           </div>
           <div
-            class="ver-dialog_body"
+            class="vk-dialog_body"
             role="document"
             aria-labelledby="dialog-title"
           >
             <slot></slot>
           </div>
-          <div v-if="$slots.footer" class="ver-dialog_footer">
+          <div v-if="$slots.footer" class="vk-dialog_footer">
             <slot name="footer"></slot>
           </div>
         </div>
@@ -46,7 +46,7 @@
 <script lang="ts" setup>
 import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import type { DiaLogProps } from '../type/index'
-import { VerIcon } from '@versakit/icons'
+import { VKIcon } from '@versakit/icons'
 
 defineOptions({ name: 'VerDialog' })
 

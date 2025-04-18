@@ -7,66 +7,66 @@
   width: 100%;
   height: 100%;
   overflow: auto;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  scrollbar-width: none; /* 隐藏默认滚动条 */
+  -ms-overflow-style: none; /* IE 隐藏滚动条 */
 }
 
 .scrollbar-content::-webkit-scrollbar {
-  display: none;
+  display: none; /* 隐藏 Webkit 滚动条 */
 }
 
 .scrollbar-content.with-vertical {
-  padding-right: 6px;
+  padding-right: 6px; /* 为垂直滚动条预留空间 */
 }
 
 .scrollbar-content.with-horizontal {
-  padding-bottom: 6px;
+  padding-bottom: 6px; /* 为水平滚动条预留空间 */
 }
 
 .scrollbar-track {
   position: absolute;
   border-radius: 4px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s; /* 平滑过渡效果 */
 }
 
 .scrollbar-track.vertical {
   top: 2px;
   right: 2px;
   width: 6px;
-  height: calc(100% - 4px);
+  height: calc(100% - 4px); /* 垂直滚动条轨道 */
 }
 
 .scrollbar-track.horizontal {
   left: 2px;
   bottom: 2px;
   height: 6px;
-  width: calc(100% - 4px);
+  width: calc(100% - 4px); /* 水平滚动条轨道 */
 }
 
 .scrollbar-thumb {
   position: absolute;
   border-radius: 4px;
   cursor: pointer;
-  transition: all 0.3s;
-  opacity: 0;
+  transition: all 0.3s; /* 平滑过渡效果 */
+  opacity: 0; /* 默认隐藏滚动条 */
 }
 
 .scrollbar-thumb.visible {
-  opacity: 1;
+  opacity: 1; /* 显示滚动条 */
 }
 
 .scrollbar-track.vertical .scrollbar-thumb {
-  width: 100%;
+  width: 100%; /* 垂直滚动条宽度 */
 }
 
 .scrollbar-track.horizontal .scrollbar-thumb {
-  height: 100%;
+  height: 100%; /* 水平滚动条高度 */
 }
 
 .scrollbar-thumb:hover {
-  background-color: var(--hover-color) !important;
+  background-color: var(--hover-color) !important; /* 鼠标悬停时的颜色 */
 }
 
 .scrollbar-thumb:active {
-  background-color: var(--hover-color) !important;
+  background-color: var(--hover-color) !important; /* 鼠标按下时的颜色 */
 }

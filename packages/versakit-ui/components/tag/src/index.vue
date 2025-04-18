@@ -1,5 +1,5 @@
 <template>
-  <span :class="tClass">
+  <span :class="tClass" role="status" aria-label="Tag Component">
     <slot></slot>
   </span>
 </template>
@@ -8,7 +8,7 @@
 import { computed } from 'vue'
 import type { TagProps } from '../type/index'
 
-defineOptions({ name: 'VerTag' })
+defineOptions({ name: 'VKTag' }) // 修改组件名称为 VKTag
 
 const props = withDefaults(defineProps<TagProps>(), {
   type: 'primary',
@@ -18,12 +18,15 @@ const props = withDefaults(defineProps<TagProps>(), {
 })
 
 const tClass = computed(() => {
+  const baseClass = 'vk-tag' // 修改类名前缀为 VK
   return [
-    'ver-tag',
-    props.type == 'primary' ? 'ver-tag-primary' : `ver-tag-${props.type}`,
-    props.round == false ? '' : 'is-round',
-    props.plain == false ? '' : 'is-plain',
-    props.size == 'md' ? '' : `is-${props.size}`,
+    baseClass,
+    props.type === 'primary'
+      ? `${baseClass}-primary`
+      : `${baseClass}-${props.type}`,
+    props.round ? 'is-round' : '',
+    props.plain ? 'is-plain' : '',
+    props.size === 'md' ? '' : `is-${props.size}`,
   ]
 })
 </script>

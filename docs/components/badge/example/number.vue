@@ -1,11 +1,11 @@
 <template>
-  <VerBadge type="number" :value="value1">
-    <VerButton @click="countUp()">点我增加</VerButton>
-  </VerBadge>
+  <VKBadge type="number" :value="value1">
+    <VKButton @click="countUp()">点我增加</VKButton>
+  </VKBadge>
 </template>
 
 <script setup>
-import { VerBadge, VerButton } from '@versakit/ui'
+import { VKBadge, VKButton } from '@versakit/ui'
 import { ref } from 'vue'
 
 const value1 = ref(95)

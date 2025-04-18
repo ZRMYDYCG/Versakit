@@ -1,4 +1,4 @@
-.ver-drawer-wrapper {
+.vk-drawer-wrapper {
   position: fixed;
   top: 0;
   right: 0;
@@ -7,14 +7,14 @@
   margin: 0;
   z-index: 2001;
   background-color: rgba(0, 0, 0, 0.5);
-  .ver-drawer {
+  .vk-drawer {
     position: absolute;
     width: 30%;
     height: 100vh;
-    background-color: var(--theme-neutral-100, var(--ver-neutral-100));
+    background-color: var(--theme-neutral-100, var(--vk-neutral-100));
 
     .dark & {
-      background-color: var(--theme-neutral-800, var(--ver-neutral-800));
+      background-color: var(--theme-neutral-800, var(--vk-neutral-800));
     }
 
     &_header {
@@ -24,18 +24,18 @@
       align-items: center;
       padding: 20px;
       padding-bottom: 10px;
-      color: var(--theme-neutral-500, var(--ver-neutral-500));
+      color: var(--theme-neutral-500, var(--vk-neutral-500));
 
       .dark & {
-        color: var(--theme-neutral-200, var(--ver-neutral-200));
+        color: var(--theme-neutral-200, var(--vk-neutral-200));
       }
 
-      .ver-drawer_title {
+      .vk-drawer_title {
         margin: 0;
         line-height: inherit;
         font-size: 1rem;
       }
-      .ver-drawer_headerbtn {
+      .vk-drawer_headerbtn {
         position: absolute;
         top: 20px;
         right: 20px;
@@ -54,14 +54,14 @@
       margin-right: 20px;
 
       .dark & {
-        color: var(--theme-neutral-300, var(--ver-neutral-300));
+        color: var(--theme-neutral-300, var(--vk-neutral-300));
       }
     }
   }
 }
 
-.ver-drawer-left {
-  .ver-drawer {
+.vk-drawer-left {
+  .vk-drawer {
     animation: fade-left 0.3s;
     left: 0;
     width: 30%;
@@ -69,8 +69,8 @@
   }
 }
 
-.ver-drawer-right {
-  .ver-drawer {
+.vk-drawer-right {
+  .vk-drawer {
     animation: fade-right 0.3s;
     right: 0;
     width: 30%;
@@ -78,8 +78,8 @@
   }
 }
 
-.ver-drawer-top {
-  .ver-drawer {
+.vk-drawer-top {
+  .vk-drawer {
     animation: fade-top 0.3s;
     top: 0;
     width: 100%;
@@ -87,8 +87,8 @@
   }
 }
 
-.ver-drawer-bottom {
-  .ver-drawer {
+.vk-drawer-bottom {
+  .vk-drawer {
     animation: fade-bottom 0.3s;
     bottom: 0;
     width: 100%;

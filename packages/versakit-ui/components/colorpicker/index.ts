@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import ColorPicker from './src/index.vue'
 
-const VerColorPicker = withInstall(ColorPicker)
+const VKColorPicker = withInstall(ColorPicker)
 
-export { VerColorPicker }
+export { VKColorPicker }

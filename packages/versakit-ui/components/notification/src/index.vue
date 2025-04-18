@@ -1,15 +1,25 @@
 <template>
   <transition name="slide-fade" @after-leave="props.destroy">
-    <div v-show="isVisable" :class="VerClass" :style="positionStyle">
-      <div class="ver-notification-top">
-        <VerIcon :size="25" :color="iconColor" :name="icon" />
-        <h2 class="ver-notification-title">{{ title }}</h2>
+    <div
+      v-show="isVisable"
+      :class="vkClass"
+      :style="positionStyle"
+      role="alert"
+      aria-live="polite"
+    >
+      <div class="vk-notification-top">
+        <VKIcon :size="25" :color="iconColor" :name="icon" aria-hidden="true" />
+        <h2 class="vk-notification-title">{{ title }}</h2>
       </div>
-      <div class="ver-notification-content">
+      <div class="vk-notification-content">
         <span>{{ content }}</span>
       </div>
-      <div class="ver-notification-closebtn" @click="handClose">
-        <VerIcon name="cross" />
+      <div
+        class="vk-notification-closebtn"
+        @click="handClose"
+        aria-label="关闭通知"
+      >
+        <VKIcon name="cross" aria-hidden="true" />
       </div>
     </div>
   </transition>
@@ -18,10 +28,10 @@
 <script lang="ts" setup>
 import { ref, onMounted, computed } from 'vue'
 import { getLastBottomOffset } from './index'
-import { VerIcon } from '@versakit/icons'
+import { VKIcon } from '@versakit/icons'
 import type { NotifivationProps } from '../type/index'
 
-defineOptions({ name: 'VerNotifivation' })
+defineOptions({ name: 'VKNotification' })
 
 const props = withDefaults(defineProps<NotifivationProps>(), {
   type: 'info',
@@ -101,10 +111,10 @@ const handClose = () => {
   isVisable.value = false
 }
 
-const VerClass = computed(() => {
+const vkClass = computed(() => {
   return [
-    'ver-notification',
-    props.plain == false ? '' : `ver-notification-${props.type}-plain`,
+    'vk-notification',
+    props.plain === false ? '' : `vk-notification-${props.type}-plain`,
   ]
 })
 

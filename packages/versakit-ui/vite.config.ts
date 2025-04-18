@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
+import { resolve } from 'path'
+import fs from 'fs-extra'
 
 // CSS工程化
 import autoprefixer from 'autoprefixer'
@@ -13,13 +15,20 @@ import CssMagic from 'postcss-magic'
 // TS
 import dts from 'vite-plugin-dts'
 
-// import { visualizer } from 'rollup-plugin-visualizer'
+import { visualizer } from 'rollup-plugin-visualizer'
 
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import VueMacros from 'unplugin-vue-macros/vite'
 
 export default defineConfig({
   plugins: [
+    {
+      name: 'clean-dist',
+      buildStart() {
+        // 在构建开始前清理 dist 目录
+        fs.emptyDirSync(resolve(__dirname, 'dist'))
+      },
+    },
     dts({ tsconfigPath: '../../tsconfig.build.json' }),
     VueMacros({
       plugins: {
@@ -27,11 +36,11 @@ export default defineConfig({
         vueJsx: vueJsx(),
       },
     }),
-    // visualizer({
-    //   open: true, // 打包完成后自动打开分析页面
-    //   gzipSize: true, // 显示 gzip 压缩后的大小
-    //   brotliSize: true, // 显示 brotli 压缩后的大小
-    // }),
+    visualizer({
+      open: true,
+      gzipSize: true,
+      brotliSize: true,
+    }),
   ],
   css: {
     postcss: {
@@ -49,13 +58,26 @@ export default defineConfig({
         cssnano({
           preset: 'default',
         }),
-      ],
+      ] as any,
     },
   },
   build: {
     sourcemap: false,
     rollupOptions: {
-      external: ['vue'],
+      external: [
+        'vue',
+        /\.test\.(ts|tsx)$/,
+        /\.spec\.(ts|tsx)$/,
+        /__tests__/,
+        /__mocks__/,
+      ],
+      input: {
+        index: 'index.ts',
+      },
+      treeshake: {
+        moduleSideEffects: false,
+        propertyReadSideEffects: false,
+      },
       output: [
         {
           format: 'umd',

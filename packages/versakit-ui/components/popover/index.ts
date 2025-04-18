@@ -1,7 +1,8 @@
 import { withInstall } from '@versakit/shared'
 import Popover from './src/index.vue'
 
-export const VerPopover = withInstall(Popover)
-export default VerPopover
+const VKPopover = withInstall(Popover)
+
+export { VKPopover }
 
 export * from './type'

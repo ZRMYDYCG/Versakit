@@ -1,6 +1,6 @@
 <template>
   <div class="upload-drag-demo">
-    <ver-upload
+    <VKUpload
       action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
       v-model:fileList="fileList"
       drag
@@ -8,7 +8,6 @@
       @change="handleChange"
     >
       <div class="upload-drag-content">
-        <ver-icon name="upload" size="40px" />
         <div class="upload-drag-text">
           <p>
             拖拽文件到此处或
@@ -17,7 +16,7 @@
           <p class="upload-hint">支持单个或批量上传文件</p>
         </div>
       </div>
-    </ver-upload>
+    </VKUpload>
 
     <div class="upload-list" v-if="fileList.length > 0">
       <h3>已上传文件列表:</h3>
@@ -35,7 +34,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerUpload } from '@versakit/ui'
+import { VKUpload } from '@versakit/ui'
 
 interface UploadFile {
   uid: string

@@ -1,8 +1,11 @@
 <template>
-  <VerCalendar v-model="date">
+  <VKCalendar v-model="date">
     <template #date-cell="{ data }">
       <div class="custom-cell">
-        <div class="custom-cell-date" :class="{ 'is-selected': data.isSelected }">
+        <div
+          class="custom-cell-date"
+          :class="{ 'is-selected': data.isSelected }"
+        >
           {{ data.day.split('-').slice(2).join('') }}
         </div>
         <div class="custom-cell-text" v-if="data.type === 'current-month'">
@@ -10,11 +13,11 @@
         </div>
       </div>
     </template>
-  </VerCalendar>
+  </VKCalendar>
 </template>
 
 <script lang="ts" setup>
-import { VerCalendar } from '@versakit/ui'
+import { VKCalendar } from '@versakit/ui'
 import { ref } from 'vue'
 
 const date = ref(new Date())

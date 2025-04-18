@@ -2,7 +2,7 @@ import { withInstall } from '@versakit/shared'
 import Avatar from './src/index.vue'
 import AvatarGroup from './src/group.vue'
 
-const VerAvatar = withInstall(Avatar)
-const VerAvatarGroup = withInstall(AvatarGroup)
+const VKAvatar = withInstall(Avatar)
+const VKAvatarGroup = withInstall(AvatarGroup)
 
-export { VerAvatar, VerAvatarGroup }
+export { VKAvatar, VKAvatarGroup }

@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { VerButton, VerRow } from '@versakit/ui'
+import { VKButton, VKRow } from '@versakit/ui'
 </script>
 
 <template>
-  <ver-row class="mb-4">
-    <ver-button color="blue-1">按 钮</ver-button>
-    <ver-button color="blue-2">按 钮</ver-button>
-    <ver-button color="blue-3">按 钮</ver-button>
-    <ver-button color="blue-4">按 钮</ver-button>
-    <ver-button color="blue-5">按 钮</ver-button>
-  </ver-row>
+  <VKRow class="mb-4">
+    <VKButton color="blue-1">按 钮</VKButton>
+    <VKButton color="blue-2">按 钮</VKButton>
+    <VKButton color="blue-3">按 钮</VKButton>
+    <VKButton color="blue-4">按 钮</VKButton>
+    <VKButton color="blue-5">按 钮</VKButton>
+  </VKRow>
 </template>
 
 <style scoped lang="scss">

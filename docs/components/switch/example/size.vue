@@ -1,13 +1,13 @@
 <template>
   <div>
-    <VerSegmented v-model="selectedValue" :options="options"></VerSegmented>
+    <VKSegmented v-model="selectedValue" :options="options"></VKSegmented>
 
-    <VerSwitch :size="selectedValue" v-model="value" />
+    <VKSwitch :size="selectedValue" v-model="value" />
   </div>
 </template>
 
 <script lang="ts" setup>
-import { VerSwitch, VerSegmented } from '@versakit/ui'
+import { VKSwitch, VKSegmented } from '@versakit/ui'
 import { ref } from 'vue'
 
 const value = ref(false)

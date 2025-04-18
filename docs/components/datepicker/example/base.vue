@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerDataPicker } from '@versakit/ui'
+import { VKDataPicker } from '@versakit/ui'
 
 const selectedDate = ref<Date | null>(null)
 </script>
@@ -8,7 +8,7 @@ const selectedDate = ref<Date | null>(null)
 <template>
   <div class="container">
     <div class="example-box">
-      <VerDataPicker v-model="selectedDate" placeholder="选择日期" />
+      <VKDataPicker v-model="selectedDate" placeholder="选择日期" />
       <div>Selected date: {{ selectedDate }}</div>
     </div>
   </div>

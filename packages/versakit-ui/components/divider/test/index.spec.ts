@@ -1,15 +1,15 @@
 import { mount } from '@vue/test-utils'
-import { VerDivider } from '../index'
+import { VKDivider } from '../index'
 import { describe, it, expect } from 'vitest'
 
-describe('VerDivider', () => {
+describe('VKDivider', () => {
   it('测试组件是否能正常渲染', () => {
     const props = {
       line: 'solid',
       position: 'left',
       direction: 'horizontal',
     }
-    const wrapper = mount(VerDivider, {
+    const wrapper = mount(VKDivider, {
       props: {
         props,
       },
@@ -25,7 +25,7 @@ describe('VerDivider', () => {
         position: 'left',
         direction: 'horizontal',
       }
-      const wrapper = mount(VerDivider, {
+      const wrapper = mount(VKDivider, {
         props: {
           props,
         },
@@ -42,7 +42,7 @@ describe('VerDivider', () => {
         position: position,
         direction: 'horizontal',
       }
-      const wrapper = mount(VerDivider, {
+      const wrapper = mount(VKDivider, {
         props: {
           props,
         },
@@ -60,7 +60,7 @@ describe('VerDivider', () => {
         position: 'left',
         direction: direction,
       }
-      const wrapper = mount(VerDivider, {
+      const wrapper = mount(VKDivider, {
         props: {
           props,
         },

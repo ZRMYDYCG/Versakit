@@ -1,5 +1,5 @@
 import { h, render, shallowReactive } from 'vue'
-import VerMessage from './index.vue'
+import VKMessage from './index.vue'
 import type { MessageProps } from '../type/index'
 
 const instances: any = shallowReactive([])
@@ -33,7 +33,7 @@ export const Message = ({
     destroy: onDestroy,
   }
 
-  const vnode = h(VerMessage, newProps)
+  const vnode = h(VKMessage, newProps)
 
   render(vnode, container)
 

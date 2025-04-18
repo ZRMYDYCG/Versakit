@@ -1,11 +1,11 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import VerCard from '../src/index.vue'
+import VKCard from '../src/index.vue'
 
-describe('VerCard', () => {
+describe('VKCard', () => {
   // 基础渲染测试
   it('renders basic card properly', () => {
-    const wrapper = mount(VerCard)
+    const wrapper = mount(VKCard)
     expect(wrapper.classes()).toContain('ver-card')
     expect(wrapper.classes()).toContain('is-shadow-always') // 默认阴影
   })
@@ -14,7 +14,7 @@ describe('VerCard', () => {
   it.each(['always', 'hover', 'never'] as const)(
     'applies correct shadow class for type: %s',
     (shadowType) => {
-      const wrapper = mount(VerCard, {
+      const wrapper = mount(VKCard, {
         props: { shadow: shadowType },
       })
       expect(wrapper.classes()).toContain(`is-shadow-${shadowType}`)
@@ -23,7 +23,7 @@ describe('VerCard', () => {
 
   // 测试插槽渲染
   it('renders slots correctly', () => {
-    const wrapper = mount(VerCard, {
+    const wrapper = mount(VKCard, {
       slots: {
         header: '<div>Header Content</div>',
         default: '<div>Main Content</div>',

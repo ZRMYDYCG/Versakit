@@ -19,7 +19,7 @@ app.mount('#app')
 
 ## 按需导入
 
-自动导入 <ver-tag>推荐</ver-tag>
+自动导入 <VK-tag>推荐</VK-tag>
 ​
 
 <p>首先你需要安装unplugin-vue-components 和 unplugin-auto-import这两款插件</p>

@@ -1,17 +1,17 @@
 <template>
   <div>
-    <VerButton @click="topleft">top-left</VerButton>
-    <VerButton @click="topright">top-right</VerButton>
-    <VerButton @click="bottomleft">bottom-left</VerButton>
-    <VerButton @click="bottomright">bottom-right</VerButton>
+    <VKButton @click="topleft">top-left</VKButton>
+    <VKButton @click="topright">top-right</VKButton>
+    <VKButton @click="bottomleft">bottom-left</VKButton>
+    <VKButton @click="bottomright">bottom-right</VKButton>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { VerButton, VerNotification } from '@versakit/ui'
+import { VKButton, VKNotification } from '@versakit/ui'
 
 const topleft = () => {
-  VerNotification({
+  VKNotification({
     title: 'title',
     content: 'content',
     position: 'top-left',
@@ -20,7 +20,7 @@ const topleft = () => {
 }
 
 const topright = () => {
-  VerNotification({
+  VKNotification({
     title: 'title',
     content: 'content',
     icon: 'ep:info-filled',
@@ -28,7 +28,7 @@ const topright = () => {
 }
 
 const bottomleft = () => {
-  VerNotification({
+  VKNotification({
     title: 'title',
     content: 'content',
     position: 'bottom-left',
@@ -37,7 +37,7 @@ const bottomleft = () => {
 }
 
 const bottomright = () => {
-  VerNotification({
+  VKNotification({
     title: 'title',
     content: 'content',
     position: 'bottom-right',

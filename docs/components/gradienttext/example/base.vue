@@ -1,10 +1,10 @@
 <template>
-  <VerGradientText type="error">炸了</VerGradientText>
-  <VerGradientText type="info">炸了</VerGradientText>
-  <VerGradientText type="warning">炸了</VerGradientText>
-  <VerGradientText type="success">炸了</VerGradientText>
+  <VKGradientText type="error">炸了</VKGradientText>
+  <VKGradientText type="info">炸了</VKGradientText>
+  <VKGradientText type="warning">炸了</VKGradientText>
+  <VKGradientText type="success">炸了</VKGradientText>
 </template>
+
 <script setup>
-import { VerGradientText } from '@versakit/ui'
+import { VKGradientText } from '@versakit/ui'
 </script>
-<style scoped lang="scss"></style>

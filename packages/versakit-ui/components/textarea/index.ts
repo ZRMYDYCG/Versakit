@@ -1,6 +1,6 @@
 import Textarea from './src/index.vue'
 import { withInstall } from '@versakit/shared'
 
-const VerTextarea = withInstall(Textarea)
+const VKTextarea = withInstall(Textarea)
 
-export { VerTextarea }
+export { VKTextarea }

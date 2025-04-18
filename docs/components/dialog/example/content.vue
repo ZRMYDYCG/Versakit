@@ -1,28 +1,28 @@
 <template>
-  <ver-row>
-    <ver-button @click="dialogVisible = true">点击打开对话框</ver-button>
-    <ver-button @click="dialogFromVisible = true">点击打开对话框</ver-button>
+  <VKRow>
+    <VKButton @click="dialogVisible = true">点击打开对话框</VKButton>
+    <VKButton @click="dialogFromVisible = true">点击打开对话框</VKButton>
     <!-- 普通 -->
-    <ver-dialog v-model="dialogVisible" title="测试">
+    <VKDialog v-model="dialogVisible" title="测试">
       <p>这是一个信息</p>
-    </ver-dialog>
+    </VKDialog>
     <!-- 表单 -->
-    <ver-dialog v-model="dialogFromVisible" title="表单" closeIcon="ep:close">
+    <VKDialog v-model="dialogFromVisible" title="表单" closeIcon="ep:close">
       <div>
-        <ver-input />
+        <VKInput />
       </div>
       <template #footer>
-        <ver-button>取消</ver-button>
-        <ver-button type="primary" @click="dialogFromVisible = false">
+        <VKButton>取消</VKButton>
+        <VKButton type="primary" @click="dialogFromVisible = false">
           确定
-        </ver-button>
+        </VKButton>
       </template>
-    </ver-dialog>
-  </ver-row>
+    </VKDialog>
+  </VKRow>
 </template>
 
 <script lang="ts" setup>
-import { VerRow, VerButton, VerDialog, VerInput } from '@versakit/ui'
+import { VKRow, VKButton, VKDialog, VKInput } from '@versakit/ui'
 
 import { ref } from 'vue'
 

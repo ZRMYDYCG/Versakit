@@ -1,7 +1,7 @@
 <template>
-  <VerEmpty icon="ep:message-box"></VerEmpty>
+  <VKEmpty icon="ep:message-box"></VKEmpty>
 </template>
+
 <script setup>
-import { VerEmpty } from '@versakit/ui'
+import { VKEmpty } from '@versakit/ui'
 </script>
-<style scoped lang="scss"></style>

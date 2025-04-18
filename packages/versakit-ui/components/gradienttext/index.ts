@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import GradientText from './src/index.vue'
 
-const VerGradientText = withInstall(GradientText)
+const VKGradientText = withInstall(GradientText)
 
-export { VerGradientText }
+export { VKGradientText }

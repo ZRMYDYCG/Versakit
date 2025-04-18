@@ -1,21 +1,21 @@
 <template>
   <div>
-    <ver-card>
+    <VKCard>
       <template #header>
         <div class="card-header">
           <span>Card name</span>
-          <ver-button size="sm" type="primary">按 钮</ver-button>
+          <VKButton size="sm" type="primary">按 钮</VKButton>
         </div>
       </template>
       <div v-for="o in 4" :key="o" class="text item">
         {{ 'List item ' + o }}
       </div>
-    </ver-card>
+    </VKCard>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { VerCard, VerButton } from '@versakit/ui'
+import { VKCard, VKButton } from '@versakit/ui'
 </script>
 
 <style scoped>

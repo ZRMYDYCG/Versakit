@@ -1,6 +1,6 @@
 <template>
   <div class="ver-empty">
-    <ver-icon :name="icon" size="80" class="ver-empty__icon" color="c1c1c1" />
+    <VKIcon :name="icon" size="80" class="ver-empty__icon" color="c1c1c1" />
     <div>
       <slot
         name="content"
@@ -11,14 +11,14 @@
       </slot>
     </div>
     <div v-if="showButton" class="ver-empty__button">
-      <VerButton ghost>看看别的</VerButton>
+      <VKButton ghost>看看别的</VKButton>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { VerIcon } from '@versakit/icons'
-import { VerButton } from '../../button/index'
+import { VKIcon } from '@versakit/icons'
+import { VKButton } from '../../button/index'
 import type { EmptyProps } from '../type/index'
 
 defineOptions({ name: 'VerEmpty' })

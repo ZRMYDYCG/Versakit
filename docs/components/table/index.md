@@ -1,4 +1,4 @@
-# Table 表格 <ver-tag type="warn">Alpha</ver-tag>
+# Table 表格 <VK-tag type="warn">Alpha</VK-tag>
 
 展示行列数据。
 

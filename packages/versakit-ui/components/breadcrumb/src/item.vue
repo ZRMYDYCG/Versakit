@@ -2,7 +2,7 @@
 import { inject } from 'vue'
 import type { BreadcrumbItemProps } from '../type/index.ts'
 
-defineOptions({ name: 'VerBreadcrumbItem' })
+defineOptions({ name: 'VKBreadcrumbItem' })
 
 const props = withDefaults(defineProps<BreadcrumbItemProps>(), {
   replace: false,
@@ -25,19 +25,22 @@ const handleClick = () => {
 </script>
 
 <template>
-  <span class="breadcrumb-item">
+  <span class="vk-breadcrumb-item">
     <span
       v-if="to"
-      class="breadcrumb-item-link"
+      class="vk-breadcrumb-item-link"
       role="link"
+      tabindex="0"
+      aria-current="false"
       @click="handleClick"
+      @keydown.enter="handleClick"
     >
       <slot></slot>
     </span>
-    <span v-else class="breadcrumb-item-text">
+    <span v-else class="vk-breadcrumb-item-text" aria-current="true">
       <slot></slot>
     </span>
-    <span class="breadcrumb-item-separator">
+    <span class="vk-breadcrumb-item-separator" aria-hidden="true">
       <i
         v-if="breadcrumb.separatorClass"
         :class="breadcrumb.separatorClass"
@@ -48,30 +51,32 @@ const handleClick = () => {
 </template>
 
 <style scoped>
-.breadcrumb-item {
+.vk-breadcrumb-item {
   display: flex;
   align-items: center;
 }
 
-.breadcrumb-item:last-child .breadcrumb-item-separator {
+.vk-breadcrumb-item:last-child .vk-breadcrumb-item-separator {
   display: none;
 }
 
-.breadcrumb-item-link {
+.vk-breadcrumb-item-link {
   color: #1890ff;
   cursor: pointer;
   transition: color 0.2s;
+  outline: none;
 }
 
-.breadcrumb-item-link:hover {
+.vk-breadcrumb-item-link:hover,
+.vk-breadcrumb-item-link:focus {
   color: #40a9ff;
 }
 
-.breadcrumb-item-text {
+.vk-breadcrumb-item-text {
   color: #666;
 }
 
-.breadcrumb-item-separator {
+.vk-breadcrumb-item-separator {
   margin: 0 8px;
   color: #999;
 }

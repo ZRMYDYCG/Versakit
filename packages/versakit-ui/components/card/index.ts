@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import Card from './src/index.vue'
 
-const VerCard = withInstall(Card)
+const VKCard = withInstall(Card)
 
-export { VerCard }
+export { VKCard }

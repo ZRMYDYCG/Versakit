@@ -36,7 +36,7 @@ export default defineConfig({
     } as any,
     socialLinks: [
       { icon: 'github', link: 'https://github.com/lenran659/Versakit' },
-      { icon: 'gitee', link: 'https://gitee.com/dragon_water/versakit' },
+      { icon: 'npm', link: 'https://www.npmjs.com/package/@versakit/ui' },
     ],
   },
   markdown: {

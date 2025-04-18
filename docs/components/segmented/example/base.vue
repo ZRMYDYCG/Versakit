@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerSegmented } from '@versakit/ui'
+import { VKSegmented } from '@versakit/ui'
 
 const selectedValue = ref('苹果')
 const options = [
@@ -19,11 +19,11 @@ const options2 = [
 
 <template>
   <div>
-    <VerSegmented v-model="selectedValue" :options="options"></VerSegmented>
+    <VKSegmented v-model="selectedValue" :options="options"></VKSegmented>
 
     <p class="selected-value">选择值: {{ selectedValue }}</p>
 
-    <VerSegmented v-model="selectedValue2" :options="options2"></VerSegmented>
+    <VKSegmented v-model="selectedValue2" :options="options2"></VKSegmented>
 
     <p class="selected-value">选择值: {{ selectedValue2 }}</p>
   </div>

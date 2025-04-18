@@ -1,19 +1,19 @@
 <template>
   <div class="upload-demo">
-    <ver-upload
+    <VKUpload
       action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
       v-model:fileList="fileList"
       @change="handleChange"
       @success="handleSuccess"
       @error="handleError"
     >
-      <ver-button type="primary">点击上传</ver-button>
+      <VKButton type="primary">点击上传</VKButton>
       <template #tip>
         <div class="upload-tip">
           支持上传任意类型文件，单个文件大小不超过10MB
         </div>
       </template>
-    </ver-upload>
+    </VKUpload>
 
     <div class="upload-status" v-if="uploadStatus">
       <div>上传状态: {{ uploadStatus }}</div>
@@ -24,7 +24,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerUpload } from '@versakit/ui'
+import { VKUpload, VKButton } from '@versakit/ui'
 
 interface UploadFile {
   uid: string

@@ -1,6 +1,6 @@
 import Main from './src/index.vue'
 import { withInstall } from '@versakit/shared'
 
-const VerMain = withInstall(Main)
+const VKMain = withInstall(Main)
 
-export { VerMain }
+export { VKMain }

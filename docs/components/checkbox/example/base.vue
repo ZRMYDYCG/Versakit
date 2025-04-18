@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerCheckbox, VerCheckboxGroup } from '@versakit/ui'
+import { VKCheckbox, VKCheckboxGroup } from '@versakit/ui'
 
 const checked = ref(false)
 const groupValue = ref<string[]>([])
@@ -11,33 +11,33 @@ const groupValue = ref<string[]>([])
     <div class="demo-section">
       <h3 class="demo-title">基础用法</h3>
       <div class="demo-content">
-        <ver-checkbox v-model="checked">选项</ver-checkbox>
+        <VKCheckbox v-model="checked">选项</VKCheckbox>
       </div>
     </div>
 
     <div class="demo-section">
       <h3 class="demo-title">禁用状态</h3>
       <div class="demo-content">
-        <ver-checkbox v-model="checked" disabled>禁用</ver-checkbox>
+        <VKCheckbox v-model="checked" disabled>禁用</VKCheckbox>
       </div>
     </div>
 
     <div class="demo-section">
       <h3 class="demo-title">半选状态</h3>
       <div class="demo-content">
-        <ver-checkbox v-model="checked" indeterminate>半选</ver-checkbox>
+        <VKCheckbox v-model="checked" indeterminate>半选</VKCheckbox>
       </div>
     </div>
 
     <div class="demo-section">
       <h3 class="demo-title">复选框组</h3>
       <div class="demo-content">
-        <ver-checkbox-group v-model="groupValue">
-          <ver-checkbox value="1">选项1</ver-checkbox>
-          <ver-checkbox value="2">选项2</ver-checkbox>
-          <ver-checkbox value="3" disabled>选项3</ver-checkbox>
-          <ver-checkbox value="4">选项4</ver-checkbox>
-        </ver-checkbox-group>
+        <VKCheckboxGroup v-model="groupValue">
+          <VKCheckbox value="1">选项1</VKCheckbox>
+          <VKCheckbox value="2">选项2</VKCheckbox>
+          <VKCheckbox value="3" disabled>选项3</VKCheckbox>
+          <VKCheckbox value="4">选项4</VKCheckbox>
+        </VKCheckboxGroup>
       </div>
     </div>
   </div>

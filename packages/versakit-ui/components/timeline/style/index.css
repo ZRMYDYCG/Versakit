@@ -13,7 +13,7 @@
   left: 50%;
   transform: translateX(-50%);
   width: 2px;
-  background-color: #e8e8e8;
+  background-color: var(--vk-neutral-200, #e8e8e8); /* 使用 VK 前缀变量 */
 }
 
 .timeline-reverse {

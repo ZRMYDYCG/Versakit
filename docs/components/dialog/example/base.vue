@@ -1,21 +1,19 @@
 <template>
   <div>
-    <ver-button @click="dialogVisible = true">点击打开对话框</ver-button>
+    <VKButton @click="dialogVisible = true">点击打开对话框</VKButton>
 
-    <ver-dialog v-model="dialogVisible" closeIcon="ep:close">
+    <VKDialog v-model="dialogVisible" closeIcon="ep:close">
       <span>这是一段信息</span>
       <template #footer>
-        <ver-button>取消</ver-button>
-        <ver-button type="primary" @click="dialogVisible = false">
-          确定
-        </ver-button>
+        <VKButton>取消</VKButton>
+        <VKButton type="primary" @click="dialogVisible = false">确定</VKButton>
       </template>
-    </ver-dialog>
+    </VKDialog>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { VerButton, VerDialog } from '@versakit/ui'
+import { VKButton, VKDialog } from '@versakit/ui'
 
 import { ref } from 'vue'
 

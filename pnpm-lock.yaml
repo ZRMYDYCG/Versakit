@@ -132,6 +132,9 @@ importers:
       '@iconify-json/ep':
         specifier: ^1.2.2
         version: 1.2.2
+      '@versakit/directives':
+        specifier: workspace:*
+        version: link:../packages/versakit-directives
       '@versakit/theme':
         specifier: workspace:*
         version: link:../packages/versakit-theme
@@ -263,10 +266,17 @@ importers:
   packages/versakit-theme: {}
 
   packages/versakit-ui:
+    dependencies:
+      fs-extra:
+        specifier: ^11.2.0
+        version: 11.3.0
     devDependencies:
       '@popperjs/core':
         specifier: ^2.11.8
         version: 2.11.8
+      '@types/fs-extra':
+        specifier: ^11.0.4
+        version: 11.0.4
       '@types/postcss-mixins':
         specifier: ^9.0.6
         version: 9.0.6
@@ -2679,6 +2689,13 @@ packages:
   /@types/estree@1.0.7:
     resolution: {integrity: sha512-w28IoSUCJpidD/TGviZwwMJckNESJZXFu7NBZ5YJ4mEUnNraUn9Pm8HSZm/jDF1pDWYKspWE7oVphigUPRakIQ==}
 
+  /@types/fs-extra@11.0.4:
+    resolution: {integrity: sha512-yTbItCNreRooED33qjunPthRcSjERP1r4MqCZc7wv0u2sUkzTFp45tgUfS5+r7FrZPdmCCNflLhVSP/o+SemsQ==}
+    dependencies:
+      '@types/jsonfile': 6.1.4
+      '@types/node': 22.14.0
+    dev: true
+
   /@types/hast@3.0.4:
     resolution: {integrity: sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==}
     dependencies:
@@ -2687,6 +2704,12 @@ packages:
 
   /@types/json5@0.0.29:
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+    dev: true
+
+  /@types/jsonfile@6.1.4:
+    resolution: {integrity: sha512-D5qGUYwjvnNNextdU59/+fI+spnwtTFmyQP0h+PfIOSkNfpU6AOICUOkm4i0OnSk+NyjdPJrxCDro0sJsWlRpQ==}
+    dependencies:
+      '@types/node': 22.14.0
     dev: true
 
   /@types/linkify-it@5.0.0:

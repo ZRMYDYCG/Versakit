@@ -18,8 +18,8 @@ const props = withDefaults(defineProps<TextProps>(), {
 
 const VerClass = computed(() => {
   return [
-    'ver-text',
-    props.type == 'info' ? 'ver-text-info' : `ver-text-${props.type}`,
+    'vk-text',
+    props.type == 'info' ? 'vk-text-info' : `vk-text-${props.type}`,
     props.size == 'md' ? '' : `is-${props.size}`,
     props.truncated == false ? '' : 'is-truncated',
   ]

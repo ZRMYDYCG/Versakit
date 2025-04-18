@@ -1,19 +1,20 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import { VerIcon } from '@versakit/icons'
+import { VKIcon } from '@versakit/icons'
 import type { ImageProps } from '../type/index'
 
-defineOptions({ name: 'VerImage' })
+defineOptions({ name: 'VkImage' })
 
 const props = withDefaults(defineProps<ImageProps>(), {
   src: '',
   fit: 'cover',
   lazy: false,
-  icon: '',
+  icon: 'image',
 })
 
 const loading = ref(true)
 const error = ref(false)
+const imageRef = ref<HTMLElement | null>(null)
 
 const handleError = () => {
   loading.value = false
@@ -25,8 +26,8 @@ const handleLoad = () => {
 }
 
 onMounted(() => {
-  if (props.lazy) {
-    const observer = new IntersectionObserver((entries) => {
+  if (props.lazy && imageRef.value) {
+    const observer = new IntersectionObserver((entries, observer) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           const img = new Image()
@@ -38,35 +39,43 @@ onMounted(() => {
       })
     })
 
-    observer.observe(document.querySelector('.ver-image') as Element)
+    observer.observe(imageRef.value)
   }
 })
 </script>
 
 <template>
-  <div class="ver-image">
+  <div
+    class="vk-image"
+    ref="imageRef"
+    role="img"
+    aria-label="Image component"
+    aria-busy="true"
+    aria-live="polite"
+  >
     <img
       :src="props.src"
       :style="{ objectFit: props.fit }"
       @error="handleError"
       @load="handleLoad"
       v-bind="$attrs"
+      alt=""
     />
 
     <!-- Loading placeholder -->
-    <div v-if="loading" class="ver-image__placeholder">
+    <div v-if="loading" class="vk-image__placeholder" aria-hidden="true">
       <slot name="placeholder">
-        <div class="ver-image__placeholder-default">
-          <ver-icon :name="icon" size="24" />
+        <div class="vk-image__placeholder-default">
+          <VKIcon :name="props.icon" size="24" />
         </div>
       </slot>
     </div>
 
     <!-- Error state -->
-    <div v-if="error" class="ver-image__error">
+    <div v-if="error" class="vk-image__error" aria-hidden="true">
       <slot name="error">
-        <div class="ver-image__error-default">
-          <ver-icon name="image-x" size="24" />
+        <div class="vk-image__error-default">
+          <VKIcon name="image-x" size="24" />
         </div>
       </slot>
     </div>

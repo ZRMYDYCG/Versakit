@@ -1,26 +1,26 @@
 <template>
   <div class="common-layout">
-    <ver-container direction="column">
-      <ver-header>Header</ver-header>
-      <ver-main>Main</ver-main>
-      <ver-footer>Footer</ver-footer>
-    </ver-container>
+    <VK-container direction="column">
+      <VK-header>Header</VK-header>
+      <VK-main>Main</VK-main>
+      <VK-footer>Footer</VK-footer>
+    </VK-container>
   </div>
 </template>
 
 <script setup lang="ts">
-import { VerContainer, VerHeader, VerMain, VerFooter } from '@versakit/ui'
+import { VKContainer, VKHeader, VKMain, VKFooter } from '@versakit/ui'
 </script>
 
 <style scoped>
 .common-layout {
-  .ver-header {
+  .vk-header {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #c6e2ff;
   }
-  .ver-main {
+  .vk-main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +28,7 @@ import { VerContainer, VerHeader, VerMain, VerFooter } from '@versakit/ui'
     height: 150px;
   }
 
-  .ver-footer {
+  .vk-footer {
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,9 +1,9 @@
 <template>
-  <VerTable stripe :data="tableData" :columns="columns"></VerTable>
+  <VKTable stripe :data="tableData" :columns="columns"></VKTable>
 </template>
 
 <script setup lang="ts">
-import { VerTable } from '@versakit/ui'
+import { VKTable } from '@versakit/ui'
 
 const tableData = [
   {

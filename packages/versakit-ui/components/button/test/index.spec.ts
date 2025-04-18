@@ -6,33 +6,31 @@
  */
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import VerButton from '../src/index.vue'
+import VkButton from '../src/index.vue'
 
-describe('VerButton', () => {
-  // 基础渲染测试
+describe('VkButton', () => {
   it('renders properly', () => {
-    const wrapper = mount(VerButton, {
+    const wrapper = mount(VkButton, {
       slots: {
         default: 'Button Text',
       },
     })
     expect(wrapper.text()).toBe('Button Text')
-    expect(wrapper.classes()).toContain('ver-btn')
+    expect(wrapper.classes()).toContain('vk-btn')
   })
 
-  // 类型测试
   it('applies correct type class', () => {
-    const wrapper = mount(VerButton, {
+    const wrapper = mount(VkButton, {
       props: {
         type: 'primary',
       },
     })
-    expect(wrapper.classes()).toContain('ver-btn-primary')
+    expect(wrapper.classes()).toContain('vk-btn-primary')
   })
 
   // 变体测试
   it('applies variant classes', () => {
-    const wrapper = mount(VerButton, {
+    const wrapper = mount(VkButton, {
       props: {
         variant: 'ghost text',
       },
@@ -43,7 +41,7 @@ describe('VerButton', () => {
 
   // 图标测试
   it('renders icon properly', () => {
-    const wrapper = mount(VerButton, {
+    const wrapper = mount(VkButton, {
       props: {
         icon: 'search',
       },
@@ -53,7 +51,7 @@ describe('VerButton', () => {
 
   // 键盘事件测试
   it('handles keyboard events', async () => {
-    const wrapper = mount(VerButton)
+    const wrapper = mount(VkButton)
     await wrapper.trigger('keydown.enter')
     await wrapper.trigger('keydown.space')
     // 验证事件触发

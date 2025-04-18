@@ -2,7 +2,7 @@ import { withInstall } from '@versakit/shared'
 import Descriptions from './src/index.vue'
 import DescriptionsItem from './src/item.vue'
 
-const VerDescriptions = withInstall(Descriptions)
-const VerDescriptionsItem = withInstall(DescriptionsItem)
+const VKDescriptions = withInstall(Descriptions)
+const VKDescriptionsItem = withInstall(DescriptionsItem)
 
-export { VerDescriptions, VerDescriptionsItem }
+export { VKDescriptions, VKDescriptionsItem }

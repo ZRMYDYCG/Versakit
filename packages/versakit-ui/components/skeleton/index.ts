@@ -1,6 +1,6 @@
 import { withInstall } from '@versakit/shared'
 import Skeleton from './src/index.vue'
 
-const VerSkeleton = withInstall(Skeleton)
+const VKSkeleton = withInstall(Skeleton)
 
-export { VerSkeleton }
+export { VKSkeleton }

@@ -1,8 +1,15 @@
 import { render, h, shallowReactive } from 'vue'
-import VerNotification from './index.vue'
+import VKNotification from './index.vue'
 import type { NotifivationProps } from '../type'
 
-const instances: any = shallowReactive([])
+// 使用shallowReactive优化性能，减少不必要的深度响应
+const instances = shallowReactive<
+  Array<{
+    id: string
+    vm: any
+    vnode: any
+  }>
+>([])
 let seed = 1
 
 export const Notification = ({
@@ -36,7 +43,7 @@ export const Notification = ({
     id,
   }
 
-  const vnode = h(VerNotification, newProps)
+  const vnode = h(VKNotification, newProps)
 
   render(vnode, container)
 
@@ -56,7 +63,7 @@ export const Notification = ({
 }
 
 export const getLastBottomOffset = (id: string) => {
-  const idx = instances.findIndex((instance: any) => instance.id === id)
+  const idx = instances.findIndex((instance) => instance.id === id)
   if (idx <= 0) {
     return 0
   } else {

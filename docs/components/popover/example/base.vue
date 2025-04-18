@@ -2,46 +2,46 @@
   <div class="popover-demo">
     <h2>基础用法</h2>
     <div class="popover-demo__row">
-      <ver-popover
+      <VKPopover
         content="这是一个 Popover"
         placement="left"
         trigger="hover"
         :arrow="true"
       >
         <button class="demo-button">左侧弹出</button>
-      </ver-popover>
+      </VKPopover>
 
-      <ver-popover
+      <VKPopover
         content="这是一个 Popover"
         placement="top"
         trigger="hover"
         :arrow="true"
       >
         <button class="demo-button">顶部弹出</button>
-      </ver-popover>
+      </VKPopover>
 
-      <ver-popover
+      <VKPopover
         content="这是一个 Popover"
         placement="right"
         trigger="hover"
         :arrow="true"
       >
         <button class="demo-button">右侧弹出</button>
-      </ver-popover>
+      </VKPopover>
 
-      <ver-popover
+      <VKPopover
         content="这是一个 Popover"
         placement="bottom"
         trigger="hover"
         :arrow="true"
       >
         <button class="demo-button">底部弹出</button>
-      </ver-popover>
+      </VKPopover>
     </div>
 
     <h2>自定义内容</h2>
     <div class="popover-demo__row">
-      <ver-popover placement="bottom" trigger="click">
+      <VKPopover placement="bottom" trigger="click">
         <button class="demo-button">点击查看</button>
         <template #content>
           <div class="popover-demo__custom">
@@ -53,13 +53,13 @@
             </div>
           </div>
         </template>
-      </ver-popover>
+      </VKPopover>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { VerPopover } from '@versakit/ui'
+import { VKPopover } from '@versakit/ui'
 </script>
 
 <style scoped>

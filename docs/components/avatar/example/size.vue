@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
-import { VerAvatar, VerSegmented, VerSlider } from '@versakit/ui'
+import { VKAvatar, VKSegmented, VKSlider } from '@versakit/ui'
 
 const sizeOptions = [
   { label: '小型', value: 'small' },
@@ -25,9 +25,9 @@ watch(selectedSize, (newVal) => {
     <section class="demo-section">
       <h2>尺寸演示</h2>
       <div class="demo-controls">
-        <VerSegmented v-model="selectedSize" :options="sizeOptions" />
+        <VKSegmented v-model="selectedSize" :options="sizeOptions" />
 
-        <VerSlider
+        <VKSlider
           v-if="showSlider"
           v-model="customSize"
           :min="20"
@@ -37,7 +37,7 @@ watch(selectedSize, (newVal) => {
         />
       </div>
       <div class="demo-row">
-        <VerAvatar
+        <VKAvatar
           :size="showSlider ? customSize : selectedSize"
           :text="showSlider ? `${customSize}px` : selectedSize.toString()"
         />

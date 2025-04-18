@@ -14,7 +14,7 @@ const style: CSSProperties = {
 </script>
 
 <template>
-  <section class="ver-container" :style="style">
+  <section class="vk-container" :style="style">
     <slot></slot>
   </section>
 </template>

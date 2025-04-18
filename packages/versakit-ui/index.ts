@@ -3,223 +3,221 @@ import { installTheme } from './core/theme'
 import { version } from './package.json'
 
 // 基础组件
-import { VerButton } from './components/button/index'
-import { VerText } from './components/text/index'
-import { VerRow } from './components/row/index'
-import { VerCol } from './components/col/index'
-import { VerInput } from './components/input/index'
-import { VerDialog } from './components/dialog/index'
-import { VerDivider } from './components/divider/index'
-import { VerBadge } from './components/badge/index'
-import { VerCard } from './components/card/index'
-import { VerTag } from './components/tag/index'
-import { VerDrawer } from './components/drawer/index'
-import { VerSwitch } from './components/switch/index'
-import { VerRadio } from './components/radio/index'
-import { VerMessage } from './components/message/index'
-import { VerTextarea } from './components/textarea/index'
-import { VerContainer } from './components/container/index'
-import { VerHeader } from './components/header/index'
-import { VerMain } from './components/main/index'
-import { VerNotification } from './components/notification/index'
-import { VerBacktop } from './components/backtop/index'
-import { VerResult } from './components/result/index'
-import { VerEmpty } from './components/empty/index'
-import { VerPanel } from './components/panel/index'
-import { VerSegmented } from './components/segmented/index'
-import { VerGradientText } from './components/gradienttext/index'
-import { VerFooter } from './components/footer/index'
-import { VerAside } from './components/aside/index'
-import { VerProgress } from './components/progress/index'
-import { VerTooltip } from './components/tooltip/index'
-import { VerSlider } from './components/slider/index'
-import { VerFlex } from './components/flex/index'
-import { VerTable } from './components/table/index'
-import { VerScrollBar } from './components/scrollbar/index'
-import { VerInputOtp } from './components/inputotp/index'
-import { VerCalendar } from './components/calendar/index'
-import { VerSkeleton } from './components/skeleton/index'
-import { VerPagination } from './components/pagination/index'
-import { VerImage } from './components/image/index'
-import { VerInputTag } from './components/inputtag/index'
-import { VerRate } from './components/rate/index'
-import { VerSplitter } from './components/splitter/index'
-import { VerNoticeBar } from './components/noticebar/index'
-import { VerColorPicker } from './components/colorpicker/index'
-import { VerInputNumber } from './components/inputnumber/index'
-import { VerDataPicker } from './components/datapicker/index'
-import { VerDateTimePicker } from './components/datetimepicker/index'
-import { VerTimePicker } from './components/timepicker/index'
-import { VerTimeSelect } from './components/timeselect/index'
-import { VerPopover } from './components/popover/index'
-import { VerSelect } from './components/select/index'
+import { VKButton } from './components/button/index'
+import { VKText } from './components/text/index'
+import { VKRow } from './components/row/index'
+import { VKCol } from './components/col/index'
+import { VKInput } from './components/input/index'
+import { VKDialog } from './components/dialog/index'
+import { VKDivider } from './components/divider/index'
+import { VKBadge } from './components/badge/index'
+import { VKCard } from './components/card/index'
+import { VKTag } from './components/tag/index'
+import { VKDrawer } from './components/drawer/index'
+import { VKSwitch } from './components/switch/index'
+import { VKRadio } from './components/radio/index'
+import { VKMessage } from './components/message/index'
+import { VKTextarea } from './components/textarea/index'
+import { VKContainer } from './components/container/index'
+import { VKHeader } from './components/header/index'
+import { VKMain } from './components/main/index'
+import { VKNotification } from './components/notification/index'
+import { VKBacktop } from './components/backtop/index'
+import { VKResult } from './components/result/index'
+import { VKEmpty } from './components/empty/index'
+import { VKPanel } from './components/panel/index'
+import { VKSegmented } from './components/segmented/index'
+import { VKGradientText } from './components/gradienttext/index'
+import { VKFooter } from './components/footer/index'
+import { VKAside } from './components/aside/index'
+import { VKProgress } from './components/progress/index'
+import { VKTooltip } from './components/tooltip/index'
+import { VKSlider } from './components/slider/index'
+import { VKFlex } from './components/flex/index'
+import { VKTable } from './components/table/index'
+import { VKScrollBar } from './components/scrollbar/index'
+import { VKInputOtp } from './components/inputotp/index'
+import { VKCalendar } from './components/calendar/index'
+import { VKSkeleton } from './components/skeleton/index'
+import { VKPagination } from './components/pagination/index'
+import { VKImage } from './components/image/index'
+import { VKInputTag } from './components/inputtag/index'
+import { VKRate } from './components/rate/index'
+import { VKSplitter } from './components/splitter/index'
+import { VKNoticeBar } from './components/noticebar/index'
+import { VKColorPicker } from './components/colorpicker/index'
+import { VKInputNumber } from './components/inputnumber/index'
+import { VKDataPicker } from './components/datapicker/index'
+import { VKDateTimePicker } from './components/datetimepicker/index'
+import { VKTimePicker } from './components/timepicker/index'
+import { VKTimeSelect } from './components/timeselect/index'
+import { VKPopover } from './components/popover/index'
+import { VKSelect } from './components/select/index'
 
 // 层级组件
-import { VerCarousel, VerCarouselItem } from './components/carousel/index'
-import { VerCollapse, VerCollapseItem } from './components/collapse/index'
-import { VerTimeline, VerTimeLineItem } from './components/timeline/index'
-import { VerTab, VerTabItem } from './components/tab/index'
-import { VerBreadcrumb, VerBreadcrumbItem } from './components/breadcrumb/index'
-import { VerDescriptions, VerDescriptionsItem } from './components/descriptions'
-import { VerCheckbox, VerCheckboxGroup } from './components/checkbox/index'
-import { VerStepItem, VerSteps } from './components/steps/index'
-import { VerAvatar, VerAvatarGroup } from './components/avatar/index'
-import {
-  VerDropdownMenu,
-  VerDropdownMenuItem,
-} from './components/dropdown/index'
-import { VerUpload, VerUploadDragger } from './components/upload/index'
+import { VKCarousel, VKCarouselItem } from './components/carousel/index'
+import { VKCollapse, VKCollapseItem } from './components/collapse/index'
+import { VKTimeline, VKTimeLineItem } from './components/timeline/index'
+import { VKTab, VKTabItem } from './components/tab/index'
+import { VKBreadcrumb, VKBreadcrumbItem } from './components/breadcrumb/index'
+import { VKDescriptions, VKDescriptionsItem } from './components/descriptions'
+import { VKCheckbox, VKCheckboxGroup } from './components/checkbox/index'
+import { VKStepItem, VKSteps } from './components/steps/index'
+import { VKAvatar, VKAvatarGroup } from './components/avatar/index'
+import { VKDropdownMenu, VKDropdownMenuItem } from './components/dropdown/index'
+import { VKUpload, VKUploadDragger } from './components/upload/index'
 
 // 样式
 import './style/index.css'
 
 const components: Component[] = [
-  VerSelect,
-  VerPopover,
-  VerUpload,
-  VerUploadDragger,
-  VerTimeSelect,
-  VerTimePicker,
-  VerDateTimePicker,
-  VerDropdownMenu,
-  VerDropdownMenuItem,
-  VerDataPicker,
-  VerInputNumber,
-  VerAvatarGroup,
-  VerStepItem,
-  VerSteps,
-  VerNoticeBar,
-  VerSplitter,
-  VerRate,
-  VerInputTag,
-  VerImage,
-  VerCheckbox,
-  VerCheckboxGroup,
-  VerPagination,
-  VerSkeleton,
-  VerCalendar,
-  VerDescriptions,
-  VerDescriptionsItem,
-  VerInputOtp,
-  VerBreadcrumb,
-  VerBreadcrumbItem,
-  VerTabItem,
-  VerTimeline,
-  VerTimeLineItem,
-  VerScrollBar,
-  VerCol,
-  VerTag,
-  VerNotification,
-  VerMessage,
-  VerText,
-  VerBadge,
-  VerCarouselItem,
-  VerCarousel,
-  VerFlex,
-  VerSlider,
-  VerTooltip,
-  VerProgress,
-  VerAside,
-  VerFooter,
-  VerCollapse,
-  VerCollapseItem,
-  VerButton,
-  VerRow,
-  VerInput,
-  VerDialog,
-  VerAvatar,
-  VerCard,
-  VerPanel,
-  VerDivider,
-  VerDrawer,
-  VerSwitch,
-  VerRadio,
-  VerTextarea,
-  VerContainer,
-  VerHeader,
-  VerMain,
-  VerTab,
-  VerBacktop,
-  VerResult,
-  VerEmpty,
-  VerSegmented,
-  VerGradientText,
-  VerTable,
-  VerColorPicker,
+  VKSelect,
+  VKPopover,
+  VKUpload,
+  VKUploadDragger,
+  VKTimeSelect,
+  VKTimePicker,
+  VKDateTimePicker,
+  VKDropdownMenu,
+  VKDropdownMenuItem,
+  VKDataPicker,
+  VKInputNumber,
+  VKAvatarGroup,
+  VKStepItem,
+  VKSteps,
+  VKNoticeBar,
+  VKSplitter,
+  VKRate,
+  VKInputTag,
+  VKImage,
+  VKCheckbox,
+  VKCheckboxGroup,
+  VKPagination,
+  VKSkeleton,
+  VKCalendar,
+  VKDescriptions,
+  VKDescriptionsItem,
+  VKInputOtp,
+  VKBreadcrumb,
+  VKBreadcrumbItem,
+  VKTabItem,
+  VKTimeline,
+  VKTimeLineItem,
+  VKScrollBar,
+  VKCol,
+  VKTag,
+  VKNotification,
+  VKMessage,
+  VKText,
+  VKBadge,
+  VKCarouselItem,
+  VKCarousel,
+  VKFlex,
+  VKSlider,
+  VKTooltip,
+  VKProgress,
+  VKAside,
+  VKFooter,
+  VKCollapse,
+  VKCollapseItem,
+  VKButton,
+  VKRow,
+  VKInput,
+  VKDialog,
+  VKAvatar,
+  VKCard,
+  VKPanel,
+  VKDivider,
+  VKDrawer,
+  VKSwitch,
+  VKRadio,
+  VKTextarea,
+  VKContainer,
+  VKHeader,
+  VKMain,
+  VKTab,
+  VKBacktop,
+  VKResult,
+  VKEmpty,
+  VKSegmented,
+  VKGradientText,
+  VKTable,
+  VKColorPicker,
 ]
+
 export {
-  VerSelect,
-  VerPopover,
-  VerUpload,
-  VerUploadDragger,
-  VerTimeSelect,
-  VerTimePicker,
-  VerDateTimePicker,
-  VerDropdownMenu,
-  VerDropdownMenuItem,
-  VerDataPicker,
-  VerInputNumber,
-  VerAvatarGroup,
-  VerStepItem,
-  VerSteps,
-  VerNoticeBar,
-  VerSplitter,
-  VerRate,
-  VerInputTag,
-  VerImage,
-  VerCheckbox,
-  VerCheckboxGroup,
-  VerPagination,
-  VerSkeleton,
-  VerCalendar,
-  VerDescriptions,
-  VerDescriptionsItem,
-  VerInputOtp,
-  VerBreadcrumb,
-  VerBreadcrumbItem,
-  VerTabItem,
-  VerTimeline,
-  VerTimeLineItem,
-  VerScrollBar,
-  VerCol,
-  VerTag,
-  VerNotification,
-  VerMessage,
-  VerText,
-  VerBadge,
-  VerCarouselItem,
-  VerCarousel,
-  VerFlex,
-  VerSlider,
-  VerTooltip,
-  VerProgress,
-  VerAside,
-  VerFooter,
-  VerSegmented,
-  VerCollapse,
-  VerCollapseItem,
-  VerButton,
-  VerRow,
-  VerInput,
-  VerDialog,
-  VerAvatar,
-  VerCard,
-  VerPanel,
-  VerDivider,
-  VerDrawer,
-  VerSwitch,
-  VerRadio,
-  VerTextarea,
-  VerContainer,
-  VerHeader,
-  VerMain,
-  VerTab,
-  VerBacktop,
-  VerResult,
-  VerEmpty,
-  VerGradientText,
-  VerTable,
-  VerColorPicker,
+  VKSelect,
+  VKPopover,
+  VKUpload,
+  VKUploadDragger,
+  VKTimeSelect,
+  VKTimePicker,
+  VKDateTimePicker,
+  VKDropdownMenu,
+  VKDropdownMenuItem,
+  VKDataPicker,
+  VKInputNumber,
+  VKAvatarGroup,
+  VKStepItem,
+  VKSteps,
+  VKNoticeBar,
+  VKSplitter,
+  VKRate,
+  VKInputTag,
+  VKImage,
+  VKCheckbox,
+  VKCheckboxGroup,
+  VKPagination,
+  VKSkeleton,
+  VKCalendar,
+  VKDescriptions,
+  VKDescriptionsItem,
+  VKInputOtp,
+  VKBreadcrumb,
+  VKBreadcrumbItem,
+  VKTabItem,
+  VKTimeline,
+  VKTimeLineItem,
+  VKScrollBar,
+  VKCol,
+  VKTag,
+  VKNotification,
+  VKMessage,
+  VKText,
+  VKBadge,
+  VKCarouselItem,
+  VKCarousel,
+  VKFlex,
+  VKSlider,
+  VKTooltip,
+  VKProgress,
+  VKAside,
+  VKFooter,
+  VKSegmented,
+  VKCollapse,
+  VKCollapseItem,
+  VKButton,
+  VKRow,
+  VKInput,
+  VKDialog,
+  VKAvatar,
+  VKCard,
+  VKPanel,
+  VKDivider,
+  VKDrawer,
+  VKSwitch,
+  VKRadio,
+  VKTextarea,
+  VKContainer,
+  VKHeader,
+  VKMain,
+  VKTab,
+  VKBacktop,
+  VKResult,
+  VKEmpty,
+  VKGradientText,
+  VKTable,
+  VKColorPicker,
 }
 
 // 定义 ThemeOptions 类型

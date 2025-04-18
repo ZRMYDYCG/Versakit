@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mount } from '@vue/test-utils'
-import { VerMessage } from '../index'
+import { VKMessage } from '../index'
 
 describe('message', () => {
   it('测试组件是否能正常渲染', () => {
@@ -9,7 +9,7 @@ describe('message', () => {
       plain: false,
       content: 'Test message',
     }
-    const wrapper = mount(VerMessage, {
+    const wrapper = mount(VKMessage, {
       props: {
         props,
       },
@@ -26,7 +26,7 @@ describe('message', () => {
         content: 'Test message',
       }
 
-      const wrapper = mount(VerMessage, {
+      const wrapper = mount(VKMessage, {
         props: {
           props,
         },
@@ -44,7 +44,7 @@ describe('message', () => {
         content: 'Test message',
       }
 
-      const wrapper = mount(VerMessage, {
+      const wrapper = mount(VKMessage, {
         props: {
           props,
         },

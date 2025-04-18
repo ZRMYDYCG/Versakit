@@ -1,14 +1,14 @@
 <template>
   <div>
-    <VerProgress type="circle" :percent />
-    <VerProgress type="circle" :percent status="success" />
-    <VerProgress type="circle" :percent status="error" />
+    <VKProgress type="circle" :percent />
+    <VKProgress type="circle" :percent status="success" />
+    <VKProgress type="circle" :percent status="error" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerProgress } from '@versakit/ui'
+import { VKProgress } from '@versakit/ui'
 
 const percent = ref(75)
 </script>

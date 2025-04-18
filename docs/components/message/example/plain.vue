@@ -1,17 +1,17 @@
 <template>
   <div>
-    <VerButton type="success" @click="success">success</VerButton>
-    <VerButton type="warn" @click="warning">warning</VerButton>
-    <VerButton type="info" @click="info">info</VerButton>
-    <VerButton type="error" @click="error">error</VerButton>
+    <VKButton type="success" @click="success">success</VKButton>
+    <VKButton type="warn" @click="warning">warning</VKButton>
+    <VKButton type="info" @click="info">info</VKButton>
+    <VKButton type="error" @click="error">error</VKButton>
   </div>
 </template>
 
 <script setup lang="ts">
-import { VerButton, VerMessage } from '@versakit/ui'
+import { VKButton, VKMessage } from '@versakit/ui'
 
 const success = () => {
-  VerMessage({
+  VKMessage({
     type: 'success',
     plain: true,
     icon: 'ep:success-filled',
@@ -19,7 +19,7 @@ const success = () => {
   })
 }
 const warning = () => {
-  VerMessage({
+  VKMessage({
     type: 'warn',
     plain: true,
     content: '这是一条消息',
@@ -28,7 +28,7 @@ const warning = () => {
 }
 
 const info = () => {
-  VerMessage({
+  VKMessage({
     type: 'info',
     plain: true,
     content: '这是一条消息',
@@ -37,7 +37,7 @@ const info = () => {
 }
 
 const error = () => {
-  VerMessage({
+  VKMessage({
     type: 'error',
     plain: true,
     content: '这是一条消息',
@@ -47,7 +47,7 @@ const error = () => {
 </script>
 
 <style scoped>
-.ver-btn {
+.vk-btn {
   margin: 0px 10px;
 }
 </style>

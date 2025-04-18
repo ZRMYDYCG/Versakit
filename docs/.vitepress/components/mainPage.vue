@@ -17,14 +17,14 @@
           </div>
 
           <div class="start-box">
-            <VerButton
+            <VkButton
               @click="navigate('/Versakit/guide/versakit/')"
               type="primary"
               variant="round"
               size="lg"
             >
               开始
-            </VerButton>
+            </VkButton>
             <div class="btn-shine">V 0.3.6</div>
           </div>
         </div>
@@ -116,7 +116,7 @@ body {
   overflow-x: hidden;
 }
 
-.ver-btn {
+.vk-btn {
   border: none;
   margin-left: 20px;
   width: 120px;

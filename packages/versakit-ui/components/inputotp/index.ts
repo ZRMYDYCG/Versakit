@@ -1,6 +1,6 @@
 import InputOtp from './src/index.vue'
 import { withInstall } from '@versakit/shared'
 
-const VerInputOtp = withInstall(InputOtp)
+const VKInputOtp = withInstall(InputOtp)
 
-export { VerInputOtp }
+export { VKInputOtp }

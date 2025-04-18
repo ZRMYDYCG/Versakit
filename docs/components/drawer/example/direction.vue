@@ -1,31 +1,31 @@
 <template>
   <div>
-    <VerButton @click="drawerLeft = true">Left</VerButton>
-    <VerButton @click="drawerTop = true">Top</VerButton>
-    <VerButton @click="drawerRight = true">Right</VerButton>
-    <VerButton @click="drawerBottom = true">Bottom</VerButton>
+    <VKButton @click="drawerLeft = true">Left</VKButton>
+    <VKButton @click="drawerTop = true">Top</VKButton>
+    <VKButton @click="drawerRight = true">Right</VKButton>
+    <VKButton @click="drawerBottom = true">Bottom</VKButton>
 
-    <VerDrawer v-model="drawerLeft" closeIcon="ep:close">
+    <VKDrawer v-model="drawerLeft" closeIcon="ep:close">
       <span>左边</span>
-    </VerDrawer>
+    </VKDrawer>
 
-    <VerDrawer direction="top" v-model="drawerTop" closeIcon="ep:close">
+    <VKDrawer direction="top" v-model="drawerTop" closeIcon="ep:close">
       <span>上面</span>
-    </VerDrawer>
+    </VKDrawer>
 
-    <VerDrawer direction="right" v-model="drawerRight" closeIcon="ep:close">
+    <VKDrawer direction="right" v-model="drawerRight" closeIcon="ep:close">
       <span>上面</span>
-    </VerDrawer>
+    </VKDrawer>
 
-    <VerDrawer direction="bottom" v-model="drawerBottom" closeIcon="ep:close">
+    <VKDrawer direction="bottom" v-model="drawerBottom" closeIcon="ep:close">
       <span>上面</span>
-    </VerDrawer>
+    </VKDrawer>
   </div>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { VerDrawer, VerButton } from '@versakit/ui'
+import { VKDrawer, VKButton } from '@versakit/ui'
 
 const drawerLeft = ref(false)
 const drawerTop = ref(false)

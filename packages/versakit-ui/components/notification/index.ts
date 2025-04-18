@@ -1,6 +1,6 @@
 import { Notification } from './src/index'
 import { withInstall } from '@versakit/shared'
 
-const VerNotification = withInstall(Notification)
+const VKNotification = withInstall(Notification)
 
-export { VerNotification }
+export { VKNotification }

@@ -1,16 +1,16 @@
 <script setup lang="ts">
-import { VerFlex } from '@versakit/ui'
+import { VKFlex } from '@versakit/ui'
 </script>
 <template>
-  <VerFlex wrap="wrap">
+  <VKFlex wrap="wrap">
     <div v-for="n in 20" :key="n" class="flex-item" />
-  </VerFlex>
+  </VKFlex>
 </template>
 
 <style scoped>
 .flex-item {
   width: 80px;
   height: 40px;
-  background-color: var(--theme-primary-500, var(--ver-primary-500));
+  background-color: var(--theme-primary-500, var(--vk-primary-500));
 }
 </style>

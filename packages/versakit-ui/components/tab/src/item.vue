@@ -1,38 +1,35 @@
 <script setup lang="ts">
-import { ref, inject, onMounted, onBeforeUnmount } from 'vue'
-import type { TabItemProps } from '../type/index.ts'
+import { inject, onMounted, onUnmounted } from 'vue'
 
-defineOptions({ name: 'VerTabItem' })
+const props = defineProps<{
+  label: string
+  name: string | number
+}>()
 
-const props = withDefaults(defineProps<TabItemProps>(), {
-  disabled: false,
-})
-
-const tabs = inject('tabs') as any
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-const isActive = ref(false)
+const { activeTab, registerTab, unregisterTab } = inject('tabs') as any
 
 onMounted(() => {
-  tabs.registerTab({
-    label: props.label,
-    name: props.name,
-    disabled: props.disabled,
-  })
+  registerTab(props)
 })
 
-onBeforeUnmount(() => {
-  tabs.unregisterTab(props.name)
+onUnmounted(() => {
+  unregisterTab(props.name)
 })
 </script>
 
 <template>
-  <div v-show="tabs.activeTab === name" class="tab-pane">
+  <div
+    v-show="activeTab === name"
+    class="tabs-pane"
+    role="tabpanel"
+    :aria-labelledby="`tab-${name}`"
+  >
     <slot></slot>
   </div>
 </template>
 
 <style scoped>
-.tab-pane {
-  width: 100%;
+.tabs-pane {
+  padding: 16px;
 }
 </style>

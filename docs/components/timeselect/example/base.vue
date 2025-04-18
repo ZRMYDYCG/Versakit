@@ -4,7 +4,7 @@
     <div class="demo-section">
       <h3>基础用法</h3>
       <div class="demo-content">
-        <VerTimeSelect v-model="time1" placeholder="请选择时间" />
+        <VKTimeSelect v-model="time1" placeholder="请选择时间" />
         <div class="desc">
           <p class="title">基本时间选择</p>
           <p class="value">选中值: {{ time1 || '未选择' }}</p>
@@ -16,7 +16,7 @@
     <div class="demo-section">
       <h3>时间范围</h3>
       <div class="demo-content">
-        <VerTimeSelect
+        <VKTimeSelect
           v-model="time2"
           placeholder="上午时段"
           start="08:30"
@@ -36,7 +36,7 @@
     <div class="demo-section">
       <h3>禁用特定时间</h3>
       <div class="demo-content">
-        <VerTimeSelect
+        <VKTimeSelect
           v-model="time3"
           placeholder="营业时间"
           :disabledHours="disabledHours"
@@ -55,7 +55,7 @@
     <div class="demo-section">
       <h3>时间限制</h3>
       <div class="demo-content">
-        <VerTimeSelect
+        <VKTimeSelect
           v-model="time4"
           placeholder="工作时间"
           minTime="09:00"
@@ -76,14 +76,14 @@
       <!-- 禁用状态 -->
       <div class="demo-section half">
         <h3>禁用状态</h3>
-        <VerTimeSelect v-model="time5" placeholder="禁用状态" disabled />
+        <VKTimeSelect v-model="time5" placeholder="禁用状态" disabled />
         <p class="value">值: {{ time5 }}</p>
       </div>
 
       <!-- 不可清除 -->
       <div class="demo-section half">
         <h3>不可清除</h3>
-        <VerTimeSelect
+        <VKTimeSelect
           v-model="time6"
           placeholder="不可清除"
           :clearable="false"
@@ -96,7 +96,7 @@
     <div class="demo-section">
       <h3>搜索筛选</h3>
       <div class="demo-content">
-        <VerTimeSelect
+        <VKTimeSelect
           v-model="time7"
           placeholder="输入筛选时间"
           start="00:00"
@@ -115,7 +115,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { VerTimeSelect } from '@versakit/ui'
+import { VKTimeSelect } from '@versakit/ui'
 
 // 基础用法
 const time1 = ref('')

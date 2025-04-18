@@ -4,8 +4,16 @@
 
 ## 基本使用
 
+通过数据源快速创建图片轮播，默认显示导航箭头和分页指示器
+
 <demo vue="./example/base.vue"></demo>
 
-## 自定义内容
+## API
 
-<demo vue="./example/slot.vue"></demo>
+### Carousel Props
+
+### Carousel Events
+
+### Carousel Slots
+
+### CarouselItem Props
