@@ -8,6 +8,7 @@ import 'virtual:group-icons.css'
 // 引入组件库
 import { Versakit } from '@versakit/ui'
 import '@versakit/ui/dist/esm/ui.css'
+import { VersakitDirectives } from '@versakit/directives'
 import { Element, Layui } from '@versakit/theme'
 
 export default {
@@ -16,5 +17,6 @@ export default {
   enhanceApp({ app }) {
     app.component('Tool', Tool)
     app.use(Versakit)
+    app.use(VersakitDirectives)
   },
 }

@@ -17,6 +17,7 @@ export const getGuideSidebar = (): DefaultTheme.Sidebar => {
       items: [
         { text: '主题', link: '/guide/theme/' },
         { text: '无障碍', link: '/guide/accessibility/' },
+        { text: '指令', link: '/guide/directives/' },
       ],
     },
   ]
