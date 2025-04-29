@@ -37,10 +37,10 @@ const input = () => {
 }
 
 const tClass = computed(() => {
-  return ['ver-textarea', props.disabled == false ? '' : 'is-disabled']
+  return ['vk-textarea', props.disabled ? 'is-disabled' : '']
 })
 </script>
 
-<style>
+<style scoped>
 @import '../style/index.css';
 </style>

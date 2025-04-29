@@ -12,7 +12,9 @@
   display: inline-block;
 }
 
-.vk-badge [class^='vk-badge-'] {
+.vk-badge-dot,
+.vk-badge-num,
+.vk-badge-text {
   position: absolute;
   height: var(--badge-height);
   line-height: var(--badge-height);
