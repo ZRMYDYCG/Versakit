@@ -15,7 +15,7 @@ import CssMagic from 'postcss-magic'
 // TS
 import dts from 'vite-plugin-dts'
 
-import { visualizer } from 'rollup-plugin-visualizer'
+// import { visualizer } from 'rollup-plugin-visualizer'
 
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import VueMacros from 'unplugin-vue-macros/vite'
@@ -36,11 +36,11 @@ export default defineConfig({
         vueJsx: vueJsx(),
       },
     }),
-    visualizer({
-      open: true,
-      gzipSize: true,
-      brotliSize: true,
-    }),
+    // visualizer({
+    //   open: true,
+    //   gzipSize: true,
+    //   brotliSize: true,
+    // }),
   ],
   css: {
     postcss: {

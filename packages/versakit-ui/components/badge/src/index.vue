@@ -17,7 +17,7 @@
 import { computed } from 'vue'
 import type { BadgeProps, BadgeType } from '../type/index'
 
-defineOptions({ name: 'VerBadge' })
+defineOptions({ name: 'VKBadge' })
 
 // Badge类型映射
 const TYPE_CLASS_MAP: Record<BadgeType, string> = {
@@ -46,6 +46,6 @@ const ariaLabel = computed(() => {
 })
 </script>
 
-<style>
+<style scoped>
 @import '../style/index.css';
 </style>

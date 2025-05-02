@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, useAttrs } from 'vue'
-import type { ButtonProps } from '../type/index'
+import type { ButtonProps, PtProps } from '../type/index'
 import { VKIcon } from '@versakit/icons'
 
 defineOptions({ name: 'VkButton' }) // 修改组件名
@@ -22,27 +22,65 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   icon: '',
   variant: '',
   type: '',
+  unstyled: false,
+  pt: () => ({}),
 })
 
 const attrs = useAttrs()
 
-// 优化类名计算逻辑
-const baseClass = computed(() => {
-  const classes = ['vk-btn']
+// 处理 pt 样式
+const getPtClasses = (key: keyof PtProps) => {
+  const ptValue = props.pt?.[key]
+  if (!ptValue) return ''
 
-  // 处理按钮类型
-  classes.push(TYPE_CLASS_MAP[props.type as keyof typeof TYPE_CLASS_MAP] || '')
-
-  // 处理变体类名
-  if (props.variant) {
-    const variants = props.variant.split(' ').filter(Boolean)
-    classes.push(...variants.map((v) => `is-${v}`))
+  if (typeof ptValue === 'string') {
+    return ptValue
   }
 
-  // 处理其他状态类名
-  if (props.circle) classes.push('is-circle')
-  if (props.disabled) classes.push('is-disabled')
-  if (props.size !== 'md') classes.push(`is-${props.size}`)
+  if (typeof ptValue === 'object') {
+    if (Array.isArray(ptValue)) {
+      return ptValue.join(' ')
+    }
+    // 处理对象中的字符串值
+    return Object.entries(ptValue)
+      .filter(([, value]) => value)
+      .map(([, value]) => (typeof value === 'string' ? value : ''))
+      .filter(Boolean)
+      .join(' ')
+  }
+
+  return ''
+}
+
+// 优化类名计算逻辑
+const baseClass = computed(() => {
+  const classes = []
+
+  // 如果不是 unstyled，添加基础类名
+  if (!props.unstyled) {
+    classes.push('vk-btn')
+    // 处理按钮类型
+    classes.push(
+      TYPE_CLASS_MAP[props.type as keyof typeof TYPE_CLASS_MAP] || '',
+    )
+
+    // 处理变体类名
+    if (props.variant) {
+      const variants = props.variant.split(' ').filter(Boolean)
+      classes.push(...variants.map((v) => `is-${v}`))
+    }
+
+    // 处理其他状态类名
+    if (props.circle) classes.push('is-circle')
+    if (props.disabled) classes.push('is-disabled')
+    if (props.size !== 'md') classes.push(`is-${props.size}`)
+  }
+
+  // 添加 root pt 类名
+  const rootPtClasses = getPtClasses('root')
+  if (rootPtClasses) {
+    classes.push(rootPtClasses)
+  }
 
   return classes.filter(Boolean)
 })
@@ -69,8 +107,13 @@ const handleKeydown = (event: KeyboardEvent) => {
 
 <template>
   <button v-bind="rootAttrs" @keydown="handleKeydown">
-    <VKIcon v-if="icon" :name="icon" :class="icon" aria-hidden="true" />
-    <span v-if="$slots.default">
+    <VKIcon
+      v-if="icon"
+      :name="icon"
+      :class="[icon, getPtClasses('icon')]"
+      aria-hidden="true"
+    />
+    <span v-if="$slots.default" :class="getPtClasses('label')">
       <slot />
     </span>
   </button>
