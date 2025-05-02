@@ -1,11 +1,11 @@
 {
   "name": "@versakit/ui",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "author": "Jannik",
   "private": false,
   "type": "module",
   "types": "./dist/index.d.ts",
-  "main": "./dist/ui.js",
+  "main": "./dist/esm/index.esm.js",
   "style": "./dist/esm/ui.css",
   "unpkg": "./dist/umd/index.umd.js",
   "module": "./dist/esm/index.esm.js",
@@ -47,12 +47,10 @@
     "@versakit/icons": "workspace:*",
     "@versakit/shared": "workspace:*",
     "@vueuse/core": "^13.0.0",
+    "fs-extra": "^11.3.0",
     "postcss-magic": "^0.0.2",
     "postcss-mixins": "^11.0.3",
     "postcss-nested": "^7.0.2",
     "rollup-plugin-visualizer": "^5.14.0"
-  },
-  "dependencies": {
-    "fs-extra": "^11.2.0"
   }
 }

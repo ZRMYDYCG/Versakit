@@ -266,10 +266,6 @@ importers:
   packages/versakit-theme: {}
 
   packages/versakit-ui:
-    dependencies:
-      fs-extra:
-        specifier: ^11.2.0
-        version: 11.3.0
     devDependencies:
       '@popperjs/core':
         specifier: ^2.11.8
@@ -289,6 +285,9 @@ importers:
       '@vueuse/core':
         specifier: ^13.0.0
         version: 13.0.0(vue@3.5.13)
+      fs-extra:
+        specifier: ^11.3.0
+        version: 11.3.0
       postcss-magic:
         specifier: ^0.0.2
         version: 0.0.2
