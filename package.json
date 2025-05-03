@@ -9,7 +9,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
+    "dev": "pnpm --filter devplay dev",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "clean": "turbo run clean && rimraf node_modules/.cache",
