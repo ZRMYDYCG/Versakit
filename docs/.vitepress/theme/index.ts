@@ -1,6 +1,7 @@
 import Theme from 'vitepress/theme'
 import Tool from '../components/tool.vue'
 import MyLayout from './Layout.vue'
+
 // 引入样式
 import './index.scss'
 import 'virtual:group-icons.css'
@@ -16,7 +17,13 @@ export default {
   Layout: MyLayout,
   enhanceApp({ app }) {
     app.component('Tool', Tool)
-    app.use(Versakit)
+
+    app.use(Versakit, {
+      theme: {
+        preset: Element,
+      },
+    })
+
     app.use(VersakitDirectives)
   },
 }
