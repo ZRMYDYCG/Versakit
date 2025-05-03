@@ -8,7 +8,7 @@
   </div>
 
   <div class="my">
-    <VerTag plain>Tag 1</VerTag>
+    <VKTag plain>Tag 1</VKTag>
     <VKTag plain type="success">Tag 2</VKTag>
     <VKTag plain type="info">Tag 3</VKTag>
     <VKTag plain type="warn">Tag 4</VKTag>
@@ -33,7 +33,7 @@ import { VKTag } from '@versakit/ui'
   margin: 1rem 0;
 }
 
-.ver-tag + .ver-tag {
+.vk-tag + .vk-tag {
   margin: 0px 10px;
 }
 </style>
