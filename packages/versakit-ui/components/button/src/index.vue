@@ -111,6 +111,7 @@ const handleKeydown = (event: KeyboardEvent) => {
       v-if="icon"
       :name="icon"
       :class="[icon, getPtClasses('icon')]"
+      :style="{ marginRight: icon && $slots.default ? '5px' : '0' }"
       aria-hidden="true"
     />
     <span v-if="$slots.default" :class="getPtClasses('label')">
