@@ -119,6 +119,6 @@ const handleKeydown = (event: KeyboardEvent) => {
   </button>
 </template>
 
-<style>
+<style scoped>
 @import '../style/index.css';
 </style>
