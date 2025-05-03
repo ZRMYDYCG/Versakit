@@ -3,7 +3,10 @@
     <transition name="fade" @after-leave="afterLeave">
       <div
         v-show="props.modelValue"
-        class="vk-dialog_wrapper"
+        :class="[
+          props.unstyled ? '' : 'vk-dialog_wrapper',
+          getPtClass('wrapper'),
+        ]"
         role="dialog"
         aria-modal="true"
         aria-label="对话框"
@@ -12,15 +15,33 @@
         tabindex="-1"
         ref="dialogRef"
       >
-        <div class="vk-dialog" :style="dialogStyle">
-          <div class="vk-dialog_header">
+        <div
+          :class="[props.unstyled ? '' : 'vk-dialog', getPtClass('dialog')]"
+          :style="dialogStyle"
+        >
+          <div
+            :class="[
+              props.unstyled ? '' : 'vk-dialog_header',
+              getPtClass('header'),
+            ]"
+          >
             <slot name="title">
-              <span class="vk-dialog_title" id="dialog-title">
+              <span
+                :class="[
+                  props.unstyled ? '' : 'vk-dialog_title',
+                  getPtClass('title'),
+                ]"
+                id="dialog-title"
+              >
                 {{ props.title }}
               </span>
             </slot>
             <button
-              class="vk-dialog_headerbtn"
+              type="button"
+              :class="[
+                props.unstyled ? '' : 'vk-dialog_headerbtn',
+                getPtClass('closeBtn'),
+              ]"
               @click="close"
               aria-label="关闭对话框"
             >
@@ -28,13 +49,22 @@
             </button>
           </div>
           <div
-            class="vk-dialog_body"
+            :class="[
+              props.unstyled ? '' : 'vk-dialog_body',
+              getPtClass('body'),
+            ]"
             role="document"
             aria-labelledby="dialog-title"
           >
             <slot></slot>
           </div>
-          <div v-if="$slots.footer" class="vk-dialog_footer">
+          <div
+            v-if="$slots.footer"
+            :class="[
+              props.unstyled ? '' : 'vk-dialog_footer',
+              getPtClass('footer'),
+            ]"
+          >
             <slot name="footer"></slot>
           </div>
         </div>
@@ -43,12 +73,12 @@
   </teleport>
 </template>
 
-<script lang="ts" setup>
+<script setup lang="ts">
 import { ref, computed, watch, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import type { DiaLogProps } from '../type/index'
 import { VKIcon } from '@versakit/icons'
 
-defineOptions({ name: 'VerDialog' })
+defineOptions({ name: 'VKDialog' })
 
 const props = withDefaults(defineProps<DiaLogProps>(), {
   title: '标题',
@@ -59,6 +89,8 @@ const props = withDefaults(defineProps<DiaLogProps>(), {
   closeOnEsc: true,
   appendToBody: true,
   lockScroll: true,
+  unstyled: false,
+  pt: () => ({}),
 })
 
 const emit = defineEmits(['update:modelValue', 'open', 'close'])
@@ -66,19 +98,16 @@ const emit = defineEmits(['update:modelValue', 'open', 'close'])
 const dialogRef = ref<HTMLElement | null>(null)
 const previousActiveElement = ref<HTMLElement | null>(null)
 
-// 计算样式
 const dialogStyle = computed(() => ({
   width: props.width,
   marginTop: props.top,
 }))
 
-// 关闭处理
 const close = () => {
   emit('update:modelValue', false)
   emit('close')
 }
 
-// 打开时的处理
 const open = () => {
   emit('open')
   previousActiveElement.value = document.activeElement as HTMLElement
@@ -87,14 +116,10 @@ const open = () => {
   })
 }
 
-// 关闭后的处理
 const afterLeave = () => {
-  if (previousActiveElement.value) {
-    previousActiveElement.value.focus()
-  }
+  previousActiveElement.value?.focus()
 }
 
-// 添加滚动条宽度计算函数
 const getScrollBarWidth = () => {
   const outer = document.createElement('div')
   outer.style.visibility = 'hidden'
@@ -111,37 +136,37 @@ const getScrollBarWidth = () => {
   outer.appendChild(inner)
 
   const widthWithScroll = inner.offsetWidth
-  outer.parentNode?.removeChild(outer)
+  outer.remove()
 
   return widthNoScroll - widthWithScroll
 }
 
-// 修改滚动锁定处理函数
 const lockScrollHandler = () => {
-  if (props.lockScroll) {
-    if (props.modelValue) {
-      const scrollBarWidth = getScrollBarWidth()
-      document.body.style.overflow = 'hidden'
-      document.body.style.paddingRight = `${scrollBarWidth}px`
-    } else {
-      document.body.style.overflow = ''
-      document.body.style.paddingRight = ''
-    }
+  if (!props.lockScroll) return
+  if (props.modelValue) {
+    const scrollBarWidth = getScrollBarWidth()
+    document.body.style.overflow = 'hidden'
+    document.body.style.paddingRight = `${scrollBarWidth}px`
+  } else {
+    document.body.style.overflow = ''
+    document.body.style.paddingRight = ''
   }
 }
 
-// 监听显示状态
+// 提取 pt 类名
+const getPtClass = (key: keyof NonNullable<DiaLogProps['pt']>) => {
+  const ptVal = props.pt?.[key]
+  return typeof ptVal === 'string' ? ptVal : ''
+}
+
 watch(
   () => props.modelValue,
   (val) => {
-    if (val) {
-      open()
-    }
+    if (val) open()
     lockScrollHandler()
   },
 )
 
-// 生命周期钩子
 onMounted(() => {
   if (props.modelValue) {
     open()
