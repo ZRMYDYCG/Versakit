@@ -8,6 +8,7 @@
 - ✨&nbsp;Card组件 无头组件化
 - ✨&nbsp;Panel组件 无头组件化
 - ✨&nbsp;Badge组件 无头组件化
+- ✨&nbsp;Tag组件 无头组件化
 - ✨&nbsp;Avatar组件 无头组件化
 
 ## 0.3.8
