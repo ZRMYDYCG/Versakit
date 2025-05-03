@@ -103,11 +103,11 @@ const shapeClass = computed(() => ({
   display: block;
 }
 
-.ver-avatar-circle {
+.is-circle {
   border-radius: 50%;
 }
 
-.ver-avatar-square {
+.is-square {
   border-radius: 4px;
 }
 </style>

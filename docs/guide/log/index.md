@@ -1,5 +1,14 @@
 # 更新日志
 
+## 0.3.9
+
+- 🛠&nbsp;组件 bugs 修复
+- 🛠&nbsp;组件样式 bugs 修复
+- ✨&nbsp;Button组件 无头组件化
+- ✨&nbsp;Card组件 无头组件化
+- ✨&nbsp;Panel组件 无头组件化
+- ✨&nbsp;Badge组件 无头组件化
+
 ## 0.3.8
 
 - 🛠&nbsp;组件样式 bugs 修复
