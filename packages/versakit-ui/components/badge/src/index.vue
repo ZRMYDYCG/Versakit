@@ -1,21 +1,21 @@
 <template>
-  <div class="vk-badge" role="status">
+  <div :class="baseClass" role="status">
     <slot />
     <!-- 通过上标文本标签实现徽标 -->
     <sup
       ref="verBadge"
-      :class="badgeClass"
-      :aria-label="ariaLabel"
-      aria-live="polite"
+      v-bind="rootAttrs"
+      :class="[valueClass, getPtClasses('value')]"
+      v-if="type !== 'dot'"
     >
-      <template v-if="type !== 'dot'">{{ displayValue }}</template>
+      {{ displayValue }}
     </sup>
   </div>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import type { BadgeProps, BadgeType } from '../type/index'
+import { computed, useAttrs } from 'vue'
+import type { BadgeProps, BadgeType, PtProps } from '../type/index'
 
 defineOptions({ name: 'VKBadge' })
 
@@ -28,7 +28,35 @@ const TYPE_CLASS_MAP: Record<BadgeType, string> = {
 
 const props = withDefaults(defineProps<BadgeProps>(), {
   type: 'dot',
+  value: '',
+  unstyled: false,
+  pt: () => ({}),
 })
+
+const attrs = useAttrs()
+
+// 处理 pt 样式
+const getPtClasses = (key: keyof PtProps) => {
+  const ptValue = props.pt?.[key]
+  if (!ptValue) return ''
+
+  if (typeof ptValue === 'string') {
+    return ptValue
+  }
+
+  if (typeof ptValue === 'object') {
+    if (Array.isArray(ptValue)) {
+      return ptValue.join(' ')
+    }
+    return Object.entries(ptValue)
+      .filter(([, value]) => value)
+      .map(([, value]) => (typeof value === 'string' ? value : ''))
+      .filter(Boolean)
+      .join(' ')
+  }
+
+  return ''
+}
 
 // 优化值的计算
 const displayValue = computed(() => {
@@ -36,14 +64,40 @@ const displayValue = computed(() => {
   return props.value > 99 ? '99+' : props.value
 })
 
-// 优化类名计算
-const badgeClass = computed(() => ['vk-badge', TYPE_CLASS_MAP[props.type]])
+// 优化类名计算逻辑
+const baseClass = computed(() => {
+  const classes = []
 
-// 计算aria标签文本
-const ariaLabel = computed(() => {
-  if (props.type === 'dot') return 'Notification indicator'
-  return `Badge value is ${displayValue.value}`
+  // 添加 root pt 类名
+  const rootPtClasses = getPtClasses('root')
+  if (rootPtClasses) {
+    classes.push(rootPtClasses)
+  }
+
+  // 如果不是 unstyled，添加基础类名
+  if (!props.unstyled) {
+    classes.push('vk-badge')
+  }
+
+  return classes.filter(Boolean)
 })
+
+// 徽标值的类名计算
+const valueClass = computed(() => {
+  if (props.unstyled) return ''
+  return TYPE_CLASS_MAP[props.type]
+})
+
+// 优化根元素属性
+const rootAttrs = computed(() => ({
+  ...attrs,
+  'aria-label':
+    props.ariaLabel ||
+    (props.type === 'dot'
+      ? 'Notification indicator'
+      : `Badge value is ${displayValue.value}`),
+  'aria-live': 'polite' as const,
+}))
 </script>
 
 <style scoped>

@@ -4,7 +4,6 @@ import { version } from './package.json'
 
 // 基础组件
 import { VKButton } from './components/button/index'
-import { VKText } from './components/text/index'
 import { VKRow } from './components/row/index'
 import { VKCol } from './components/col/index'
 import { VKInput } from './components/input/index'
@@ -108,7 +107,6 @@ const components: Component[] = [
   VKTag,
   VKNotification,
   VKMessage,
-  VKText,
   VKBadge,
   VKCarouselItem,
   VKCarousel,
@@ -183,7 +181,6 @@ export {
   VKTag,
   VKNotification,
   VKMessage,
-  VKText,
   VKBadge,
   VKCarouselItem,
   VKCarousel,
