@@ -1,6 +1,6 @@
 <template>
   <div
-    :class="cardClass"
+    :class="baseClass"
     role="region"
     :aria-label="title || 'Card'"
     :aria-description="description"
@@ -8,18 +8,18 @@
   >
     <div
       v-if="hasHeaderSlot"
-      class="ver-card-header"
+      :class="headerClass"
       role="heading"
       aria-level="3"
     >
       <slot name="header" />
     </div>
-    <div class="ver-card-body" role="group" aria-label="Card content">
+    <div :class="bodyClass" role="group" aria-label="Card content">
       <slot />
     </div>
     <div
       v-if="hasFooterSlot"
-      class="ver-card-footer"
+      :class="footerClass"
       role="contentinfo"
       aria-label="Card footer"
     >
@@ -30,40 +30,106 @@
 
 <script setup lang="ts">
 import { computed, useSlots, shallowRef, onMounted } from 'vue'
-import type { CardProps, ShadowType } from '../type/index'
+import type { CardProps, ShadowType, PtProps } from '../type/index'
 
 defineOptions({ name: 'VKCard' })
 
 const slots = useSlots()
 
-// 阴影类型映射 - 使用常量避免重复创建
+const props = withDefaults(defineProps<CardProps>(), {
+  shadow: 'always',
+  title: undefined,
+  description: undefined,
+  unstyled: false,
+  pt: () => ({}),
+})
+
 const SHADOW_CLASS_MAP: Readonly<Record<ShadowType, string>> = {
   always: 'is-shadow-always',
   hover: 'is-shadow-hover',
   never: 'is-shadow-never',
 } as const
 
-const props = withDefaults(defineProps<CardProps>(), {
-  shadow: 'always',
-  title: undefined,
-  description: undefined,
+const getPtClasses = (key: keyof PtProps) => {
+  const ptValue = props.pt?.[key]
+  if (!ptValue) return ''
+
+  if (typeof ptValue === 'string') {
+    return ptValue
+  }
+
+  if (Array.isArray(ptValue)) {
+    return ptValue.join(' ')
+  }
+
+  return Object.entries(ptValue)
+    .filter(([, value]) => value)
+    .map(([, value]) => (typeof value === 'string' ? value : ''))
+    .filter(Boolean)
+    .join(' ')
+}
+
+// =======================
+// Class 计算
+// =======================
+const baseClass = computed(() => {
+  const classes = []
+
+  const ptRoot = getPtClasses('root')
+  if (ptRoot) classes.push(ptRoot)
+
+  if (!props.unstyled) {
+    classes.push('ver-card', SHADOW_CLASS_MAP[props.shadow])
+  }
+
+  return classes
 })
 
-// 优化类名计算 - 使用数组字面量减少GC压力
-const cardClass = computed(() => ['ver-card', SHADOW_CLASS_MAP[props.shadow]])
+const headerClass = computed(() => {
+  const classes = []
 
-// 使用v-if替代v-show+computed以提高性能
-// 使用shallowRef优化插槽检查，减少不必要的重新计算
+  const ptHeader = getPtClasses('header')
+  if (ptHeader) classes.push(ptHeader)
+
+  if (!props.unstyled) {
+    classes.push('ver-card-header')
+  }
+
+  return classes
+})
+
+const bodyClass = computed(() => {
+  const classes = []
+
+  const ptBody = getPtClasses('body')
+  if (ptBody) classes.push(ptBody)
+
+  if (!props.unstyled) {
+    classes.push('ver-card-body')
+  }
+
+  return classes
+})
+
+const footerClass = computed(() => {
+  const classes = []
+
+  const ptFooter = getPtClasses('footer')
+  if (ptFooter) classes.push(ptFooter)
+
+  if (!props.unstyled) {
+    classes.push('ver-card-footer')
+  }
+
+  return classes
+})
+
+// 插槽存在性检测
 const hasHeaderSlot = shallowRef(false)
 const hasFooterSlot = shallowRef(false)
 
-// 只在组件挂载时检查一次插槽，避免每次渲染都重新计算
 onMounted(() => {
   hasHeaderSlot.value = Boolean(slots.header)
   hasFooterSlot.value = Boolean(slots.footer)
 })
 </script>
-
-<style>
-@import '../style/index.css';
-</style>
