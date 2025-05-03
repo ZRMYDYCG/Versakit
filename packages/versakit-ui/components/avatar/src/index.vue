@@ -1,27 +1,27 @@
 <script setup lang="ts">
 import { computed, toRefs } from 'vue'
-import type { AvatarProps } from '../type/index'
+import type { AvatarProps, PtProps } from '../type/index'
 
 defineOptions({ name: 'VKAvatar' })
 
 const props = withDefaults(defineProps<AvatarProps>(), {
   size: 'default',
   shape: 'circle',
-  backgroundColor: '#1890ff',
-  color: '#ffffff',
+  backgroundColor: '',
+  color: '',
+  unstyled: false,
+  pt: () => ({}),
 })
 
-// 使用 toRefs 解构 props 保持响应式
 const { shape, size, src, backgroundColor, color, text } = toRefs(props)
 
-// 将常量移到组件外部避免重复创建
+// 常量尺寸映射
 const SIZE_MAP = {
   small: 32,
   default: 40,
   large: 48,
 } as const
 
-// 合并相关计算属性
 const avatarSize = computed(() =>
   typeof size.value === 'number'
     ? `${size.value}px`
@@ -32,31 +32,70 @@ const fontSize = computed(() => {
   const baseSize =
     typeof size.value === 'number'
       ? size.value
-      : (SIZE_MAP[size.value as keyof typeof SIZE_MAP] ?? size.value)
+      : SIZE_MAP[size.value as keyof typeof SIZE_MAP]
   return `${baseSize / 2.5}px`
 })
 
-// 增加文本处理健壮性
 const firstLetter = computed(
   () => text.value?.trim().charAt(0).toUpperCase() || '',
 )
 
-// 增加图片加载失败处理
 const handleImgError = (e: Event) => {
   ;(e.target as HTMLImageElement).style.display = 'none'
 }
 
-// 新增形状计算属性
-const shapeClass = computed(() => ({
-  'is-circle': shape.value === 'circle',
-  'is-square': shape.value === 'square',
-}))
+// pt 处理函数
+const getPtClasses = (key: keyof PtProps) => {
+  const ptValue = props.pt?.[key]
+  if (!ptValue) return ''
+
+  if (typeof ptValue === 'string') return ptValue
+  if (Array.isArray(ptValue)) return ptValue.join(' ')
+  if (typeof ptValue === 'object') {
+    return Object.entries(ptValue)
+      .filter(([, v]) => v)
+      .map(([, v]) => (typeof v === 'string' ? v : ''))
+      .filter(Boolean)
+      .join(' ')
+  }
+
+  return ''
+}
+
+const rootClass = computed(() => {
+  const classes = []
+  const ptRoot = getPtClasses('root')
+  if (ptRoot) classes.push(ptRoot)
+  if (!props.unstyled) classes.push('ver-avatar')
+  return classes
+})
+
+const shapeClass = computed(() => {
+  if (props.unstyled) return []
+  return {
+    'is-circle': shape.value === 'circle',
+    'is-square': shape.value === 'square',
+  }
+})
+
+const imageClass = computed(() => {
+  const classes = []
+  const ptImg = getPtClasses('image')
+  if (ptImg) classes.push(ptImg)
+  return classes
+})
+
+const textClass = computed(() => {
+  const classes = []
+  const ptText = getPtClasses('text')
+  if (ptText) classes.push(ptText)
+  return classes
+})
 </script>
 
 <template>
   <div
-    class="ver-avatar"
-    :class="shapeClass"
+    :class="[rootClass, shapeClass]"
     :style="{
       width: avatarSize,
       height: avatarSize,
@@ -68,6 +107,7 @@ const shapeClass = computed(() => ({
     <img
       v-if="src"
       :src="src"
+      :class="imageClass"
       alt="avatar"
       role="img"
       aria-label="User avatar"
@@ -75,6 +115,7 @@ const shapeClass = computed(() => ({
     />
     <span
       v-else-if="text && firstLetter"
+      :class="textClass"
       role="img"
       aria-label="User avatar with initials"
     >
