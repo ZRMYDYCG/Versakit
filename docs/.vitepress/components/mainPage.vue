@@ -563,6 +563,7 @@ body {
   /* background: linear-gradient(to right, #e4e4e4 0, #6a6a6a 10%, #b9b9b9 20%); */
   background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #7f7f7f 20%);
   background-position: 0;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 3s infinite linear;
@@ -595,10 +596,6 @@ body {
     font-size: 0.6rem;
     margin-left: 5px;
   }
-}
-
-.dark .btn-shine {
-  /* background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #7f7f7f 20%); */
 }
 
 @-moz-keyframes shine {
