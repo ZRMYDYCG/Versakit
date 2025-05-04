@@ -9,6 +9,7 @@ import { vCopy } from './src/copy'
 import { vLongPress } from './src/long-press'
 import { vTypewriter } from './src/typewriter'
 import { vResize } from './src/resize'
+import { vDesensitize } from './src/desensitize'
 
 const VersakitDirectives = {
   install(app: App) {
@@ -22,6 +23,7 @@ const VersakitDirectives = {
     app.directive('long-press', vLongPress)
     app.directive('typewriter', vTypewriter)
     app.directive('resize', vResize)
+    app.directive('desensitize', vDesensitize)
   },
 }
 

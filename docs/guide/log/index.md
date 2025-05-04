@@ -5,7 +5,7 @@
 - 🛠&nbsp;组件 bugs 修复
 - 🛠&nbsp;组件样式 bugs 修复
 - 📃&nbsp;文档更新
-- ✨&nbsp;Button组件 无头组件化
+- ⛓️‍💥&nbsp;数据脱敏指令
 - ✨&nbsp;Card组件 无头组件化
 - ✨&nbsp;Panel组件 无头组件化
 - ✨&nbsp;Badge组件 无头组件化
@@ -14,6 +14,7 @@
 - ✨&nbsp;Switch组件 无头组件化
 - ✨&nbsp;Dialog组件 无头组件化
 - ✨&nbsp;Drawer组件 无头组件化
+- ✨&nbsp;Divider组件 无头组件化
 - 🚫&nbsp;删除Text文本组件
 - 🚫&nbsp;删除Result结果组件
 - 🚫&nbsp;删除Empty空组件

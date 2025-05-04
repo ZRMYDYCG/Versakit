@@ -15,6 +15,7 @@ export const getDirectives = (): DefaultTheme.Sidebar => {
         { text: 'LongPress 长按', link: '/directives/long-press/' },
         { text: 'Typewriter 打字机', link: '/directives/typewriter/' },
         { text: 'Resize 大小调整', link: '/directives/resize/' },
+        { text: 'Desensitize 数据脱敏', link: '/directives/desensitize/' },
       ],
     },
   ]
