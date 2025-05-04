@@ -18,11 +18,7 @@ export default {
   enhanceApp({ app }) {
     app.component('Tool', Tool)
 
-    app.use(Versakit, {
-      theme: {
-        preset: Element,
-      },
-    })
+    app.use(Versakit)
 
     app.use(VersakitDirectives)
   },
