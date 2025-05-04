@@ -16,6 +16,8 @@ export interface TabPt {
   tabClose?: string
   addButton?: string
   content?: string
+  typeClass?: string
+  activeClass?: string
 }
 
 export interface TabItemProps {

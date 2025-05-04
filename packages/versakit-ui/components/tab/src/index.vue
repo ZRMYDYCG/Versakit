@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, provide } from 'vue'
+import { ref, provide, computed } from 'vue'
 import type { TabProps } from '../type/index.ts'
 
 defineOptions({ name: 'VKTab' })
@@ -56,11 +56,25 @@ const handleTabAdd = () => {
   emit('tab-add')
 }
 
-// 组件无头化处理
+// 组件无头化处理（default、type、active）
 const getPtClass = (key: keyof NonNullable<TabProps['pt']>) => {
   const ptVal = props.pt?.[key]
   return typeof ptVal === 'string' ? ptVal : ''
 }
+
+const typeClass = computed(() => {
+  if (props.unstyled) {
+    return props.pt?.typeClass || ''
+  }
+  return `tabs-${props.type}`
+})
+
+const activeClass = computed(() => {
+  if (props.unstyled) {
+    return props.pt?.activeClass || ''
+  }
+  return 'is-active'
+})
 
 provide('tabs', {
   activeTab,
@@ -71,7 +85,7 @@ provide('tabs', {
 
 <template>
   <div
-    :class="[props.unstyled ? '' : `tabs`, getPtClass('root'), `tabs-${type}`]"
+    :class="[props.unstyled ? '' : `tabs`, getPtClass('root'), typeClass]"
     role="tablist"
     aria-label="Tab Navigation"
   >
@@ -88,7 +102,7 @@ provide('tabs', {
           :class="[
             props.unstyled ? '' : `tabs-tab`,
             getPtClass('tab'),
-            { 'is-active': activeTab === tab.name },
+            { [activeClass]: activeTab === tab.name },
           ]"
           role="tab"
           :aria-selected="activeTab === tab.name ? 'true' : 'false'"
