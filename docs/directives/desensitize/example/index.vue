@@ -1,7 +1,5 @@
 <template>
   <div class="demo-container">
-    <h2>数据脱敏指令示例</h2>
-
     <div class="demo-item">
       <h3>默认脱敏规则</h3>
       <p>
