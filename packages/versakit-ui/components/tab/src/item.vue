@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { inject, onMounted, onUnmounted } from 'vue'
+import type { TabItemPt, TabItemProps } from '../type'
 
-const props = defineProps<{
-  label: string
-  name: string | number
-}>()
+const props = defineProps<TabItemProps>()
 
 const { activeTab, registerTab, unregisterTab } = inject('tabs') as any
+
+// 组件无头化处理
+const getPtClass = (key: keyof NonNullable<TabItemPt['pt']>) => {
+  const ptVal = props.pt?.[key]
+  return typeof ptVal === 'string' ? ptVal : ''
+}
 
 onMounted(() => {
   registerTab(props)
@@ -20,7 +24,7 @@ onUnmounted(() => {
 <template>
   <div
     v-show="activeTab === name"
-    class="tabs-pane"
+    :class="[props.unstyled ? '' : 'tabs-pane', getPtClass('root')]"
     role="tabpanel"
     :aria-labelledby="`tab-${name}`"
   >

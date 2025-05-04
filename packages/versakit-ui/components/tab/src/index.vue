@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref, provide } from 'vue'
+import { ref, provide, computed } from 'vue'
 import type { TabProps } from '../type/index.ts'
 
 defineOptions({ name: 'VKTab' })
 
 const props = withDefaults(defineProps<TabProps>(), {
-  type: 'line',
+  type: 'card',
   closable: false,
   addable: false,
 })
@@ -56,6 +56,26 @@ const handleTabAdd = () => {
   emit('tab-add')
 }
 
+// 组件无头化处理（default、type、active）
+const getPtClass = (key: keyof NonNullable<TabProps['pt']>) => {
+  const ptVal = props.pt?.[key]
+  return typeof ptVal === 'string' ? ptVal : ''
+}
+
+const typeClass = computed(() => {
+  if (props.unstyled) {
+    return props.pt?.typeClass || ''
+  }
+  return `tabs-${props.type}`
+})
+
+const activeClass = computed(() => {
+  if (props.unstyled) {
+    return props.pt?.activeClass || ''
+  }
+  return 'is-active'
+})
+
 provide('tabs', {
   activeTab,
   registerTab,
@@ -65,18 +85,25 @@ provide('tabs', {
 
 <template>
   <div
-    class="tabs"
-    :class="[`tabs-${type}`]"
+    :class="[props.unstyled ? '' : `tabs`, getPtClass('root'), typeClass]"
     role="tablist"
     aria-label="Tab Navigation"
   >
-    <div class="tabs-nav">
-      <div class="tabs-nav-wrap">
+    <div :class="[props.unstyled ? '' : `tabs-nav`, getPtClass('nav')]">
+      <div
+        :class="[
+          props.unstyled ? '' : `tabs-nav-wrap`,
+          getPtClass('navWrapper'),
+        ]"
+      >
         <div
           v-for="tab in tabs"
           :key="tab.name"
-          class="tabs-tab"
-          :class="{ 'is-active': activeTab === tab.name }"
+          :class="[
+            props.unstyled ? '' : `tabs-tab`,
+            getPtClass('tab'),
+            { [activeClass]: activeTab === tab.name },
+          ]"
           role="tab"
           :aria-selected="activeTab === tab.name ? 'true' : 'false'"
           @click="handleTabClick(tab.name)"
@@ -84,7 +111,10 @@ provide('tabs', {
           <span>{{ tab.label }}</span>
           <span
             v-if="closable"
-            class="tabs-tab-close"
+            :class="[
+              props.unstyled ? '' : `tabs-tab-close`,
+              getPtClass('tabClose'),
+            ]"
             @click="handleTabRemove($event, tab.name)"
           >
             ×
@@ -92,7 +122,10 @@ provide('tabs', {
         </div>
         <button
           v-if="addable"
-          class="tabs-nav-add"
+          :class="[
+            props.unstyled ? '' : `tabs-nav-add`,
+            getPtClass('addButton'),
+          ]"
           @click="handleTabAdd"
           aria-label="Add Tab"
         >
@@ -100,7 +133,7 @@ provide('tabs', {
         </button>
       </div>
     </div>
-    <div class="tabs-content">
+    <div :class="[props.unstyled ? '' : `tabs-content`, getPtClass('content')]">
       <slot></slot>
     </div>
   </div>

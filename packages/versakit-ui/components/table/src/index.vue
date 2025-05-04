@@ -1,10 +1,10 @@
 <template>
-  <div class="ver-table">
-    <div class="ver-table-wrapper">
-      <div class="ver-table-header">
-        <div :class="['ver-table-header-row', props.stripe ? 'is-stripe' : '']">
+  <div class="vk-table">
+    <div class="vk-table-wrapper">
+      <div class="vk-table-header">
+        <div :class="['vk-table-header-row', props.stripe ? 'is-stripe' : '']">
           <div
-            :class="['ver-table-header-cell', props.border ? 'is-border' : '']"
+            :class="['vk-table-header-cell', props.border ? 'is-border' : '']"
             v-for="column in props.columns"
             :key="column.key"
           >
@@ -13,16 +13,16 @@
         </div>
       </div>
 
-      <div class="ver-table-body">
+      <div class="vk-table-body">
         <div
-          :class="['ver-table-row', props.stripe ? 'is-stripe' : '']"
+          :class="['vk-table-row', props.stripe ? 'is-stripe' : '']"
           v-for="row in props.data"
           :key="row.key"
         >
           <div
             v-for="column in props.columns"
             :key="column.key"
-            :class="['ver-table-row-cell', props.border ? 'is-border' : '']"
+            :class="['vk-table-row-cell', props.border ? 'is-border' : '']"
           >
             {{ row[column.dataIndex] }}
           </div>
@@ -42,7 +42,7 @@ const props = withDefaults(defineProps<TableProps>(), {
   stripe: false,
 })
 
-defineOptions({ name: 'VerTable' })
+defineOptions({ name: 'VkTable' })
 </script>
 
 <style>
