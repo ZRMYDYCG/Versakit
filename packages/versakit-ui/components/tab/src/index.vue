@@ -5,7 +5,7 @@ import type { TabProps } from '../type/index.ts'
 defineOptions({ name: 'VKTab' })
 
 const props = withDefaults(defineProps<TabProps>(), {
-  type: 'line',
+  type: 'card',
   closable: false,
   addable: false,
 })
@@ -56,6 +56,12 @@ const handleTabAdd = () => {
   emit('tab-add')
 }
 
+// 组件无头化处理
+const getPtClass = (key: keyof NonNullable<TabProps['pt']>) => {
+  const ptVal = props.pt?.[key]
+  return typeof ptVal === 'string' ? ptVal : ''
+}
+
 provide('tabs', {
   activeTab,
   registerTab,
@@ -65,18 +71,25 @@ provide('tabs', {
 
 <template>
   <div
-    class="tabs"
-    :class="[`tabs-${type}`]"
+    :class="[props.unstyled ? '' : `tabs`, getPtClass('root'), `tabs-${type}`]"
     role="tablist"
     aria-label="Tab Navigation"
   >
-    <div class="tabs-nav">
-      <div class="tabs-nav-wrap">
+    <div :class="[props.unstyled ? '' : `tabs-nav`, getPtClass('nav')]">
+      <div
+        :class="[
+          props.unstyled ? '' : `tabs-nav-wrap`,
+          getPtClass('navWrapper'),
+        ]"
+      >
         <div
           v-for="tab in tabs"
           :key="tab.name"
-          class="tabs-tab"
-          :class="{ 'is-active': activeTab === tab.name }"
+          :class="[
+            props.unstyled ? '' : `tabs-tab`,
+            getPtClass('tab'),
+            { 'is-active': activeTab === tab.name },
+          ]"
           role="tab"
           :aria-selected="activeTab === tab.name ? 'true' : 'false'"
           @click="handleTabClick(tab.name)"
@@ -84,7 +97,10 @@ provide('tabs', {
           <span>{{ tab.label }}</span>
           <span
             v-if="closable"
-            class="tabs-tab-close"
+            :class="[
+              props.unstyled ? '' : `tabs-tab-close`,
+              getPtClass('tabClose'),
+            ]"
             @click="handleTabRemove($event, tab.name)"
           >
             ×
@@ -92,7 +108,10 @@ provide('tabs', {
         </div>
         <button
           v-if="addable"
-          class="tabs-nav-add"
+          :class="[
+            props.unstyled ? '' : `tabs-nav-add`,
+            getPtClass('addButton'),
+          ]"
           @click="handleTabAdd"
           aria-label="Add Tab"
         >
@@ -100,7 +119,7 @@ provide('tabs', {
         </button>
       </div>
     </div>
-    <div class="tabs-content">
+    <div :class="[props.unstyled ? '' : `tabs-content`, getPtClass('content')]">
       <slot></slot>
     </div>
   </div>
