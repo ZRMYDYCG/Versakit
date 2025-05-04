@@ -25,7 +25,7 @@
             >
               开始
             </VkButton>
-            <div class="btn-shine">V 0.3.8</div>
+            <div class="btn-shine">V 0.3.9</div>
           </div>
         </div>
       </div>
