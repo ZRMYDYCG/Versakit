@@ -22,8 +22,6 @@ import { VKHeader } from './components/header/index'
 import { VKMain } from './components/main/index'
 import { VKNotification } from './components/notification/index'
 import { VKBacktop } from './components/backtop/index'
-import { VKResult } from './components/result/index'
-import { VKEmpty } from './components/empty/index'
 import { VKPanel } from './components/panel/index'
 import { VKSegmented } from './components/segmented/index'
 import { VKGradientText } from './components/gradienttext/index'
@@ -34,7 +32,6 @@ import { VKTooltip } from './components/tooltip/index'
 import { VKSlider } from './components/slider/index'
 import { VKFlex } from './components/flex/index'
 import { VKTable } from './components/table/index'
-import { VKScrollBar } from './components/scrollbar/index'
 import { VKInputOtp } from './components/inputotp/index'
 import { VKCalendar } from './components/calendar/index'
 import { VKSkeleton } from './components/skeleton/index'
@@ -102,7 +99,6 @@ const components: Component[] = [
   VKTabItem,
   VKTimeline,
   VKTimeLineItem,
-  VKScrollBar,
   VKCol,
   VKTag,
   VKNotification,
@@ -135,8 +131,6 @@ const components: Component[] = [
   VKMain,
   VKTab,
   VKBacktop,
-  VKResult,
-  VKEmpty,
   VKSegmented,
   VKGradientText,
   VKTable,
@@ -176,7 +170,6 @@ export {
   VKTabItem,
   VKTimeline,
   VKTimeLineItem,
-  VKScrollBar,
   VKCol,
   VKTag,
   VKNotification,
@@ -210,8 +203,6 @@ export {
   VKMain,
   VKTab,
   VKBacktop,
-  VKResult,
-  VKEmpty,
   VKGradientText,
   VKTable,
   VKColorPicker,

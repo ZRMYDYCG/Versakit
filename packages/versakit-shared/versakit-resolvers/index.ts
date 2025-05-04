@@ -99,7 +99,7 @@ const VersakitResolver = (options: ResolverOptions = {}): ComponentResolver => {
             name: componentName,
             from: '@versakit/ui',
             sideEffects: importStyle
-              ? '@versakit/ui/dist/esm/ui.css'
+              ? '@versakit/ui/dist/style.css'
               : undefined,
           }
         }

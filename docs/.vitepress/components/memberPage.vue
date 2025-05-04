@@ -35,14 +35,13 @@
 import { VPTeamPage, VPTeamPageTitle, VPTeamMembers } from 'vitepress/theme'
 const contributors = [
   {
-    avatar:
-      'https://avatars.githubusercontent.com/u/74483049?s=400&u=102dfac48d0067d9d7a5576134e409590bbfaafe&v=4',
-    name: 'Jannik',
+    avatar: 'https://avatars.githubusercontent.com/u/74483049?v=4',
+    name: 'lenran659',
     link: 'https://github.com/lenran659',
   },
   {
     avatar: 'https://avatars.githubusercontent.com/u/131731035?v=4',
-    name: 'Pei',
+    name: 'Dream-2022',
     link: 'https://github.com/Dream-2022',
   },
   {
@@ -51,23 +50,42 @@ const contributors = [
     link: 'https://github.com/ZHuuO',
   },
   {
+    avatar: 'https://avatars.githubusercontent.com/u/116160870?v=4',
+    name: 'ZRMYDYCG',
+    link: 'https://github.com/ZRMYDYCG',
+  },
+  {
     avatar: 'https://avatars.githubusercontent.com/u/122306263?v=4',
-    name: 'JustHappy',
+    name: 'Simonmie',
     link: 'https://github.com/Simonmie',
   },
   {
     avatar: 'https://avatars.githubusercontent.com/u/86543671?v=4',
-    name: 'xiao yi bin',
-    title: 'Contributor',
+    name: 'abining',
     link: 'https://github.com/abining',
+  },
+  {
+    avatar: 'https://avatars.githubusercontent.com/u/47586954?v=4',
+    name: 'yyz945947732',
+    link: 'https://github.com/yyz945947732',
+  },
+  {
+    avatar: 'https://avatars.githubusercontent.com/u/184910937?v=4',
+    name: 'StriveToLearnCode',
+    link: 'https://github.com/StriveToLearnCode',
   },
   {
     avatar: 'https://avatars.githubusercontent.com/u/58333667?v=4',
     name: 'yuguaa',
-    title: 'Contributor',
     link: 'https://github.com/yuguaa',
   },
+  {
+    avatar: 'https://avatars.githubusercontent.com/u/85224021?v=4',
+    name: 'xiaotanqingjiao',
+    link: 'https://github.com/xiaotanqingjiao',
+  },
 ]
+
 const members = [
   {
     avatar:

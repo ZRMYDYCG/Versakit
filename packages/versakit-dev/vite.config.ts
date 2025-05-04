@@ -13,7 +13,6 @@ import autoprefixer from 'autoprefixer'
 import postCssPxToRem from 'postcss-pxtorem'
 import postNested from 'postcss-nested'
 import mixins from 'postcss-mixins'
-
 import CssMagic from 'postcss-magic'
 
 const pkgRoot = resolve(__dirname, '..', 'versakit-ui')

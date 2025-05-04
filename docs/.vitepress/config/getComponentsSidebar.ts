@@ -15,7 +15,6 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
       items: [
         { text: 'Button 按钮', link: '/components/button/' },
         { text: 'Divider 分割线', link: '/components/divider/' },
-        { text: 'Scrollbar 滚动条', link: '/components/scrollbar/' },
       ],
     },
     {
@@ -31,6 +30,23 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'CheckBox 复选框', link: '/components/checkbox/' },
         { text: 'Rate 评分', link: '/components/rate/' },
         { text: 'Input Number 数字输入框', link: '/components/inputnumber/' },
+        {
+          text: 'Color Picker 取色器',
+          link: '/components/colorpicker/',
+        },
+        {
+          text: 'Upload 上传',
+          link: '/components/upload/',
+        },
+        {
+          text: 'Select 选择器',
+          link: '/components/select/',
+        },
+      ],
+    },
+    {
+      text: 'Date 时间',
+      items: [
         { text: 'Date Picker 日期选择器', link: '/components/datepicker/' },
         {
           text: 'DateTime Picker 日期时间选择器',
@@ -44,18 +60,7 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
           text: 'Time Select 时间选择器',
           link: '/components/timeselect/',
         },
-        {
-          text: 'Color Picker 取色器',
-          link: '/components/colorpicker/',
-        },
-        {
-          text: 'Upload 上传',
-          link: '/components/upload/',
-        },
-        {
-          text: 'Select 选择器',
-          link: '/components/select/',
-        },
+        { text: 'Calendar 日历', link: '/components/calendar/' },
       ],
     },
     {
@@ -74,7 +79,7 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'GradientText 渐变文字', link: '/components/gradienttext/' },
         { text: 'Timeline 时间线', link: '/components/timeline/' },
         { text: 'Table 表格', link: '/components/table/' },
-        { text: 'Calendar 日历', link: '/components/calendar/' },
+
         { text: 'Skeleton 骨架屏', link: '/components/skeleton/' },
         { text: 'Pagination 分页', link: '/components/pagination/' },
         { text: 'Splitter 分配器', link: '/components/splitter/' },
@@ -117,14 +122,6 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         {
           text: 'Tooltip 文字提示',
           link: '/components/tooltip/',
-        },
-        {
-          text: 'Result 结果页',
-          link: '/components/result/',
-        },
-        {
-          text: 'Empty 无内容',
-          link: '/components/empty/',
         },
         {
           text: 'Popover 弹出框',
