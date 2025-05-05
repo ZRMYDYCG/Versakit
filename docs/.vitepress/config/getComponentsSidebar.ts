@@ -78,7 +78,7 @@ export const getComponentsSidebar = (): DefaultTheme.Sidebar => {
         { text: 'Breadcrumb 面包屑', link: '/components/breadcrumb/' },
         { text: 'Dropdown 下拉菜单', link: '/components/dropdown/' },
         { text: 'Steps 步骤条', link: '/components/steps/' },
-        { text: 'Tab 标签页', link: '/components/tab/' },
+        { text: 'Tabs 标签页', link: '/components/tab/' },
       ],
     },
     {

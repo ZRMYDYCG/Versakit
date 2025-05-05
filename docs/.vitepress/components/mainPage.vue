@@ -1,4 +1,8 @@
 <template>
+  <div v-if="showBanner" class="banner">
+    🎉0.4.x 很快到来 🚀
+    <button class="close-btn" @click="showBanner = false">X</button>
+  </div>
   <div class="theme-main-page">
     <div class="background-box">
       <template v-for="img in images" :key="img.src">
@@ -72,6 +76,8 @@
 </template>
 <script setup>
 import { ref } from 'vue'
+
+const showBanner = ref(true)
 
 let list = [
   {
@@ -563,6 +569,7 @@ body {
   /* background: linear-gradient(to right, #e4e4e4 0, #6a6a6a 10%, #b9b9b9 20%); */
   background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #7f7f7f 20%);
   background-position: 0;
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 3s infinite linear;
@@ -595,10 +602,6 @@ body {
     font-size: 0.6rem;
     margin-left: 5px;
   }
-}
-
-.dark .btn-shine {
-  /* background: linear-gradient(to right, #9f9f9f 0, #fff 10%, #7f7f7f 20%); */
 }
 
 @-moz-keyframes shine {
@@ -655,5 +658,32 @@ body {
   100% {
     background-position: 180px;
   }
+}
+
+.banner {
+  background-color: #8b5cf6;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  user-select: none;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  color: #ccc;
 }
 </style>
