@@ -2,7 +2,7 @@
 import { computed, ref, onMounted, nextTick } from 'vue'
 import type { SegmentedProps } from '../type/index.ts'
 
-defineOptions({ name: 'VerSegmented' })
+defineOptions({ name: 'VKSegmented' })
 
 const props = defineProps<SegmentedProps>()
 const componentId = `segmented-${Math.random().toString(36).slice(2, 11)}`
@@ -46,28 +46,57 @@ onMounted(async () => {
     document.querySelectorAll(`[data-segmented-id="${componentId}"]`),
   )
 })
+
+// 新增 pt 和 unstyled 处理
+const { unstyled, pt = {} } = props as any
+const rootClass = computed(() => [
+  'segmented-control',
+  pt.root,
+  unstyled ? '' : 'default-root-class',
+])
+const containerClass = computed(() => [
+  'segmented-control-container',
+  pt.container,
+  unstyled ? '' : 'default-container-class',
+])
+const highlightClass = computed(() => [
+  'segmented-control-highlight',
+  pt.highlight,
+  unstyled ? '' : 'default-highlight-class',
+])
+const itemClass = computed(() => [
+  'segmented-control-item',
+  pt.item,
+  unstyled ? '' : 'default-item-class',
+])
 </script>
 
 <template>
-  <div class="segmented-control">
-    <div class="segmented-control-container" role="radiogroup">
-      <div class="segmented-control-highlight" :style="highlightStyle" />
+  <div :class="rootClass">
+    <div
+      :class="containerClass"
+      role="radiogroup"
+      aria-label="Segmented Control"
+    >
+      <div :class="highlightClass" :style="highlightStyle" />
       <div
-        v-for="(option, index) in options"
+        v-for="(option, index) in props.options"
         :key="option.value"
-        class="segmented-control-item"
+        :class="itemClass"
       >
         <input
           type="radio"
           :id="`${componentId}-${index}`"
           :name="componentId"
           :value="option.value"
-          :checked="modelValue === option.value"
+          :checked="props.modelValue === option.value"
           @change="updateValue(option.value)"
+          aria-labelledby="`${componentId}-label-${index}`"
         />
         <label
           :for="`${componentId}-${index}`"
           :data-segmented-id="componentId"
+          :id="`${componentId}-label-${index}`"
           ref="labelRefs"
         >
           {{ option.label }}
@@ -78,5 +107,8 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-@import '../style/index.css';
+/* 当 unstyled 为 false 时应用的默认样式 */
+@media not all and (--unstyled) {
+  @import '../style/index.css';
+}
 </style>

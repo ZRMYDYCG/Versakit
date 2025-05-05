@@ -12,4 +12,11 @@ export interface SegmentedProps {
       )[]
     | any
   size?: SizeType
+  unstyled?: boolean
+  pt?: {
+    root?: string
+    container?: string
+    highlight?: string
+    item?: string
+  }
 }
