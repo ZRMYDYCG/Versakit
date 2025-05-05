@@ -1,5 +1,12 @@
 import type { SizeType } from '../../../utils/constant'
 
+export interface PtProps {
+  root?: string
+  container?: string
+  highlight?: string
+  item?: string
+}
+
 export interface SegmentedProps {
   modelValue: string | number
   options?:
@@ -13,10 +20,5 @@ export interface SegmentedProps {
     | any
   size?: SizeType
   unstyled?: boolean
-  pt?: {
-    root?: string
-    container?: string
-    highlight?: string
-    item?: string
-  }
+  pt?: PtProps
 }

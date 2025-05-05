@@ -4,7 +4,13 @@ import type { SegmentedProps } from '../type/index.ts'
 
 defineOptions({ name: 'VKSegmented' })
 
-const props = defineProps<SegmentedProps>()
+const props = withDefaults(defineProps<SegmentedProps>(), {
+  modelValue: '',
+  options: [],
+  unstyled: false,
+  pt: () => ({}),
+})
+
 const componentId = `segmented-${Math.random().toString(36).slice(2, 11)}`
 const labelRefs = ref<HTMLElement[]>([])
 
@@ -47,42 +53,38 @@ onMounted(async () => {
   )
 })
 
-// 新增 pt 和 unstyled 处理
+// 处理 unstyled 和 pt 选项
 const { unstyled, pt = {} } = props as any
-const rootClass = computed(() => [
+const rootClasses = computed(() => [
   'segmented-control',
   pt.root,
-  unstyled ? '' : 'default-root-class',
+  unstyled ? '' : 'default-root-styles',
 ])
-const containerClass = computed(() => [
+const containerClasses = computed(() => [
   'segmented-control-container',
   pt.container,
-  unstyled ? '' : 'default-container-class',
+  unstyled ? '' : 'default-container-styles',
 ])
-const highlightClass = computed(() => [
+const highlightClasses = computed(() => [
   'segmented-control-highlight',
   pt.highlight,
-  unstyled ? '' : 'default-highlight-class',
+  unstyled ? '' : 'default-highlight-styles',
 ])
-const itemClass = computed(() => [
+const itemClasses = computed(() => [
   'segmented-control-item',
   pt.item,
-  unstyled ? '' : 'default-item-class',
+  unstyled ? '' : 'default-item-styles',
 ])
 </script>
 
 <template>
-  <div :class="rootClass">
-    <div
-      :class="containerClass"
-      role="radiogroup"
-      aria-label="Segmented Control"
-    >
-      <div :class="highlightClass" :style="highlightStyle" />
+  <div :class="rootClasses" role="group" aria-label="分段选择器">
+    <div :class="containerClasses" role="radiogroup">
+      <div :class="highlightClasses" :style="highlightStyle" />
       <div
         v-for="(option, index) in props.options"
         :key="option.value"
-        :class="itemClass"
+        :class="itemClasses"
       >
         <input
           type="radio"
@@ -98,17 +100,16 @@ const itemClass = computed(() => [
           :data-segmented-id="componentId"
           :id="`${componentId}-label-${index}`"
           ref="labelRefs"
+          aria-describedby="segmented-description"
         >
           {{ option.label }}
         </label>
       </div>
     </div>
+    <div id="segmented-description" aria-hidden="true">
+      请从以下选项中选择一个
+    </div>
   </div>
 </template>
 
-<style scoped>
-/* 当 unstyled 为 false 时应用的默认样式 */
-@media not all and (--unstyled) {
-  @import '../style/index.css';
-}
-</style>
+<style scoped src="../style/index.css"></style>
