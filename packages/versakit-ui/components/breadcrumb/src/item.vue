@@ -10,7 +10,6 @@ const props = withDefaults(defineProps<BreadcrumbItemProps>(), {
 
 const breadcrumb = inject('breadcrumb') as {
   separator: string
-  separatorClass: string
 }
 
 const handleClick = () => {
@@ -41,11 +40,7 @@ const handleClick = () => {
       <slot></slot>
     </span>
     <span class="vk-breadcrumb-item-separator" aria-hidden="true">
-      <i
-        v-if="breadcrumb.separatorClass"
-        :class="breadcrumb.separatorClass"
-      ></i>
-      <span v-else>{{ breadcrumb.separator }}</span>
+      <span>{{ breadcrumb.separator }}</span>
     </span>
   </span>
 </template>

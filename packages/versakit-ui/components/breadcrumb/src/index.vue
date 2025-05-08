@@ -6,12 +6,10 @@ defineOptions({ name: 'VerBreadcrumb' })
 
 const props = withDefaults(defineProps<BreadcrumbProps>(), {
   separator: '/',
-  separatorClass: '',
 })
 
 provide('breadcrumb', {
   separator: props.separator,
-  separatorClass: props.separatorClass,
 })
 </script>
 
