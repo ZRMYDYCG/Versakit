@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { provide } from 'vue'
-import type { BreadcrumbProps } from '../type/index.ts'
+import { computed, provide } from 'vue'
+import type { BreadcrumbProps, BreadcrumbPtProps } from '../type/index.ts'
 
 defineOptions({ name: 'VKBreadcrumb' })
 
@@ -9,16 +9,45 @@ const props = withDefaults(defineProps<BreadcrumbProps>(), {
   separatorIcon: '',
 })
 
+// 组件无头化
+const getPtClass = (key: keyof BreadcrumbPtProps) => {
+  const ptValue = props.pt?.[key]
+  if (!ptValue) return ''
+
+  if (typeof ptValue === 'string') {
+    return ptValue
+  }
+
+  if (typeof ptValue === 'object') {
+    if (Array.isArray(ptValue)) {
+      return ptValue.join(' ')
+    }
+    return Object.entries(ptValue)
+      .filter(([, value]) => value)
+      .map(([, value]) => (typeof value === 'string' ? value : ''))
+      .filter(Boolean)
+      .join(' ')
+  }
+
+  return ''
+}
+
+const rootClass = computed(() => {
+  if (props.unstyled) {
+    return getPtClass('root')
+  } else {
+    return 'breadcrumb'
+  }
+})
+
 provide('breadcrumb', {
   separator: props.separator,
   separatorIcon: props.separatorIcon,
 })
-
-console.log(props)
 </script>
 
 <template>
-  <div class="breadcrumb" role="navigation" aria-label="Breadcrumb">
+  <div :class="rootClass" role="navigation" aria-label="Breadcrumb">
     <slot></slot>
   </div>
 </template>

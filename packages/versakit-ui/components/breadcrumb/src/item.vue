@@ -1,6 +1,9 @@
 <script setup lang="ts">
-import { type Component, inject } from 'vue'
-import type { BreadcrumbItemProps } from '../type/index.ts'
+import { type Component, computed, inject } from 'vue'
+import type {
+  BreadcrumbItemProps,
+  BreadcrumbItemPtProps,
+} from '../type/index.ts'
 import { VKIcon } from '@versakit/icons'
 
 defineOptions({ name: 'VKBreadcrumbItem' })
@@ -23,13 +26,53 @@ const handleClick = () => {
     window.location.href = props.to
   }
 }
+
+// 组件无头化
+const getPtClass = (key: keyof BreadcrumbItemPtProps) => {
+  const ptValue = props.pt?.[key]
+  if (!ptValue) return ''
+
+  if (typeof ptValue === 'string') {
+    return ptValue
+  }
+
+  if (typeof ptValue === 'object') {
+    if (Array.isArray(ptValue)) {
+      return ptValue.join(' ')
+    }
+    return Object.entries(ptValue)
+      .filter(([, value]) => value)
+      .map(([, value]) => (typeof value === 'string' ? value : ''))
+      .filter(Boolean)
+      .join(' ')
+  }
+
+  return ''
+}
+
+const vkBreadcrumbItemClass = computed(() => {
+  if (props.unstyled) {
+    return {
+      root: getPtClass('root'),
+      link: getPtClass('link'),
+      text: getPtClass('text'),
+      separator: getPtClass('separator'),
+    }
+  }
+  return {
+    root: 'vk-breadcrumb-item',
+    link: 'vk-breadcrumb-item-link',
+    text: 'vk-breadcrumb-item-text',
+    separator: 'vk-breadcrumb-item-separator',
+  }
+})
 </script>
 
 <template>
-  <span class="vk-breadcrumb-item">
+  <span :class="vkBreadcrumbItemClass.root">
     <span
       v-if="to"
-      class="vk-breadcrumb-item-link"
+      :class="vkBreadcrumbItemClass.link"
       role="link"
       tabindex="0"
       aria-current="false"
@@ -38,10 +81,10 @@ const handleClick = () => {
     >
       <slot></slot>
     </span>
-    <span v-else class="vk-breadcrumb-item-text" aria-current="true">
+    <span v-else :class="vkBreadcrumbItemClass.text" aria-current="true">
       <slot></slot>
     </span>
-    <span class="vk-breadcrumb-item-separator" aria-hidden="true">
+    <span :class="vkBreadcrumbItemClass.separator" aria-hidden="true">
       <VKIcon
         v-if="breadcrumb.separatorIcon"
         :name="breadcrumb.separatorIcon"
