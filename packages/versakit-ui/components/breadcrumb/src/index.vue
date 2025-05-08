@@ -2,15 +2,19 @@
 import { provide } from 'vue'
 import type { BreadcrumbProps } from '../type/index.ts'
 
-defineOptions({ name: 'VerBreadcrumb' })
+defineOptions({ name: 'VKBreadcrumb' })
 
 const props = withDefaults(defineProps<BreadcrumbProps>(), {
   separator: '/',
+  separatorIcon: '',
 })
 
 provide('breadcrumb', {
   separator: props.separator,
+  separatorIcon: props.separatorIcon,
 })
+
+console.log(props)
 </script>
 
 <template>

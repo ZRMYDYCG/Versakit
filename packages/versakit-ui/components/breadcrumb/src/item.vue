@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { inject } from 'vue'
+import { type Component, inject } from 'vue'
 import type { BreadcrumbItemProps } from '../type/index.ts'
+import { VKIcon } from '@versakit/icons'
 
 defineOptions({ name: 'VKBreadcrumbItem' })
 
@@ -10,6 +11,7 @@ const props = withDefaults(defineProps<BreadcrumbItemProps>(), {
 
 const breadcrumb = inject('breadcrumb') as {
   separator: string
+  separatorIcon: string | Component
 }
 
 const handleClick = () => {
@@ -40,7 +42,11 @@ const handleClick = () => {
       <slot></slot>
     </span>
     <span class="vk-breadcrumb-item-separator" aria-hidden="true">
-      <span>{{ breadcrumb.separator }}</span>
+      <VKIcon
+        v-if="breadcrumb.separatorIcon"
+        :name="breadcrumb.separatorIcon"
+      />
+      <span v-else>{{ breadcrumb.separator }}</span>
     </span>
   </span>
 </template>
