@@ -19,21 +19,23 @@ import { VKIcon } from '@versakit/icons'
 import { computed, ref, onMounted, shallowRef, onUnmounted } from 'vue'
 import type { BackTopProps } from '../type/index'
 
-// 设置属性默认值
 const props = withDefaults(defineProps<BackTopProps>(), {
   right: '60',
   bottom: '40',
   icon: '',
   iconColor: '#8b5cf6',
   visibilityHeight: '150',
+  unstyled: false,
 })
 
 const iconColor = computed(() => props.iconColor || '#8b5cf6')
 
-const vkClass = computed(() => [
-  'vk-backtop',
-  props.visibleHeight ? `is-visibleHeight-${props.visibleHeight}` : '',
-])
+const vkClass = computed(() => {
+  if (props.unstyled) {
+    return getPtClass('root')
+  }
+  return 'vk-backtop'
+})
 
 const backTopStyle = computed(() => ({
   right: `${props.right}px`,
@@ -57,6 +59,12 @@ const handleScroll = () => {
     }
     scrollTimer = null
   }, 300)
+}
+
+// 组件无头化处理
+const getPtClass = (key: keyof NonNullable<BackTopProps['pt']>) => {
+  const ptVal = props.pt?.[key]
+  return typeof ptVal === 'string' ? ptVal : ''
 }
 
 onMounted(() => {
