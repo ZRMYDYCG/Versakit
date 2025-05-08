@@ -45,7 +45,7 @@
           :key="cell.date.toISOString()"
           :class="[
             `${vkCalendarClass.cell}`,
-            `vk-calendar-cell-${cell.type}`,
+            `${vkCalendarClass.cell}-${cell.type}`,
             {
               'is-selected': isSelected(cell.date),
             },
@@ -227,7 +227,7 @@ const vkCalendarClass = computed(() => {
   }
 })
 
-export const getPtClass = (key: keyof CalendarPtProps) => {
+const getPtClass = (key: keyof CalendarPtProps) => {
   const ptValue = props.pt?.[key]
   if (!ptValue) return ''
   return ptValue

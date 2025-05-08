@@ -14,7 +14,6 @@ export interface CalendarPtProps {
   weeks?: string | Record<string, any>
   dates?: string | Record<string, any>
   cell?: string | Record<string, any>
-  /*状态类*/
 }
 
 export interface CalendarEmits {
