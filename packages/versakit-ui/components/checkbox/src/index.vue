@@ -3,7 +3,7 @@ import { computed, inject } from 'vue'
 import type { CheckboxProps, CheckboxGroupContext } from '../type'
 
 defineOptions({
-  name: 'VerCheckbox',
+  name: 'VKCheckbox',
 })
 
 const props = withDefaults(defineProps<CheckboxProps>(), {
@@ -53,9 +53,10 @@ const handleChange = (e: Event) => {
       }
     }
 
+    // 更新 CheckboxGroup 的值
     checkboxGroup.onChange(groupValue)
   } else {
-    // 独立 Checkbox 的处理逻辑
+    // 单独 Checkbox 的处理逻辑
     emit('update:modelValue', target.checked)
     emit('change', target.checked)
   }

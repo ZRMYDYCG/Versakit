@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { provide } from 'vue'
-import type { CheckboxGroupProps, CheckboxGroupContext } from '../type'
+import { provide, reactive, toRef } from 'vue'
+import type { CheckboxGroupProps } from '../type'
 
 defineOptions({
   name: 'VerCheckboxGroup',
@@ -19,12 +19,14 @@ const onChange = (value: string[]) => {
   emit('update:modelValue', value)
   emit('change', value)
 }
-
-provide<CheckboxGroupContext>('checkboxGroup', {
-  modelValue: props.modelValue,
-  disabled: props.disabled,
-  onChange,
-})
+provide(
+  'checkboxGroup',
+  reactive({
+    modelValue: toRef(props, 'modelValue'),
+    disabled: toRef(props, 'disabled'),
+    onChange,
+  }),
+)
 </script>
 
 <template>
