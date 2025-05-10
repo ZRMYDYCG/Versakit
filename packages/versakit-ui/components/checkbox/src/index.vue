@@ -67,14 +67,14 @@ const handleChange = (e: Event) => {
 
 <template>
   <label
-    class="ver-checkbox"
+    class="vk-checkbox"
     :class="{
       'is-checked': isChecked,
       'is-disabled': isDisabled,
       'is-indeterminate': indeterminate,
     }"
   >
-    <span class="ver-checkbox__input">
+    <span class="vk-checkbox__input">
       <input
         type="checkbox"
         :checked="isChecked"
@@ -83,9 +83,9 @@ const handleChange = (e: Event) => {
         :value="value"
         @change="handleChange"
       />
-      <span class="ver-checkbox__inner"></span>
+      <span class="vk-checkbox__inner"></span>
     </span>
-    <span v-if="label || $slots.default" class="ver-checkbox__label">
+    <span v-if="label || $slots.default" class="vk-checkbox__label">
       <slot>{{ label }}</slot>
     </span>
   </label>
