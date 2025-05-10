@@ -16,8 +16,15 @@
     >
       <slot name="title">{{ title }}</slot>
 
-      <div class="header-angle">
-        <VKIcon :name="icon" />
+      <div
+        :class="{
+          'header-angle': icon,
+        }"
+        v-if="icon || $slots.icon"
+      >
+        <slot name="icon" :is-active="isActive">
+          <VKIcon :name="icon" />
+        </slot>
       </div>
     </div>
     <Transition name="slide" v-on="transitionEvents">
