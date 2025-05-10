@@ -61,6 +61,8 @@ const handleChange = (e: Event) => {
     emit('change', target.checked)
   }
 }
+
+// 组件无头化
 </script>
 
 <template>
