@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed, inject } from 'vue'
 import type { CheckboxProps, CheckboxGroupContext } from '../type'
+import { getPtClasses } from '@versakit/shared'
 
 defineOptions({
   name: 'VKCheckbox',
@@ -63,18 +64,42 @@ const handleChange = (e: Event) => {
 }
 
 // 组件无头化
+const ptClasses = computed(() => {
+  if (props.unstyled) {
+    return {
+      root: getPtClasses(props.pt, 'root'),
+      input: getPtClasses(props.pt, 'input'),
+      inner: getPtClasses(props.pt, 'inner'),
+      label: getPtClasses(props.pt, 'label'),
+      checked: getPtClasses(props.pt, 'checked'),
+      disabled: getPtClasses(props.pt, 'disabled'),
+      indeterminate: getPtClasses(props.pt, 'indeterminate'),
+    }
+  }
+  return {
+    root: 'vk-checkbox',
+    input: 'vk-checkbox__input',
+    inner: 'vk-checkbox__inner',
+    label: 'vk-checkbox__label',
+    checked: 'is-checked',
+    disabled: 'is-disabled',
+    indeterminate: 'is-indeterminate',
+  }
+})
 </script>
 
 <template>
   <label
-    class="vk-checkbox"
-    :class="{
-      'is-checked': isChecked,
-      'is-disabled': isDisabled,
-      'is-indeterminate': indeterminate,
-    }"
+    :class="[
+      ptClasses.root,
+      {
+        [ptClasses.checked]: isChecked,
+        [ptClasses.disabled]: isDisabled,
+        [ptClasses.indeterminate]: props.indeterminate,
+      },
+    ]"
   >
-    <span class="vk-checkbox__input">
+    <span :class="ptClasses.input">
       <input
         type="checkbox"
         :checked="isChecked"
@@ -83,9 +108,9 @@ const handleChange = (e: Event) => {
         :value="value"
         @change="handleChange"
       />
-      <span class="vk-checkbox__inner"></span>
+      <span :class="ptClasses.inner"></span>
     </span>
-    <span v-if="label || $slots.default" class="vk-checkbox__label">
+    <span v-if="label || $slots.default" :class="ptClasses.label">
       <slot>{{ label }}</slot>
     </span>
   </label>
