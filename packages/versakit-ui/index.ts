@@ -1,6 +1,5 @@
 import type { App, Component } from 'vue'
 import { installTheme } from './core/theme'
-import { version } from './package.json'
 
 // 基础组件
 import { VKButton } from './components/button/index'
@@ -24,7 +23,6 @@ import { VKNotification } from './components/notification/index'
 import { VKBacktop } from './components/backtop/index'
 import { VKPanel } from './components/panel/index'
 import { VKSegmented } from './components/segmented/index'
-import { VKGradientText } from './components/gradienttext/index'
 import { VKFooter } from './components/footer/index'
 import { VKAside } from './components/aside/index'
 import { VKProgress } from './components/progress/index'
@@ -132,7 +130,6 @@ const components: Component[] = [
   VKTab,
   VKBacktop,
   VKSegmented,
-  VKGradientText,
   VKTable,
   VKColorPicker,
 ]
@@ -203,7 +200,6 @@ export {
   VKMain,
   VKTab,
   VKBacktop,
-  VKGradientText,
   VKTable,
   VKColorPicker,
 }
@@ -219,8 +215,6 @@ type VersakitOptions = {
 }
 
 const Versakit = {
-  version,
-
   /**
    * 安装方法
    * @param app - Vue 应用实例
@@ -239,4 +233,4 @@ const Versakit = {
   },
 }
 
-export { Versakit, version }
+export { Versakit }
