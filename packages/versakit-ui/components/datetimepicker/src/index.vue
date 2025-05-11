@@ -244,6 +244,7 @@ const ptClasses = computed(() => {
       timeInput: getPtClasses(props.pt, 'timeInput'),
       calendarIcon: getPtClasses(props.pt, 'calendarIcon'),
       clearIcon: getPtClasses(props.pt, 'clearIcon'),
+      dateTimePanel: getPtClasses(props.pt, 'dateTimePanel'),
       timePanel: getPtClasses(props.pt, 'timePanel'),
       tabs: getPtClasses(props.pt, 'tabs'),
       tab: getPtClasses(props.pt, 'tab'),
