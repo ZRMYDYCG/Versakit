@@ -1,23 +1,13 @@
-import type { ComType } from '../../../utils/constant'
-type positionType =
-  | 'topRight'
-  | 'topLeft'
-  | 'bottomLeft'
-  | 'bottomRight'
-  | 'top-right'
-  | 'top-left'
-  | 'bottom-left'
-  | 'bottom-right'
-
+// type/index.ts
 export interface NotifivationProps {
-  id?: any
-  type?: ComType
-  icon?: string
+  id?: string
+  type?: 'info' | 'success' | 'warn' | 'error' | 'primary'
   title?: string
-  plain?: boolean
   content?: string
-  offset?: number | string
+  plain?: boolean
+  icon?: string
   duration?: number
-  position?: positionType
+  position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right'
+  offset?: number
   destroy?: () => void
 }

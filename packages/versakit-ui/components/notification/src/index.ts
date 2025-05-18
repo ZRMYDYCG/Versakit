@@ -1,8 +1,8 @@
+// index.ts
 import { render, h, shallowReactive } from 'vue'
 import VKNotification from './index.vue'
 import type { NotifivationProps } from '../type'
 
-// 使用shallowReactive优化性能，减少不必要的深度响应
 const instances = shallowReactive<
   Array<{
     id: string
@@ -13,7 +13,6 @@ const instances = shallowReactive<
 let seed = 1
 
 const formatPosition = (position: string): string => {
-  // Convert camelCase to kebab-case (e.g., topRight -> top-right)
   return position.replace(/([A-Z])/g, '-$1').toLowerCase()
 }
 
@@ -52,7 +51,6 @@ export const Notification = ({
     instances.splice(idx, 1)
     render(null, wrapper)
     wrapper.remove()
-    // Remove container if empty
     if (container.children.length === 0) {
       container.remove()
     }
@@ -72,7 +70,7 @@ export const Notification = ({
 
   const vnode = h(VKNotification, newProps)
   render(vnode, wrapper)
-  // Insert at the beginning to maintain stacking order
+
   if (container.firstChild) {
     container.insertBefore(wrapper.firstElementChild!, container.firstChild)
   } else {
@@ -92,5 +90,5 @@ export const Notification = ({
 }
 
 export const getLastBottomOffset = () => {
-  return 0 // No longer needed with new stacking approach
+  return 0
 }
