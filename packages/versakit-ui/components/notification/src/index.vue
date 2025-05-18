@@ -1,7 +1,7 @@
 <template>
   <transition name="slide-fade" @after-leave="props.destroy">
     <div
-      v-show="isVisable"
+      v-show="isVisible"
       :class="vkClass"
       :style="positionStyle"
       role="alert"
@@ -16,7 +16,7 @@
       </div>
       <div
         class="vk-notification-closebtn"
-        @click="handClose"
+        @click="handleClose"
         aria-label="关闭通知"
       >
         <VKIcon name="cross" aria-hidden="true" />
@@ -27,7 +27,6 @@
 
 <script lang="ts" setup>
 import { ref, onMounted, computed } from 'vue'
-
 import { VKIcon } from '@versakit/icons'
 import type { NotifivationProps } from '../type/index'
 
@@ -46,9 +45,8 @@ const props = withDefaults(defineProps<NotifivationProps>(), {
 })
 
 const height = ref(0)
-const bottomOffset = computed(() => height.value)
+const isVisible = ref(false)
 
-// 根据传入的消息类型，计算对应的图标颜色
 const iconColor = computed(() => {
   switch (props.type) {
     case 'success':
@@ -62,39 +60,45 @@ const iconColor = computed(() => {
   }
 })
 
-// 使用对象展开语法结合类型断言返回样式对象
 const positionStyle = computed(() => {
-  return {} as Record<string, string>
+  const baseOffset = `${props.offset}px`
+  const style: Record<string, string> = {}
+
+  if (props.position.includes('top')) {
+    style.top = baseOffset
+  } else {
+    style.bottom = baseOffset
+  }
+
+  if (props.position.includes('left')) {
+    style.left = baseOffset
+  } else {
+    style.right = baseOffset
+  }
+
+  return style
 })
 
-const isVisable = ref(false)
-
-const handClose = () => {
-  isVisable.value = false
+const handleClose = () => {
+  isVisible.value = false
 }
 
 const vkClass = computed(() => {
   return [
     'vk-notification',
-    props.plain === false ? '' : `vk-notification-${props.type}-plain`,
+    props.plain ? `vk-notification-${props.type}-plain` : '',
   ]
 })
 
-/**
- * 保证动画展示，需要在 mounted 之后进行展示
- */
 onMounted(() => {
-  isVisable.value = true
-  /**
-   * 延迟时间关闭
-   */
+  isVisible.value = true
   setTimeout(() => {
-    isVisable.value = false
+    isVisible.value = false
   }, props.duration)
 })
 
 defineExpose({
-  bottomOffset,
+  height,
 })
 </script>
 
